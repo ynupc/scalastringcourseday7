@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quiz
+    messages_intro="「Day 7 文字の正規化とオプション」"
+    title="Day 7 文字の正規化とオプション"
+    shuffle_questions="true"
+    shuffle_choices="true"
+    show_correct_answer="false"
+    show_instant_result="true"
+    passing_score="100"
+    movable="false"
+    sound="true"
+    lang="ja">
+  <!--Day7-1-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+  <!--Day7-2-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+  <!--Day7-3-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+  <!--Day7-4-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+  <!--Day7-5-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+  <!--Day7-6-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+  <!--Day7-7-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+  <!--Day7-8-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+ <!--Day7-9-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+ <!--Day7-10-->
+  <question
+      statement=""
+      feedback_for_correct_answer=""
+      feedback_for_incorrect_answer="">
+      type="ma">
+    <choices>
+      <choice answer="true"></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+      <choice feedback=""></choice>
+    </choices>
+  </question>
+</quiz>
+

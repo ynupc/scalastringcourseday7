@@ -1,0 +1,12 @@
+{
+  "title": "１週間で学ぶScalaの文字列処理",
+  "description": "",
+  "language": "ja",
+  "gitbook": "2.x.x",
+  "plugins": ["youtube"],
+  "pluginsConfig": {
+    "search": {
+      "maxIndexSize": 100000
+    }
+  }
+}
