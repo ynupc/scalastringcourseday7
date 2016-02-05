@@ -1,5 +1,28 @@
 # 1.　文字の正規化
 <h3>正準等価性・互換等価性</h3>
+<h4>正準等価性</h4>
+ダイアクリティカルマークを合成済みの文字「が」＝文字「か」＋合成用ダイアクリティカルマーク「゛」<br>
+<ul>
+  <li>左辺から右辺への変換を「分解」</li>
+  <li>右辺から左辺への変換を「合成」</li>
+</ul>
+例：<br>
+<a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%82%A4%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AB%E3%83%AB%E3%83%9E%E3%83%BC%E3%82%AF" target="_blank">ダイアクリティカルマーク</a>
+<h4>互換等価性</h4>
+上付き文字「¹」＝普通の文字「1」<br>
+下付き文字「₁」＝普通の文字「1」<br>
+半角カナ文字「ｱ」＝全角カナ文字「ア」<br>
+全角英字「Ｃ」＝半角英字「C」<br>
+全角数字「１」＝半角数字「1」<br>
+etc.<br>
+<ul>
+  <li>左辺から右辺への変換を「分解」（多対1を許す。変換可能）</li>
+  <li>右辺から左辺への変換を「合成」（1対多を許すので、<strong>変換不可能</strong>）</li>
+</ul>
+例：<br>
+<a href="https://ja.wikipedia.org/wiki/%E4%B8%8A%E4%BB%98%E3%81%8D%E6%96%87%E5%AD%97" target="_blank">上付き文字</a><br>
+<a href="https://ja.wikipedia.org/wiki/%E4%B8%8B%E4%BB%98%E3%81%8D%E6%96%87%E5%AD%97" target="_blank">下付き文字</a><br>
+<a href="https://ja.wikipedia.org/wiki/%E5%85%A8%E8%A7%92%E3%81%A8%E5%8D%8A%E8%A7%92" target="_blank">全角と半角</a>
 <h3>EUC-JP/Shift-JISでの正規化</h3>
 例：EUC-JPを表す正規表現
 ```
