@@ -42,8 +42,8 @@ etc.<br>
 )
 ```
 <h3>Unicode正規化</h3>
----|---
 
+---|---
 NFD (Normalization Form Canonical Decomposition, 正規化形式D）|文字は正準等価性によって分解されます。
 NFC（Normalization Form Connonical Composition, 正規化形式C）|文字は正準等価性によって分解され、
 再度合成されます。
