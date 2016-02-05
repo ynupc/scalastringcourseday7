@@ -42,7 +42,7 @@ etc.<br>
 )
 ```
 <h3>Unicode正規化</h3>
-
+正規化形式の種類
 <ul>
   <li>NFD (Normalization Form Canonical Decomposition, 正規化形式D）<br>文字は正準等価性によって分解されます。</li>
   <li>NFC（Normalization Form Connonical Composition, 正規化形式C）<br>文字は正準等価性によって分解され、
