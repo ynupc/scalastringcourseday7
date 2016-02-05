@@ -48,8 +48,8 @@ etc.<br>
   <li>NFC（Normalization Form Connonical Composition, 正規化形式C）<br>文字は正準等価性によって分解され、
 再度合成されます。<br>（結果として文字の並びが変換前と変わることがありえます。）</li>
   <li>NFKD（Normalization Form Compatibility Decomposition, 正規化形式KD）<br>文字は互換等価性によって分解されます。</li>
-  <li>NFKC（Normalization Form Compatibility Composition, 正規化形式KC）<br>文字は互換等価性によって分解され、
-正準等価性によって再度合成されます。</li>
+  <li><strong>NFKC（Normalization Form Compatibility Composition, 正規化形式KC）<br>文字は互換等価性によって分解され、
+正準等価性によって再度合成されます。</strong></li>
 </ul>
 
 <h3>字種の判定</h3>
