@@ -42,5 +42,14 @@ etc.<br>
 )
 ```
 <h3>Unicode正規化</h3>
+---|---
+
+NFD (Normalization Form Canonical Decomposition, 正規化形式D）|文字は正準等価性によって分解されます。
+NFC（Normalization Form Connonical Composition, 正規化形式C）|文字は正準等価性によって分解され、
+再度合成されます。
+（結果として文字の並びが変換前と変わることがありえます。）
+NFKD（Normalization Form Compatibility Decomposition, 正規化形式KD）|文字は互換等価性によって分解されます。
+NFKC（Normalization Form Compatibility Composition, 正規化形式KC）|文字は互換等価性によって分解され、
+正準等価性によって再度合成されます。
 <h3>字種の判定</h3>
 <h3>字種の変換</h3>
