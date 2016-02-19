@@ -78,26 +78,21 @@ class NormalizedString(str: StringOption) extends AnyRef {
 
 object Normalizer {
   def normalize(str: StringOption): StringOption = {
-
-    def normalizeCharacters(string: String): StringOption = {
-      StringOption(
-        JavaNormalizer.normalize(string.
-          //波線記号の統一
-          replaceAll("\u301C", "\uFF5E").//〜 ～
-          replaceAll("\u007E", "\uFF5E"),//~ ～,
-          JavaNormalizer.Form.NFKC).
-          //イコール記号の削除
-          replaceAll("\u003D", "").//=
-          replaceAll("\uFF1D", "").//＝
-          //中黒の削除
-          replaceAll("\u30FB", "")//・
-      )
+    def normalizeCharacters: StringOption = {
+      CharacterNormalizerBeforeUnicodeNormalization.normalize(str) map {
+        s =>
+          CharacterNormalizerAfterUnicodeNormalization.normalize(
+            StringOption(
+              JavaNormalizer.normalize(s, JavaNormalizer.Form.NFKC)
+            )
+          ).getOrElse(null)
+      }
     }
 
     str match {
       case StringSome(s) =>
         WordExpressionNormalizer.normalize(
-          normalizeCharacters(s)
+          normalizeCharacters
         )
       case StringNone =>
         StringNone
