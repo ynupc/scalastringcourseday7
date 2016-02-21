@@ -91,8 +91,8 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </td></tr>
 <tr><td>isUnicodeIdentifierStart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の最初に指定できます。
 <ul>
-<li>isLetter(codePoint) が true を返す。</li>
-<li>getType(codePoint) が LETTER_NUMBER を返す。</li>
+<li>Character.isLetter(codePoint) が true を返す。</li>
+<li>Character.getType(codePoint) が LETTER_NUMBER を返す。</li>
 </ul>
 </td></tr>
 <tr><td>isUnicodeIdentifierPart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字以外に使用可能かどうかを判定します。次の文のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の一部に使用できます。
@@ -109,8 +109,8 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>isJavaIdentifierStart</td><td>
 文字 (Unicode コードポイント) を Java 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Java 識別子の最初に指定できます。
 <ul>
-<li>isLetter(codePoint) が次を返す: true</li>
-<li>getType(codePoint) が次を返す: LETTER_NUMBER</li>
+<li>Character.isLetter(codePoint) が次を返す: true</li>
+<li>Character.getType(codePoint) が次を返す: LETTER_NUMBER</li>
 <li><u>参照される文字が通貨記号である ('$' など)</u></li>
 <li><u>参照文字が連結句読点文字である ('_' など)</u></li>
 </ul>
