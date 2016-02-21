@@ -53,7 +53,7 @@ etc.<br>
 </ul>
 
 <h3>字種の判定</h3>
-<table border="1" width="1000">
+<table>
 <caption>Characterクラスの字種判定（引数はcharでもint コードポイントでも可、ただしcharだとBMPしか格納できないので、補助文字は判定不能。）</caption>
 <tr><td>isDefined</td><td>Unicodeで定義されている</td></tr>
 <tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br>（Character.getType(code_point)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
