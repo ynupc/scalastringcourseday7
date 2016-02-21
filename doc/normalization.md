@@ -103,7 +103,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <li>数値汎用文字である (ローマ数字文字など)</li>
 <li>連結マークである</li>
 <li>非スペーシングマークである</li>
-<li>この文字の isIdentifierIgnorable が true を返す。</li>
+<li>この文字の Character.isIdentifierIgnorable が true を返す。</li>
 </ul>
 </td></tr>
 <tr><td>isJavaIdentifierStart</td><td>
