@@ -12,12 +12,12 @@ object SentenceParser {
   private final val japanesePeriod: String = "。"
   private final val japaneseComma: String  = "、"
 
-  def parse(textOpt: StringOption): Seq[Sentence] = {
+  def parse(textOpt: StringOption): Seq[NormalizedSentence] = {
     if (textOpt.isEmpty) {
       return Nil
     }
 
-    val sentences: ListBuffer[Sentence] = ListBuffer[Sentence]()
+    val sentences: ListBuffer[NormalizedSentence] = ListBuffer[NormalizedSentence]()
 
     //改行文字により行に分割
     textOpt.get split '\n' foreach {
@@ -26,7 +26,7 @@ object SentenceParser {
           //句点により文単位に分割
           for (sentence <- line.trim split japanesePeriodRegex
                if StringOption(sentence).nonEmpty) yield {
-            new Sentence(parseSentence(sentence))
+            new NormalizedSentence(parseSentence(sentence))
           }
         }
     }
@@ -55,5 +55,5 @@ object SentenceParser {
       result
   }
 
-  private class Sentence(val text: String)
+  private class NormalizedSentence(val text: String)
 }
