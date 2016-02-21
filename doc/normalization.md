@@ -42,7 +42,7 @@ etc.<br>
 )
 ```
 <h3>Unicode正規化</h3>
-正規化形式の種類
+正規化形式の種類：
 <ul>
   <li>NFD (Normalization Form Canonical Decomposition, 正規化形式D）<br>文字は正準等価性によって分解されます。</li>
   <li>NFC（Normalization Form Connonical Composition, 正規化形式C）<br>文字は正準等価性によって分解され、
@@ -53,8 +53,8 @@ etc.<br>
 </ul>
 
 <h3>字種の判定</h3>
+Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
-<caption>Characterクラスの字種判定（引数はcharでもint コードポイントでも可、ただしcharだとBMPしか格納できないので、補助文字は判定不能。）</caption>
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
 <tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(code_point)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
 <tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(code_point)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
