@@ -96,7 +96,8 @@ scalastringcourseday7/
  │　　　　　└ …
  …
  ```
-<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a><br>
+互換等価性に関するサンプルコード
 ```scala
   //\u30AC = 全角カタカナの「ガ」
   private val sOfU30AC = "\u30AC"
@@ -114,6 +115,7 @@ scalastringcourseday7/
   private val sOfU3099 = "\u3099"
   //\uFF9E = 半角濁点の「ﾞ」
   private val sOfUFF9E = "\uFF9E"
+  
   @Test
   def testNormalizedStringOfCompatibilityEquivalent(): Unit = {
     //カ
@@ -136,6 +138,25 @@ scalastringcourseday7/
     assert(nsOfU3099 != nsOfU309B)
     assert(nsOfUFF9E != nsOfU309B)
   }
+```
+正準等価性に関するサンプルコード
+```scala
+  //\u30AC = 全角カタカナの「ガ」
+  private val sOfU30AC = "\u30AC"
+  //\u30AB = 全角カタカナの「カ」
+  private val sOfU30AB = "\u30AB"
+  //\uFF76 = 半角カタカナの「ｶ」
+  private val sOfUFF76 = "\uFF76"
+  //\u30F5 = 小書の全角カタカナの「ヵ」
+  private val sOfU30F5 = "\u30F5"
+  //\u32D5 = 丸囲いカタカナの「㋕」
+  private val sOfU32D5 = "\u32D5"
+  //\u309B = 全角濁点の「゙」
+  private val sOfU309B = "\u309B"
+  //\u3099 = 全角濁点の「゛」
+  private val sOfU3099 = "\u3099"
+  //\uFF9E = 半角濁点の「ﾞ」
+  private val sOfUFF9E = "\uFF9E"
 
   @Test
   def testNormalizedStringOfCanonicalEquivalent(): Unit = {
