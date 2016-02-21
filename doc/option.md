@@ -63,14 +63,14 @@ NormalizedStringを構成するファイル：
   <li>辞書ファイル
     <ul>
       <li>character_dic_after_unicode_normalization.yml<br>「Unicode正規化後の辞書による文字の正規化」で使用する辞書</li>
-      <li>character_dic_before_unicode_normalization.yml<br>「Unicode正規化前の辞書による文字の正規」で使用する辞書</li>
+      <li>character_dic_before_unicode_normalization.yml<br>「Unicode正規化前の辞書による文字の正規化」で使用する辞書</li>
       <li>word_expression_dic.yml<br>「辞書による単語の異表記からの代表表記への置換」で使用する辞書</li>
     </ul>
   </li>
   <li>プログラム
     <ul>
       <li>CharacterNormalizerAfterUnicodeNormalization.scala<br>「Unicode正規化後の辞書による文字の正規化」で使用するプログラム</li>
-      <li>CharacterNormalizerBeforeUnicodeNormalization.scala<br>「Unicode正規化前の辞書による文字の正規」で使用するプログラム</li>
+      <li>CharacterNormalizerBeforeUnicodeNormalization.scala<br>「Unicode正規化前の辞書による文字の正規化」で使用するプログラム</li>
       <li>DictionaryBasedNormalizer.scala<br>CharacterNormalizerBeforeUnicodeNormalization、CharacterNormalizerAfterUnicodeNormalization、WordExpressionNormalizerが継承するクラス。</li>
       <li>NormalizedString.scala<br>NormalizedStringの本体。正規化のために内部でCharacterNormalizerBeforeUnicodeNormalization、java.text.Normalizer、CharacterNormalizerAfterUnicodeNormalization、WordExpressionNormalizerを順に使用する。</li>
       <li>WordExpressionNormalizer.scala<br>「辞書による単語の異表記からの代表表記への置換」で使用するプログラム</li>
