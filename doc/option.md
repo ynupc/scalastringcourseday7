@@ -224,3 +224,4 @@ scalastringcourseday7/
   }
 ```
 <h3>2.5　句点による文分割と正規化文字列オプション（自作）</h3>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/SentenceParser.scala" target="_blank">SentenceParserの実装</a>
