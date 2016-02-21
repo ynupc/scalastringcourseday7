@@ -12,7 +12,10 @@ object SentenceParser {
   private final val japanesePeriod: String = "。"
   private final val japaneseComma: String  = "、"
 
-  def parse(textOpt: StringOption): Seq[NormalizedSentence] = {
+  // このようなprivateな型を作成しておかないとobject SentenceParser内のprivate class NormalizedSentenceをSeqで返すparseメソッドが作成ができない。
+  private type NS = NormalizedSentence
+
+  def parse(textOpt: StringOption): Seq[NS] = {
     if (textOpt.isEmpty) {
       return Nil
     }
@@ -55,7 +58,7 @@ object SentenceParser {
       result
   }
 
-  class NormalizedSentence(val text: String) {
+  private class NormalizedSentence(val text: String) {
     override def toString: String = text
   }
 }
