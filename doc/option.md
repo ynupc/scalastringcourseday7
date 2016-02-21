@@ -51,6 +51,25 @@
   }
 ```
 <h3>2.3　NormalizedString</h3>
+NormalizedStringを構成するファイル：
+<ul>
+  <li>辞書ファイル
+    <ul>
+      <li>character_dic_after_unicode_normalization.yml</li>
+      <li>character_dic_before_unicode_normalization.yml</li>
+      <li>word_expression_dic.yml</li>
+    </ul>
+  </li>
+  <li>プログラム
+    <ul>
+      <li>CharacterNormalizerAfterUnicodeNormalization.scala</li>
+      <li>CharacterNormalizerBeforeUnicodeNormalization.scala</li>
+      <li>DictionaryBasedNormalizer.scala</li>
+      <li>NormalizedString.scala</li>
+      <li>WordExpressionNormalizer.scala</li>
+    </ul>
+  </li>
+</ul>
 ```
 scalastringcourseday7/
  ├ src/
