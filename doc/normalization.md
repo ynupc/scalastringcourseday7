@@ -129,6 +129,14 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </td></tr>
 </table>
 
+<h3>正規表現による字種のマッチング</h3>
+p
+
+<h3>文字の字種情報の取得</h3>
+Character.getName
+Character.getDirectionality
+Character.getType
+
 <h3>字種の変換</h3>
 <h4>アルファベットのletter case</h4>
 <table>
