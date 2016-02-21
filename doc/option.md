@@ -26,7 +26,7 @@
     }
   }
 ```
-<h3>2.2　文字列オプション</h3>
+<h3>2.2　文字列オプション（自作）</h3>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>
 ```scala
   @Test
@@ -50,7 +50,7 @@
     }
   }
 ```
-<h3>2.3　正規化文字列</h3>
+<h3>2.3　正規化文字列（自作）</h3>
 NormalizedStringの正規化処理の流れ：
 <ol>
   <li>Unicode正規化前の辞書による文字の正規化</li>
@@ -176,7 +176,7 @@ scalastringcourseday7/
     assert(nsOfU30AC == nsOfU32D5UFF9E)
   }
 ```
-<h3>2.4　正規化文字列オプション</h3>
+<h3>2.4　正規化文字列オプション（自作）</h3>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedStringOption.scala" target="_blank">NormalizedStringOptionの実装</a>
 ```scala
   private val wordVariants: String = "スパゲッティ,スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ"
@@ -202,4 +202,4 @@ scalastringcourseday7/
     }
   }
 ```
-<h3>2.5　句点による文分割と正規化文字列オプション</h3>
+<h3>2.5　句点による文分割と正規化文字列オプション（自作）</h3>
