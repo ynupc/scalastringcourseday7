@@ -56,7 +56,7 @@ etc.<br>
 <table>
 <caption>Characterクラスの字種判定（引数はcharでもint コードポイントでも可、ただしcharだとBMPしか格納できないので、補助文字は判定不能。）</caption>
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
-<tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br>「〇」以外の漢数字は数字として判定されない。<br>（Character.getType(code_point)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
+<tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(code_point)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
 <tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(code_point)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
 <tr><td>isLetterOrDigit</td><td>isLetter || isDigit</td></tr>
 <tr><td>isLowerCase</td><td>小文字である。Character.getType(code_point)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
