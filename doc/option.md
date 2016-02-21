@@ -51,6 +51,25 @@
   }
 ```
 <h3>2.3　NormalizedString</h3>
+```
+scalastringcourseday7/<br>
+ ├ src/<br>
+ │　└ test/<br>
+ │      ├ resources/<br>
+ │　　　│    ├ character_dic_after_unicode_normalization.yml
+ │　　　│    ├ character_dic_before_unicode_normalization.yml
+ │　　　│    └ word_expression_dic.yml
+ │　　　└ scala/<br>
+ │          ├ text/<br>
+ │　　　　　│    ├ CharacterNormalizerAfterUnicodeNormalization.scala
+ │　　　　　│    ├ CharacterNormalizerBeforeUnicodeNormalization.scala
+ │　　　　　│    ├ DictionaryBasedNormalizer.scala
+ │　　　　　│    ├ NormalizedString.scala
+ │　　　　　│    ├ WordExpressionNormalizer.scala
+ │　　　　　│    └ …
+ │　　　　　└ …
+ …
+ ```
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a>
 ```scala
   //\u30AC = 全角カタカナの「ガ」
