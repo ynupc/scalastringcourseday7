@@ -1,6 +1,6 @@
 # 1.　文字の正規化
-<h3>正準等価性・互換等価性</h3>
-<h4>正準等価性</h4>
+<h3>1.1　正準等価性・互換等価性</h3>
+<h4>1.1.1　正準等価性</h4>
 ダイアクリティカルマークを合成済みの文字「が」＝文字「か」＋合成用ダイアクリティカルマーク「゛」<br>
 <ul>
   <li>左辺から右辺への変換＝「分解」（1対1なので、変換可能）</li>
@@ -8,7 +8,7 @@
 </ul>
 例：<br>
 <a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%82%A4%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AB%E3%83%AB%E3%83%9E%E3%83%BC%E3%82%AF" target="_blank">ダイアクリティカルマーク</a>
-<h4>互換等価性</h4>
+<h4>1.1.2　互換等価性</h4>
 上付き文字「¹」＝普通の文字「1」<br>
 下付き文字「₁」＝普通の文字「1」<br>
 半角カナ文字「ｱ」＝全角カナ文字「ア」<br>
@@ -23,7 +23,7 @@ etc.<br>
 <a href="https://ja.wikipedia.org/wiki/%E4%B8%8A%E4%BB%98%E3%81%8D%E6%96%87%E5%AD%97" target="_blank">上付き文字</a><br>
 <a href="https://ja.wikipedia.org/wiki/%E4%B8%8B%E4%BB%98%E3%81%8D%E6%96%87%E5%AD%97" target="_blank">下付き文字</a><br>
 <a href="https://ja.wikipedia.org/wiki/%E5%85%A8%E8%A7%92%E3%81%A8%E5%8D%8A%E8%A7%92" target="_blank">全角と半角</a>
-<h3>EUC-JP/Shift-JISでの正規化</h3>
+<h3>1.2　EUC-JP/Shift-JISでの正規化</h3>
 例：EUC-JPを表す正規表現
 ```
 (
@@ -41,7 +41,7 @@ etc.<br>
                                    [\\xA0-\\xDF] //半角片仮名
 )
 ```
-<h3>Unicode正規化</h3>
+<h3>1.3　Unicode正規化</h3>
 正規化形式の種類：
 <ul>
   <li>NFD (Normalization Form Canonical Decomposition, 正規化形式D）<br>文字は正準等価性によって分解されます。</li>
@@ -52,12 +52,12 @@ etc.<br>
 正準等価性によって再度合成されます。</strong></li>
 </ul>
 
-<h3>文字の字種情報の取得</h3>
+<h3>1.4　文字の字種情報の取得</h3>
 Character.getName
 Character.getDirectionality
 Character.getType
 
-<h3>文字の字種判定</h3>
+<h3>1.5　文字の字種判定</h3>
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
@@ -134,18 +134,18 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </td></tr>
 </table>
 
-<h3>正規表現による字種のマッチング</h3>
+<h3>1.6　正規表現による字種のマッチング</h3>
 p
 
-<h3>字種の変換</h3>
-<h4>アルファベットのletter case</h4>
+<h3>1.7　字種の変換</h3>
+<h4>1.7.1　アルファベットのletter case</h4>
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
 <tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
 <tr><td>title case</td><td>Abc</td><td>先頭文字が大文字で残りは小文字<br>１文字で複数文字あるように見える文字には、<br>title caseを持っている文字があります。<br>例：<ul><li>upper case:「Ǉ」（U+01C7）</li><li>title case:「ǈ」（U+01C8）</li><li>lower case:「	ǉ」（U+01C9）</li></ul></td></tr>
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
-<h4>文字のletter caseの変換</h4>
+<h4>1.7.2　文字のletter caseの変換</h4>
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
   private val titleCaseChar: Char = '\u01C8'//「ǈ」
@@ -185,7 +185,7 @@ p
     assert(Character.toLowerCase(lowerCaseCodePoint) == lowerCaseChar)
   }
 ```
-<h4>文字列のletter caseの変換</h4>
+<h4>1.7.3　文字列のletter caseの変換</h4>
 ```scala
   private val locale: Locale = Locale.JAPAN
 
@@ -204,7 +204,7 @@ p
   }
 ```
 
-<h4>カタカナとひらがなの相互変換（自作）</h4>
+<h4>1.7.4　カタカナとひらがなの相互変換（自作）</h4>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
 自作のNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱う。
 ```scala
