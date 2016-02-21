@@ -58,7 +58,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
 <tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(code_point)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
 <tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(code_point)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
-<tr><td>isLetterOrDigit</td><td>isLetter || isDigit</td></tr>
+<tr><td>isLetterOrDigit</td><td>Character.isLetter || Character.isDigit</td></tr>
 <tr><td>isLowerCase</td><td>小文字である。Character.getType(code_point)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
 <tr><td>isTitleCase</td><td>タイトルケース文字である。Character.getType(code_point)がTITLECASE_LETTERである。</td></tr>
 <tr><td>isUpperCase</td><td>大文字である。Character.getType(code_point)がUPPERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Uppercaseを持つ。</td></tr>
@@ -124,7 +124,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <li>数値汎用文字である (ローマ数字文字など)</li>
 <li>連結マークである</li>
 <li>非スペーシングマークである</li>
-<li>文字の isIdentifierIgnorable(codePoint) が true を返す。</li>
+<li>文字の Character.isIdentifierIgnorable(codePoint) が true を返す。</li>
 </ul>
 </td></tr>
 </table>
