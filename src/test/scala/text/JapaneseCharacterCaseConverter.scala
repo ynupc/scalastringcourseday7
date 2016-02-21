@@ -5,17 +5,29 @@ package text
   *         Created on 2016/02/22
   */
 object JapaneseCharacterCaseConverter {
-  class Conversion(val begin: Int, val end: Int, val target: Int)
+  private class Conversion(val begin: Int, val end: Int, val target: Int)
 
-  private val FROM_KATAKANA_TO_HIRAGANA: Seq[Conversion] = Seq[Conversion](
-    new Conversion('\u30A1', '\u30F6', '\u3041'),//'ァ', 'ヶ', 'ぁ'
-    new Conversion('\u30FD', '\u30FE', '\u309D') //'ヽ', 'ヾ', 'ゝ'
+  private final val KATAKANA: Seq[(Char, Char)] = Seq[(Char, Char)](
+    ('\u30A1', '\u30F6'),//'ァ', 'ヶ'
+    ('\u30FD', '\u30FE') //'ヽ', 'ヾ'
   )
 
-  private val FROM_HIRAGANA_TO_KATAKANA: Seq[Conversion] = Seq[Conversion](
-    new Conversion('\u3041', '\u3096', '\u30A1'),//'ぁ', 'ゖ', 'ァ'
-    new Conversion('\u309D', '\u309E', '\u30FD') //'ゝ', 'ゞ', 'ヽ'
+  private final val HIRAGANA: Seq[(Char, Char)] = Seq[(Char, Char)](
+    ('\u3041', '\u3096'),//'ぁ', 'ゖ'
+    ('\u309D', '\u309E') //'ゝ', 'ゞ'
   )
+
+  private final val FROM_KATAKANA_TO_HIRAGANA: Seq[Conversion] = {
+    for (i <- KATAKANA.indices) yield {
+      new Conversion(KATAKANA(i)._1, KATAKANA(i)._2, HIRAGANA(i)._1)
+    }
+  }
+
+  private final val FROM_HIRAGANA_TO_KATAKANA: Seq[Conversion] = {
+    for (i <- HIRAGANA.indices) yield {
+      new Conversion(HIRAGANA(i)._1, HIRAGANA(i)._2, KATAKANA(i)._1)
+    }
+  }
 
   private def convert(normalizedStringOpt: NormalizedStringOption, conversion: Conversion): NormalizedStringOption = {
     normalizedStringOpt map {
