@@ -140,7 +140,7 @@ etc.<br>
 <h4>文字のletter caseの変換</h4>
 <h4>文字列のletter caseの変換</h4>
 
-<h4>カタカナとひらがなの相互変換</h4>
+<h4>カタカナとひらがなの相互変換（自作）</h4>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
 ```scala
   private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
