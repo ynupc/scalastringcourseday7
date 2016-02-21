@@ -74,6 +74,7 @@ class Day7TestSuite extends AssertionsForJUnit {
     assert(letterCase.toLowerCase         == "letter case string")
     assert(letterCase.toLowerCase(locale) == "letter case string")
 
+    //文字列の１文字目を大文字にする
     assert(letterCase.capitalize == "Letter Case string")
   }
 
