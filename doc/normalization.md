@@ -52,7 +52,12 @@ etc.<br>
 正準等価性によって再度合成されます。</strong></li>
 </ul>
 
-<h3>字種の判定</h3>
+<h3>文字の字種情報の取得</h3>
+Character.getName
+Character.getDirectionality
+Character.getType
+
+<h3>文字の字種判定</h3>
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
@@ -131,11 +136,6 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 
 <h3>正規表現による字種のマッチング</h3>
 p
-
-<h3>文字の字種情報の取得</h3>
-Character.getName
-Character.getDirectionality
-Character.getType
 
 <h3>字種の変換</h3>
 <h4>アルファベットのletter case</h4>
