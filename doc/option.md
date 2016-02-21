@@ -51,6 +51,13 @@
   }
 ```
 <h3>2.3　NormalizedString</h3>
+NormalizedStringの正規化処理の流れ：
+<ol>
+  <li>Unicode正規化前の辞書による文字の正規化</li>
+  <li>Unicode正規化</li>
+  <li>Unicode正規化後の辞書による文字の正規化</li>
+  <li>辞書による単語の異表記からの代表表記への置換</li>
+</ol>
 NormalizedStringを構成するファイル：
 <ul>
   <li>辞書ファイル
@@ -195,3 +202,4 @@ scalastringcourseday7/
     }
   }
 ```
+<h3>2.5　句点による文分割と正規化オプション</h3>
