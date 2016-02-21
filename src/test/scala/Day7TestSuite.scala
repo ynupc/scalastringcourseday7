@@ -32,8 +32,6 @@ class Day7TestSuite extends AssertionsForJUnit {
   private val titleCaseCodePoint: Int = Character.codePointAt(Array[Char](titleCaseChar), 0)
   private val lowerCaseCodePoint: Int = Character.codePointAt(Array[Char](lowerCaseChar), 0)
 
-  private val locale: Locale = Locale.JAPAN
-
   @Test
   def testConverseLetterCaseOfCharacterWithChar(): Unit = {
     assert(Character.toUpperCase(upperCaseChar) == upperCaseChar)
@@ -63,6 +61,8 @@ class Day7TestSuite extends AssertionsForJUnit {
     assert(Character.toLowerCase(titleCaseCodePoint) == lowerCaseChar)
     assert(Character.toLowerCase(lowerCaseCodePoint) == lowerCaseChar)
   }
+
+  private val locale: Locale = Locale.JAPAN
 
   @Test
   def testConverseLetterCaseOfString(): Unit = {
