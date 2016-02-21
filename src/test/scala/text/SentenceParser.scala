@@ -31,7 +31,7 @@ object SentenceParser {
         }
     }
 
-    sentences.result()
+    sentences.result
   }
 
   private def parseSentence(sentence: String): String = {
