@@ -206,6 +206,7 @@ p
 
 <h4>カタカナとひらがなの相互変換（自作）</h4>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
+自作のNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱う。
 ```scala
   private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
 
