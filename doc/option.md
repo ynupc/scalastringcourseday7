@@ -77,7 +77,6 @@ NormalizedStringを構成するファイル：
     </ul>
   </li>
 </ul>
-NormalizedStringを構成するファイルの構成：
 ```
 scalastringcourseday7/
  ├ src/
