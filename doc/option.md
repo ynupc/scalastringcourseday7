@@ -60,7 +60,7 @@ NormalizedStringの正規化処理の流れ：
 </ol>
 NormalizedStringを構成するファイル：
 <ul>
-  <li>辞書ファイル
+  <li>辞書
     <ul>
       <li>character_dic_after_unicode_normalization.yml<br>「Unicode正規化後の辞書による文字の正規化」で使用する辞書</li>
       <li>character_dic_before_unicode_normalization.yml<br>「Unicode正規化前の辞書による文字の正規化」で使用する辞書</li>
