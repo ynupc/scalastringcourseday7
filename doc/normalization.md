@@ -53,4 +53,81 @@ etc.<br>
 </ul>
 
 <h3>字種の判定</h3>
+<table border="1" width="1000">
+<caption>Characterクラスの字種判定（引数はcharでもint コードポイントでも可、ただしcharだとBMPしか格納できないので、補助文字は判定不能。）</caption>
+<tr><td>isDefined</td><td>Unicodeで定義されている</td></tr>
+<tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br>（Character.getType(code_point)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
+<tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(code_point)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
+<tr><td>isLetterOrDigit</td><td>isLetter || isDigit</td></tr>
+<tr><td>isLowerCase</td><td>小文字である。Character.getType(code_point)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
+<tr><td>isTitleCase</td><td>タイトルケース文字である。Character.getType(code_point)がTITLECASE_LETTERである。</td></tr>
+<tr><td>isUpperCase</td><td>大文字である。Character.getType(code_point)がUPPERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Uppercaseを持つ。</td></tr>
+<tr><td>isSpaceChar</td><td>Unicode標準の空白文字である。Character.getType(code_point)がSPACE_SEPARATOR, LINE_SEPARATOR, PARAGRAPH_SEPARATORのいずれかである。</td></tr>
+<tr><td>isWhiteSpace</td><td>空白文字である。次のいずれかを満たす場合、空白文字とみなされます。
+<ul>
+<li>Unicode の空白文字 (SPACE_SEPARATOR、LINE_SEPARATOR、または PARAGRAPH_SEPARATOR) であるが、改行なしの空白 ('\u00A0'、'\u2007'、'\u202F') ではない。</li>
+<li>'\t' (U+0009 水平タブ) である</li>
+<li>'\n' (U+000A 改行) である。</li>
+<li>'\u000B' (U+000B 垂直タブ) である</li>
+<li>'\f' (U+000C フォームフィード) である。</li>
+<li>'\r' (U+000D 復帰) である。</li>
+<li>'\u001C' (U+001C ファイル区切り文字) である。</li>
+<li>'\u001D' (U+001D グループ区切り文字) である。</li>
+<li>'\u001E' (U+001E レコード区切り文字) である。</li>
+<li>'\u001F' (U+001F 単位区切り文字) である。</li>
+</ul>
+</td></tr>
+<tr><td>isMirrored</td><td>Unicode 仕様に従って、指定された文字 (Unicode コードポイント) をミラー化するかどうかを判定します。テキスト内で右から左に文字が描画される場合、文字のミラー化により、グリフが水平方向にミラー化されます。たとえば、'\u0028' LEFT PARENTHESIS は、セマンティクスでは開き括弧として定義されています。これは、左から右に描画されるテキストでは「(」になり、右から左に描画されるテキストでは「)」になります。</td></tr>
+<tr><td>isISOControl</td><td>参照された文字 (Unicode コードポイント) が ISO 制御文字かどうかを判定します。コードが '\u0000' - '\u001F' の範囲、または '\u007F' - '\u009F' の範囲の場合は、ISO 制御文字と見なされます。</td></tr>
+<tr><td>isIdentifierIgnorable</td><td>指定された文字 (Unicode コードポイント) が、Java 識別子または Unicode 識別子内で無視可能な文字かどうかを判定します。次の Unicode 文字は、Java 識別子や Unicode 識別子内で無視できます。
+<ul><li>空白以外の ISO 制御文字
+<ul>
+<li>'\u0000' - '\u0008'</li>
+<li>'\u000E' - '\u001B'</li>
+<li>'\u007F' - '\u009F'</li>
+</ul></li>
+<li>Character.getType(code_point)がFORMATであるすべての文字</li>
+</ul>
+</td></tr>
+<tr><td>isUnicodeIdentifierStart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の最初に指定できます。
+<ul>
+<li>isLetter(codePoint) が true を返す。</li>
+<li>getType(codePoint) が LETTER_NUMBER を返す。</li>
+</ul>
+</td></tr>
+<tr><td>isUnicodeIdentifierPart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字以外に使用可能かどうかを判定します。次の文のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の一部に使用できます。
+<ul>
+<li>汎用文字である</li>
+<li>連結句読点文字である ('_' など)</li>
+<li>数字である</li>
+<li>数値汎用文字である (ローマ数字文字など)</li>
+<li>連結マークである</li>
+<li>非スペーシングマークである</li>
+<li>この文字の isIdentifierIgnorable が true を返す。</li>
+</ul>
+</td></tr>
+<tr><td>isJavaIdentifierStart</td><td>
+文字 (Unicode コードポイント) を Java 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Java 識別子の最初に指定できます。
+<ul>
+<li>isLetter(codePoint) が次を返す: true</li>
+<li>getType(codePoint) が次を返す: LETTER_NUMBER</li>
+<li><u>参照される文字が通貨記号である ('$' など)</u></li>
+<li><u>参照文字が連結句読点文字である ('_' など)</u></li>
+</ul>
+</td></tr>
+<tr><td>isJavaIdentifierPart</td><td>文字 (Unicode コードポイント) を Java 識別子の最初の文字以外に使用可能かどうかを判定します。次のどれかに当てはまる場合にだけ、その文字を Java 識別子の一部に指定できます。
+<ul>
+<li>汎用文字である</li>
+<li><u>通貨記号である ('$' など)</u></li>
+<li>連結句読点文字である ('_' など)</li>
+<li>数字である</li>
+<li>数値汎用文字である (ローマ数字文字など)</li>
+<li>連結マークである</li>
+<li>非スペーシングマークである</li>
+<li>文字の isIdentifierIgnorable(codePoint) が true を返す。</li>
+</ul>
+</td></tr>
+</table>
+
+
 <h3>字種の変換</h3>
