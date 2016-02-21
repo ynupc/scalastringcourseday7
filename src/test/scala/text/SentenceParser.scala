@@ -55,5 +55,7 @@ object SentenceParser {
       result
   }
 
-  private class NormalizedSentence(val text: String)
+  class NormalizedSentence(val text: String) {
+    override def toString: String = text
+  }
 }

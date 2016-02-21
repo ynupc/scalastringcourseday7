@@ -36,16 +36,15 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
       val line: String = lines.next.trim
       line match {
         case regex(representation, notationalVariants, commentOut) =>
-          var trimmedRepresentation: String = representation.trim
-          if (trimmedRepresentation == "\"\"") {
-            trimmedRepresentation = ""
-          } else {
-            val sortedNotationalVariants: List[String] = sortNotationVariants(notationalVariants.split(',').toList) //.
-            map(trimmedRepresentation) = if (map.contains(trimmedRepresentation)) {
+          val trimmedRepresentation: String = representation.trim match {
+            case "\"\"" => ""
+            case otherwise => otherwise
+          }
+          val sortedNotationalVariants: List[String] = sortNotationVariants(notationalVariants.split(',').toList)
+          map(trimmedRepresentation) = if (map.contains(trimmedRepresentation)) {
               sortNotationVariants(map(trimmedRepresentation) ++ sortedNotationalVariants)
-            } else {
-              sortedNotationalVariants
-            }
+          } else {
+            sortedNotationalVariants
           }
         case otherwise =>
         //Do nothing
