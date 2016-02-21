@@ -52,15 +52,15 @@
 ```
 <h3>2.3　NormalizedString</h3>
 ```
-scalastringcourseday7/<br>
- ├ src/<br>
- │　└ test/<br>
- │      ├ resources/<br>
+scalastringcourseday7/
+ ├ src/
+ │　└ test/
+ │     ├ resources/
  │　　　│    ├ character_dic_after_unicode_normalization.yml
  │　　　│    ├ character_dic_before_unicode_normalization.yml
  │　　　│    └ word_expression_dic.yml
- │　　　└ scala/<br>
- │          ├ text/<br>
+ │　　　└ scala/
+ │        ├ text/
  │　　　　　│    ├ CharacterNormalizerAfterUnicodeNormalization.scala
  │　　　　　│    ├ CharacterNormalizerBeforeUnicodeNormalization.scala
  │　　　　　│    ├ DictionaryBasedNormalizer.scala
