@@ -96,6 +96,13 @@ scalastringcourseday7/
  │　　　　　└ …
  …
  ```
+ 辞書の解説
+ 基本的なフォーマットについて、１行ごとに代表表記と異表記リストの紐付けている。
+ Unicodeシーケンスが使える。フォントの見た目が似ている文字を人間が識別するため。
+ コメントアウトの書き方
+ word_expression_dic.ymlの単語異表記は正規表現による記述が可能
+ 変換順序について
+ このやり方で異表記を代表表記に統一する場合の問題点について
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a><br>
 互換等価性に関するサンプルコード
 ```scala
@@ -224,4 +231,9 @@ scalastringcourseday7/
   }
 ```
 <h3>2.5　句点による文分割と文の正規化（自作）</h3>
+文の定義
+単文・重文・複文ではなく句点区切りによる文
+句点・読点がUnicode正規化ではピリオド・カンマに変換されてしまう。
+その問題点を具体的に挙げる
+日本語のテキストを入力すると、句点・読点をピリオド・カンマに変換せずに文字の正規化が保証された文を持つクラスのシーケンスを返すSentenceParser.parseメソッドの解説。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/SentenceParser.scala" target="_blank">SentenceParserの実装</a>
