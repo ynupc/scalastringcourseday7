@@ -26,6 +26,7 @@
     }
   }
 ```
+***
 <h3>2.2　文字列オプション（自作）</h3>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>
 ```scala
@@ -50,6 +51,7 @@
     }
   }
 ```
+***
 <h3>2.3　正規化文字列（自作）</h3>
 NormalizedStringの正規化処理の流れ：
 <ol>
@@ -204,6 +206,7 @@ scalastringcourseday7/
     assert(nsOfU30AC == nsOfU32D5UFF9E)
   }
 ```
+***
 <h3>2.4　正規化文字列オプション（自作）</h3>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedStringOption.scala" target="_blank">NormalizedStringOptionの実装</a>
 ```scala
@@ -230,6 +233,7 @@ scalastringcourseday7/
     }
   }
 ```
+***
 <h3>2.5　句点による文分割と文の正規化（自作）</h3>
 文の定義
 単文・重文・複文ではなく句点区切りによる文
