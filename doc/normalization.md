@@ -129,5 +129,23 @@ etc.<br>
 </td></tr>
 </table>
 
-
 <h3>字種の変換</h3>
+<h4>アルファベットのletter case</h4>
+<table>
+<tr><th>letter case</th><th>例</th><th>説明</th></tr>
+<tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
+<tr><td>title case</td><td>Abc</td><td>先頭文字が大文字で残りは小文字<br>１文字で複数文字あるように見える文字には、<br>Title Caseを持っている文字があります。<ul><li>upper case:「Ǉ」（U+01C7）</li><li>title case:「ǈ」（U+01C8）</li><li>lower case:「	ǉ」（U+01C9）</li></ul></td></tr>
+<tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
+</table>
+<h4>文字のletter caseの変換</h4>
+<h4>文字列のletter caseの変換</h4>
+
+<h4>カタカナとひらがなの相互変換</h4>
+<table>
+<tr><td>変換関数</td><td><pre>
+</pre></td></tr>
+<tr><td>カタカナ to ひらがな</td><td><pre>
+</pre></td></tr>
+<tr><td>ひらがな to カタカナ</td><td><pre>
+</pre></td></tr>
+</table>
