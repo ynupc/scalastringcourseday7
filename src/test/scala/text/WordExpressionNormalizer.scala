@@ -14,5 +14,9 @@ object WordExpressionNormalizer extends DictionaryBasedNormalizer(StringOption("
     super.sortRepresentations(representations).
     sortWith((a, b) => a.length < b.length)//length ascending order
   }
+
+  override protected def replaceAll(input: String, term: String, replacement: String): String = {
+    input.replaceAll(term, replacement)
+  }
 }
 

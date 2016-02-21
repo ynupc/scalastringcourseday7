@@ -14,7 +14,7 @@ import scala.util.matching.Regex
 class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
   private def ascii2native(inputPath: Path): Stream[String] = {
     Process(Seq[String](
-      "native2ascii",
+      s"${System.getProperty("java.home")}/../bin/native2ascii",
       "-reverse",
       "-encoding", "UTF-8",
       inputPath.toAbsolutePath.toString)).lineStream_!
@@ -76,12 +76,16 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
         if (terms.nonEmpty) {
           terms foreach {
             case (term, replacement) =>
-              result = result.replaceAllLiterally(term, replacement)
+              result = replaceAll(result, term, replacement)
             case otherwise =>
             //Do nothing
           }
         }
         result
     }
+  }
+
+  protected def replaceAll(input: String, term: String, replacement: String): String = {
+    input.replaceAllLiterally(term, replacement)
   }
 }
