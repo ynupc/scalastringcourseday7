@@ -12,6 +12,18 @@ import text._
   *         Created on 2016/02/19
   */
 class Day7TestSuite extends AssertionsForJUnit {
+  private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
+
+  @Test
+  def testKatakana2Hiragana(): Unit = {
+    assert(JapaneseCharacterCaseConverter.convertKatakana2Hiragana(nullPoGa).get.toString == "「ぬるぽ」「がっ」")
+  }
+
+  @Test
+  def testHiragana2Katakana(): Unit = {
+    assert(JapaneseCharacterCaseConverter.convertHiragana2Katakana(nullPoGa).get.toString == "「ヌルポ」「ガッ」")
+  }
+
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
   private val titleCaseChar: Char = '\u01C8'//「ǈ」
   private val lowerCaseChar: Char = '\u01C9'//「ǉ」
