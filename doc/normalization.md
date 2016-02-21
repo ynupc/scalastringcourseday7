@@ -138,7 +138,62 @@ etc.<br>
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 <h4>文字のletter caseの変換</h4>
+```scala
+  private val upperCaseChar: Char = '\u01C7'//「Ǉ」
+  private val titleCaseChar: Char = '\u01C8'//「ǈ」
+  private val lowerCaseChar: Char = '\u01C9'//「ǉ」
+
+  private val upperCaseCodePoint: Int = Character.codePointAt(Array[Char](upperCaseChar), 0)
+  private val titleCaseCodePoint: Int = Character.codePointAt(Array[Char](titleCaseChar), 0)
+  private val lowerCaseCodePoint: Int = Character.codePointAt(Array[Char](lowerCaseChar), 0)
+
+  private val locale: Locale = Locale.JAPAN
+
+  @Test
+  def testConverseLetterCaseOfCharacterWithChar(): Unit = {
+    assert(Character.toUpperCase(upperCaseChar) == upperCaseChar)
+    assert(Character.toUpperCase(titleCaseChar) == upperCaseChar)
+    assert(Character.toUpperCase(lowerCaseChar) == upperCaseChar)
+
+    assert(Character.toTitleCase(upperCaseChar) == titleCaseChar)
+    assert(Character.toTitleCase(titleCaseChar) == titleCaseChar)
+    assert(Character.toTitleCase(lowerCaseChar) == titleCaseChar)
+
+    assert(Character.toLowerCase(upperCaseChar) == lowerCaseChar)
+    assert(Character.toLowerCase(titleCaseChar) == lowerCaseChar)
+    assert(Character.toLowerCase(lowerCaseChar) == lowerCaseChar)
+  }
+
+  @Test
+  def testConverseLetterCaseOfCharacterWithCodePoint(): Unit = {
+    assert(Character.toUpperCase(upperCaseCodePoint) == upperCaseChar)
+    assert(Character.toUpperCase(titleCaseCodePoint) == upperCaseChar)
+    assert(Character.toUpperCase(lowerCaseCodePoint) == upperCaseChar)
+
+    assert(Character.toTitleCase(upperCaseCodePoint) == titleCaseChar)
+    assert(Character.toTitleCase(titleCaseCodePoint) == titleCaseChar)
+    assert(Character.toTitleCase(lowerCaseCodePoint) == titleCaseChar)
+
+    assert(Character.toLowerCase(upperCaseCodePoint) == lowerCaseChar)
+    assert(Character.toLowerCase(titleCaseCodePoint) == lowerCaseChar)
+    assert(Character.toLowerCase(lowerCaseCodePoint) == lowerCaseChar)
+  }
+```
 <h4>文字列のletter caseの変換</h4>
+```scala
+  @Test
+  def testConverseLetterCaseOfString(): Unit = {
+    val letterCase: String = "letter Case string"
+
+    assert(letterCase.toUpperCase         == "LETTER CASE STRING")
+    assert(letterCase.toUpperCase(locale) == "LETTER CASE STRING")
+
+    assert(letterCase.toLowerCase         == "letter case string")
+    assert(letterCase.toLowerCase(locale) == "letter case string")
+
+    assert(letterCase.capitalize == "Letter Case string")
+  }
+```
 
 <h4>カタカナとひらがなの相互変換（自作）</h4>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
