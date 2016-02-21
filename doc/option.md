@@ -72,7 +72,7 @@ NormalizedStringを構成するファイル：
       <li>CharacterNormalizerAfterUnicodeNormalization.scala<br>「Unicode正規化後の辞書による文字の正規化」で使用するプログラム</li>
       <li>CharacterNormalizerBeforeUnicodeNormalization.scala<br>「Unicode正規化前の辞書による文字の正規化」で使用するプログラム</li>
       <li>DictionaryBasedNormalizer.scala<br>DictionaryBasedNormalizerは、CharacterNormalizerBeforeUnicodeNormalization、CharacterNormalizerAfterUnicodeNormalization、WordExpressionNormalizerが継承するクラス</li>
-      <li>NormalizedString.scala<br>NormalizedStringの本体。正規化のために内部でCharacterNormalizerBeforeUnicodeNormalization、java.text.Normalizer、CharacterNormalizerAfterUnicodeNormalization、WordExpressionNormalizerを順に使用する。</li>
+      <li>NormalizedString.scala<br>NormalizedStringの本体。「NormalizedStringの正規化処理の流れ」に従い、CharacterNormalizerBeforeUnicodeNormalization、java.text.Normalizer、CharacterNormalizerAfterUnicodeNormalization、WordExpressionNormalizerを順に実行する。</li>
       <li>WordExpressionNormalizer.scala<br>「辞書による単語の異表記からの代表表記への置換」で使用するプログラム</li>
     </ul>
   </li>
