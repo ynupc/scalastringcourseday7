@@ -141,11 +141,17 @@ etc.<br>
 <h4>文字列のletter caseの変換</h4>
 
 <h4>カタカナとひらがなの相互変換</h4>
-<table>
-<tr><td>変換関数</td><td><pre>
-</pre></td></tr>
-<tr><td>カタカナ to ひらがな</td><td><pre>
-</pre></td></tr>
-<tr><td>ひらがな to カタカナ</td><td><pre>
-</pre></td></tr>
-</table>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
+```scala
+  private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
+
+  @Test
+  def testKatakana2Hiragana(): Unit = {
+    assert(JapaneseCharacterCaseConverter.convertKatakana2Hiragana(nullPoGa).get.toString == "「ぬるぽ」「がっ」")
+  }
+
+  @Test
+  def testHiragana2Katakana(): Unit = {
+    assert(JapaneseCharacterCaseConverter.convertHiragana2Katakana(nullPoGa).get.toString == "「ヌルポ」「ガッ」")
+  }
+```
