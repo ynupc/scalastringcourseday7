@@ -134,7 +134,7 @@ etc.<br>
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
 <tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
-<tr><td>title case</td><td>Abc</td><td>先頭文字が大文字で残りは小文字<br>１文字で複数文字あるように見える文字には、<br>Title Caseを持っている文字があります。<ul><li>upper case:「Ǉ」（U+01C7）</li><li>title case:「ǈ」（U+01C8）</li><li>lower case:「	ǉ」（U+01C9）</li></ul></td></tr>
+<tr><td>title case</td><td>Abc</td><td>先頭文字が大文字で残りは小文字<br>１文字で複数文字あるように見える文字には、<br>title caseを持っている文字があります。<br>例：<ul><li>upper case:「Ǉ」（U+01C7）</li><li>title case:「ǈ」（U+01C8）</li><li>lower case:「	ǉ」（U+01C9）</li></ul></td></tr>
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 <h4>文字のletter caseの変換</h4>
