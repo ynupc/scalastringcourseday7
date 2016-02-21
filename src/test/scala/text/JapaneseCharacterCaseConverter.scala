@@ -5,7 +5,7 @@ package text
   *         Created on 2016/02/22
   */
 object JapaneseCharacterCaseConverter {
-  class Conversion(val begin: Int, val end: Int, val d: Int)
+  class Conversion(val begin: Int, val end: Int, val target: Int)
 
   private val FROM_KATAKANA_TO_HIRAGANA: Seq[Conversion] = Seq[Conversion](
     new Conversion('\u30A1', '\u30F6', '\u3041'),//'ァ', 'ヶ', 'ぁ'
@@ -25,7 +25,7 @@ object JapaneseCharacterCaseConverter {
   }
 
   private def convert(textOpt: StringOption, conversion: Conversion): StringOption = {
-    val diff: Int = conversion.d - conversion.begin
+    val diff: Int = conversion.target - conversion.begin
     textOpt map {
       text =>
         new String(
