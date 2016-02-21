@@ -1,5 +1,7 @@
 package day7
 
+import java.util.Locale
+
 import org.junit.Test
 import org.scalatest.junit.AssertionsForJUnit
 import text.SentenceParser.NormalizedSentence
@@ -10,6 +12,59 @@ import text._
   *         Created on 2016/02/19
   */
 class Day7TestSuite extends AssertionsForJUnit {
+  private val upperCaseChar: Char = '\u01C7'//「Ǉ」
+  private val titleCaseChar: Char = '\u01C8'//「ǈ」
+  private val lowerCaseChar: Char = '\u01C9'//「ǉ」
+
+  private val upperCaseCodePoint: Int = Character.codePointAt(Array[Char](upperCaseChar), 0)
+  private val titleCaseCodePoint: Int = Character.codePointAt(Array[Char](titleCaseChar), 0)
+  private val lowerCaseCodePoint: Int = Character.codePointAt(Array[Char](lowerCaseChar), 0)
+
+  private val locale: Locale = Locale.JAPAN
+
+  @Test
+  def testConverseLetterCaseOfCharacterWithChar(): Unit = {
+    assert(Character.toUpperCase(upperCaseChar) == upperCaseChar)
+    assert(Character.toUpperCase(titleCaseChar) == upperCaseChar)
+    assert(Character.toUpperCase(lowerCaseChar) == upperCaseChar)
+
+    assert(Character.toTitleCase(upperCaseChar) == titleCaseChar)
+    assert(Character.toTitleCase(titleCaseChar) == titleCaseChar)
+    assert(Character.toTitleCase(lowerCaseChar) == titleCaseChar)
+
+    assert(Character.toLowerCase(upperCaseChar) == lowerCaseChar)
+    assert(Character.toLowerCase(titleCaseChar) == lowerCaseChar)
+    assert(Character.toLowerCase(lowerCaseChar) == lowerCaseChar)
+  }
+
+  @Test
+  def testConverseLetterCaseOfCharacterWithCodePoint(): Unit = {
+    assert(Character.toUpperCase(upperCaseCodePoint) == upperCaseChar)
+    assert(Character.toUpperCase(titleCaseCodePoint) == upperCaseChar)
+    assert(Character.toUpperCase(lowerCaseCodePoint) == upperCaseChar)
+
+    assert(Character.toTitleCase(upperCaseCodePoint) == titleCaseChar)
+    assert(Character.toTitleCase(titleCaseCodePoint) == titleCaseChar)
+    assert(Character.toTitleCase(lowerCaseCodePoint) == titleCaseChar)
+
+    assert(Character.toLowerCase(upperCaseCodePoint) == lowerCaseChar)
+    assert(Character.toLowerCase(titleCaseCodePoint) == lowerCaseChar)
+    assert(Character.toLowerCase(lowerCaseCodePoint) == lowerCaseChar)
+  }
+
+  @Test
+  def testConverseLetterCaseOfString(): Unit = {
+    val letterCase: String = "letter Case string"
+
+    assert(letterCase.toUpperCase         == "LETTER CASE STRING")
+    assert(letterCase.toUpperCase(locale) == "LETTER CASE STRING")
+
+    assert(letterCase.toLowerCase         == "letter case string")
+    assert(letterCase.toLowerCase(locale) == "letter case string")
+
+    assert(letterCase.capitalize == "Letter Case string")
+  }
+
   private val wordVariants: String = "スパゲッティ,スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ"
   private val nullString: String = null
   private val emptyString: String = ""
