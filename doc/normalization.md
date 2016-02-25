@@ -326,20 +326,20 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 ***
 <h3>1.9　Unicodeバイナリ・プロパティ</h3>
 <table>
-<tr><td>Alphabetic</td><td></td></tr>
-<tr><td>Ideographic</td><td></td></tr>
-<tr><td>Letter</td><td></td></tr>
-<tr><td>Lowercase</td><td></td></tr>
-<tr><td>Uppercase</td><td></td></tr>
-<tr><td>Titlecase</td><td></td></tr>
-<tr><td>Punctuation</td><td></td></tr>
-<tr><td>Control</td><td></td></tr>
-<tr><td>White_Space</td><td></td></tr>
-<tr><td>Digit</td><td></td></tr>
-<tr><td>Hex_Digit</td><td></td></tr>
-<tr><td>Join_Control</td><td></td></tr>
-<tr><td>Noncharacter_Code_Point</td><td></td></tr>
-<tr><td>Assigned</td><td></td></tr>
+<tr><td>IsAlphabetic</td><td></td></tr>
+<tr><td>IsIdeographic</td><td></td></tr>
+<tr><td>IsLetter</td><td></td></tr>
+<tr><td>IsLowercase</td><td></td></tr>
+<tr><td>IsUppercase</td><td></td></tr>
+<tr><td>IsTitlecase</td><td></td></tr>
+<tr><td>IsPunctuation</td><td></td></tr>
+<tr><td>IsControl</td><td></td></tr>
+<tr><td>IsWhite_Space</td><td></td></tr>
+<tr><td>IsDigit</td><td></td></tr>
+<tr><td>IsHex_Digit</td><td></td></tr>
+<tr><td>IsJoin_Control</td><td></td></tr>
+<tr><td>IsNoncharacter_Code_Point</td><td></td></tr>
+<tr><td>IsAssigned</td><td></td></tr>
 </table>
 ***
 <h3>1.10　正規表現による字種のマッチング</h3>
