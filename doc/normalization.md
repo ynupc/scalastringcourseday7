@@ -319,10 +319,15 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </table>
 ***
 <h3>1.6　Unicode書体</h3>
+***
 <h3>1.7　Unicodeブロック</h3>
+***
 <h3>1.8　Unicodeカテゴリ</h3>
-<h3>1.9　正規表現による字種のマッチング</h3>
-<h4>1.9.1　POSIX文字クラス(US-ASCIIのみ)</h4>
+***
+<h3>1.9　Unicodeバイナリ・プロパティ</h3>
+***
+<h3>1.10　正規表現による字種のマッチング</h3>
+<h4>1.10.1　POSIX文字クラス(US-ASCIIのみ)</h4>
 <table>
 <tr><td>\p{Lower}</td><td>小文字の英字</td><td>[a-z]</td></tr>
 <tr><td>\p{Upper}</td><td>大文字の英字</td><td>[A-Z]</td></tr>
@@ -339,7 +344,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
 </table>
 
-<h4>1.9.2　java.lang.Characterクラス(単純なjava文字タイプ)</h4>
+<h4>1.10.2　java.lang.Characterクラス(単純なjava文字タイプ)</h4>
 <table>
 <tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
 <tr><td>\p{javaUpperCase}</td><td>java.lang.Character.isUpperCase()と等価</td></tr>
@@ -347,7 +352,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
 </table>
 
-<h4>1.9.3　Unicode書体、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
+<h4>1.10.3　Unicode書体、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 <table>
 <tr><td>\p{IsLatin}</td><td>Latin 書体文字(書体)</td></tr>
 <tr><td>\p{InGreek}</td><td>Greek ブロックの文字(ブロック)</td></tr>
@@ -359,8 +364,8 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </table>
 
 ***
-<h3>1.10　字種の変換</h3>
-<h4>1.10.1　アルファベットのletter case</h4>
+<h3>1.11　字種の変換</h3>
+<h4>1.11.1　アルファベットのletter case</h4>
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
 <tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
@@ -368,7 +373,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 ***
-<h4>1.10.2　文字のletter caseの変換</h4>
+<h4>1.11.2　文字のletter caseの変換</h4>
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
   private val titleCaseChar: Char = '\u01C8'//「ǈ」
@@ -409,7 +414,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
   }
 ```
 ***
-<h4>1.10.3　文字列のletter caseの変換</h4>
+<h4>1.11.3　文字列のletter caseの変換</h4>
 ```scala
   private val locale: Locale = Locale.JAPAN
 
@@ -428,7 +433,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
   }
 ```
 ***
-<h4>1.10.4　カタカナとひらがなの相互変換（自作）</h4>
+<h4>1.11.4　カタカナとひらがなの相互変換（自作）</h4>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
 自作のNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱う。
 ```scala
