@@ -98,16 +98,16 @@ class Day7TestSuite extends AssertionsForJUnit {
     assert( 1 == Character.UPPERCASE_LETTER)
 
     //Char
-    assert(Character.getType(hiraganaChar) == 5)
-    assert(Character.getType(katakanaChar) == 5)
-    assert(Character.getType(alphabetChar) == 1)
-    assert(Character.getType(symbolChar)   == 25)
+    assert(Character.getType(hiraganaChar) == Character.OTHER_LETTER)
+    assert(Character.getType(katakanaChar) == Character.OTHER_LETTER)
+    assert(Character.getType(alphabetChar) == Character.UPPERCASE_LETTER)
+    assert(Character.getType(symbolChar)   == Character.MATH_SYMBOL)
 
     //コードポイント
-    assert(Character.getType(hiraganaCodePoint) == 5)
-    assert(Character.getType(katakanaCodePoint) == 5)
-    assert(Character.getType(alphabetCodePoint) == 1)
-    assert(Character.getType(symbolCodePoint)   == 25)
+    assert(Character.getType(hiraganaCodePoint) == Character.OTHER_LETTER)
+    assert(Character.getType(katakanaCodePoint) == Character.OTHER_LETTER)
+    assert(Character.getType(alphabetCodePoint) == Character.UPPERCASE_LETTER)
+    assert(Character.getType(symbolCodePoint)   == Character.MATH_SYMBOL)
   }
 
   @Test
