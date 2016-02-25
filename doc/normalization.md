@@ -56,9 +56,180 @@ etc.<br>
 </ul>
 ***
 <h3>1.4　文字の字種情報の取得</h3>
-Character.getName
-Character.getDirectionality
-Character.getType
+<h4>1.4.1　Character.getName</h4>
+```scala
+  private val hiraganaChar: Char = 'か'
+  private val katakanaChar: Char = 'カ'
+  private val alphabetChar: Char = 'C'
+  private val symbolChar:   Char = '+'
+
+  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
+  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
+  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
+  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
+
+  @Test
+  def testCharacterClass(): Unit = {
+    assert(Character.getName(hiraganaCodePoint) == "HIRAGANA LETTER KA")
+    assert(Character.getName(katakanaCodePoint) == "KATAKANA LETTER KA")
+    assert(Character.getName(alphabetCodePoint) == "LATIN CAPITAL LETTER C")
+    assert(Character.getName(symbolCodePoint)   == "PLUS SIGN")
+  }
+```
+<h4>1.4.2　Character.getType</h4>
+```scala
+  private val hiraganaChar: Char = 'か'
+  private val katakanaChar: Char = 'カ'
+  private val alphabetChar: Char = 'C'
+  private val symbolChar:   Char = '+'
+
+  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
+  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
+  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
+  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
+  
+  @Test
+  def testCharacterType(): Unit = {
+    //index order
+    assert( 0 == Character.UNASSIGNED)
+    assert( 1 == Character.UPPERCASE_LETTER)
+    assert( 2 == Character.LOWERCASE_LETTER)
+    assert( 3 == Character.TITLECASE_LETTER)
+    assert( 4 == Character.MODIFIER_LETTER)
+    assert( 5 == Character.OTHER_LETTER)
+    assert( 6 == Character.NON_SPACING_MARK)
+    assert( 7 == Character.ENCLOSING_MARK)
+    assert( 8 == Character.COMBINING_SPACING_MARK)
+    assert( 9 == Character.DECIMAL_DIGIT_NUMBER)
+    assert(10 == Character.LETTER_NUMBER)
+    assert(11 == Character.OTHER_NUMBER)
+    assert(12 == Character.SPACE_SEPARATOR)
+    assert(13 == Character.LINE_SEPARATOR)
+    assert(14 == Character.PARAGRAPH_SEPARATOR)
+    assert(15 == Character.CONTROL)
+    assert(16 == Character.FORMAT)
+    //17?
+    assert(18 == Character.PRIVATE_USE)
+    assert(19 == Character.SURROGATE)
+    assert(20 == Character.DASH_PUNCTUATION)
+    assert(21 == Character.START_PUNCTUATION)
+    assert(22 == Character.END_PUNCTUATION)
+    assert(23 == Character.CONNECTOR_PUNCTUATION)
+    assert(24 == Character.OTHER_PUNCTUATION)
+    assert(25 == Character.MATH_SYMBOL)
+    assert(26 == Character.CURRENCY_SYMBOL)
+    assert(27 == Character.MODIFIER_SYMBOL)
+    assert(28 == Character.OTHER_SYMBOL)
+    assert(29 == Character.INITIAL_QUOTE_PUNCTUATION)
+    assert(30 == Character.FINAL_QUOTE_PUNCTUATION)
+
+    //alphabetical order
+    assert( 8 == Character.COMBINING_SPACING_MARK)
+    assert(23 == Character.CONNECTOR_PUNCTUATION)
+    assert(15 == Character.CONTROL)
+    assert(26 == Character.CURRENCY_SYMBOL)
+    assert(20 == Character.DASH_PUNCTUATION)
+    assert( 9 == Character.DECIMAL_DIGIT_NUMBER)
+    assert( 7 == Character.ENCLOSING_MARK)
+    assert(22 == Character.END_PUNCTUATION)
+    assert(30 == Character.FINAL_QUOTE_PUNCTUATION)
+    assert(16 == Character.FORMAT)
+    assert(29 == Character.INITIAL_QUOTE_PUNCTUATION)
+    assert(10 == Character.LETTER_NUMBER)
+    assert(13 == Character.LINE_SEPARATOR)
+    assert( 2 == Character.LOWERCASE_LETTER)
+    assert(25 == Character.MATH_SYMBOL)
+    assert( 4 == Character.MODIFIER_LETTER)
+    assert(27 == Character.MODIFIER_SYMBOL)
+    assert( 6 == Character.NON_SPACING_MARK)
+    assert( 5 == Character.OTHER_LETTER)
+    assert(11 == Character.OTHER_NUMBER)
+    assert(24 == Character.OTHER_PUNCTUATION)
+    assert(28 == Character.OTHER_SYMBOL)
+    assert(14 == Character.PARAGRAPH_SEPARATOR)
+    assert(18 == Character.PRIVATE_USE)
+    assert(12 == Character.SPACE_SEPARATOR)
+    assert(21 == Character.START_PUNCTUATION)
+    assert(19 == Character.SURROGATE)
+    assert( 3 == Character.TITLECASE_LETTER)
+    assert( 0 == Character.UNASSIGNED)
+    assert( 1 == Character.UPPERCASE_LETTER)
+
+    //Char
+    assert(Character.getType(hiraganaChar) == 5)
+    assert(Character.getType(katakanaChar) == 5)
+    assert(Character.getType(alphabetChar) == 1)
+    assert(Character.getType(symbolChar)   == 25)
+
+    //コードポイント
+    assert(Character.getType(hiraganaCodePoint) == 5)
+    assert(Character.getType(katakanaCodePoint) == 5)
+    assert(Character.getType(alphabetCodePoint) == 1)
+    assert(Character.getType(symbolCodePoint)   == 25)
+  }
+```
+<h4>1.4.3　Character.getDirectionality</h4>
+```scala
+  @Test
+  def testCharacterDirectionality(): Unit = {
+    //index order
+    assert((-1: Byte) == Character.DIRECTIONALITY_UNDEFINED)
+    assert(( 0: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(( 1: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT)
+    assert(( 2: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC)
+    assert(( 3: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER)
+    assert(( 4: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+    assert(( 5: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR)
+    assert(( 6: Byte) == Character.DIRECTIONALITY_ARABIC_NUMBER)
+    assert(( 7: Byte) == Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR)
+    assert(( 8: Byte) == Character.DIRECTIONALITY_NONSPACING_MARK)
+    assert(( 9: Byte) == Character.DIRECTIONALITY_BOUNDARY_NEUTRAL)
+    assert((10: Byte) == Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR)
+    assert((11: Byte) == Character.DIRECTIONALITY_SEGMENT_SEPARATOR)
+    assert((12: Byte) == Character.DIRECTIONALITY_WHITESPACE)
+    assert((13: Byte) == Character.DIRECTIONALITY_OTHER_NEUTRALS)
+    assert((14: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING)
+    assert((15: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE)
+    assert((16: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING)
+    assert((17: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE)
+    assert((18: Byte) == Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT)
+
+    //alphabetical order
+    assert(( 6: Byte) == Character.DIRECTIONALITY_ARABIC_NUMBER)
+    assert(( 9: Byte) == Character.DIRECTIONALITY_BOUNDARY_NEUTRAL)
+    assert(( 7: Byte) == Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR)
+    assert(( 3: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER)
+    assert(( 4: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+    assert(( 5: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR)
+    assert(( 0: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert((14: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING)
+    assert((15: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE)
+    assert(( 8: Byte) == Character.DIRECTIONALITY_NONSPACING_MARK)
+    assert((13: Byte) == Character.DIRECTIONALITY_OTHER_NEUTRALS)
+    assert((10: Byte) == Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR)
+    assert((18: Byte) == Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT)
+    assert(( 1: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT)
+    assert(( 2: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC)
+    assert((16: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING)
+    assert((17: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE)
+    assert((11: Byte) == Character.DIRECTIONALITY_SEGMENT_SEPARATOR)
+    assert((-1: Byte) == Character.DIRECTIONALITY_UNDEFINED)
+    assert((12: Byte) == Character.DIRECTIONALITY_WHITESPACE)
+
+    //Char
+    assert(Character.getDirectionality(hiraganaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(katakanaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(alphabetChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(symbolChar)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+
+    //コードポイント
+    assert(Character.getDirectionality(hiraganaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(katakanaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(alphabetCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(symbolCodePoint)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+  }
+```
+
 ***
 <h3>1.5　文字の字種判定</h3>
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
