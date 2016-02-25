@@ -345,6 +345,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <h3>1.10　正規表現による字種のマッチング</h3>
 <h4>1.10.1　POSIX文字クラス(US-ASCIIのみ)</h4>
 <table>
+<tr><th>クラス</th><th colspan="2">マッチ</th></tr>
 <tr><td>\p{Lower}</td><td>小文字の英字</td><td>[a-z]</td></tr>
 <tr><td>\p{Upper}</td><td>大文字の英字</td><td>[A-Z]</td></tr>
 <tr><td>\p{ASCII}</td><td>すべてのASCII文字</td><td>[\x00-\x7F]</td></tr>
@@ -362,6 +363,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 
 <h4>1.10.2　java.lang.Characterクラス(単純なjava文字タイプ)</h4>
 <table>
+<tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
 <tr><td>\p{javaUpperCase}</td><td>java.lang.Character.isUpperCase()と等価</td></tr>
 <tr><td>\p{javaWhitespace}</td><td>java.lang.Character.isWhitespace()と等価</td></tr>
@@ -370,6 +372,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 
 <h4>1.10.3　Unicode書体、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 <table>
+<tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{IsLatin}</td><td>Latin 書体文字(書体)</td></tr>
 <tr><td>\p{InGreek}</td><td>Greek ブロックの文字(ブロック)</td></tr>
 <tr><td>\p{Lu}</td><td>大文字(カテゴリ)</td></tr>
