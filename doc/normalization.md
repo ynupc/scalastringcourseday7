@@ -323,6 +323,39 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <h3>1.7　Unicodeブロック</h3>
 ***
 <h3>1.8　Unicodeカテゴリ</h3>
+<table>
+<tr><th>Unicode仕様の汎用カテゴリ</th><th>java.lang.Character</th></tr>
+<tr><td>Cc</td><td>CONTROL</td></tr>
+<tr><td>Cf</td><td>FORMAT</td></tr>
+<tr><td>Cn</td><td>UNASSIGNED</td></tr>
+<tr><td>Co</td><td>PRIVATE_USE</td></tr>
+<tr><td>Cs</td><td>SURROGATE</td></tr>
+<tr><td>Ll</td><td>LOWERCASE_LETTER</td></tr>
+<tr><td>Lm</td><td>MODIFIER_LETTER</td></tr>
+<tr><td>Lo</td><td>OTHER_LETTER</td></tr>
+<tr><td>Lt</td><td>TITLECASE_LETTER</td></tr>
+<tr><td>Lu</td><td>UPPERCASE_LETTER</td></tr>
+<tr><td>Mc</td><td>COMBINING_SPACING_MARK</td></tr>
+<tr><td>Me</td><td>ENCLOSING_MARK</td></tr>
+<tr><td>Mn</td><td>NON_SPACING_MARK</td></tr>
+<tr><td>Nd</td><td>DECIMAL_DIGIT_NUMBER</td></tr>
+<tr><td>Nl</td><td>LETTER_NUMBER</td></tr>
+<tr><td>No</td><td>OTHER_NUMBER</td></tr>
+<tr><td>Pd</td><td>DASH_PUNCTUATION</td></tr>
+<tr><td>Pc</td><td>CONNECTOR_PUNCTUATION</td></tr>
+<tr><td>Pe</td><td>END_PUNCTUATION</td></tr>
+<tr><td>Pf</td><td>FINAL_QUOTE_PUNCTUATION</td></tr>
+<tr><td>Pi</td><td>INITIAL_QUOTE_PUNCTUATION</td></tr>
+<tr><td>Po</td><td>OTHER_PUNCTUATION</td></tr>
+<tr><td>Ps</td><td>START_PUNCTUATION</td></tr>
+<tr><td>Sc</td><td>CURRENCY_SYMBOL</td></tr>
+<tr><td>Sk</td><td>MODIFIER_SYMBOL</td></tr>
+<tr><td>Sm</td><td>MATH_SYMBOL</td></tr>
+<tr><td>So</td><td>OTHER_SYMBOL</td></tr>
+<tr><td>Zl</td><td>LINE_SEPARATOR</td></tr>
+<tr><td>Zp</td><td>PARAGRAPH_SEPARATOR</td></tr>
+<tr><td>Zs</td><td>SPACE_SEPARATOR</td></tr>
+</table>
 ***
 <h3>1.9　Unicodeバイナリ・プロパティ</h3>
 <table>
