@@ -382,26 +382,26 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <h4>1.10.4　定義済の文字クラスとPOSIX文字クラスの互換性</h4>
 定義済の文字クラスとPOSIX文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
 <table>
-<tr><th>クラス</th><th>マッチ</th></tr>
-<tr><td>\p{Lower}</td><td>小文字:\p{IsLowercase}</td></tr>
-<tr><td>\p{Upper}</td><td>大文字:\p{IsUppercase}</td></tr>
-<tr><td>\p{ASCII}</td><td>すべてのASCII文字: [\x00-\x7F]</td></tr>
-<tr><td>\p{Alpha}</td><td>英字:\p{IsAlphabetic}</td></tr>
-<tr><td>\p{Digit}</td><td>10進数字:p{IsDigit}</td></tr>
-<tr><td>\p{Alnum}</td><td>英数字:[\p{IsAlphabetic}\p{IsDigit}]</td></tr>
-<tr><td>\p{Punct}</td><td>句読点文字:p{IsPunctuation}</td></tr>
-<tr><td>\p{Graph}</td><td>表示できる文字: [^\p{IsWhite_Space}\p{gc=Cc}\p{gc=Cs}\p{gc=Cn}]</td></tr>
-<tr><td>\p{Print}</td><td>プリント可能文字: [\p{Graph}\p{Blank}&&[^\p{Cntrl}]]</td></tr>
-<tr><td>\p{Blank}</td><td>空白またはタブ: [\p{IsWhite_Space}&&[^\p{gc=Zl}\p{gc=Zp}\x0a\x0b\x0c\x0d\x85]]</td></tr>
-<tr><td>\p{Cntrl}</td><td>制御文字: \p{gc=Cc}</td></tr>
-<tr><td>\p{XDigit}</td><td>16進数字: [\p{gc=Nd}\p{IsHex_Digit}]</td></tr>
-<tr><td>\p{Space}</td><td>空白文字:\p{IsWhite_Space}</td></tr>
-<tr><td>\d</td><td>数字: \p{IsDigit}</td></tr>
-<tr><td>\D</td><td>数字以外: [^\d]</td></tr>
-<tr><td>\s</td><td>空白文字: \p{IsWhite_Space}</td></tr>
-<tr><td>\S</td><td>非空白文字: [^\s]</td></tr>
-<tr><td>\w</td><td>単語構成文字: [\p{Alpha}\p{gc=Mn}\p{gc=Me}\p{gc=Mc}\p{Digit}\p{gc=Pc}\p{IsJoin_Control}]</td></tr>
-<tr><td>\W</td><td>非単語文字: [^\w]</td></tr>
+<tr><th>クラス</th><th colspan="2">マッチ</th></tr>
+<tr><td>\p{Lower}</td><td>小文字</td><td>\p{IsLowercase}</td></tr>
+<tr><td>\p{Upper}</td><td>大文字</td><td>\p{IsUppercase}</td></tr>
+<tr><td>\p{ASCII}</td><td>すべてのASCII文字</td><td>[\x00-\x7F]</td></tr>
+<tr><td>\p{Alpha}</td><td>英字</td><td>\p{IsAlphabetic}</td></tr>
+<tr><td>\p{Digit}</td><td>10進数字</td><td>p{IsDigit}</td></tr>
+<tr><td>\p{Alnum}</td><td>英数字</td><td>[\p{IsAlphabetic}\p{IsDigit}]</td></tr>
+<tr><td>\p{Punct}</td><td>句読点文字</td><td>\p{IsPunctuation}</td></tr>
+<tr><td>\p{Graph}</td><td>表示できる文字</td><td>[^\p{IsWhite_Space}\p{gc=Cc}\p{gc=Cs}\p{gc=Cn}]</td></tr>
+<tr><td>\p{Print}</td><td>プリント可能文字</td><td>[\p{Graph}\p{Blank}&&[^\p{Cntrl}]]</td></tr>
+<tr><td>\p{Blank}</td><td>空白またはタブ</td><td>[\p{IsWhite_Space}&&[^\p{gc=Zl}\p{gc=Zp}\x0a\x0b\x0c\x0d\x85]]</td></tr>
+<tr><td>\p{Cntrl}</td><td>制御文字</td><td>\p{gc=Cc}</td></tr>
+<tr><td>\p{XDigit}</td><td>16進数字</td><td>[\p{gc=Nd}\p{IsHex_Digit}]</td></tr>
+<tr><td>\p{Space}</td><td>空白文字</td><td>\p{IsWhite_Space}</td></tr>
+<tr><td>\d</td><td>数字</td><td>\p{IsDigit}</td></tr>
+<tr><td>\D</td><td>数字以外</td><td>[^\d]</td></tr>
+<tr><td>\s</td><td>空白文字</td><td>\p{IsWhite_Space}</td></tr>
+<tr><td>\S</td><td>非空白文字</td><td>[^\s]</td></tr>
+<tr><td>\w</td><td>単語構成文字</td><td>[\p{Alpha}\p{gc=Mn}\p{gc=Me}\p{gc=Mc}\p{Digit}\p{gc=Pc}\p{IsJoin_Control}]</td></tr>
+<tr><td>\W</td><td>非単語文字</td><td>[^\w]</td></tr>
 </table>
 ***
 <h3>1.11　字種の変換</h3>
