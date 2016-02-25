@@ -170,6 +170,16 @@ etc.<br>
 ```
 <h4>1.4.3　Character.getDirectionality</h4>
 ```scala
+  private val hiraganaChar: Char = 'か'
+  private val katakanaChar: Char = 'カ'
+  private val alphabetChar: Char = 'C'
+  private val symbolChar:   Char = '+'
+
+  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
+  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
+  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
+  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
+
   @Test
   def testCharacterDirectionality(): Unit = {
     //index order
