@@ -64,13 +64,13 @@ Character.getType
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
-<tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(code_point)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
-<tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(code_point)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
+<tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(codePoint)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
+<tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(codePoint)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
 <tr><td>isLetterOrDigit</td><td>Character.isLetter || Character.isDigit</td></tr>
-<tr><td>isLowerCase</td><td>小文字である。Character.getType(code_point)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
-<tr><td>isTitleCase</td><td>タイトルケース文字である。Character.getType(code_point)がTITLECASE_LETTERである。</td></tr>
-<tr><td>isUpperCase</td><td>大文字である。Character.getType(code_point)がUPPERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Uppercaseを持つ。</td></tr>
-<tr><td>isSpaceChar</td><td>Unicode標準の空白文字である。Character.getType(code_point)がSPACE_SEPARATOR, LINE_SEPARATOR, PARAGRAPH_SEPARATORのいずれかである。</td></tr>
+<tr><td>isLowerCase</td><td>小文字である。Character.getType(codePoint)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
+<tr><td>isTitleCase</td><td>タイトルケース文字である。Character.getType(codePoint)がTITLECASE_LETTERである。</td></tr>
+<tr><td>isUpperCase</td><td>大文字である。Character.getType(codePoint)がUPPERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Uppercaseを持つ。</td></tr>
+<tr><td>isSpaceChar</td><td>Unicode標準の空白文字である。Character.getType(codePoint)がSPACE_SEPARATOR, LINE_SEPARATOR, PARAGRAPH_SEPARATORのいずれかである。</td></tr>
 <tr><td>isWhiteSpace</td><td>空白文字である。次のいずれかを満たす場合、空白文字とみなされます。
 <ul>
 <li>Unicode の空白文字 (SPACE_SEPARATOR、LINE_SEPARATOR、または PARAGRAPH_SEPARATOR) であるが、改行なしの空白 ('\u00A0'、'\u2007'、'\u202F') ではない。</li>
@@ -94,7 +94,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <li>'\u000E' - '\u001B'</li>
 <li>'\u007F' - '\u009F'</li>
 </ul></li>
-<li>Character.getType(code_point)がFORMATであるすべての文字</li>
+<li>Character.getType(codePoint)がFORMATであるすべての文字</li>
 </ul>
 </td></tr>
 <tr><td>isUnicodeIdentifierStart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の最初に指定できます。
