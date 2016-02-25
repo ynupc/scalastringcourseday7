@@ -405,7 +405,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </table>
 ***
 <h3>1.11　字種の変換</h3>
-<h4>1.11.1　アルファベットのletter case</h4>
+<h4>1.11.1　letter case</h4>
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
 <tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
