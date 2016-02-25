@@ -318,11 +318,12 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </td></tr>
 </table>
 ***
-<h3>1.6　正規表現による字種のマッチング</h3>
+<h3>1.6　Unicodeブロック</h3>
+<h3>1.7　正規表現による字種のマッチング</h3>
 p
 ***
-<h3>1.7　字種の変換</h3>
-<h4>1.7.1　アルファベットのletter case</h4>
+<h3>1.8　字種の変換</h3>
+<h4>1.8.1　アルファベットのletter case</h4>
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
 <tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
@@ -330,7 +331,7 @@ p
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 ***
-<h4>1.7.2　文字のletter caseの変換</h4>
+<h4>1.8.2　文字のletter caseの変換</h4>
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
   private val titleCaseChar: Char = '\u01C8'//「ǈ」
@@ -371,7 +372,7 @@ p
   }
 ```
 ***
-<h4>1.7.3　文字列のletter caseの変換</h4>
+<h4>1.8.3　文字列のletter caseの変換</h4>
 ```scala
   private val locale: Locale = Locale.JAPAN
 
@@ -390,7 +391,7 @@ p
   }
 ```
 ***
-<h4>1.7.4　カタカナとひらがなの相互変換（自作）</h4>
+<h4>1.8.4　カタカナとひらがなの相互変換（自作）</h4>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
 自作のNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱う。
 ```scala
