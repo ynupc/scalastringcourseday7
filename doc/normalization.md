@@ -411,7 +411,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>\p{InGreek}</td><td>Greek ブロックの文字(ブロック)</td></tr>
 <tr><td>\p{Lu}</td><td>大文字(カテゴリ)</td></tr>
 <tr><td>\p{IsAlphabetic}</td><td>英字(バイナリ・プロパティ)</td></tr>
-<tr><td>\p{Sc}</td><td>通貨記号</td></tr>
+<tr><td>\p{Sc}</td><td>通貨記号(カテゴリ)</td></tr>
 <tr><td>\P{InGreek}</td><td>ギリシャ語ブロック以外の文字(否定)</td></tr>
 <tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
 </table>
