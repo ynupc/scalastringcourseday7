@@ -387,7 +387,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>\p{Upper}</td><td>大文字</td><td>\p{IsUppercase}</td></tr>
 <tr><td>\p{ASCII}</td><td>すべてのASCII文字</td><td>[\x00-\x7F]</td></tr>
 <tr><td>\p{Alpha}</td><td>英字</td><td>\p{IsAlphabetic}</td></tr>
-<tr><td>\p{Digit}</td><td>10進数字</td><td>p{IsDigit}</td></tr>
+<tr><td>\p{Digit}</td><td>10進数字</td><td>\p{IsDigit}</td></tr>
 <tr><td>\p{Alnum}</td><td>英数字</td><td>[\p{IsAlphabetic}\p{IsDigit}]</td></tr>
 <tr><td>\p{Punct}</td><td>句読点文字</td><td>\p{IsPunctuation}</td></tr>
 <tr><td>\p{Graph}</td><td>表示できる文字</td><td>[^\p{IsWhite_Space}\p{gc=Cc}\p{gc=Cs}\p{gc=Cn}]</td></tr>
