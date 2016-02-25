@@ -323,7 +323,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <h4>1.7.1　POSIX文字クラス(US-ASCIIのみ)</h4>
 <table>
 <tr><td>\p{Lower}</td><td>小文字の英字</td><td>[a-z]</td></tr>
-<tr><td>\p{Upper}</td><td>大文字の英字</td>[A-Z]</td></tr>
+<tr><td>\p{Upper}</td><td>大文字の英字</td><td>[A-Z]</td></tr>
 <tr><td>\p{ASCII}</td><td>すべてのASCII文字</td><td>[\x00-\x7F]</td></tr>
 <tr><td>\p{Alpha}</td><td>英字</td><td>[\p{Lower}\p{Upper}]</td></tr>
 <tr><td>\p{Digit}</td><td>10 進数字</td><td>[0-9]</td></tr>
