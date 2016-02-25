@@ -326,6 +326,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 ***
 <h3>1.9　Unicodeバイナリ・プロパティ</h3>
 <table>
+<tr><th>接頭辞"Is"+バイナリ・プロパティ</th><th>説明</th></tr>
 <tr><td>IsAlphabetic</td><td></td></tr>
 <tr><td>IsIdeographic</td><td></td></tr>
 <tr><td>IsLetter</td><td></td></tr>
