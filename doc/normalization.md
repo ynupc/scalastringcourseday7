@@ -320,7 +320,42 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 ***
 <h3>1.6　Unicodeブロック</h3>
 <h3>1.7　正規表現による字種のマッチング</h3>
-p
+<h4>1.7.1　POSIX文字クラス(US-ASCIIのみ)</h4>
+<table>
+<tr><td>\p{Lower}</td><td>小文字の英字</td><td>[a-z]</td></tr>
+<tr><td>\p{Upper}</td><td>大文字の英字</td>[A-Z]</td></tr>
+<tr><td>\p{ASCII}</td><td>すべてのASCII文字</td><td>[\x00-\x7F]</td></tr>
+<tr><td>\p{Alpha}</td><td>英字</td><td>[\p{Lower}\p{Upper}]</td></tr>
+<tr><td>\p{Digit}</td><td>10 進数字</td><td>[0-9]</td></tr>
+<tr><td>\p{Alnum}</td><td>英数字</td><td>[\p{Alpha}\p{Digit}]</td></tr>
+<tr><td>\p{Punct}</td><td>句読文字</td><td>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~のうちのひとつ</td></tr>
+<tr><td>\p{Graph}</td><td>表示できる文字</td><td>[\p{Alnum}\p{Punct}]</td></tr>
+<tr><td>\p{Print}</td><td>プリント可能文字</td><td>[\p{Graph}\x20]</td></tr>
+<tr><td>\p{Blank}</td><td>空白またはタブ</td><td>[\t]</td></tr>
+<tr><td>\p{Cntrl}</td><td>制御文字</td><td>[\x00-\x1F\x7F]</td></tr>
+<tr><td>\p{XDigit}</td><td>16進数字</td><td>[0-9a-fA-F]</td></tr>
+<tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
+</table>
+
+<h4>1.7.2　java.lang.Characterクラス(単純なjava文字タイプ)</h4>
+<table>
+<tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
+<tr><td>\p{javaUpperCase}</td><td>java.lang.Character.isUpperCase()と等価</td></tr>
+<tr><td>\p{javaWhitespace}</td><td>java.lang.Character.isWhitespace()と等価</td></tr>
+<tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
+</table>
+
+<h4>1.7.3　Unicode書体、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
+<table>
+<tr><td>\p{IsLatin}</td><td>Latin 書体文字(書体)</td></tr>
+<tr><td>\p{InGreek}</td><td>Greek ブロックの文字(ブロック)</td></tr>
+<tr><td>\p{Lu}</td><td>大文字(カテゴリ)</td></tr>
+<tr><td>\p{IsAlphabetic}</td><td>英字(バイナリ・プロパティ)</td></tr>
+<tr><td>\p{Sc}</td><td>通貨記号</td></tr>
+<tr><td>\P{InGreek}</td><td>ギリシャ語ブロック以外の文字(否定)</td></tr>
+<tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
+</table>
+
 ***
 <h3>1.8　字種の変換</h3>
 <h4>1.8.1　アルファベットのletter case</h4>
