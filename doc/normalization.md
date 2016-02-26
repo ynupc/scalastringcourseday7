@@ -170,6 +170,7 @@ Character.getTypeメソッドはCharやコードポイントに対して<a href=
   }
 ```
 <h4>1.4.3　Character.getDirectionality</h4>
+Character.getDirectionalityは文字の方向性（双方向文字タイプ）を取得するために使用します。文字の方向性というのは、例えば、日本語の文字は「左から右に表示する」といった情報のことです。
 <table>
 <tr><th colspan="2">双方向文字タイプ</th><th>java.lang.Character</th></tr>
 <tr><td>AN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_ARABIC_NUMBER</td></tr>
