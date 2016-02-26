@@ -970,7 +970,7 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
 ```
 ***
 <h4>1.8.4　カタカナとひらがなの相互変換（自作）</h4>
-カタカナとひらがなのコードポイントの差分を利用してカタカナとひらがなの相互変換を実行します。
+自作のJapaneseCharacterCaseConverterは、カタカナとひらがなのコードポイントの差分を利用してカタカナとひらがなの相互変換を実行します。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
 処理に使用するのNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱います。
 ```scala
