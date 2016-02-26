@@ -988,3 +988,4 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
     assert(JapaneseCharacterCaseConverter.convertHiragana2Katakana(nullPoGa).get.toString == "「ヌルポ」「ガッ」")
   }
 ```
+<h3>コラム：Shift-JISのダメ文字問題</h3>
