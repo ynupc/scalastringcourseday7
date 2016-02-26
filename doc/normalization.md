@@ -1,5 +1,9 @@
 # 1.　文字の正規化
+半角カナ文字「ｱ」と全角カナ文字「ア」のように、等価な文字が存在します。
+言語処理をする上では、このような等価性は前処理でいずれかに揃えておくとアルゴリズムの複雑さを大幅に減らすことができます。
+この前処理のことを文字の正規化と呼びます。
 <h3>1.1　正準等価性・互換等価性</h3>
+文字の等価性には正準等価性と互換等価性があります。
 <h4>1.1.1　正準等価性</h4>
 ダイアクリティカルマークを合成済みの文字「が」＝文字「か」＋合成用ダイアクリティカルマーク「゛」<br>
 <ul>
@@ -271,6 +275,7 @@ rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank"
 <h3>1.5　java.lang.Characterクラスによる文字の字種判定</h3>
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
+<tr><th>java.lang.Characterの字種判定メソッド</th><th>説明</th></tr>
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
 <tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(codePoint)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
 <tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(codePoint)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
