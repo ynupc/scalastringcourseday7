@@ -772,8 +772,8 @@ Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接
 <tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
 </table>
 
-<h4>1.10.4　定義済の文字クラスとPOSIX文字クラスの互換性</h4>
-定義済の文字クラスとPOSIX文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
+<h4>1.10.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
+POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
 <table>
 <tr><th>クラス</th><th colspan="2">マッチ</th></tr>
 <tr><td>\p{Lower}</td><td>小文字</td><td>\p{IsLowercase}</td></tr>
