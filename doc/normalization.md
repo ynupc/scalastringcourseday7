@@ -796,7 +796,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>\W</td><td>非単語文字</td><td>[^\w]</td></tr>
 </table>
 
-<h4>1.10.4　日本語の字種のマッチング</h4>
+<h4>1.10.5　日本語の字種のマッチング</h4>
 ひらがな
 <table>
 <tr><td>\p{InHiragana}</td><td>ひらがな</td><td>[U+3040, U+309F]</td></tr>
