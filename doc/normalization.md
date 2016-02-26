@@ -920,14 +920,19 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 漢字
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
+<tr><td>\p{InCJKCompatibility}</td><td></td><td>[, ]</td></tr>
+<tr><td>\p{CJKCompatibilityForms}</td><td></td><td>[, ]</td></tr>
+<tr><td>\p{CJKCompatibilityIdeographs}</td><td></td><td>[U+F900, U+FAFF]</td></tr>
+<tr><td>\p{CJKCompatibilityIdeographs Supplement}</td><td></td><td>[U+2F800, U+2FA1D]</td></tr>
+<tr><td>\p{CJKRadicals Supplement}</td><td></td><td></td></tr>
+<tr><td>\p{CJKStrokes}</td><td></td><td></td></tr>
+<tr><td>\p{CJKSymbolsAndPunctuation}</td><td></td><td>[U+3000, U+303F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographs}</td><td></td><td>[U+4E00, U+9FFF]</td></tr>
 <tr><td>\p{InCJKSymbolsAndPunctuation}</td><td></td><td>[U+3000, U+303F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td></td><td>[U+3400, U+4DBF]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td></td><td>[U+20000, U+2A6DF]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionC}</td><td></td><td>[U+2A700, U+2B73F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionD}</td><td></td><td>[U+2B740, U+2B81F]</td></tr>
-<tr><td>\p{InCJKCompatibilityIdeographs}</td><td></td><td>[U+F900, U+FAFF]</td></tr>
-<tr><td>\p{InCJKCompatibilityIdeographsSupplement}</td><td></td><td>[U+2F800, U+2FA1D]</td></tr>
 <tr><td>\p{InKanbun}</td><td>漢文の返り点</td><td>[U+3190, U+319F]</td></tr>
 <tr><td>\uFA0E-\uFA2D</td><td>カナダ漢字（IBM拡張文字）</td><td>[U+FA0E, U+FA2D]</td></tr>
 <tr><td>\uFA2E\uFA2F</td><td>これらの字と0x9FCCはUnicode6.1から追加</td><td>[U+FA2E, U+FA2F]</td></tr>
