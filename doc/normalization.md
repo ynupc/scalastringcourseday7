@@ -354,7 +354,12 @@ Unicode表の区分けには、Unicodeスクリプト、ブロック、カテゴ
 <tr><td>Unicodeバイナリ・プロパティ</td><td></td></tr>
 </table>
 <h3>1.6.1　Unicodeスクリプト</h3>
-Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Inherited、Common、Unknownのいずれか)に割り当てられます。
+Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Common、Inherited、Unknownのいずれか)に割り当てられます。
+<table>
+<tr><td>Common</td><td>用字をまたがって共通に使うスクリプト</td></tr>
+<tr><td>Inherite</td><td>隣接した文字からスクリプトを受け継ぐスクリプト</td></tr>
+<tr><td>Unknown</td><td>未知のスクリプト</td></tr>
+</table>
 
 <table>
 <tr><th>Unicodeスクリプト</th><th>java.lang.Character.UnicodeScript</th></tr>
