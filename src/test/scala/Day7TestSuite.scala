@@ -258,6 +258,14 @@ class Day7TestSuite extends AssertionsForJUnit {
       case None =>
         assert(false)
     }
+
+    val wordVariantsOpt: Option[String] = Option(wordVariants)
+    if (wordVariantsOpt.nonEmpty) {
+      assert(wordVariantsOpt.get == wordVariants)
+    }
+
+    val nullStringOpt: Option[String] = Option(nullString)
+    assert(nullStringOpt.getOrElse("ゲッティ") == "ゲッティ")
   }
 
   @Test
