@@ -483,6 +483,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 </table>
 ***
 <h3>1.6.2　Unicodeブロック</h3>
+全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。
+各Unicodeブロックの下限と上限のUnicodeコードポイントは「<a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Character Block Property Data File</a>」で確認できます。
 <table>
 <tr><th>Unicodeブロック</th><th>java.lang.Character.UnicodeBlock</th></tr>
 <tr><td>Aegean Numbers</td><td>AEGEAN_NUMBERS</td></tr>
