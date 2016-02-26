@@ -59,16 +59,15 @@ Optionはnullを書かずにNullPointerExceptionを排除するために使用�
 ```
 ***
 <h3>2.3　正規化文字列（自作）</h3>
-値がnullや空文字ではなく正規化されていることを保証することができます。
-
-NormalizedStringの正規化処理の流れ：
+値からnullや空文字を排除するだけではなく値が正規化されていることを保証するためにNormalizedStringを自作しました。
+<h4>2.3.1　NormalizedStringの正規化処理の流れ</h4>
 <ol>
   <li>Unicode正規化前の辞書による文字の正規化</li>
   <li>Unicode正規化</li>
   <li>Unicode正規化後の辞書による文字の正規化</li>
   <li>辞書による単語の異表記からの代表表記への置換</li>
 </ol>
-NormalizedStringを構成するファイル：
+<h4>2.3.2　NormalizedStringを構成するファイル</h4>
 <ul>
   <li>辞書
     <ul>
