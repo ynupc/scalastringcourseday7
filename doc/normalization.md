@@ -834,7 +834,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{XDigit}</td><td>16進数字</td><td>[0-9a-fA-F]</td></tr>
 <tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
 </table>
-
+***
 <h4>1.7.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
@@ -843,7 +843,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{javaWhitespace}</td><td>java.lang.Character.isWhitespace()と等価</td></tr>
 <tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
 </table>
-
+***
 <h4>1.7.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接頭辞"Is"をつけることで定義済み文字クラスとして正規表現で記述できます。
 <table>
@@ -856,7 +856,7 @@ Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接
 <tr><td>\P{InGreek}</td><td>ギリシャ語ブロック以外の文字(否定)</td></tr>
 <tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
 </table>
-
+***
 <h4>1.7.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
 POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
 <table>
@@ -881,7 +881,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\w</td><td>単語構成文字</td><td>[\p{Alpha}\p{gc=Mn}\p{gc=Me}\p{gc=Mc}\p{Digit}\p{gc=Pc}\p{IsJoin_Control}]</td></tr>
 <tr><td>\W</td><td>非単語文字</td><td>[^\w]</td></tr>
 </table>
-
+***
 <h4>1.7.5　日本語の字種のマッチング</h4>
 ひらがな
 <table>
