@@ -794,7 +794,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#142charactergettype">Character.getTypeメソッド</a>を使用します。
 ***
 <h3>1.6.4　Unicodeバイナリ・プロパティ</h3>
-Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうちの下記のものがJavaの正規表現で定義されています。
+Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうち下記のものがJavaの正規表現で定義されています。
 <table>
 <tr><th>バイナリ・プロパティ</th></tr>
 <tr><td>Alphabetic</td></tr>
