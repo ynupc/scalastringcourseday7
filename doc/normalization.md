@@ -381,7 +381,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Greek</td><td>GREEK</td></tr>
 <tr><td>Gujarati</td><td>GUJARATI</td></tr>
 <tr><td>Gurmukhi</td><td>GURMUKHI</td></tr>
-<tr><td>Han</td><td>HAN</td></tr>
+<tr><td><strong>Han</strong></td><td><strong>HAN</strong></td></tr>
 <tr><td>Hangul</td><td>HANGUL</td></tr>
 <tr><td>Hanunoo</td><td>HANUNOO</td></tr>
 <tr><td>Hebrew</td><td>HEBREW</td></tr>
