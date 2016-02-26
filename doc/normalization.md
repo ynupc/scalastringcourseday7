@@ -694,20 +694,21 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 一般カテゴリ
 <table>
-<tr><th>カテゴリ</th><th>説明</th></tr>
-<tr><td>C</td><td>その他 (Other)</td></tr>
-<tr><td>L</td><td>アルファベット (Letter)</td></tr>
-<tr><td>M</td><td>記号 (Mark)</td></tr>
-<tr><td>N</td><td>数字 (Number)</td></tr>
-<tr><td>P</td><td>句読記号 (Punctuation)</td></tr>
-<tr><td>S</td><td>記号 (Symbol)</td></tr>
-<tr><td>Z</td><td>区切り文字 (Separator)</td></tr>
+<tr><th>カテゴリ</th><th>説明</th><th>Cc | Cf | Cs | Co | Cn</th></tr>
+<tr><td>C</td><td>その他 (Other)</td><td></td></tr>
+<tr><td>L</td><td>アルファベット (Letter)</td><td>Lu | Ll | Lt | Lm | Lo</td></tr>
+<tr><td>LC</td><td>case付きアルファベット（Cased Letter）</td><td>Lu | Ll | Lt</td></tr>
+<tr><td>M</td><td>記号 (Mark)</td><td>Mn | Mc | Me</td></tr>
+<tr><td>N</td><td>数字 (Number)</td><td>Nd | Nl | No</td></tr>
+<tr><td>P</td><td>句読記号 (Punctuation)</td><td>Pc | Pd | Ps | Pe | Pi | Pf | Po</td></tr>
+<tr><td>S</td><td>記号 (Symbol)</td><td>Sm | Sc | Sk | So</td></tr>
+<tr><td>Z</td><td>区切り文字 (Separator)</td><td>Zs | Zl | Zp</td></tr>
 </table>
 
 サブカテゴリ
 <table>
 <tr><th>カテゴリ</th><th>説明</th><th>java.lang.Character</th></tr>
-<tr><td>Cc</td><td>制御文字 (Control)</td><td>CONTROL</td></tr>
+<tr><td>Cc</td><td>C0/C1制御文字 (Control）</td><td>CONTROL</td></tr>
 <tr><td>Cf</td><td>非可視整形用文字 (Format)</td><td>FORMAT</td></tr>
 <tr><td>Cn</td><td>未定義コードポイント (Unassigned)</td><td>UNASSIGNED</td></tr>
 <tr><td>Co</td><td>私的利用領域 (Private use)</td><td>PRIVATE_USE</td></tr>
@@ -734,8 +735,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Sk</td><td>合わせ文字 (Modifier symbol)</td><td>MODIFIER_SYMBOL</td></tr>
 <tr><td>Sm</td><td>数学記号 (Mathematical symbol)</td><td>MATH_SYMBOL</td></tr>
 <tr><td>So</td><td>その他の記号 (Other symbol)</td><td>OTHER_SYMBOL</td></tr>
-<tr><td>Zl</td><td>行区切り文字 (Line separator)</td><td>LINE_SEPARATOR</td></tr>
-<tr><td>Zp</td><td>段落区切り文字 (Paragraph separator)</td><td>PARAGRAPH_SEPARATOR</td></tr>
+<tr><td>Zl</td><td>行区切り文字 (Line separator)、U+2028のみ</td><td>LINE_SEPARATOR</td></tr>
+<tr><td>Zp</td><td>段落区切り文字 (Paragraph separator)、U+2029のみ</td><td>PARAGRAPH_SEPARATOR</td></tr>
 <tr><td>Zs</td><td>空白文字 (Space separator)</td><td>SPACE_SEPARATOR</td></tr>
 </table>
 <br>
