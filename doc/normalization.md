@@ -384,7 +384,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>Zs</td><td>SPACE_SEPARATOR</td></tr>
 </table>
 <br>
-任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#charactergettype">Character.getTypeメソッド</a>を使用します。
+任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#142charactergettype">Character.getTypeメソッド</a>を使用します。
 ***
 <h3>1.9　Unicodeバイナリ・プロパティ</h3>
 <table>
