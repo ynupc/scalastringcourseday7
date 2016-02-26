@@ -59,7 +59,8 @@ Unicodeには次の４種類の正規化形式が用意されています。言�
 正準等価性によって再度合成されます。</strong></li>
 </ul>
 ***
-<h3>1.4　文字の字種情報の取得</h3>
+<h3>1.4　java.lang.Characterクラスによる文字の字種情報の取得</h3>
+java.lang.CharacterクラスのメソッドgetName、getType、getDirectionalityにより文字の字種情報を取得します。
 <h4>1.4.1　Character.getName</h4>
 ```scala
   private val hiraganaChar: Char = 'か'
