@@ -214,6 +214,18 @@ scalastringcourseday7/
     assert(nsOfU30AC == nsOfU32D5UFF9E)
   }
 ```
+文字列の正規化に関するサンプルコード
+```scala
+  @Test
+  def testNormalizedString(): Unit = {
+    NormalizedString(StringOption(wordVariants)).toStringOption match {
+      case StringSome(str) =>
+        assert(str == "スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ")
+      case StringNone =>
+        assert(false)
+    }
+  }
+```
 ***
 <h3>2.4　句点による文分割と文の正規化（自作）</h3>
 文の定義
