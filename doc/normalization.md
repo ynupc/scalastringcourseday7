@@ -559,8 +559,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>IPA Extensions</td><td>IPA_EXTENSIONS</td></tr>
 <tr><td>Javanese</td><td>JAVANESE</td></tr>
 <tr><td>Kaithi</td><td>KAITHI</td></tr>
-<tr><td>Kana Supplement</td><td>KANA_SUPPLEMENT</td></tr>
-<tr><td>Kanbun</td><td>KANBUN</td></tr>
+<tr><td><strong>Kana Supplement</strong></td><td><strong>KANA_SUPPLEMENT</strong></td></tr>
+<tr><td><strong>Kanbun</strong></td><td><strong>KANBUN</strong></td></tr>
 <tr><td>Kangxi Radicals</td><td>KANGXI_RADICALS</td></tr>
 <tr><td>Kannada</td><td>KANNADA</td></tr>
 <tr><td><strong>Katakana</strong></td><td><strong>KATAKANA</strong></td></tr>
@@ -673,6 +673,39 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Yi Radicals</td><td>YI_RADICALS</td></tr>
 <tr><td>Yi Syllables</td><td>YI_SYLLABLES</td></tr>
 <tr><td>Yijing Hexagram Symbols</td><td>YIJING_HEXAGRAM_SYMBOLS</td></tr>
+</table>
+
+ひらがな
+<table>
+<tr><td>\p{InHiragana}</td><td>ひらがな</td><td></td></tr>
+<tr><td>\p{InKanaSupplement}</td><td>歴史的仮名（衣と江の仮名文字が0x1B000と0x1B001に対応）</td><td>[U+1B000, U+1B0FF]</td></tr>
+</table>
+
+カタカナ
+<table>
+<tr><td>\p{InKatakana}</td><td>カタカナ</td><td></td></tr>
+<tr><td>\p{InKatakanaPhoneticExtensions}</td><td>アイヌ語などの翻字に使用する小書カタカナ</td><td>[U+31F0, U+31FF]</td></tr>
+</table>
+
+ローマ字
+<table>
+<tr><td>\p{InBasicLatin}</td><td></td><td></td></tr>
+</table>
+
+漢字
+<table>
+<tr><td>\p{InCJKSymbolsAndPunctuation}</td><td></td><td>[U+3000, U+303F]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td></td><td>[U+3400, U+4DBF]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td></td><td>[U+20000, U+2A6DF]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionC}</td><td></td><td>[U+2A700, U+2B73F]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionD}</td><td></td><td>[U+2B740, U+2B81F]</td></tr>
+<tr><td>\p{InCJKCompatibilityIdeographs}</td><td></td><td>[U+F900, U+FAFF]</td></tr>
+<tr><td>\p{InCJKCompatibilityIdeographsSupplement}</td><td></td><td>[U+2F800, U+2FA1D]</td></tr>
+<tr><td>\p{InKanbun}</td><td>漢文の返り点</td><td>[U+3190, U+319F]</td></tr>
+<tr><td>\uFA0E-\uFA2D</td><td>カナダ漢字（IBM拡張文字）</td><td>[U+FA0E, U+FA2D]</td></tr>
+<tr><td>\uFA2E\uFA2F</td><td>これらの字と0x9FCCはUnicode6.1から追加</td><td>[U+FA2E, U+FA2F]</td></tr>
+<tr><td>\uFA30-\uFA6A</td><td>康煕別掲字（こうきべっけいじ）・人名許容体</td><td>[U+FA30, U+FA6A]</td></tr>
+<tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
 <h3>1.8　Unicodeカテゴリ</h3>
