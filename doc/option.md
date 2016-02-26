@@ -226,7 +226,7 @@ scalastringcourseday7/
     assert(NormalizedStringOption(NormalizedString(StringOption(nullString))).isEmpty)
     assert(NormalizedStringOption(NormalizedString(StringOption(emptyString))).isEmpty)
 
-    text.NormalizedStringOption(NormalizedString(StringOption(wordVariants))) match {
+    NormalizedStringOption(NormalizedString(StringOption(wordVariants))) match {
       case NormalizedStringSome(ns) =>
         ns.toStringOption match {
           case StringSome(str) =>
