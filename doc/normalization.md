@@ -693,7 +693,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>L</td><td>アルファベット (Letter)。※サブカテゴリLl、 Lm、Lo、Lt、Luが含まれる。</td></tr>
 <tr><td>M</td><td>記号 (Mark)</td></tr>
 <tr><td>N</td><td>数字 (Number)</td></tr>
-<tr><td>P</td><td>句読記号 (Punctuation)<td></tr>
+<tr><td>P</td><td>句読記号 (Punctuation)</td></tr>
 <tr><td>S</td><td>記号 (Symbol)</td></tr>
 <tr><td>Z</td><td>	区切り文字 (Separator)</td></tr>
 </table>
