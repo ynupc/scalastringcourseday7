@@ -475,7 +475,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Balinese</td><td>BALINESE</td></tr>
 <tr><td>Bamum</td><td>BAMUM</td></tr>
 <tr><td>Bamum Supplement</td><td>BAMUM_SUPPLEMENT</td></tr>
-<tr><td>Basic Latin</td><td>BASIC_LATIN</td></tr>
+<tr><td><strong>Basic Latin</strong></td><td><strong>BASIC_LATIN</strong></td></tr>
 <tr><td>Batak</td><td>BATAK</td></tr>
 <tr><td>Bengali</td><td>BENGALI</td></tr>
 <tr><td>Block Elements</td><td>BLOCK_ELEMENTS</td></tr>
