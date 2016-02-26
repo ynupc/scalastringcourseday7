@@ -353,6 +353,7 @@ Unicodeコードポイントのグループ分けには、Unicodeスクリプト
 <tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられる。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられる。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a></td></tr>
 <tr><td>Unicodeバイナリ・プロパティ</td><td></td></tr>
 </table>
+***
 <h3>1.6.1　Unicodeスクリプト</h3>
 Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Common、Inherited、Unknownのいずれか)に割り当てられます。
 <table>
