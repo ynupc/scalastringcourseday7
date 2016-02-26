@@ -2,7 +2,7 @@
 <h3>2.1　オプション</h3>
 Optionは値があるのかないのかどうかわからない状態を表すものです。値をOptionで包むことで、その値がある（nullではない）場合はSome、ない（nullである）の場合はNoneという状態に移り、Someの場合は値を取り出せるという機構です。nullを記述せずにNullPointerExceptionを排除するために使えます。Optionで包まれた値を取り出す方法は主に３つあります。
 <ol>
-  <li>match caseを利用する方法（サンプルコード）</li>
+  <li>match-case文を利用する方法</li>
   <li>isEmpty/nonEmptyでNoneを排除後に、getで値を取り出す方法</li>
   <li>getOrElseで取り出せなかった時（elseの時）に返すデフォルト値を事前に用意してから値を取り出す方法</li>
 </ol>
