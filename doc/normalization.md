@@ -540,8 +540,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Carian</td><td>CARIAN</td></tr>
 <tr><td>Cham</td><td>CHAM</td></tr>
 <tr><td>Cherokee</td><td>CHEROKEE</td></tr>
-<tr><td><strong>CJK Compatibility</strong></td><td><strong>CJK_COMPATIBILITY</strong></td></tr>
-<tr><td><strong>CJK Compatibility Forms</strong></td><td><strong>CJK_COMPATIBILITY_FORMS</strong></td></tr>
+<tr><td>CJK Compatibility</td><td>CJK_COMPATIBILITY</td></tr>
+<tr><td>CJK Compatibility Forms</td><td>CJK_COMPATIBILITY_FORMS</td></tr>
 <tr><td><strong>CJK Compatibility Ideographs</strong></td><td><strong>CJK_COMPATIBILITY_IDEOGRAPHS</strong></td></tr>
 <tr><td><strong>CJK Compatibility Ideographs Supplement</strong></td><td><strong>CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT</strong></td></tr>
 <tr><td><strong>CJK Radicals Supplement</strong></td><td><strong>CJK_RADICALS_SUPPLEMENT</strong></td></tr>
@@ -923,13 +923,11 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
 <tr><td>\p{Han}</td><td>漢字（Unicodeスクリプト）</td><td>[, ]</td></tr>
-<tr><td>\p{InCJKCompatibility}</td><td>（Unicodeブロック）</td><td>[, ]</td></tr>
-<tr><td>\p{InCJKCompatibilityForms}</td><td>（Unicodeブロック）</td><td>[, ]</td></tr>
 <tr><td>\p{InCJKCompatibilityIdeographs}</td><td>CJK互換漢字（Unicodeブロック）</td><td>[U+F900, U+FAFF]</td></tr>
 <tr><td>\p{InCJKCompatibilityIdeographs Supplement}</td><td>CJK互換漢字補助（Unicodeブロック）</td><td>[U+2F800, U+2FA1D]</td></tr>
 <tr><td>\p{InCJKRadicalsSupplement}</td><td>CJK部首補助（Unicodeブロック）</td><td>[U+2E80, U+2EFF]</td></tr>
 <tr><td>\p{InCJKStrokes}</td><td>CJKの筆画（Unicodeブロック）</td><td>[U+31C0, U+31EF]</td></tr>
-<tr><td>\p{InCJKSymbolsAndPunctuation}</td><td>（Unicodeブロック）</td><td>[U+3000, U+303F]</td></tr>
+<tr><td>\p{InCJKSymbolsAndPunctuation}</td><td>CJK記号と句読点（Unicodeブロック）</td><td>[U+3000, U+303F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographs}</td><td>CJK統合漢字（Unicodeブロック）</td><td>[U+4E00, U+9FFF]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td>CJK統合漢字拡張A（Unicodeブロック）</td><td>[U+3400, U+4DBF]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td>CJK統合漢字拡張B（Unicodeブロック）</td><td>[U+20000, U+2A6DF]</td></tr>
