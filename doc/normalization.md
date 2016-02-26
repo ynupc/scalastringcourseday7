@@ -897,7 +897,9 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 </table>
 ***
 <h3>1.8　字種の変換</h3>
+case付きのアルファベットをlower case、title case、upper caseに揃える方法と、ひらがなからカタカナ・カタカナからひらがなに変換する方法について説明します。
 <h4>1.8.1　letter case</h4>
+letter caseにはlower case、title case、upper caseが存在します。
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
 <tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
@@ -906,6 +908,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 </table>
 ***
 <h4>1.8.2　文字のletter caseの変換</h4>
+Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUpperCase、toTitleCase、toLowerCaseメソッドでいずれか一方に揃えます。
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
   private val titleCaseChar: Char = '\u01C8'//「ǈ」
@@ -947,6 +950,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 ```
 ***
 <h4>1.8.3　文字列のletter caseの変換</h4>
+Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃えます。
 ```scala
   private val locale: Locale = Locale.JAPAN
 
@@ -966,8 +970,9 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 ```
 ***
 <h4>1.8.4　カタカナとひらがなの相互変換（自作）</h4>
-<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
-自作のNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱う。
+カタカナとひらがなのコードポイントの差分を利用してカタカナとひらがなの相互変換を実行します。
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
+処理に使用するのNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱います。
 ```scala
   private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
 
