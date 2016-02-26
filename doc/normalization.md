@@ -49,7 +49,7 @@ etc.<br>
 ```
 ***
 <h3>1.3　Unicode正規化</h3>
-Unicodeには次の４種類の正規化形式が用意されています。
+Unicodeには次の４種類の正規化形式が用意されています。言語処理の前処理としては正規化形式KCを使用します。
 <ul>
   <li>NFD (Normalization Form Canonical Decomposition, 正規化形式D）<br>文字は正準等価性によって分解されます。</li>
   <li>NFC（Normalization Form Connonical Composition, 正規化形式C）<br>文字は正準等価性によって分解され、
