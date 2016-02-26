@@ -344,10 +344,10 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </td></tr>
 </table>
 ***
-<h3>1.6　Unicode表のグループ分け</h3>
-Unicode表のグループ分けには、Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティがあります。
+<h3>1.6　Unicodeコードポイントのグループ分け</h3>
+Unicodeコードポイントのグループ分けには、Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティがあります。
 <table>
-<tr><th>Unicode表のグループ分け</th><th>特徴</th></tr>
+<tr><th>Unicodeコードポイントのグループ分け</th><th>特徴</th></tr>
 <tr><td>Unicodeスクリプト</td><td>全てのUnicodeコードポイントは単一のUnicodeスクリプトに割り当てられます。</td></tr>
 <tr><td>Unicodeブロック</td><td>連続するUnicodeコードポイントの塊。全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。</td></tr>
 <tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられる。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられる。</td></tr>
