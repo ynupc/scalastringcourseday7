@@ -169,6 +169,30 @@ etc.<br>
   }
 ```
 <h4>1.4.3　Character.getDirectionality</h4>
+<table>
+<tr><th></th><th></th><th>java.lang.Character</th></tr>
+<tr><td>AN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_ARABIC_NUMBER</td></tr>
+<tr><td>BN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_BOUNDARY_NEUTRAL</td></tr>
+<tr><td>CS</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_COMMON_NUMBER_SEPARATOR</td></tr>
+<tr><td>EN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER</td></tr>
+<tr><td>ES</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR</td></tr>
+<tr><td>ET</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR</td></tr>
+<tr><td>L</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_LEFT_TO_RIGHT</td></tr>
+<tr><td>LRE</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING</td></tr>
+<tr><td>LRO</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE</td></tr>
+<tr><td>NSM</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_NONSPACING_MARK</td></tr>
+<tr><td>ON</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_OTHER_NEUTRALS</td></tr>
+<tr><td>B</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_PARAGRAPH_SEPARATOR</td></tr>
+<tr><td>PDF</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_POP_DIRECTIONAL_FORMAT</td></tr>
+<tr><td>R</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT</td></tr>
+<tr><td>AL</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC</td></tr>
+<tr><td>RLE</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING</td></tr>
+<tr><td>RLO</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE</td></tr>
+<tr><td>S</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_SEGMENT_SEPARATOR</td></tr>
+<tr><td>&nbsp;</td><td>未定義の双方向文字タイプ</td><td>DIRECTIONALITY_UNDEFINED</td></tr>
+<tr><td>WS</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_WHITESPACE</td></tr>
+</table>
+
 ```scala
   private val hiraganaChar: Char = 'か'
   private val katakanaChar: Char = 'カ'
@@ -319,8 +343,10 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </table>
 ***
 <h3>1.6　Unicode書体</h3>
+
 ***
 <h3>1.7　Unicodeブロック</h3>
+
 ***
 <h3>1.8　Unicodeカテゴリ</h3>
 <table>
