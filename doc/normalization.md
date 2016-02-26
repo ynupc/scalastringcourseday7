@@ -77,6 +77,7 @@ etc.<br>
   }
 ```
 <h4>1.4.2　Character.getType</h4>
+Character.getTypeメソッドはCharやコードポイントに対してUnicodeカテゴリを返します。
 ```scala
   private val hiraganaChar: Char = 'か'
   private val katakanaChar: Char = 'カ'
