@@ -116,7 +116,25 @@ scalastringcourseday7/
  │　　　　　└ …
  …
  ```
- <h4>2.3.2　NormalizedStringの辞書ファイルのフォーマット</h4>
+ <h4>2.3.3　NormalizedStringの辞書ファイルのフォーマット</h4>
+「Unicode正規化後の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/character_dic_before_unicode_normalization.yml" target="_blank">character_dic_before_unicode_normalization.yml</a>）
+ ```
+ \uFF5E:[\u301C,\u007E]#波線記号の統一,～,〜,~
+#\u309B:[\u3099]#濁点の統一,゛,゙
+ ```
+ 
+「Unicode正規化前の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/character_dic_after_unicode_normalization.yml" target="_blank">character_dic_after_unicode_normalization.yml</a>）
+ ```
+"":[\u003D,\uFF1D]#イコール記号の削除,=,＝
+"":[\u30FB]#中黒の削除,・
+ ```
+ 
+「辞書による単語の異表記からの代表表記への置換」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/word_expression_dic.yml" target="_blank">word_expression_dic.yml</a>）
+```
+タンパク質:[たんぱく質,蛋白質]
+スパゲッティ:[スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ]
+```
+ 
  基本的なフォーマットについて、１行ごとに代表表記と異表記リストの紐付けている。
  Unicodeシーケンスが使える。フォントの見た目が似ている文字を人間が識別するため。
  コメントアウトの書き方
