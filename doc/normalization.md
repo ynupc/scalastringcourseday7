@@ -267,7 +267,7 @@ Character.getDirectionalityは文字の方向性（双方向文字タイプ）�
 ```
 
 ***
-<h3>1.5　文字の字種判定</h3>
+<h3>1.5　java.lang.Characterクラスによる文字の字種判定</h3>
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
@@ -750,7 +750,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
 </table>
 
-<h4>1.10.2　java.lang.Characterクラス(単純なjava文字タイプ)</h4>
+<h4>1.10.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
