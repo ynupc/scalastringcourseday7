@@ -187,6 +187,12 @@ class Day7TestSuite extends AssertionsForJUnit {
 
   @Test
   def testCharacterUnicodeBlockOf(): Unit = {
+    assert(Character.UnicodeBlock.of(hiraganaChar) == Character.UnicodeBlock.HIRAGANA)
+    assert(Character.UnicodeBlock.of(katakanaChar) == Character.UnicodeBlock.KATAKANA)
+    assert(Character.UnicodeBlock.of(kanjiChar)    == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS)
+    assert(Character.UnicodeBlock.of(alphabetChar) == Character.UnicodeBlock.BASIC_LATIN)
+    assert(Character.UnicodeBlock.of(symbolChar)   == Character.UnicodeBlock.BASIC_LATIN)
+
     assert(Character.UnicodeBlock.of(hiraganaCodePoint) == Character.UnicodeBlock.HIRAGANA)
     assert(Character.UnicodeBlock.of(katakanaCodePoint) == Character.UnicodeBlock.KATAKANA)
     assert(Character.UnicodeBlock.of(kanjiCodePoint)    == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS)
