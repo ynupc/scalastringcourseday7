@@ -140,8 +140,11 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 タンパク質:[たんぱく質,蛋白質]
 スパゲッティ:[スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ]
 ```
-<h4>2.3.4　辞書ファイルで記述した置換規則の実行順序</h4>
- 変換順序について
+<h4>2.3.4　辞書ファイルの置換規則の実行順序</h4>
+実行順序は代表表記の順序が異表記の順序より優先されます。
+「Unicode正規化後の辞書による文字の正規化」と「Unicode正規化前の辞書による文字の正規化」で使用する辞書ファイルについては、代表表記・異表記ともにUTF-16BEの順です。「辞書による単語の異表記からの代表表記への置換」で使用する辞書ファイルについては、代表表記・異表記ともにUTF-16BEの順に並べた後、文字列のlength（Char数）で並べています。代表表記はlengthで昇順、異表記は降順です。それぞれWordExpressionNormalizerのsortRepresentationsメソッドとsortNotationVariantsメソッドを書き換えることで順序を変更することができます。
+
+<h4>2.3.5　懸念事項</h4>
  このやり方で異表記を代表表記に統一する場合の問題点について
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a><br>
 互換等価性に関するサンプルコード
