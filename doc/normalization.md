@@ -350,12 +350,13 @@ Unicode表の区分けには、Unicodeスクリプト、ブロック、カテゴ
 <tr><th>Unicode表の区分け</th><th>特徴</th></tr>
 <tr><td>Unicodeスクリプト</td><td>全てのUnicodeコードポイントは単一のUnicodeスクリプトに割り当てられます。</td></tr>
 <tr><td>Unicodeブロック</td><td>連続するUnicodeコードポイントの塊。全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。</td></tr>
-<tr><td>Unicodeカテゴリ</td><td></td></tr>
+<tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられる。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられる。</td></tr>
 <tr><td>Unicodeバイナリ・プロパティ</td><td></td></tr>
 </table>
 <h3>1.6.1　Unicodeスクリプト</h3>
 Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Common、Inherited、Unknownのいずれか)に割り当てられます。
 <table>
+<tr><th>特殊なスクリプト</th><th>説明</th></tr>
 <tr><td>Common</td><td>用字をまたがって共通に使うスクリプト</td></tr>
 <tr><td>Inherite</td><td>隣接した文字からスクリプトを受け継ぐスクリプト</td></tr>
 <tr><td>Unknown</td><td>未知のスクリプト</td></tr>
@@ -691,21 +692,21 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 ***
 <h3>1.6.3　Unicodeカテゴリ</h3>
 
-カテゴリ
+一般カテゴリ
 <table>
-<tr><th>Unicode仕様の汎用カテゴリ</th><th>説明</th></tr>
+<tr><th>カテゴリ</th><th>説明</th></tr>
 <tr><td>C</td><td>その他 (Other)</td></tr>
-<tr><td>L</td><td>アルファベット (Letter)。※サブカテゴリLl、 Lm、Lo、Lt、Luが含まれる。</td></tr>
+<tr><td>L</td><td>アルファベット (Letter)</td></tr>
 <tr><td>M</td><td>記号 (Mark)</td></tr>
 <tr><td>N</td><td>数字 (Number)</td></tr>
 <tr><td>P</td><td>句読記号 (Punctuation)</td></tr>
 <tr><td>S</td><td>記号 (Symbol)</td></tr>
-<tr><td>Z</td><td>	区切り文字 (Separator)</td></tr>
+<tr><td>Z</td><td>区切り文字 (Separator)</td></tr>
 </table>
 
 サブカテゴリ
 <table>
-<tr><th>Unicode仕様の汎用カテゴリ</th><th>説明</th><th>java.lang.Character</th></tr>
+<tr><th>カテゴリ</th><th>説明</th><th>java.lang.Character</th></tr>
 <tr><td>Cc</td><td>コントロール文字 (Control)</td><td>CONTROL</td></tr>
 <tr><td>Cf</td><td>非可視整形用文字 (Format)</td><td>FORMAT</td></tr>
 <tr><td>Cn</td><td>未定義コードポイント (Unassigned)</td><td>UNASSIGNED</td></tr>
