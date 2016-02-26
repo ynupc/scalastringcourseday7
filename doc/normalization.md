@@ -677,13 +677,13 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 ひらがな
 <table>
-<tr><td>\p{InHiragana}</td><td>ひらがな</td><td></td></tr>
+<tr><td>\p{InHiragana}</td><td>ひらがな</td><td>[U+3040, U+309F]</td></tr>
 <tr><td>\p{InKanaSupplement}</td><td>歴史的仮名（衣と江の仮名文字が0x1B000と0x1B001に対応）</td><td>[U+1B000, U+1B0FF]</td></tr>
 </table>
 
 カタカナ
 <table>
-<tr><td>\p{InKatakana}</td><td>カタカナ</td><td></td></tr>
+<tr><td>\p{InKatakana}</td><td>カタカナ</td><td>[U+30A0, U+30FF]</td></tr>
 <tr><td>\p{InKatakanaPhoneticExtensions}</td><td>アイヌ語などの翻字に使用する小書カタカナ</td><td>[U+31F0, U+31FF]</td></tr>
 </table>
 
@@ -694,6 +694,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 漢字
 <table>
+<tr><td>\p{InCJKUnifiedIdeographs}</td><td></td><td>[U+4E00, U+9FFF]</td></tr>
 <tr><td>\p{InCJKSymbolsAndPunctuation}</td><td></td><td>[U+3000, U+303F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td></td><td>[U+3400, U+4DBF]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td></td><td>[U+20000, U+2A6DF]</td></tr>
