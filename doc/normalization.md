@@ -886,25 +886,27 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 ひらがな
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
-<tr><td>\p{InHiragana}</td><td>ひらがな</td><td>[U+3040, U+309F]</td></tr>
-<tr><td>\p{InKanaSupplement}</td><td>歴史的仮名（衣と江の仮名文字が0x1B000と0x1B001に対応）</td><td>[U+1B000, U+1B0FF]</td></tr>
+<tr><td>\p{InHiragana}</td><td>ひらがな（Unicodeスクリプト）</td><td>[U+3040, U+309F]</td></tr>
+<tr><td>\p{InHiragana}</td><td>ひらがな（Unicodeブロック）</td><td>[U+3040, U+309F]</td></tr>
+<tr><td>\p{InKanaSupplement}</td><td>歴史的仮名（衣と江の仮名文字が0x1B000と0x1B001に対応）（Unicodeブロック）</td><td>[U+1B000, U+1B0FF]</td></tr>
 </table>
 
 カタカナ
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
-<tr><td>\p{InKatakana}</td><td>カタカナ</td><td>[U+30A0, U+30FF]</td></tr>
-<tr><td>\p{InKatakanaPhoneticExtensions}</td><td>アイヌ語などの翻字に使用する小書カタカナ</td><td>[U+31F0, U+31FF]</td></tr>
+<tr><td>\p{Katakana}</td><td>カタカナ（Unicodeスクリプト）</td><td>[U+30A0, U+30FF]</td></tr>
+<tr><td>\p{InKatakana}</td><td>カタカナ（Unicodeブロック）</td><td>[U+30A0, U+30FF]</td></tr>
+<tr><td>\p{InKatakanaPhoneticExtensions}</td><td>アイヌ語などの翻字に使用する小書カタカナ（Unicodeブロック）</td><td>[U+31F0, U+31FF]</td></tr>
 </table>
 
 ローマ字
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
-<tr><td>\p{Upper}</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
-<tr><td>\p{IsUppercase}</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
+<tr><td>\p{Upper}</td><td>大文字（POSIX文字クラス）</td><td>[U+0041, U+005A]</td></tr>
+<tr><td>\p{IsUppercase}</td><td>大文字（Unicodeスクリプト）</td><td>[U+0041, U+005A]</td></tr>
 <tr><td>A-Z</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
-<tr><td>\p{Lower}</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
-<tr><td>\p{IsLowercase}</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
+<tr><td>\p{Lower}</td><td>小文字（POSIX文字クラス）</td><td>[U+0061, U+007A]</td></tr>
+<tr><td>\p{IsLowercase}</td><td>小文字（Unicodeスクリプト）</td><td>[U+0061, U+007A]</td></tr>
 <tr><td>a-z</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
 </table>
 
@@ -912,28 +914,29 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
 <tr><td>\d</td><td>10進数字</td><td>[U+0030, U+0039]</td></tr>
-<tr><td>\p{Digit}</td><td>10進数字</td><td>[U+0030, U+0039]</td></tr>
-<tr><td>\p{IsDigit}</td><td>10進数字</td><td>[U+0030, U+0039]</td></tr>
+<tr><td>\p{Digit}</td><td>10進数字（POSIX文字クラス）</td><td>[U+0030, U+0039]</td></tr>
+<tr><td>\p{IsDigit}</td><td>10進数字（Unicodeスクリプト）</td><td>[U+0030, U+0039]</td></tr>
 <tr><td>0-9</td><td>10進数字</td><td>[U+0030, U+0039]</td></tr>
 </table>
 
 漢字
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
-<tr><td>\p{InCJKCompatibility}</td><td></td><td>[, ]</td></tr>
-<tr><td>\p{CJKCompatibilityForms}</td><td></td><td>[, ]</td></tr>
-<tr><td>\p{CJKCompatibilityIdeographs}</td><td></td><td>[U+F900, U+FAFF]</td></tr>
-<tr><td>\p{CJKCompatibilityIdeographs Supplement}</td><td></td><td>[U+2F800, U+2FA1D]</td></tr>
-<tr><td>\p{CJKRadicals Supplement}</td><td></td><td></td></tr>
-<tr><td>\p{CJKStrokes}</td><td></td><td></td></tr>
-<tr><td>\p{CJKSymbolsAndPunctuation}</td><td></td><td>[U+3000, U+303F]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographs}</td><td></td><td>[U+4E00, U+9FFF]</td></tr>
-<tr><td>\p{InCJKSymbolsAndPunctuation}</td><td></td><td>[U+3000, U+303F]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td></td><td>[U+3400, U+4DBF]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td></td><td>[U+20000, U+2A6DF]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionC}</td><td></td><td>[U+2A700, U+2B73F]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionD}</td><td></td><td>[U+2B740, U+2B81F]</td></tr>
-<tr><td>\p{InKanbun}</td><td>漢文の返り点</td><td>[U+3190, U+319F]</td></tr>
+<tr><td>\p{Han}</td><td>漢字（Unicodeスクリプト）</td><td></td></tr>
+<tr><td>\p{InCJKCompatibility}</td><td>（Unicodeブロック）</td><td>[, ]</td></tr>
+<tr><td>\p{InCJKCompatibilityForms}</td><td>（Unicodeブロック）</td><td>[, ]</td></tr>
+<tr><td>\p{InCJKCompatibilityIdeographs}</td><td>（Unicodeブロック）</td><td>[U+F900, U+FAFF]</td></tr>
+<tr><td>\p{InCJKCompatibilityIdeographs Supplement}</td><td>（Unicodeブロック）</td><td>[U+2F800, U+2FA1D]</td></tr>
+<tr><td>\p{InCJKRadicals Supplement}</td><td><（Unicodeブロック）/td><td></td></tr>
+<tr><td>\p{InCJKStrokes}</td><td>（Unicodeブロック）</td><td></td></tr>
+<tr><td>\p{InCJKSymbolsAndPunctuation}</td><td>（Unicodeブロック）</td><td>[U+3000, U+303F]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographs}</td><td>（Unicodeブロック）</td><td>[U+4E00, U+9FFF]</td></tr>
+<tr><td>\p{InCJKSymbolsAndPunctuation}</td><td>（Unicodeブロック）</td><td>[U+3000, U+303F]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td>（Unicodeブロック）</td><td>[U+3400, U+4DBF]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td>（Unicodeブロック）</td><td>[U+20000, U+2A6DF]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionC}</td><td>（Unicodeブロック）</td><td>[U+2A700, U+2B73F]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionD}</td><td>（Unicodeブロック）</td><td>[U+2B740, U+2B81F]</td></tr>
+<tr><td>\p{InKanbun}</td><td>漢文の返り点（Unicodeブロック）</td><td>[U+3190, U+319F]</td></tr>
 <tr><td>\uFA0E-\uFA2D</td><td>カナダ漢字（IBM拡張文字）</td><td>[U+FA0E, U+FA2D]</td></tr>
 <tr><td>\uFA2E\uFA2F</td><td>これらの字と0x9FCCはUnicode6.1から追加</td><td>[U+FA2E, U+FA2F]</td></tr>
 <tr><td>\uFA30-\uFA6A</td><td>康煕別掲字（こうきべっけいじ）・人名許容体</td><td>[U+FA30, U+FA6A]</td></tr>
