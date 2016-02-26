@@ -348,9 +348,9 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 Unicodeコードポイントのグループ分けには、Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティがあります。
 <table>
 <tr><th>Unicodeコードポイントのグループ分け</th><th>特徴</th></tr>
-<tr><td>Unicodeスクリプト</td><td>全てのUnicodeコードポイントは単一のUnicodeスクリプトに割り当てられます。</td></tr>
-<tr><td>Unicodeブロック</td><td>連続するUnicodeコードポイントの塊。全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。</td></tr>
-<tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられる。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられる。</td></tr>
+<tr><td>Unicodeスクリプト</td><td>全てのUnicodeコードポイントは単一のUnicodeスクリプトに割り当てられます。<br>rf. <a href="http://www.unicode.org/reports/tr24/tr24-24.html" target="_blank">Unicode® Standard Annex #24 UNICODE SCRIPT PROPERTY</a></td></tr>
+<tr><td>Unicodeブロック</td><td>連続するUnicodeコードポイントの塊。全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。<br>rf. <a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Character Block Property Data File</a></td></tr>
+<tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられる。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられる。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a></td></tr>
 <tr><td>Unicodeバイナリ・プロパティ</td><td></td></tr>
 </table>
 <h3>1.6.1　Unicodeスクリプト</h3>
