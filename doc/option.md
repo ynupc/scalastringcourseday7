@@ -214,7 +214,7 @@ scalastringcourseday7/
 ```
 ***
 <h3>2.4　正規化文字列オプション（自作）</h3>
-nullや空文字ではなく正規化されていることを保証するために、正規化された文字列NormalizedStringのための特別なOptionとしてNormalizedStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedStringOption.scala" target="_blank">NormalizedStringOptionの実装</a>。
+値がnullや空文字ではなく正規化されていることを保証するために、正規化された文字列NormalizedStringのための特別なOptionとしてNormalizedStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedStringOption.scala" target="_blank">NormalizedStringOptionの実装</a>。
 ```scala
   private val wordVariants: String = "スパゲッティ,スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ"
   private val nullString: String = null
