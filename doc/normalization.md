@@ -812,10 +812,10 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 ローマ字
 <table>
 <tr><td>\p{Upper}</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
-<tr><td>\p{Lower}</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
 <tr><td>\p{IsUppercase}</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
-<tr><td>\p{IsLowercase}</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
 <tr><td>A-Z</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
+<tr><td>\p{Lower}</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
+<tr><td>\p{IsLowercase}</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
 <tr><td>a-z</td><td>小文字</td><td>[U+0061, U+007A]</td></tr>
 </table>
 
