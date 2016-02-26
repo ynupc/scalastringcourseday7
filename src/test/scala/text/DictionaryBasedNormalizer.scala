@@ -20,7 +20,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
       inputPath.toAbsolutePath.toString)).lineStream_!
   }
   private val basePath: String = "../../src/test/resources/"
-  private val regex: Regex = """([^#:][^:]*):\[([^\]]+)\](#.*)?""".r
+  private val regex: Regex = """([^#:][^:]*):\[([^#]+)\](#.*)?""".r
   private val terms: Seq[(String, String)] = initialize()
 
   private def initialize(): Seq[(String, String)] = {
