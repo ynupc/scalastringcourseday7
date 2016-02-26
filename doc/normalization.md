@@ -714,21 +714,21 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 ***
 <h3>1.9　Unicodeバイナリ・プロパティ</h3>
 <table>
-<tr><th>接頭辞"Is"+バイナリ・プロパティ</th></tr>
-<tr><td>IsAlphabetic</td></tr>
-<tr><td>IsIdeographic</td></tr>
-<tr><td>IsLetter</td></tr>
-<tr><td>IsLowercase</td></tr>
-<tr><td>IsUppercase</td></tr>
-<tr><td>IsTitlecase</td></tr>
-<tr><td>IsPunctuation</td></tr>
-<tr><td>IsControl</td></tr>
-<tr><td>IsWhite_Space</td></tr>
-<tr><td>IsDigit</td></tr>
-<tr><td>IsHex_Digit</td></tr>
-<tr><td>IsJoin_Control</td></tr>
-<tr><td>IsNoncharacter_Code_Point</td></tr>
-<tr><td>IsAssigned</td></tr>
+<tr><th>バイナリ・プロパティ</th></tr>
+<tr><td>Alphabetic</td></tr>
+<tr><td>Ideographic</td></tr>
+<tr><td>Letter</td></tr>
+<tr><td>Lowercase</td></tr>
+<tr><td>Uppercase</td></tr>
+<tr><td>Titlecase</td></tr>
+<tr><td>Punctuation</td></tr>
+<tr><td>Control</td></tr>
+<tr><td>White_Space</td></tr>
+<tr><td>Digit</td></tr>
+<tr><td>Hex_Digit</td></tr>
+<tr><td>Join_Control</td></tr>
+<tr><td>Noncharacter_Code_Point</td></tr>
+<tr><td>Assigned</td></tr>
 </table>
 ***
 <h3>1.10　正規表現による字種のマッチング</h3>
@@ -760,6 +760,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 </table>
 
 <h4>1.10.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
+Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接頭辞"Is"をつけることで定義済み文字クラスとして正規表現で記述できる。
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{IsLatin}</td><td>Latin 書体文字(スクリプト)</td></tr>
