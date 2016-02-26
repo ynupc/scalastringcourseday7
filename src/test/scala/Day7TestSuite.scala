@@ -176,6 +176,24 @@ class Day7TestSuite extends AssertionsForJUnit {
     assert(Character.getDirectionality(symbolCodePoint)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
   }
 
+  @Test
+  def testCharacterUnicodeScriptOf(): Unit = {
+    assert(Character.UnicodeScript.of(hiraganaCodePoint) == Character.UnicodeScript.HIRAGANA)
+    assert(Character.UnicodeScript.of(katakanaCodePoint) == Character.UnicodeScript.KATAKANA)
+    assert(Character.UnicodeScript.of(kanjiCodePoint)    == Character.UnicodeScript.HAN)
+    assert(Character.UnicodeScript.of(alphabetCodePoint) == Character.UnicodeScript.LATIN)
+    assert(Character.UnicodeScript.of(symbolCodePoint)   == Character.UnicodeScript.COMMON)
+  }
+
+  @Test
+  def testCharacterUnicodeBlockOf(): Unit = {
+    assert(Character.UnicodeBlock.of(hiraganaCodePoint) == Character.UnicodeBlock.HIRAGANA)
+    assert(Character.UnicodeBlock.of(katakanaCodePoint) == Character.UnicodeBlock.KATAKANA)
+    assert(Character.UnicodeBlock.of(kanjiCodePoint)    == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS)
+    assert(Character.UnicodeBlock.of(alphabetCodePoint) == Character.UnicodeBlock.BASIC_LATIN)
+    assert(Character.UnicodeBlock.of(symbolCodePoint)   == Character.UnicodeBlock.BASIC_LATIN)
+  }
+
   private val nullPoGa: NormalizedString = NormalizedString(StringOption("「ぬるぽ」「ガッ」"))
 
   @Test
