@@ -117,18 +117,24 @@ scalastringcourseday7/
  …
  ```
  <h4>2.3.3　NormalizedStringの辞書ファイルのフォーマット</h4>
+ AやBやCをDに置換し、EやFをGに置換したい場合は次のように記述します。
+ ```
+ D:[A,B,C]
+ G:[E,F]
+ ```
+ Unicodeシーケンスで記述することができます。これにより、見た目が似ている文字もコードポイントにより明示的に区別することができます。「#」記号を使うことでコメントアウトすることができます。これにより、例えば、Unicodeシーケンンスで記述した文字をnativeな文字でコメントアウト内に記述したり、置換規則（行）の使用をコメントアウトにより管理することができます。<br>
 「Unicode正規化後の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/character_dic_before_unicode_normalization.yml" target="_blank">character_dic_before_unicode_normalization.yml</a>）
  ```
  \uFF5E:[\u301C,\u007E]#波線記号の統一,～,〜,~
 #\u309B:[\u3099]#濁点の統一,゛,゙
  ```
- 
+次のように「""」を使用することで、マッチする文字・文字列を削除（空文字に置換）することができます。<br>
 「Unicode正規化前の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/character_dic_after_unicode_normalization.yml" target="_blank">character_dic_after_unicode_normalization.yml</a>）
  ```
 "":[\u003D,\uFF1D]#イコール記号の削除,=,＝
 "":[\u30FB]#中黒の削除,・
  ```
- 
+word_expression_dic.ymlでは、次のように異表記を代表表記に変換できます。この辞書ファイルのみ、置き換えたい文字列を正規表現で記述することができます。同時に正規表現で記述できるためエスケープシーケンスに注意が必要です。<br>
 「辞書による単語の異表記からの代表表記への置換」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/word_expression_dic.yml" target="_blank">word_expression_dic.yml</a>）
 ```
 タンパク質:[たんぱく質,蛋白質]
