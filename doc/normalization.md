@@ -540,18 +540,18 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Carian</td><td>CARIAN</td></tr>
 <tr><td>Cham</td><td>CHAM</td></tr>
 <tr><td>Cherokee</td><td>CHEROKEE</td></tr>
-<tr><td>CJK Compatibility</td><td>CJK_COMPATIBILITY</td></tr>
-<tr><td>CJK Compatibility Forms</td><td>CJK_COMPATIBILITY_FORMS</td></tr>
-<tr><td>CJK Compatibility Ideographs</td><td>CJK_COMPATIBILITY_IDEOGRAPHS</td></tr>
-<tr><td>CJK Compatibility Ideographs Supplement</td><td>CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT</td></tr>
-<tr><td>CJK Radicals Supplement</td><td>CJK_RADICALS_SUPPLEMENT</td></tr>
-<tr><td>CJK Strokes</td><td>CJK_STROKES</td></tr>
-<tr><td>CJK Symbols and Punctuation</td><td>CJK_SYMBOLS_AND_PUNCTUATION</td></tr>
-<tr><td><strong>CJK Unified Ideographs</strong></td><td><strong>CJK_UNIFIED_IDEOGRAPHS</strong></td></tr>
-<tr><td>CJK Unified Ideographs Extension A</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A</td></tr>
-<tr><td>CJK Unified Ideographs Extension B</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B</td></tr>
-<tr><td>CJK Unified Ideographs Extension C</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C</td></tr>
-<tr><td>CJK Unified Ideographs Extension D</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D</td></tr>
+<tr><td><strong>CJK Compatibility</strong></td><td><strong>CJK_COMPATIBILITY</strong></td></tr>
+<tr><td><strong>CJK Compatibility Forms</strong></td><td><strong>CJK_COMPATIBILITY_FORMS</strong></td></tr>
+<tr><td><strong>CJK Compatibility Ideographs</strong></td><td><strong>CJK_COMPATIBILITY_IDEOGRAPHS</strong></td></tr>
+<tr><td><strong>CJK Compatibility Ideographs Supplement</strong></td><td><strong>CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT</strong></td></tr>
+<tr><td><strong>CJK Radicals Supplement</strong></td><td><strong>CJK_RADICALS_SUPPLEMENT</strong></td></tr>
+<tr><td><strong>CJK Strokes</strong></td><td><strong>CJK_STROKES</strong></td></tr>
+<tr><td><strong>CJK Symbols and Punctuation</strong></td><td><strong>CJK_SYMBOLS_AND_PUNCTUATION</strong></td></tr>
+<tr><td><strong>CJK Unified Ideographs</strong></td><td><strong><strong>CJK_UNIFIED_IDEOGRAPHS</strong></td></tr>
+<tr><td><strong>CJK Unified Ideographs Extension A</strong></td><td><strong>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A</strong></td></tr>
+<tr><td><strong>CJK Unified Ideographs Extension B</strong></td><td><strong>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B</strong></td></tr>
+<tr><td><strong>CJK Unified Ideographs Extension C</strong></td><td><strong>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C</strong></td></tr>
+<tr><td><strong>CJK Unified Ideographs Extension D</strong></td><td><strong>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D</strong></td></tr>
 <tr><td>Combining Diacritical Marks</td><td>COMBINING_DIACRITICAL_MARKS</td></tr>
 <tr><td>Combining Diacritical Marks Supplement</td><td>COMBINING_DIACRITICAL_MARKS_SUPPLEMENT</td></tr>
 <tr><td>Combining Half Marks</td><td>COMBINING_HALF_MARKS</td></tr>
