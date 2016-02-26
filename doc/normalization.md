@@ -366,7 +366,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Chakma</td><td>CHAKMA</td></tr>
 <tr><td>Cham</td><td>CHAM</td></tr>
 <tr><td>Cherokee</td><td>CHEROKEE</td></tr>
-<tr><td><strong>Common</strong></td><td><strong>COMMON</strong></td></tr>
+<tr><td><strong><i>Common</i></strong></td><td><strong><i>COMMON</i></strong></td></tr>
 <tr><td>Coptic</td><td>COPTIC</td></tr>
 <tr><td>Cuneiform</td><td>CUNEIFORM</td></tr>
 <tr><td>Cypriot</td><td>CYPRIOT</td></tr>
@@ -387,7 +387,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Hebrew</td><td>HEBREW</td></tr>
 <tr><td><strong>Hiragana</strong></td><td><strong>HIRAGANA</strong></td></tr>
 <tr><td>Imperial_Aramaic</td><td>IMPERIAL_ARAMAIC</td></tr>
-<tr><td><strong>Inherited</strong></td><td><strong>INHERITED</strong></td></tr>
+<tr><td><strong><i>Inherited</i></strong></td><td><strong><i>INHERITED</i></strong></td></tr>
 <tr><td>Inscriptional_Pahlavi</td><td>INSCRIPTIONAL_PAHLAVI</td></tr>
 <tr><td>Inscriptional_Parthian</td><td>INSCRIPTIONAL_PARTHIAN</td></tr>
 <tr><td>Javanese</td><td>JAVANESE</td></tr>
@@ -449,7 +449,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Tibetan</td><td>TIBETAN</td></tr>
 <tr><td>Tifinagh</td><td>TIFINAGH</td></tr>
 <tr><td>Ugaritic</td><td>UGARITIC</td></tr>
-<tr><td><strong>Unknown</strong></td><td><strong>UNKNOWN</strong></td></tr>
+<tr><td><strong><i>Unknown</i></strong></td><td><strong><i>UNKNOWN</i></strong></td></tr>
 <tr><td>Vai</td><td>VAI</td></tr>
 <tr><td>Yi</td><td>YI</td></tr>
 </table>
