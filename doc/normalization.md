@@ -922,20 +922,19 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 漢字
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
-<tr><td>\p{Han}</td><td>漢字（Unicodeスクリプト）</td><td></td></tr>
+<tr><td>\p{Han}</td><td>漢字（Unicodeスクリプト）</td><td>[, ]</td></tr>
 <tr><td>\p{InCJKCompatibility}</td><td>（Unicodeブロック）</td><td>[, ]</td></tr>
 <tr><td>\p{InCJKCompatibilityForms}</td><td>（Unicodeブロック）</td><td>[, ]</td></tr>
-<tr><td>\p{InCJKCompatibilityIdeographs}</td><td>（Unicodeブロック）</td><td>[U+F900, U+FAFF]</td></tr>
-<tr><td>\p{InCJKCompatibilityIdeographs Supplement}</td><td>（Unicodeブロック）</td><td>[U+2F800, U+2FA1D]</td></tr>
-<tr><td>\p{InCJKRadicals Supplement}</td><td>（Unicodeブロック）</td><td></td></tr>
-<tr><td>\p{InCJKStrokes}</td><td>（Unicodeブロック）</td><td></td></tr>
+<tr><td>\p{InCJKCompatibilityIdeographs}</td><td>CJK互換漢字（Unicodeブロック）</td><td>[U+F900, U+FAFF]</td></tr>
+<tr><td>\p{InCJKCompatibilityIdeographs Supplement}</td><td>CJK互換漢字補助（Unicodeブロック）</td><td>[U+2F800, U+2FA1D]</td></tr>
+<tr><td>\p{InCJKRadicalsSupplement}</td><td>CJK部首補助（Unicodeブロック）</td><td>[U+2E80, U+2EFF]</td></tr>
+<tr><td>\p{InCJKStrokes}</td><td>CJKの筆画（Unicodeブロック）</td><td>[U+31C0, U+31EF]</td></tr>
 <tr><td>\p{InCJKSymbolsAndPunctuation}</td><td>（Unicodeブロック）</td><td>[U+3000, U+303F]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographs}</td><td>（Unicodeブロック）</td><td>[U+4E00, U+9FFF]</td></tr>
-<tr><td>\p{InCJKSymbolsAndPunctuation}</td><td>（Unicodeブロック）</td><td>[U+3000, U+303F]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td>（Unicodeブロック）</td><td>[U+3400, U+4DBF]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td>（Unicodeブロック）</td><td>[U+20000, U+2A6DF]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionC}</td><td>（Unicodeブロック）</td><td>[U+2A700, U+2B73F]</td></tr>
-<tr><td>\p{InCJKUnifiedIdeographsExtensionD}</td><td>（Unicodeブロック）</td><td>[U+2B740, U+2B81F]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographs}</td><td>CJK統合漢字（Unicodeブロック）</td><td>[U+4E00, U+9FFF]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td>CJK統合漢字拡張A（Unicodeブロック）</td><td>[U+3400, U+4DBF]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td>CJK統合漢字拡張B（Unicodeブロック）</td><td>[U+20000, U+2A6DF]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionC}</td><td>CJK統合漢字拡張C（Unicodeブロック）</td><td>[U+2A700, U+2B73F]</td></tr>
+<tr><td>\p{InCJKUnifiedIdeographsExtensionD}</td><td>CJK統合漢字拡張D（Unicodeブロック）</td><td>[U+2B740, U+2B81F]</td></tr>
 <tr><td>\p{InKanbun}</td><td>漢文の返り点（Unicodeブロック）</td><td>[U+3190, U+319F]</td></tr>
 <tr><td>\uFA0E-\uFA2D</td><td>カナダ漢字（IBM拡張文字）</td><td>[U+FA0E, U+FA2D]</td></tr>
 <tr><td>\uFA2E\uFA2F</td><td>これらの字と0x9FCCはUnicode6.1から追加</td><td>[U+FA2E, U+FA2F]</td></tr>
