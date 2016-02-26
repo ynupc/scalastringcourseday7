@@ -34,7 +34,7 @@ Optionは値があるのかないのかどうかわからない状態を表す�
 ```
 ***
 <h3>2.2　文字列オプション（自作）</h3>
-<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>
+Optionはnullを書かずにNullPointerExceptionを排除するために使用できます。文字列処理においてStringはnullだけでなく空文字""も同時に排除したい場合がよくありますが、Optionでは空文字は排除されません。そこで、OptionのようにStringを包むことでnullと空文字を排除するためのStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>。
 ```scala
   @Test
   def testStringOption(): Unit = {
