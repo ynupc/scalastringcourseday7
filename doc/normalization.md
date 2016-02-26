@@ -356,7 +356,7 @@ Unicodeコードポイントのグループ分けには、Unicodeスクリプト
 <tr><th>Unicodeコードポイントのグループ分け</th><th>特徴</th></tr>
 <tr><td>Unicodeスクリプト</td><td>全てのUnicodeコードポイントは単一のUnicodeスクリプトに割り当てられます。<br>rf. <a href="http://www.unicode.org/reports/tr24/tr24-24.html" target="_blank">Unicode® Standard Annex #24 UNICODE SCRIPT PROPERTY</a></td></tr>
 <tr><td>Unicodeブロック</td><td>連続するUnicodeコードポイントの塊。全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。<br>rf. <a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Character Block Property Data File</a></td></tr>
-<tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられる。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられる。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a></td></tr>
+<tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられます。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられます。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a></td></tr>
 <tr><td>Unicodeバイナリ・プロパティ</td><td>Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうちの一部がJavaの正規表現で定義されています。<br>
 rf.<br>
 <ul>
@@ -706,7 +706,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 </table>
 ***
 <h3>1.6.3　Unicodeカテゴリ</h3>
-
+全てのUnicodeコードポイントは一般カテゴリに割り当てられます。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられます。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a><br><br>
 一般カテゴリ
 <table>
 <tr><th>カテゴリ</th><th>説明</th><th>サブカテゴリ</th></tr>
@@ -758,6 +758,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#142charactergettype">Character.getTypeメソッド</a>を使用します。
 ***
 <h3>1.6.4　Unicodeバイナリ・プロパティ</h3>
+Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうちの下記のものがJavaの正規表現で定義されています。
 <table>
 <tr><th>バイナリ・プロパティ</th></tr>
 <tr><td>Alphabetic</td></tr>
