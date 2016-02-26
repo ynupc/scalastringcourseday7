@@ -694,8 +694,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 一般カテゴリ
 <table>
-<tr><th>カテゴリ</th><th>説明</th><th>Cc | Cf | Cs | Co | Cn</th></tr>
-<tr><td>C</td><td>その他 (Other)</td><td></td></tr>
+<tr><th>カテゴリ</th><th>説明</th><th>サブカテゴリ</th></tr>
+<tr><td>C</td><td>その他 (Other)</td><td>Cc | Cf | Cs | Co | Cn</td></tr>
 <tr><td>L</td><td>アルファベット (Letter)</td><td>Lu | Ll | Lt | Lm | Lo</td></tr>
 <tr><td>LC</td><td>case付きアルファベット（Cased Letter）</td><td>Lu | Ll | Lt</td></tr>
 <tr><td>M</td><td>記号 (Mark)</td><td>Mn | Mc | Me</td></tr>
