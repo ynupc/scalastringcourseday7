@@ -344,7 +344,8 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </td></tr>
 </table>
 ***
-<h3>1.6　Unicodeスクリプト</h3>
+<h3>1.6　Unicode表の区分け</h3>
+<h3>1.6.1　Unicodeスクリプト</h3>
 Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Inherited、Common、Unknownのいずれか)に割り当てられます。
 
 <table>
@@ -454,7 +455,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Yi</td><td>YI</td></tr>
 </table>
 ***
-<h3>1.7　Unicodeブロック</h3>
+<h3>1.6.2　Unicodeブロック</h3>
 <table>
 <tr><th>Unicodeブロック</th><th>java.lang.Character.UnicodeBlock</th></tr>
 <tr><td>Aegean Numbers</td><td>AEGEAN_NUMBERS</td></tr>
@@ -675,7 +676,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Yijing Hexagram Symbols</td><td>YIJING_HEXAGRAM_SYMBOLS</td></tr>
 </table>
 ***
-<h3>1.8　Unicodeカテゴリ</h3>
+<h3>1.6.3　Unicodeカテゴリ</h3>
 <table>
 <tr><th>Unicode仕様の汎用カテゴリ</th><th>java.lang.Character</th></tr>
 <tr><td>Cc</td><td>CONTROL</td></tr>
@@ -712,7 +713,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <br>
 任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#142charactergettype">Character.getTypeメソッド</a>を使用します。
 ***
-<h3>1.9　Unicodeバイナリ・プロパティ</h3>
+<h3>1.6.4　Unicodeバイナリ・プロパティ</h3>
 <table>
 <tr><th>バイナリ・プロパティ</th></tr>
 <tr><td>Alphabetic</td></tr>
@@ -731,8 +732,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Assigned</td></tr>
 </table>
 ***
-<h3>1.10　正規表現による字種のマッチング</h3>
-<h4>1.10.1　POSIX文字クラス(US-ASCIIのみ)</h4>
+<h3>1.7　正規表現による字種のマッチング</h3>
+<h4>1.7.1　POSIX文字クラス(US-ASCIIのみ)</h4>
 <table>
 <tr><th>クラス</th><th colspan="2">マッチ</th></tr>
 <tr><td>\p{Lower}</td><td>小文字の英字</td><td>[a-z]</td></tr>
@@ -750,7 +751,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
 </table>
 
-<h4>1.10.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
+<h4>1.7.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
@@ -759,7 +760,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
 </table>
 
-<h4>1.10.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
+<h4>1.7.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接頭辞"Is"をつけることで定義済み文字クラスとして正規表現で記述できる。
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
@@ -772,7 +773,7 @@ Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接
 <tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
 </table>
 
-<h4>1.10.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
+<h4>1.7.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
 POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
 <table>
 <tr><th>クラス</th><th colspan="2">マッチ</th></tr>
@@ -797,7 +798,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\W</td><td>非単語文字</td><td>[^\w]</td></tr>
 </table>
 
-<h4>1.10.5　日本語の字種のマッチング</h4>
+<h4>1.7.5　日本語の字種のマッチング</h4>
 ひらがな
 <table>
 <tr><td>\p{InHiragana}</td><td>ひらがな</td><td>[U+3040, U+309F]</td></tr>
@@ -845,8 +846,8 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
-<h3>1.11　字種の変換</h3>
-<h4>1.11.1　letter case</h4>
+<h3>1.8　字種の変換</h3>
+<h4>1.8.1　letter case</h4>
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
 <tr><td>lower case</td><td>abc</td><td>全部小文字</td></tr>
@@ -854,7 +855,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 ***
-<h4>1.11.2　文字のletter caseの変換</h4>
+<h4>1.8.2　文字のletter caseの変換</h4>
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
   private val titleCaseChar: Char = '\u01C8'//「ǈ」
@@ -895,7 +896,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
   }
 ```
 ***
-<h4>1.11.3　文字列のletter caseの変換</h4>
+<h4>1.8.3　文字列のletter caseの変換</h4>
 ```scala
   private val locale: Locale = Locale.JAPAN
 
@@ -914,7 +915,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
   }
 ```
 ***
-<h4>1.11.4　カタカナとひらがなの相互変換（自作）</h4>
+<h4>1.8.4　カタカナとひらがなの相互変換（自作）</h4>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>
 自作のNormalizedStringOption、NormalizedString、StringOptionについては次章で取り扱う。
 ```scala
