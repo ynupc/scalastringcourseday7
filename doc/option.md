@@ -68,7 +68,7 @@ Optionはnullを書かずにNullPointerExceptionを排除するために使用�
 ***
 <h3>2.3　正規化文字列（自作）</h3>
 値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。
-<h4>2.3.1　NormalizedStringの正規化処理の流れ</h4>
+<h4>2.3.1　正規化処理の流れ</h4>
 NormalizedStringの正規化処理は次の順序で４段階で実行されます。
 <ol>
   <li>Unicode正規化前の辞書による文字の正規化</li>
@@ -76,7 +76,7 @@ NormalizedStringの正規化処理は次の順序で４段階で実行されま�
   <li>Unicode正規化後の辞書による文字の正規化</li>
   <li>辞書による単語の異表記からの代表表記への置換</li>
 </ol>
-<h4>2.3.2　NormalizedStringを構成するファイル</h4>
+<h4>2.3.2　ファイル構成</h4>
 NormalizedStringは辞書ファイルとプログラムファイルから構成されています。それぞれについて含まれているファイルとその説明は次です。
 <ul>
   <li>辞書
@@ -116,7 +116,7 @@ scalastringcourseday7/
  │　　　　　└ …
  …
  ```
- <h4>2.3.3　NormalizedStringの辞書ファイルのフォーマット</h4>
+ <h4>2.3.3　辞書ファイルのフォーマット</h4>
  AやBやCをDに置換し、EやFをGに置換したい場合は次のように記述します。
  ```
  D:[A,B,C]
@@ -140,6 +140,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 タンパク質:[たんぱく質,蛋白質]
 スパゲッティ:[スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ]
 ```
+<h4>2.3.4　辞書ファイルで記述した置換規則の実行順序</h4>
  変換順序について
  このやり方で異表記を代表表記に統一する場合の問題点について
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a><br>
