@@ -274,7 +274,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
 <tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(codePoint)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
 <tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(codePoint)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
-<tr><td>isLetterOrDigit</td><td>Character.isLetter || Character.isDigit</td></tr>
+<tr><td>isLetterOrDigit</td><td>Character.isLetterまたはCharacter.isDigit</td></tr>
 <tr><td>isLowerCase</td><td>小文字である。Character.getType(codePoint)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
 <tr><td>isTitleCase</td><td>タイトルケース文字である。Character.getType(codePoint)がTITLECASE_LETTERである。</td></tr>
 <tr><td>isUpperCase</td><td>大文字である。Character.getType(codePoint)がUPPERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Uppercaseを持つ。</td></tr>
@@ -352,7 +352,13 @@ Unicodeコードポイントのグループ分けには、Unicodeスクリプト
 <tr><td>Unicodeスクリプト</td><td>全てのUnicodeコードポイントは単一のUnicodeスクリプトに割り当てられます。<br>rf. <a href="http://www.unicode.org/reports/tr24/tr24-24.html" target="_blank">Unicode® Standard Annex #24 UNICODE SCRIPT PROPERTY</a></td></tr>
 <tr><td>Unicodeブロック</td><td>連続するUnicodeコードポイントの塊。全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。<br>rf. <a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Character Block Property Data File</a></td></tr>
 <tr><td>Unicodeカテゴリ</td><td>全てのUnicodeコードポイントは一般カテゴリに割り当てられる。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられる。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a></td></tr>
-<tr><td>Unicodeバイナリ・プロパティ</td><td></td></tr>
+<tr><td>Unicodeバイナリ・プロパティ</td><td>Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうちの一部が正規表現で定義されています。<br>
+rf.<br>
+<ul>
+<li><a href="http://www.unicode.org/reports/tr44/#Property_List_Table" target="_blank">Table 9. Property Table - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a></li>
+<li><a href="http://www.unicode.org/Public/UCD/latest/ucd/PropList.txt" target="_blank">PropList.txt</a></li>
+</ul>
+</td></tr>
 </table>
 ***
 <h3>1.6.1　Unicodeスクリプト</h3>
