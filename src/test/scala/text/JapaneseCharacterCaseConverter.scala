@@ -29,11 +29,8 @@ object JapaneseCharacterCaseConverter {
     }
   }
 
-  private def convert(normalizedStringOpt: NormalizedStringOption, conversion: Conversion): NormalizedStringOption = {
-    normalizedStringOpt map {
-      normalizedString =>
-        NormalizedString(convert(normalizedString.toStringOption, conversion))
-    }
+  private def convert(normalizedString: NormalizedString, conversion: Conversion): NormalizedString = {
+    NormalizedString(convert(normalizedString.toStringOption, conversion))
   }
 
   private def convert(textOpt: StringOption, conversion: Conversion): StringOption = {
@@ -51,8 +48,8 @@ object JapaneseCharacterCaseConverter {
     }
   }
 
-  def convertKatakana2Hiragana(textOpt: NormalizedStringOption): NormalizedStringOption = {
-    var ret: NormalizedStringOption = textOpt
+  def convertKatakana2Hiragana(text: NormalizedString): NormalizedString = {
+    var ret: NormalizedString = text
     FROM_KATAKANA_TO_HIRAGANA foreach {
       conversion =>
         ret = convert(ret, conversion)
@@ -60,8 +57,8 @@ object JapaneseCharacterCaseConverter {
     ret
   }
 
-  def convertHiragana2Katakana(textOpt: NormalizedStringOption): NormalizedStringOption = {
-    var ret: NormalizedStringOption = textOpt
+  def convertHiragana2Katakana(text: NormalizedString): NormalizedString = {
+    var ret: NormalizedString = text
     FROM_HIRAGANA_TO_KATAKANA foreach {
       conversion =>
         ret = convert(ret, conversion)

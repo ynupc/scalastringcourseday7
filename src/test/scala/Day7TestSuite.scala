@@ -169,16 +169,16 @@ class Day7TestSuite extends AssertionsForJUnit {
     assert(Character.getDirectionality(symbolCodePoint)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
   }
 
-  private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
+  private val nullPoGa: NormalizedString = NormalizedString(StringOption("「ぬるぽ」「ガッ」"))
 
   @Test
   def testKatakana2Hiragana(): Unit = {
-    assert(JapaneseCharacterCaseConverter.convertKatakana2Hiragana(nullPoGa).get.toString == "「ぬるぽ」「がっ」")
+    assert(JapaneseCharacterCaseConverter.convertKatakana2Hiragana(nullPoGa).toString == "「ぬるぽ」「がっ」")
   }
 
   @Test
   def testHiragana2Katakana(): Unit = {
-    assert(JapaneseCharacterCaseConverter.convertHiragana2Katakana(nullPoGa).get.toString == "「ヌルポ」「ガッ」")
+    assert(JapaneseCharacterCaseConverter.convertHiragana2Katakana(nullPoGa).toString == "「ヌルポ」「ガッ」")
   }
 
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
@@ -360,20 +360,11 @@ class Day7TestSuite extends AssertionsForJUnit {
   }
 
   @Test
-  def testNormalizedStringOption(): Unit = {
-    assert(NormalizedStringOption(NormalizedString(StringOption(wordVariants))).nonEmpty)
-    assert(NormalizedStringOption(NormalizedString(StringOption(nullString))).isEmpty)
-    assert(NormalizedStringOption(NormalizedString(StringOption(emptyString))).isEmpty)
-
-    text.NormalizedStringOption(NormalizedString(StringOption(wordVariants))) match {
-      case NormalizedStringSome(ns) =>
-        ns.toStringOption match {
-          case StringSome(str) =>
-            assert(str == "スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ")
-          case StringNone =>
-            assert(false)
-        }
-      case NormalizedStringNone =>
+  def testNormalizedString(): Unit = {
+    NormalizedString(StringOption(wordVariants)).toStringOption match {
+      case StringSome(str) =>
+        assert(str == "スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ")
+      case StringNone =>
         assert(false)
     }
   }
