@@ -67,7 +67,7 @@ Optionはnullを書かずにNullPointerExceptionを排除するために使用�
 ```
 ***
 <h3>2.3　正規化文字列（自作）</h3>
-値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。
+値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a>
 <h4>2.3.1　正規化処理の流れ</h4>
 NormalizedStringの正規化処理は次の順序で４段階で実行されます。
 <ol>
@@ -145,8 +145,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 「Unicode正規化後の辞書による文字の正規化」と「Unicode正規化前の辞書による文字の正規化」で使用する辞書ファイルについては、代表表記・異表記ともにUTF-16BEの順です。「辞書による単語の異表記からの代表表記への置換」で使用する辞書ファイルについては、代表表記・異表記ともにUTF-16BEの順に並べた後、文字列のlength（Char数）で並べています。代表表記はlengthで昇順、異表記は降順です。それぞれWordExpressionNormalizerのsortRepresentationsメソッドとsortNotationVariantsメソッドを書き換えることで順序を変更することができます。
 
 <h4>2.3.5　懸念事項</h4>
- このやり方で異表記を代表表記に統一する場合の問題点について
-<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a><br>
+ このやり方で異表記を代表表記に統一する場合の問題点について<br>
 互換等価性に関するサンプルコード
 ```scala
   //\u30AC = 全角カタカナの「ガ」
