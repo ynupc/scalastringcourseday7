@@ -122,7 +122,7 @@ scalastringcourseday7/
  D:[A,B,C]
  G:[E,F]
  ```
- Unicodeシーケンスで記述することができます。これにより、見た目が似ている文字もコードポイントにより明示的に区別することができます。「#」記号を使うことでコメントアウトすることができます。これにより、例えば、Unicodeシーケンンスで記述した文字をnativeな文字でコメントアウト内に記述したり、置換規則（行）の使用をコメントアウトにより管理することができます。<br>
+ Unicodeシーケンスで記述することができます。これにより、見た目が似ている文字もコードポイントにより明示的に区別することができます。「#」記号を使うことでコメントアウトすることができます。これにより、例えば、Unicodeシーケンンスで記述した文字をnativeな文字でコメントアウト内に記述したり、置換規則（行）の使用をコメントアウトにより管理することができます。現状では「#」記号と「:」記号を置換する・される文字・文字列内で記述することができません。<br>
 「Unicode正規化後の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/character_dic_before_unicode_normalization.yml" target="_blank">character_dic_before_unicode_normalization.yml</a>）
  ```
  \uFF5E:[\u301C,\u007E]#波線記号の統一,～,〜,~
@@ -140,11 +140,6 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 タンパク質:[たんぱく質,蛋白質]
 スパゲッティ:[スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ]
 ```
- 
- 基本的なフォーマットについて、１行ごとに代表表記と異表記リストの紐付けている。
- Unicodeシーケンスが使える。フォントの見た目が似ている文字を人間が識別するため。
- コメントアウトの書き方
- word_expression_dic.ymlの単語異表記は正規表現による記述が可能
  変換順序について
  このやり方で異表記を代表表記に統一する場合の問題点について
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a><br>
