@@ -14,11 +14,13 @@ class Day7TestSuite extends AssertionsForJUnit {
 
   private val hiraganaChar: Char = 'か'
   private val katakanaChar: Char = 'カ'
+  private val kanjiChar:    Char = '漢'
   private val alphabetChar: Char = 'C'
   private val symbolChar:   Char = '+'
 
   private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
   private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
+  private val kanjiCodePoint:    Int = Character.codePointAt(Array[Char](kanjiChar), 0)
   private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
   private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
 
@@ -26,6 +28,7 @@ class Day7TestSuite extends AssertionsForJUnit {
   def testCharacterClass(): Unit = {
     assert(Character.getName(hiraganaCodePoint) == "HIRAGANA LETTER KA")
     assert(Character.getName(katakanaCodePoint) == "KATAKANA LETTER KA")
+    assert(Character.getName(kanjiCodePoint)    == "CJK UNIFIED IDEOGRAPHS 6F22")
     assert(Character.getName(alphabetCodePoint) == "LATIN CAPITAL LETTER C")
     assert(Character.getName(symbolCodePoint)   == "PLUS SIGN")
   }
@@ -100,12 +103,14 @@ class Day7TestSuite extends AssertionsForJUnit {
     //Char
     assert(Character.getType(hiraganaChar) == Character.OTHER_LETTER)
     assert(Character.getType(katakanaChar) == Character.OTHER_LETTER)
+    assert(Character.getType(kanjiChar)    == Character.OTHER_LETTER)
     assert(Character.getType(alphabetChar) == Character.UPPERCASE_LETTER)
     assert(Character.getType(symbolChar)   == Character.MATH_SYMBOL)
 
     //コードポイント
     assert(Character.getType(hiraganaCodePoint) == Character.OTHER_LETTER)
     assert(Character.getType(katakanaCodePoint) == Character.OTHER_LETTER)
+    assert(Character.getType(kanjiCodePoint)    == Character.OTHER_LETTER)
     assert(Character.getType(alphabetCodePoint) == Character.UPPERCASE_LETTER)
     assert(Character.getType(symbolCodePoint)   == Character.MATH_SYMBOL)
   }
@@ -159,12 +164,14 @@ class Day7TestSuite extends AssertionsForJUnit {
     //Char
     assert(Character.getDirectionality(hiraganaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
     assert(Character.getDirectionality(katakanaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(kanjiChar)    == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
     assert(Character.getDirectionality(alphabetChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
     assert(Character.getDirectionality(symbolChar)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
 
     //コードポイント
     assert(Character.getDirectionality(hiraganaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
     assert(Character.getDirectionality(katakanaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(kanjiCodePoint)    == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
     assert(Character.getDirectionality(alphabetCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
     assert(Character.getDirectionality(symbolCodePoint)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
   }
