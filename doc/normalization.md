@@ -695,7 +695,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 一般カテゴリ
 <table>
 <tr><th>カテゴリ</th><th>説明</th></tr>
-<tr><td>C</td><td>制御文字 (Control)</td></tr>
+<tr><td>C</td><td>その他 (Other)</td></tr>
 <tr><td>L</td><td>アルファベット (Letter)</td></tr>
 <tr><td>M</td><td>記号 (Mark)</td></tr>
 <tr><td>N</td><td>数字 (Number)</td></tr>
