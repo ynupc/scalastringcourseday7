@@ -602,7 +602,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Hanunoo</td><td>HANUNOO</td></tr>
 <tr><td>Hebrew</td><td>HEBREW</td></tr>
 <tr><td><strong>Hiragana</strong></td><td><strong>HIRAGANA</strong></td></tr>
-<tr><td>Ideographic Description Characters</td><td>IDEOGRAPHIC_DESCRIPTION_CHARACTERS</td></tr>
+<tr><td><strong>Ideographic Description Characters</strong></td><td><strong>IDEOGRAPHIC_DESCRIPTION_CHARACTERS</strong></td></tr>
 <tr><td>Imperial Aramaic</td><td>IMPERIAL_ARAMAIC</td></tr>
 <tr><td>Inscriptional Pahlavi</td><td>INSCRIPTIONAL_PAHLAVI</td></tr>
 <tr><td>Inscriptional Parthian</td><td>INSCRIPTIONAL_PARTHIAN</td></tr>
@@ -935,6 +935,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\p{InCJKUnifiedIdeographsExtensionB}</td><td>CJK統合漢字拡張B（Unicodeブロック）</td><td>[U+20000, U+2A6DF]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionC}</td><td>CJK統合漢字拡張C（Unicodeブロック）</td><td>[U+2A700, U+2B73F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionD}</td><td>CJK統合漢字拡張D（Unicodeブロック）</td><td>[U+2B740, U+2B81F]</td></tr>
+<tr><td>\p{InIdeographicDescriptionCharacters}</td><td>漢字構成記述文字（Unicodeブロック）</td><td>[U+2FF0, U+2FFF]</td></tr>
 <tr><td>\p{InKanbun}</td><td>漢文の返り点（Unicodeブロック）</td><td>[U+3190, U+319F]</td></tr>
 <tr><td>\uFA0E-\uFA2D</td><td>カナダ漢字（IBM拡張文字）</td><td>[U+FA0E, U+FA2D]</td></tr>
 <tr><td>\uFA2E\uFA2F</td><td>これらの字と0x9FCCはUnicode6.1から追加</td><td>[U+FA2E, U+FA2F]</td></tr>
