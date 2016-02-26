@@ -464,6 +464,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Ancient Greek Numbers</td><td>ANCIENT_GREEK_NUMBERS</td></tr>
 <tr><td>Ancient Symbols</td><td>ANCIENT_SYMBOLS</td></tr>
 <tr><td>Arabic</td><td>ARABIC</td></tr>
+<tr><td>Arabic Extended-A</td><td>ARABIC_EXTENDED_A</td></tr>
+<tr><td>Arabic Mathematical Alphabetic Symbols</td><td>ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS</td></tr>
 <tr><td>Arabic Presentation Forms-A</td><td>ARABIC_PRESENTATION_FORMS_A</td></tr>
 <tr><td>Arabic Presentation Forms-B</td><td>ARABIC_PRESENTATION_FORMS_B</td></tr>
 <tr><td>Arabic Supplement</td><td>ARABIC_SUPPLEMENT</td></tr>
@@ -495,7 +497,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>CJK Radicals Supplement</td><td>CJK_RADICALS_SUPPLEMENT</td></tr>
 <tr><td>CJK Strokes</td><td>CJK_STROKES</td></tr>
 <tr><td>CJK Symbols and Punctuation</td><td>CJK_SYMBOLS_AND_PUNCTUATION</td></tr>
-<tr><td>CJK Unified Ideographs</td><td>CJK_UNIFIED_IDEOGRAPHS</td></tr>
+<tr><td><strong>CJK Unified Ideographs</strong></td><td><strong>CJK_UNIFIED_IDEOGRAPHS</strong></td></tr>
 <tr><td>CJK Unified Ideographs Extension A</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A</td></tr>
 <tr><td>CJK Unified Ideographs Extension B</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B</td></tr>
 <tr><td>CJK Unified Ideographs Extension C</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C</td></tr>
@@ -549,7 +551,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Hangul Syllables</td><td>HANGUL_SYLLABLES</td></tr>
 <tr><td>Hanunoo</td><td>HANUNOO</td></tr>
 <tr><td>Hebrew</td><td>HEBREW</td></tr>
-<tr><td>Hiragana</td><td>HIRAGANA</td></tr>
+<tr><td><strong>Hiragana</strong></td><td><strong>HIRAGANA</strong></td></tr>
 <tr><td>Ideographic Description Characters</td><td>IDEOGRAPHIC_DESCRIPTION_CHARACTERS</td></tr>
 <tr><td>Imperial Aramaic</td><td>IMPERIAL_ARAMAIC</td></tr>
 <tr><td>Inscriptional Pahlavi</td><td>INSCRIPTIONAL_PAHLAVI</td></tr>
@@ -561,8 +563,8 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Kanbun</td><td>KANBUN</td></tr>
 <tr><td>Kangxi Radicals</td><td>KANGXI_RADICALS</td></tr>
 <tr><td>Kannada</td><td>KANNADA</td></tr>
-<tr><td>Katakana</td><td>KATAKANA</td></tr>
-<tr><td>Katakana Phonetic Extensions</td><td>KATAKANA_PHONETIC_EXTENSIONS</td></tr>
+<tr><td><strong>Katakana</strong></td><td><strong>KATAKANA</strong></td></tr>
+<tr><td><strong>Katakana Phonetic Extensions</strong></td><td><strong>KATAKANA_PHONETIC_EXTENSIONS</strong></td></tr>
 <tr><td>Kayah Li</td><td>KAYAH_LI</td></tr>
 <tr><td>Kharoshthi</td><td>KHAROSHTHI</td></tr>
 <tr><td>Khmer</td><td>KHMER</td></tr>
