@@ -42,22 +42,36 @@ object SentenceParser {
       l =>
         var line: String = l
         sentences ++= {
+          val replacementBuffer: ListBuffer[String] = ListBuffer[String]()
+
+          //句点を含む固有名詞の句点を幽霊文字に変換
           for (properNoun <- properNounsWithJapanesePeriod if line contains properNoun) {
+            val replacement: String = properNoun.
+              replaceAllLiterally(japanesePeriod, ghost).
+              replaceAllLiterally(japanesePeriod2, ghost2)
+            replacementBuffer += replacement
             line = line.replaceAllLiterally(
               properNoun,
-              properNoun.
-                replaceAllLiterally(japanesePeriod, ghost).
-                replaceAllLiterally(japanesePeriod2, ghost2)
+              replacement
             )
           }
+
+          val replacements: Seq[String] = replacementBuffer.result
 
           //句点により文単位に分割
           for (sentence <- line.trim split japanesePeriodRegex
                if StringOption(sentence).nonEmpty) yield {
-            new NormalizedSentence(parseSentence(sentence).
-              replaceAllLiterally(ghost, japanesePeriod).
-              replaceAllLiterally(ghost2, japanesePeriod2)
-            )
+            //正規化処理
+            var s: String = parseSentence(sentence)
+            //幽霊文字を元の句点に戻す
+            for (replacement <- replacements) {
+              val normalizedProperNoun: String = NormalizedString(StringOption(replacement)).toString
+              val normalizedProperNounWithJapanesePeriod: String = normalizedProperNoun.
+                replaceAllLiterally(ghost, japanesePeriod).
+                replaceAllLiterally(ghost2, japanesePeriod2)
+              s = s.replaceAllLiterally(normalizedProperNoun, normalizedProperNounWithJapanesePeriod)
+            }
+            new NormalizedSentence(s)
           }
         }
     }
