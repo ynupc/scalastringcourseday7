@@ -359,21 +359,21 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 ***
 <h3>1.9　Unicodeバイナリ・プロパティ</h3>
 <table>
-<tr><th>接頭辞"Is"+バイナリ・プロパティ</th><th>例</th><th>説明</th></tr>
-<tr><td>IsAlphabetic</td><td></td><td></td></tr>
-<tr><td>IsIdeographic</td><td></td><td></td></tr>
-<tr><td>IsLetter</td><td></td><td></td></tr>
-<tr><td>IsLowercase</td><td></td><td></td></tr>
-<tr><td>IsUppercase</td><td></td><td></td></tr>
-<tr><td>IsTitlecase</td><td></td><td></td></tr>
-<tr><td>IsPunctuation</td><td></td><td></td></tr>
-<tr><td>IsControl</td><td></td><td></td></tr>
-<tr><td>IsWhite_Space</td><td></td><td></td></tr>
-<tr><td>IsDigit</td><td></td><td></td></tr>
-<tr><td>IsHex_Digit</td><td></td><td></td></tr>
-<tr><td>IsJoin_Control</td><td></td><td></td></tr>
-<tr><td>IsNoncharacter_Code_Point</td><td></td><td></td></tr>
-<tr><td>IsAssigned</td><td></td><td></td></tr>
+<tr><th>接頭辞"Is"+バイナリ・プロパティ</th></tr>
+<tr><td>IsAlphabetic</td></tr>
+<tr><td>IsIdeographic</td></tr>
+<tr><td>IsLetter</td></tr>
+<tr><td>IsLowercase</td></tr>
+<tr><td>IsUppercase</td></tr>
+<tr><td>IsTitlecase</td></tr>
+<tr><td>IsPunctuation</td></tr>
+<tr><td>IsControl</td></tr>
+<tr><td>IsWhite_Space</td></tr>
+<tr><td>IsDigit</td></tr>
+<tr><td>IsHex_Digit</td></tr>
+<tr><td>IsJoin_Control</td></tr>
+<tr><td>IsNoncharacter_Code_Point</td></tr>
+<tr><td>IsAssigned</td></tr>
 </table>
 ***
 <h3>1.10　正規表現による字種のマッチング</h3>
