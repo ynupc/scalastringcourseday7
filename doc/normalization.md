@@ -457,90 +457,220 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <h3>1.7　Unicodeブロック</h3>
 <table>
 <tr><th>Unicodeブロック</th><th>java.lang.Character.UnicodeBlock</th></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
+<tr><td>Aegean Numbers</td><td>AEGEAN_NUMBERS</td></tr>
+<tr><td>Alchemical Symbols</td><td>ALCHEMICAL_SYMBOLS</td></tr>
+<tr><td>Alphabetic Presentation Forms</td><td>ALPHABETIC_PRESENTATION_FORMS</td></tr>
+<tr><td>Ancient Greek Musical Notation</td><td>ANCIENT_GREEK_MUSICAL_NOTATION</td></tr>
+<tr><td>Ancient Greek Numbers</td><td>ANCIENT_GREEK_NUMBERS</td></tr>
+<tr><td>Ancient Symbols</td><td>ANCIENT_SYMBOLS</td></tr>
+<tr><td>Arabic</td><td>ARABIC</td></tr>
+<tr><td>Arabic Presentation Forms-A</td><td>ARABIC_PRESENTATION_FORMS_A</td></tr>
+<tr><td>Arabic Presentation Forms-B</td><td>ARABIC_PRESENTATION_FORMS_B</td></tr>
+<tr><td>Arabic Supplement</td><td>ARABIC_SUPPLEMENT</td></tr>
+<tr><td>Armenian</td><td>ARMENIAN</td></tr>
+<tr><td>Arrows</td><td>ARROWS</td></tr>
+<tr><td>Avestan</td><td>AVESTAN</td></tr>
+<tr><td>Balinese</td><td>BALINESE</td></tr>
+<tr><td>Bamum</td><td>BAMUM</td></tr>
+<tr><td>Bamum Supplement</td><td>BAMUM_SUPPLEMENT</td></tr>
+<tr><td>Basic Latin</td><td>BASIC_LATIN</td></tr>
+<tr><td>Batak</td><td>BATAK</td></tr>
+<tr><td>Bengali</td><td>BENGALI</td></tr>
+<tr><td>Block Elements</td><td>BLOCK_ELEMENTS</td></tr>
+<tr><td>Bopomofo</td><td>BOPOMOFO</td></tr>
+<tr><td>Bopomofo Extended</td><td>BOPOMOFO_EXTENDED</td></tr>
+<tr><td>Box Drawing</td><td>BOX_DRAWING</td></tr>
+<tr><td>Brahmi</td><td>BRAHMI</td></tr>
+<tr><td>Braille Patterns</td><td>BRAILLE_PATTERNS</td></tr>
+<tr><td>Buginese</td><td>BUGINESE</td></tr>
+<tr><td>Buhid</td><td>BUHID</td></tr>
+<tr><td>Byzantine Musical Symbols</td><td>BYZANTINE_MUSICAL_SYMBOLS</td></tr>
+<tr><td>Carian</td><td>CARIAN</td></tr>
+<tr><td>Cham</td><td>CHAM</td></tr>
+<tr><td>Cherokee</td><td>CHEROKEE</td></tr>
+<tr><td>CJK Compatibility</td><td>CJK_COMPATIBILITY</td></tr>
+<tr><td>CJK Compatibility Forms</td><td>CJK_COMPATIBILITY_FORMS</td></tr>
+<tr><td>CJK Compatibility Ideographs</td><td>CJK_COMPATIBILITY_IDEOGRAPHS</td></tr>
+<tr><td>CJK Compatibility Ideographs Supplement</td><td>CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT</td></tr>
+<tr><td>CJK Radicals Supplement</td><td>CJK_RADICALS_SUPPLEMENT</td></tr>
+<tr><td>CJK Strokes</td><td>CJK_STROKES</td></tr>
+<tr><td>CJK Symbols and Punctuation</td><td>CJK_SYMBOLS_AND_PUNCTUATION</td></tr>
+<tr><td>CJK Unified Ideographs</td><td>CJK_UNIFIED_IDEOGRAPHS</td></tr>
+<tr><td>CJK Unified Ideographs Extension A</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A</td></tr>
+<tr><td>CJK Unified Ideographs Extension B</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B</td></tr>
+<tr><td>CJK Unified Ideographs Extension C</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C</td></tr>
+<tr><td>CJK Unified Ideographs Extension D</td><td>CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D</td></tr>
+<tr><td>Combining Diacritical Marks</td><td>COMBINING_DIACRITICAL_MARKS</td></tr>
+<tr><td>Combining Diacritical Marks Supplement</td><td>COMBINING_DIACRITICAL_MARKS_SUPPLEMENT</td></tr>
+<tr><td>Combining Half Marks</td><td>COMBINING_HALF_MARKS</td></tr>
+<tr><td>Combining Diacritical Marks for Symbols</td><td>COMBINING_MARKS_FOR_SYMBOLS</td></tr>
+<tr><td>Common Indic Number Forms</td><td>COMMON_INDIC_NUMBER_FORMS</td></tr>
+<tr><td>Control Pictures</td><td>CONTROL_PICTURES</td></tr>
+<tr><td>Coptic</td><td>COPTIC</td></tr>
+<tr><td>Counting Rod Numerals</td><td>COUNTING_ROD_NUMERALS</td></tr>
+<tr><td>Cuneiform</td><td>CUNEIFORM</td></tr>
+<tr><td>Cuneiform Numbers and Punctuation</td><td>CUNEIFORM_NUMBERS_AND_PUNCTUATION</td></tr>
+<tr><td>Currency Symbols</td><td>CURRENCY_SYMBOLS</td></tr>
+<tr><td>Cypriot Syllabary</td><td>CYPRIOT_SYLLABARY</td></tr>
+<tr><td>Cyrillic</td><td>CYRILLIC</td></tr>
+<tr><td>Cyrillic Extended-A</td><td>CYRILLIC_EXTENDED_A</td></tr>
+<tr><td>Cyrillic Extended-B</td><td>CYRILLIC_EXTENDED_B</td></tr>
+<tr><td>Cyrillic Supplementary</td><td>CYRILLIC_SUPPLEMENTARY</td></tr>
+<tr><td>Deseret</td><td>DESERET</td></tr>
+<tr><td>Devanagari</td><td>DEVANAGARI</td></tr>
+<tr><td>Devanagari Extended</td><td>DEVANAGARI_EXTENDED</td></tr>
+<tr><td>Dingbats</td><td>DINGBATS</td></tr>
+<tr><td>Domino Tiles</td><td>DOMINO_TILES</td></tr>
+<tr><td>Egyptian Hieroglyphs</td><td>EGYPTIAN_HIEROGLYPHS</td></tr>
+<tr><td>Emoticons</td><td>EMOTICONS</td></tr>
+<tr><td>Enclosed Alphanumeric Supplement</td><td>ENCLOSED_ALPHANUMERIC_SUPPLEMENT</td></tr>
+<tr><td>Enclosed Alphanumerics</td><td>ENCLOSED_ALPHANUMERICS</td></tr>
+<tr><td>Enclosed CJK Letters and Months</td><td>ENCLOSED_CJK_LETTERS_AND_MONTHS</td></tr>
+<tr><td>Enclosed Ideographic Supplement</td><td>ENCLOSED_IDEOGRAPHIC_SUPPLEMENT</td></tr>
+<tr><td>Ethiopic</td><td>ETHIOPIC</td></tr>
+<tr><td>Ethiopic Extended</td><td>ETHIOPIC_EXTENDED</td></tr>
+<tr><td>Ethiopic Extended-A</td><td>ETHIOPIC_EXTENDED_A</td></tr>
+<tr><td>Ethiopic Supplement</td><td>ETHIOPIC_SUPPLEMENT</td></tr>
+<tr><td>General Punctuation</td><td>GENERAL_PUNCTUATION</td></tr>
+<tr><td>Geometric Shapes</td><td>GEOMETRIC_SHAPES</td></tr>
+<tr><td>Georgian</td><td>GEORGIAN</td></tr>
+<tr><td>Georgian Supplement</td><td>GEORGIAN_SUPPLEMENT</td></tr>
+<tr><td>Glagolitic</td><td>GLAGOLITIC</td></tr>
+<tr><td>Gothic</td><td>GOTHIC</td></tr>
+<tr><td>Greek and Coptic</td><td>GREEK</td></tr>
+<tr><td>Greek Extended</td><td>GREEK_EXTENDED</td></tr>
+<tr><td>Gujarati</td><td>GUJARATI</td></tr>
+<tr><td>Gurmukhi</td><td>GURMUKHI</td></tr>
+<tr><td>Halfwidth and Fullwidth Forms</td><td>HALFWIDTH_AND_FULLWIDTH_FORMS</td></tr>
+<tr><td>Hangul Compatibility Jamo</td><td>HANGUL_COMPATIBILITY_JAMO</td></tr>
+<tr><td>Hangul Jamo</td><td>HANGUL_JAMO</td></tr>
+<tr><td>Hangul Jamo Extended-A</td><td>HANGUL_JAMO_EXTENDED_A</td></tr>
+<tr><td>Hangul Jamo Extended-B</td><td>HANGUL_JAMO_EXTENDED_B</td></tr>
+<tr><td>Hangul Syllables</td><td>HANGUL_SYLLABLES</td></tr>
+<tr><td>Hanunoo</td><td>HANUNOO</td></tr>
+<tr><td>Hebrew</td><td>HEBREW</td></tr>
+<tr><td>Hiragana</td><td>HIRAGANA</td></tr>
+<tr><td>Ideographic Description Characters</td><td>IDEOGRAPHIC_DESCRIPTION_CHARACTERS</td></tr>
+<tr><td>Imperial Aramaic</td><td>IMPERIAL_ARAMAIC</td></tr>
+<tr><td>Inscriptional Pahlavi</td><td>INSCRIPTIONAL_PAHLAVI</td></tr>
+<tr><td>Inscriptional Parthian</td><td>INSCRIPTIONAL_PARTHIAN</td></tr>
+<tr><td>IPA Extensions</td><td>IPA_EXTENSIONS</td></tr>
+<tr><td>Javanese</td><td>JAVANESE</td></tr>
+<tr><td>Kaithi</td><td>KAITHI</td></tr>
+<tr><td>Kana Supplement</td><td>KANA_SUPPLEMENT</td></tr>
+<tr><td>Kanbun</td><td>KANBUN</td></tr>
+<tr><td>Kangxi Radicals</td><td>KANGXI_RADICALS</td></tr>
+<tr><td>Kannada</td><td>KANNADA</td></tr>
+<tr><td>Katakana</td><td>KATAKANA</td></tr>
+<tr><td>Katakana Phonetic Extensions</td><td>KATAKANA_PHONETIC_EXTENSIONS</td></tr>
+<tr><td>Kayah Li</td><td>KAYAH_LI</td></tr>
+<tr><td>Kharoshthi</td><td>KHAROSHTHI</td></tr>
+<tr><td>Khmer</td><td>KHMER</td></tr>
+<tr><td>Khmer Symbols</td><td>KHMER_SYMBOLS</td></tr>
+<tr><td>Lao</td><td>LAO</td></tr>
+<tr><td>Latin-1 Supplement</td><td>LATIN_1_SUPPLEMENT</td></tr>
+<tr><td>Latin Extended-A</td><td>LATIN_EXTENDED_A</td></tr>
+<tr><td>Latin Extended Additional</td><td>LATIN_EXTENDED_ADDITIONAL</td></tr>
+<tr><td>Latin Extended-B</td><td>LATIN_EXTENDED_B</td></tr>
+<tr><td>Latin Extended-C</td><td>LATIN_EXTENDED_C</td></tr>
+<tr><td>Latin Extended-D</td><td>LATIN_EXTENDED_D</td></tr>
+<tr><td>Lepcha</td><td>LEPCHA</td></tr>
+<tr><td>Letterlike Symbols</td><td>LETTERLIKE_SYMBOLS</td></tr>
+<tr><td>Limbu</td><td>LIMBU</td></tr>
+<tr><td>Linear B Ideograms</td><td>LINEAR_B_IDEOGRAMS</td></tr>
+<tr><td>Linear B Syllabary</td><td>LINEAR_B_SYLLABARY</td></tr>
+<tr><td>Lisu</td><td>LISU</td></tr>
+<tr><td>Lycian</td><td>LYCIAN</td></tr>
+<tr><td>Lydian</td><td>LYDIAN</td></tr>
+<tr><td>Mahjong Tiles</td><td>MAHJONG_TILES</td></tr>
+<tr><td>Malayalam</td><td>MALAYALAM</td></tr>
+<tr><td>Mandaic</td><td>MANDAIC</td></tr>
+<tr><td>Mathematical Alphanumeric Symbols</td><td>MATHEMATICAL_ALPHANUMERIC_SYMBOLS</td></tr>
+<tr><td>Mathematical Operators</td><td>MATHEMATICAL_OPERATORS</td></tr>
+<tr><td>Meetei Mayek</td><td>MEETEI_MAYEK</td></tr>
+<tr><td>Meetei Mayek Extensions</td><td>MEETEI_MAYEK_EXTENSIONS</td></tr>
+<tr><td>Meroitic Cursive</td><td>MEROITIC_CURSIVE</td></tr>
+<tr><td>Meroitic Hieroglyphs</td><td>MEROITIC_HIEROGLYPHS</td></tr>
+<tr><td>Miao</td><td>MIAO</td></tr>
+<tr><td>Miscellaneous Mathematical Symbols-A</td><td>MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A</td></tr>
+<tr><td>Miscellaneous Mathematical Symbols-B</td><td>MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B</td></tr>
+<tr><td>Miscellaneous Symbols</td><td>MISCELLANEOUS_SYMBOLS</td></tr>
+<tr><td>Miscellaneous Symbols and Arrows</td><td>MISCELLANEOUS_SYMBOLS_AND_ARROWS</td></tr>
+<tr><td>Miscellaneous Symbols And Pictographs</td><td>MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS</td></tr>
+<tr><td>Miscellaneous Technical</td><td>MISCELLANEOUS_TECHNICAL</td></tr>
+<tr><td>Modifier Tone Letters</td><td>MODIFIER_TONE_LETTERS</td></tr>
+<tr><td>Mongolian</td><td>MONGOLIAN</td></tr>
+<tr><td>Musical Symbols</td><td>MUSICAL_SYMBOLS</td></tr>
+<tr><td>Myanmar</td><td>MYANMAR</td></tr>
+<tr><td>Myanmar Extended-A</td><td>MYANMAR_EXTENDED_A</td></tr>
+<tr><td>New Tai Lue</td><td>NEW_TAI_LUE</td></tr>
+<tr><td>NKo</td><td>NKO</td></tr>
+<tr><td>Number Forms</td><td>NUMBER_FORMS</td></tr>
+<tr><td>Ogham</td><td>OGHAM</td></tr>
+<tr><td>Ol Chiki</td><td>OL_CHIKI</td></tr>
+<tr><td>Old Italic</td><td>OLD_ITALIC</td></tr>
+<tr><td>Old Persian</td><td>OLD_PERSIAN</td></tr>
+<tr><td>Old South Arabian</td><td>OLD_SOUTH_ARABIAN</td></tr>
+<tr><td>Old Turkic</td><td>OLD_TURKIC</td></tr>
+<tr><td>Optical Character Recognition</td><td>OPTICAL_CHARACTER_RECOGNITION</td></tr>
+<tr><td>Oriya</td><td>ORIYA</td></tr>
+<tr><td>Osmanya</td><td>OSMANYA</td></tr>
+<tr><td>Phags-pa</td><td>PHAGS_PA</td></tr>
+<tr><td>Phaistos Disc</td><td>PHAISTOS_DISC</td></tr>
+<tr><td>Phoenician</td><td>PHOENICIAN</td></tr>
+<tr><td>Phonetic Extensions</td><td>PHONETIC_EXTENSIONS</td></tr>
+<tr><td>Phonetic Extensions Supplement</td><td>PHONETIC_EXTENSIONS_SUPPLEMENT</td></tr>
+<tr><td>Playing Cards</td><td>PLAYING_CARDS</td></tr>
+<tr><td>Private Use Area</td><td>PRIVATE_USE_AREA</td></tr>
+<tr><td>Rejang</td><td>REJANG</td></tr>
+<tr><td>Rumi Numeral Symbols</td><td>RUMI_NUMERAL_SYMBOLS</td></tr>
+<tr><td>Runic</td><td>RUNIC</td></tr>
+<tr><td>Samaritan</td><td>SAMARITAN</td></tr>
+<tr><td>Saurashtra</td><td>SAURASHTRA</td></tr>
+<tr><td>Sharada</td><td>SHARADA</td></tr>
+<tr><td>Shavian</td><td>SHAVIAN</td></tr>
+<tr><td>Sinhala</td><td>SINHALA</td></tr>
+<tr><td>Small Form Variants</td><td>SMALL_FORM_VARIANTS</td></tr>
+<tr><td>Sora Sompeng</td><td>SORA_SOMPENG</td></tr>
+<tr><td>Spacing Modifier Letters</td><td>SPACING_MODIFIER_LETTERS</td></tr>
+<tr><td>Specials</td><td>SPECIALS</td></tr>
+<tr><td>Sundanese</td><td>SUNDANESE</td></tr>
+<tr><td>Sundanese Supplement</td><td>SUNDANESE_SUPPLEMENT</td></tr>
+<tr><td>Superscripts and Subscripts</td><td>SUPERSCRIPTS_AND_SUBSCRIPTS</td></tr>
+<tr><td>Supplemental Arrows-A</td><td>SUPPLEMENTAL_ARROWS_A</td></tr>
+<tr><td>Supplemental Arrows-B</td><td>SUPPLEMENTAL_ARROWS_B</td></tr>
+<tr><td>Supplemental Mathematical Operators</td><td>SUPPLEMENTAL_MATHEMATICAL_OPERATORS</td></tr>
+<tr><td>Supplemental Punctuation</td><td>SUPPLEMENTAL_PUNCTUATION</td></tr>
+<tr><td>Supplementary Private Use Area-A</td><td>SUPPLEMENTARY_PRIVATE_USE_AREA_A</td></tr>
+<tr><td>Supplementary Private Use Area-B</td><td>SUPPLEMENTARY_PRIVATE_USE_AREA_B</td></tr>
+<tr><td>Syloti Nagri</td><td>SYLOTI_NAGRI</td></tr>
+<tr><td>Syriac</td><td>SYRIAC</td></tr>
+<tr><td>Tagalog</td><td>TAGALOG</td></tr>
+<tr><td>Tagbanwa</td><td>TAGBANWA</td></tr>
+<tr><td>Tags</td><td>TAGS</td></tr>
+<tr><td>Tai Le</td><td>TAI_LE</td></tr>
+<tr><td>Tai Tham</td><td>TAI_THAM</td></tr>
+<tr><td>Tai Viet</td><td>TAI_VIET</td></tr>
+<tr><td>Tai Xuan Jing Symbols</td><td>TAI_XUAN_JING_SYMBOLS</td></tr>
+<tr><td>Takri</td><td>TAKRI</td></tr>
+<tr><td>Tamil</td><td>TAMIL</td></tr>
+<tr><td>Telugu</td><td>TELUGU</td></tr>
+<tr><td>Thaana</td><td>THAANA</td></tr>
+<tr><td>Thai</td><td>THAI</td></tr>
+<tr><td>Tibetan</td><td>TIBETAN</td></tr>
+<tr><td>Tifinagh</td><td>TIFINAGH</td></tr>
+<tr><td>Transport And Map Symbols</td><td>TRANSPORT_AND_MAP_SYMBOLS</td></tr>
+<tr><td>Ugaritic</td><td>UGARITIC</td></tr>
+<tr><td>Unified Canadian Aboriginal Syllabics</td><td>UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS</td></tr>
+<tr><td>Unified Canadian Aboriginal Syllabics Extended</td><td>UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED</td></tr>
+<tr><td>Vai</td><td>VAI</td></tr>
+<tr><td>Variation Selectors</td><td>VARIATION_SELECTORS</td></tr>
+<tr><td>Variation Selectors Supplement</td><td>VARIATION_SELECTORS_SUPPLEMENT</td></tr>
+<tr><td>Vedic Extensions</td><td>VEDIC_EXTENSIONS</td></tr>
+<tr><td>Vertical Forms</td><td>VERTICAL_FORMS</td></tr>
+<tr><td>Yi Radicals</td><td>YI_RADICALS</td></tr>
+<tr><td>Yi Syllables</td><td>YI_SYLLABLES</td></tr>
+<tr><td>Yijing Hexagram Symbols</td><td>YIJING_HEXAGRAM_SYMBOLS</td></tr>
 </table>
 ***
 <h3>1.8　Unicodeカテゴリ</h3>
