@@ -695,7 +695,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 一般カテゴリ
 <table>
 <tr><th>カテゴリ</th><th>説明</th></tr>
-<tr><td>C</td><td>その他 (Other)</td></tr>
+<tr><td>C</td><td>制御文字 (Control)</td></tr>
 <tr><td>L</td><td>アルファベット (Letter)</td></tr>
 <tr><td>M</td><td>記号 (Mark)</td></tr>
 <tr><td>N</td><td>数字 (Number)</td></tr>
@@ -707,7 +707,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 サブカテゴリ
 <table>
 <tr><th>カテゴリ</th><th>説明</th><th>java.lang.Character</th></tr>
-<tr><td>Cc</td><td>コントロール文字 (Control)</td><td>CONTROL</td></tr>
+<tr><td>Cc</td><td>制御文字 (Control)</td><td>CONTROL</td></tr>
 <tr><td>Cf</td><td>非可視整形用文字 (Format)</td><td>FORMAT</td></tr>
 <tr><td>Cn</td><td>未定義コードポイント (Unassigned)</td><td>UNASSIGNED</td></tr>
 <tr><td>Co</td><td>私的利用領域 (Private use)</td><td>PRIVATE_USE</td></tr>
