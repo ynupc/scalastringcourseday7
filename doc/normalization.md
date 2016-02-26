@@ -485,6 +485,16 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Vai</td><td>VAI</td></tr>
 <tr><td>Yi</td><td>YI</td></tr>
 </table>
+```scala
+  @Test
+  def testCharacterUnicodeScriptOf(): Unit = {
+    assert(Character.UnicodeScript.of(hiraganaCodePoint) == Character.UnicodeScript.HIRAGANA)
+    assert(Character.UnicodeScript.of(katakanaCodePoint) == Character.UnicodeScript.KATAKANA)
+    assert(Character.UnicodeScript.of(kanjiCodePoint)    == Character.UnicodeScript.HAN)
+    assert(Character.UnicodeScript.of(alphabetCodePoint) == Character.UnicodeScript.LATIN)
+    assert(Character.UnicodeScript.of(symbolCodePoint)   == Character.UnicodeScript.COMMON)
+  }
+```
 ***
 <h3>1.6.2　Unicodeブロック</h3>
 全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。
@@ -708,6 +718,22 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Yi Syllables</td><td>YI_SYLLABLES</td></tr>
 <tr><td>Yijing Hexagram Symbols</td><td>YIJING_HEXAGRAM_SYMBOLS</td></tr>
 </table>
+```scala
+  @Test
+  def testCharacterUnicodeBlockOf(): Unit = {
+    assert(Character.UnicodeBlock.of(hiraganaChar) == Character.UnicodeBlock.HIRAGANA)
+    assert(Character.UnicodeBlock.of(katakanaChar) == Character.UnicodeBlock.KATAKANA)
+    assert(Character.UnicodeBlock.of(kanjiChar)    == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS)
+    assert(Character.UnicodeBlock.of(alphabetChar) == Character.UnicodeBlock.BASIC_LATIN)
+    assert(Character.UnicodeBlock.of(symbolChar)   == Character.UnicodeBlock.BASIC_LATIN)
+
+    assert(Character.UnicodeBlock.of(hiraganaCodePoint) == Character.UnicodeBlock.HIRAGANA)
+    assert(Character.UnicodeBlock.of(katakanaCodePoint) == Character.UnicodeBlock.KATAKANA)
+    assert(Character.UnicodeBlock.of(kanjiCodePoint)    == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS)
+    assert(Character.UnicodeBlock.of(alphabetCodePoint) == Character.UnicodeBlock.BASIC_LATIN)
+    assert(Character.UnicodeBlock.of(symbolCodePoint)   == Character.UnicodeBlock.BASIC_LATIN)
+  }
+```
 ***
 <h3>1.6.3　Unicodeカテゴリ</h3>
 全てのUnicodeコードポイントは一般カテゴリに割り当てられます。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられます。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a><br><br>
