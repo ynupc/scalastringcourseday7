@@ -59,6 +59,8 @@ Optionはnullを書かずにNullPointerExceptionを排除するために使用�
 ```
 ***
 <h3>2.3　正規化文字列（自作）</h3>
+値がnullや空文字ではなく正規化されていることを保証することができます。
+
 NormalizedStringの正規化処理の流れ：
 <ol>
   <li>Unicode正規化前の辞書による文字の正規化</li>
@@ -213,34 +215,7 @@ scalastringcourseday7/
   }
 ```
 ***
-<h3>2.4　正規化文字列オプション（自作）</h3>
-値がnullや空文字ではなく正規化されていることを保証するために、正規化された文字列NormalizedStringのための特別なOptionとしてNormalizedStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedStringOption.scala" target="_blank">NormalizedStringOptionの実装</a>。
-```scala
-  private val wordVariants: String = "スパゲッティ,スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ"
-  private val nullString: String = null
-  private val emptyString: String = ""
-  
-  @Test
-  def testNormalizedStringOption(): Unit = {
-    assert(NormalizedStringOption(NormalizedString(StringOption(wordVariants))).nonEmpty)
-    assert(NormalizedStringOption(NormalizedString(StringOption(nullString))).isEmpty)
-    assert(NormalizedStringOption(NormalizedString(StringOption(emptyString))).isEmpty)
-
-    NormalizedStringOption(NormalizedString(StringOption(wordVariants))) match {
-      case NormalizedStringSome(ns) =>
-        ns.toStringOption match {
-          case StringSome(str) =>
-            assert(str == "スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ,スパゲッティ")
-          case StringNone =>
-            assert(false)
-        }
-      case NormalizedStringNone =>
-        assert(false)
-    }
-  }
-```
-***
-<h3>2.5　句点による文分割と文の正規化（自作）</h3>
+<h3>2.4　句点による文分割と文の正規化（自作）</h3>
 文の定義
 単文・重文・複文ではなく句点区切りによる文
 句点・読点がUnicode正規化ではピリオド・カンマに変換されてしまう。
