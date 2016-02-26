@@ -344,8 +344,119 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </td></tr>
 </table>
 ***
-<h3>1.6　Unicode書体</h3>
+<h3>1.6　Unicodeスクリプト</h3>
+Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Inherited、Common、Unknownのいずれか)に割り当てられます。
 
+<table>
+<tr><th>Unicodeスクリプト</th><th>java.lang.Character.UnicodeScript</th></tr>
+<tr><td>Arabic</td><td>ARABIC</td></tr>
+<tr><td>Armenian</td><td>ARMENIAN</td></tr>
+<tr><td>Avestan</td><td>AVESTAN</td></tr>
+<tr><td>Balinese</td><td>BALINESE</td></tr>
+<tr><td>Bamum</td><td>BAMUM</td></tr>
+<tr><td>Batak</td><td>BATAK</td></tr>
+<tr><td>Bengali</td><td>BENGALI</td></tr>
+<tr><td>Bopomofo</td><td>BOPOMOFO</td></tr>
+<tr><td>Brahmi</td><td>BRAHMI</td></tr>
+<tr><td>Braille</td><td>BRAILLE</td></tr>
+<tr><td>Buginese</td><td>BUGINESE</td></tr>
+<tr><td>Buhid</td><td>BUHID</td></tr>
+<tr><td>Canadian_Aboriginal</td><td>CANADIAN_ABORIGINAL</td></tr>
+<tr><td>Carian</td><td>CARIAN</td></tr>
+<tr><td>Chakma</td><td>CHAKMA</td></tr>
+<tr><td>Cham</td><td>CHAM</td></tr>
+<tr><td>Cherokee</td><td>CHEROKEE</td></tr>
+<tr><td>Common</td><td>COMMON</td></tr>
+<tr><td>Coptic</td><td>COPTIC</td></tr>
+<tr><td>Cuneiform</td><td>CUNEIFORM</td></tr>
+<tr><td>Cypriot</td><td>CYPRIOT</td></tr>
+<tr><td>Cyrillic</td><td>CYRILLIC</td></tr>
+<tr><td>Deseret</td><td>DESERET</td></tr>
+<tr><td>Devanagari</td><td>DEVANAGARI</td></tr>
+<tr><td>Egyptian_Hieroglyphs</td><td>EGYPTIAN_HIEROGLYPHS</td></tr>
+<tr><td>Ethiopic</td><td>ETHIOPIC</td></tr>
+<tr><td>Georgian</td><td>GEORGIAN</td></tr>
+<tr><td>Glagolitic</td><td>GLAGOLITIC</td></tr>
+<tr><td>Gothic</td><td>GOTHIC</td></tr>
+<tr><td>Greek</td><td>GREEK</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+</table>
 ***
 <h3>1.7　Unicodeブロック</h3>
 
@@ -434,10 +545,10 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 <tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
 </table>
 
-<h4>1.10.3　Unicode書体、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
+<h4>1.10.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
-<tr><td>\p{IsLatin}</td><td>Latin 書体文字(書体)</td></tr>
+<tr><td>\p{IsLatin}</td><td>Latin 書体文字(スクリプト)</td></tr>
 <tr><td>\p{InGreek}</td><td>Greek ブロックの文字(ブロック)</td></tr>
 <tr><td>\p{Lu}</td><td>大文字(カテゴリ)</td></tr>
 <tr><td>\p{IsAlphabetic}</td><td>英字(バイナリ・プロパティ)</td></tr>
