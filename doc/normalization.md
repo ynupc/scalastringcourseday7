@@ -927,7 +927,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\p{InCJKCompatibilityForms}</td><td>（Unicodeブロック）</td><td>[, ]</td></tr>
 <tr><td>\p{InCJKCompatibilityIdeographs}</td><td>（Unicodeブロック）</td><td>[U+F900, U+FAFF]</td></tr>
 <tr><td>\p{InCJKCompatibilityIdeographs Supplement}</td><td>（Unicodeブロック）</td><td>[U+2F800, U+2FA1D]</td></tr>
-<tr><td>\p{InCJKRadicals Supplement}</td><td><（Unicodeブロック）/td><td></td></tr>
+<tr><td>\p{InCJKRadicals Supplement}</td><td>（Unicodeブロック）</td><td></td></tr>
 <tr><td>\p{InCJKStrokes}</td><td>（Unicodeブロック）</td><td></td></tr>
 <tr><td>\p{InCJKSymbolsAndPunctuation}</td><td>（Unicodeブロック）</td><td>[U+3000, U+303F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographs}</td><td>（Unicodeブロック）</td><td>[U+4E00, U+9FFF]</td></tr>
