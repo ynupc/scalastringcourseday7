@@ -214,8 +214,10 @@ scalastringcourseday7/
     assert(nsOfU30AC == nsOfU32D5UFF9E)
   }
 ```
-文字列の正規化に関するサンプルコード
+文字列の正規化に関するサンプルコード（単語異表記を代表表記に置換）
 ```scala
+  private val wordVariants: String = "スパゲッティ,スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ"
+  
   @Test
   def testNormalizedString(): Unit = {
     NormalizedString(StringOption(wordVariants)).toStringOption match {
