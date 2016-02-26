@@ -84,6 +84,7 @@ java.lang.CharacterクラスのメソッドgetName、getType、getDirectionality
     assert(Character.getName(symbolCodePoint)   == "PLUS SIGN")
   }
 ```
+***
 <h4>1.4.2　Character.getType</h4>
 Character.getTypeメソッドはCharやコードポイントに対して<a href="#18unicodeカテゴリ">Unicodeカテゴリ</a>を返します。
 ```scala
@@ -177,6 +178,7 @@ Character.getTypeメソッドはCharやコードポイントに対して<a href=
     assert(Character.getType(symbolCodePoint)   == Character.MATH_SYMBOL)
   }
 ```
+***
 <h4>1.4.3　Character.getDirectionality</h4>
 Character.getDirectionalityは文字の方向性（双方向文字タイプ）を取得するために使用します。文字の方向性というのは、例えば、日本語の文字は「左から右に表示する」といった情報のことです。<br>
 rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank">5.7.2 Bidirectional Class Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a>
