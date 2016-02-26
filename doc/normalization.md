@@ -345,6 +345,14 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </table>
 ***
 <h3>1.6　Unicode表の区分け</h3>
+Unicode表の区分けには、Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティがあります。
+<table>
+<tr><th>Unicode表の区分け</th><th>特徴</th></tr>
+<tr><td>Unicodeスクリプト</td><td>全てのUnicodeコードポイントは単一のUnicodeスクリプトに割り当てられます。</td></tr>
+<tr><td>Unicodeブロック</td><td>連続するUnicodeコードポイントの塊。全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。</td></tr>
+<tr><td>Unicodeカテゴリ</td><td></td></tr>
+<tr><td>Unicodeバイナリ・プロパティ</td><td></td></tr>
+</table>
 <h3>1.6.1　Unicodeスクリプト</h3>
 Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Inherited、Common、Unknownのいずれか)に割り当てられます。
 
