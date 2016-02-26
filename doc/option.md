@@ -69,6 +69,7 @@ Optionはnullを書かずにNullPointerExceptionを排除するために使用�
 <h3>2.3　正規化文字列（自作）</h3>
 値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。
 <h4>2.3.1　NormalizedStringの正規化処理の流れ</h4>
+NormalizedStringの正規化処理は次の順序で４段階で実行されます。
 <ol>
   <li>Unicode正規化前の辞書による文字の正規化</li>
   <li>Unicode正規化</li>
@@ -76,6 +77,7 @@ Optionはnullを書かずにNullPointerExceptionを排除するために使用�
   <li>辞書による単語の異表記からの代表表記への置換</li>
 </ol>
 <h4>2.3.2　NormalizedStringを構成するファイル</h4>
+NormalizedStringは辞書ファイルとプログラムファイルから構成されています。それぞれについて含まれているファイルとその説明は次です。
 <ul>
   <li>辞書
     <ul>
@@ -94,6 +96,7 @@ Optionはnullを書かずにNullPointerExceptionを排除するために使用�
     </ul>
   </li>
 </ul>
+NormalizedStringに関する辞書ファイルとプログラムファイルについて、リポジトリ内のディレクトリ構成図は次です。
 ```
 scalastringcourseday7/
  ├ src/
@@ -113,7 +116,7 @@ scalastringcourseday7/
  │　　　　　└ …
  …
  ```
- 辞書の解説
+ <h4>2.3.2　NormalizedStringの辞書ファイルのフォーマット</h4>
  基本的なフォーマットについて、１行ごとに代表表記と異表記リストの紐付けている。
  Unicodeシーケンスが使える。フォントの見た目が似ている文字を人間が識別するため。
  コメントアウトの書き方
