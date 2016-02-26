@@ -685,38 +685,52 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 </table>
 ***
 <h3>1.6.3　Unicodeカテゴリ</h3>
+
+カテゴリ
 <table>
-<tr><th>Unicode仕様の汎用カテゴリ</th><th>java.lang.Character</th></tr>
-<tr><td>Cc</td><td>CONTROL</td></tr>
-<tr><td>Cf</td><td>FORMAT</td></tr>
-<tr><td>Cn</td><td>UNASSIGNED</td></tr>
-<tr><td>Co</td><td>PRIVATE_USE</td></tr>
-<tr><td>Cs</td><td>SURROGATE</td></tr>
-<tr><td>Ll</td><td>LOWERCASE_LETTER</td></tr>
-<tr><td>Lm</td><td>MODIFIER_LETTER</td></tr>
-<tr><td>Lo</td><td>OTHER_LETTER</td></tr>
-<tr><td>Lt</td><td>TITLECASE_LETTER</td></tr>
-<tr><td>Lu</td><td>UPPERCASE_LETTER</td></tr>
-<tr><td>Mc</td><td>COMBINING_SPACING_MARK</td></tr>
-<tr><td>Me</td><td>ENCLOSING_MARK</td></tr>
-<tr><td>Mn</td><td>NON_SPACING_MARK</td></tr>
-<tr><td>Nd</td><td>DECIMAL_DIGIT_NUMBER</td></tr>
-<tr><td>Nl</td><td>LETTER_NUMBER</td></tr>
-<tr><td>No</td><td>OTHER_NUMBER</td></tr>
-<tr><td>Pd</td><td>DASH_PUNCTUATION</td></tr>
-<tr><td>Pc</td><td>CONNECTOR_PUNCTUATION</td></tr>
-<tr><td>Pe</td><td>END_PUNCTUATION</td></tr>
-<tr><td>Pf</td><td>FINAL_QUOTE_PUNCTUATION</td></tr>
-<tr><td>Pi</td><td>INITIAL_QUOTE_PUNCTUATION</td></tr>
-<tr><td>Po</td><td>OTHER_PUNCTUATION</td></tr>
-<tr><td>Ps</td><td>START_PUNCTUATION</td></tr>
-<tr><td>Sc</td><td>CURRENCY_SYMBOL</td></tr>
-<tr><td>Sk</td><td>MODIFIER_SYMBOL</td></tr>
-<tr><td>Sm</td><td>MATH_SYMBOL</td></tr>
-<tr><td>So</td><td>OTHER_SYMBOL</td></tr>
-<tr><td>Zl</td><td>LINE_SEPARATOR</td></tr>
-<tr><td>Zp</td><td>PARAGRAPH_SEPARATOR</td></tr>
-<tr><td>Zs</td><td>SPACE_SEPARATOR</td></tr>
+<tr><th>Unicode仕様の汎用カテゴリ</th><th>説明</th></tr>
+<tr><td>C</td><td>その他 (Other)</td></tr>
+<tr><td>L</td><td>アルファベット (Letter)。※サブカテゴリLl、 Lm、Lo、Lt、Luが含まれる。</td></tr>
+<tr><td>M</td>記号 (Mark)<td></td></tr>
+<tr><td>N</td><td>数字 (Number)</td></tr>
+<tr><td>P</td><td>句読記号 (Punctuation)<td></tr>
+<tr><td>S</td><td>記号 (Symbol)</td></tr>
+<tr><td>Z</td><td>	区切り文字 (Separator)</td></tr>
+</table>
+
+サブカテゴリ
+<table>
+<tr><th>Unicode仕様の汎用カテゴリ</th><th></th><th>java.lang.Character</th></tr>
+<tr><td>Cc</td><td>コントロール文字 (Control)</td><td>CONTROL</td></tr>
+<tr><td>Cf</td><td>非可視整形用文字 (Format)</td><td>FORMAT</td></tr>
+<tr><td>Cn</td><td>未定義コードポイント (Unassigned)</td><td>UNASSIGNED</td></tr>
+<tr><td>Co</td><td>私的利用領域 (Private use)</td><td>PRIVATE_USE</td></tr>
+<tr><td>Cs</td><td>サロゲート (Surrogate)</td><td>SURROGATE</td></tr>
+<tr><td>Ll</td><td>小文字アルファベット (Lower case letter)</td><td>LOWERCASE_LETTER</td></tr>
+<tr><td>Lm</td><td>擬似文字 (Modifier letter)</td><td>MODIFIER_LETTER</td></tr>
+<tr><td>Lo</td><td>その他の文字 (Other letter)</td><td>OTHER_LETTER</td></tr>
+<tr><td>Lt</td><td>タイトル文字 (Title case letter)</td><td>TITLECASE_LETTER</td></tr>
+<tr><td>Lu</td><td>大文字アルファベット (Upper case letter)</td><td>UPPERCASE_LETTER</td></tr>
+<tr><td>Mc</td><td>修飾文字 (Spacing mark)</td><td>COMBINING_SPACING_MARK</td></tr>
+<tr><td>Me</td><td>他の文字を囲むための文字 (Enclosing mark)</td><td>ENCLOSING_MARK</td></tr>
+<tr><td>Mn</td><td>他の文字を修飾するための文字 (Non-spacing mark)</td><td>NON_SPACING_MARK</td></tr>
+<tr><td>Nd</td><td>10 進数字 (Decimal number)</td><td>DECIMAL_DIGIT_NUMBER</td></tr>
+<tr><td>Nl</td><td>数値を表す文字 (Letter number)</td><td>LETTER_NUMBER</td></tr>
+<tr><td>No</td><td>その他の数字 (Other number)</td><td>OTHER_NUMBER</td></tr>
+<tr><td>Pd</td><td>連結用句読記号 (Connector punctuation)</td><td>DASH_PUNCTUATION</td></tr>
+<tr><td>Pc</td><td>ダッシュ (Dash punctuation)</td><td>CONNECTOR_PUNCTUATION</td></tr>
+<tr><td>Pe</td><td>閉じ句読記号 (Close punctuation)</td><td>END_PUNCTUATION</td></tr>
+<tr><td>Pf</td><td>末尾句読記号 (Final punctuation)</td><td>FINAL_QUOTE_PUNCTUATION</td></tr>
+<tr><td>Pi</td><td>先頭句読記号 (Initial punctuation)</td><td>INITIAL_QUOTE_PUNCTUATION</td></tr>
+<tr><td>Po</td><td>その他の句読記号 (Other punctuation)</td><td>OTHER_PUNCTUATION</td></tr>
+<tr><td>Ps</td><td>開き句読記号 (Open punctuation)</td><td>START_PUNCTUATION</td></tr>
+<tr><td>Sc</td><td>通貨記号 (Currency symbol)</td><td>CURRENCY_SYMBOL</td></tr>
+<tr><td>Sk</td><td>合わせ文字 (Modifier symbol)</td><td>MODIFIER_SYMBOL</td></tr>
+<tr><td>Sm</td><td>数学記号 (Mathematical symbol)</td><td>MATH_SYMBOL</td></tr>
+<tr><td>So</td><td>その他の記号 (Other symbol)</td><td>OTHER_SYMBOL</td></tr>
+<tr><td>Zl</td><td>行区切り文字 (Line separator)</td><td>LINE_SEPARATOR</td></tr>
+<tr><td>Zp</td><td>段落区切り文字 (Paragraph separator)</td><td>PARAGRAPH_SEPARATOR</td></tr>
+<tr><td>Zs</td><td>空白文字 (Space separator)</td><td>SPACE_SEPARATOR</td></tr>
 </table>
 <br>
 任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#142charactergettype">Character.getTypeメソッド</a>を使用します。
