@@ -30,6 +30,14 @@ Optionは値があるのかないのかどうかわからない状態を表す�
       case None =>
         assert(false)
     }
+    
+    val wordVariantsOpt: Option[String] = Option(wordVariants)
+    if (wordVariantsOpt.nonEmpty) {
+      assert(wordVariantsOpt.get == wordVariants)
+    }
+
+    val nullStringOpt: Option[String] = Option(nullString)
+    assert(nullStringOpt.getOrElse("ゲッティ") == "ゲッティ")
   }
 ```
 ***
