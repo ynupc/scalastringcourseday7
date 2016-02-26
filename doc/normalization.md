@@ -52,7 +52,7 @@ etc.<br>
 マルチバイト文字のマッチングエラーについては<a href="#コラムマルチバイト文字のマッチングエラー">コラム：マルチバイト文字のマッチングエラー</a>、Shift-JISのダメ文字問題については、<a href="#コラムshift-jisのダメ文字問題">コラム：Shift-JISのダメ文字問題</a>をご参照ください。
 ***
 <h3>1.3　Unicode正規化</h3>
-Unicodeには次の４種類の正規化形式が用意されています。正準等価性・互換等価性がともに正規化される正規化形式KCが言語処理の前処理に使用されます。
+Unicodeには次の４種類の正規化形式が用意されています。正準等価性・互換等価性の両方によって正規化される正規化形式KCが言語処理の前処理に使用されます。
 <ul>
   <li>NFD (Normalization Form Canonical Decomposition, 正規化形式D）<br>文字は正準等価性によって分解されます。</li>
   <li>NFC（Normalization Form Connonical Composition, 正規化形式C）<br>文字は正準等価性によって分解され、
