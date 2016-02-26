@@ -846,18 +846,21 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <h4>1.7.5　日本語の字種のマッチング</h4>
 ひらがな
 <table>
+<tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
 <tr><td>\p{InHiragana}</td><td>ひらがな</td><td>[U+3040, U+309F]</td></tr>
 <tr><td>\p{InKanaSupplement}</td><td>歴史的仮名（衣と江の仮名文字が0x1B000と0x1B001に対応）</td><td>[U+1B000, U+1B0FF]</td></tr>
 </table>
 
 カタカナ
 <table>
+<tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
 <tr><td>\p{InKatakana}</td><td>カタカナ</td><td>[U+30A0, U+30FF]</td></tr>
 <tr><td>\p{InKatakanaPhoneticExtensions}</td><td>アイヌ語などの翻字に使用する小書カタカナ</td><td>[U+31F0, U+31FF]</td></tr>
 </table>
 
 ローマ字
 <table>
+<tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
 <tr><td>\p{Upper}</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
 <tr><td>\p{IsUppercase}</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
 <tr><td>A-Z</td><td>大文字</td><td>[U+0041, U+005A]</td></tr>
@@ -868,6 +871,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 
 アラビア数字
 <table>
+<tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
 <tr><td>\d</td><td>10進数字</td><td>[U+0030, U+0039]</td></tr>
 <tr><td>\p{Digit}</td><td>10進数字</td><td>[U+0030, U+0039]</td></tr>
 <tr><td>\p{IsDigit}</td><td>10進数字</td><td>[U+0030, U+0039]</td></tr>
@@ -876,6 +880,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 
 漢字
 <table>
+<tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
 <tr><td>\p{InCJKUnifiedIdeographs}</td><td></td><td>[U+4E00, U+9FFF]</td></tr>
 <tr><td>\p{InCJKSymbolsAndPunctuation}</td><td></td><td>[U+3000, U+303F]</td></tr>
 <tr><td>\p{InCJKUnifiedIdeographsExtensionA}</td><td></td><td>[U+3400, U+4DBF]</td></tr>
