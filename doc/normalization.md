@@ -65,6 +65,10 @@ Unicodeには次の４種類の正規化形式が用意されています。言�
 <h3>1.4　java.lang.Characterクラスによる文字の字種情報の取得</h3>
 java.lang.CharacterクラスのメソッドgetName、getType、getDirectionalityにより文字の字種情報を取得します。
 <h4>1.4.1　Character.getName</h4>
+Character.getNameメソッドは、コードポイントがunassignedの場合はnull、それ以外は次の結果を返します。
+```scala
+Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ENGLISH);
+```
 ```scala
   private val hiraganaChar: Char = 'か'
   private val katakanaChar: Char = 'カ'
