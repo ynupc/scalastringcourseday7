@@ -170,7 +170,7 @@ etc.<br>
 ```
 <h4>1.4.3　Character.getDirectionality</h4>
 <table>
-<tr><th></th><th></th><th>java.lang.Character</th></tr>
+<tr><th colspan="2">双方向文字タイプ</th><th>java.lang.Character</th></tr>
 <tr><td>AN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_ARABIC_NUMBER</td></tr>
 <tr><td>BN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_BOUNDARY_NEUTRAL</td></tr>
 <tr><td>CS</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_COMMON_NUMBER_SEPARATOR</td></tr>
