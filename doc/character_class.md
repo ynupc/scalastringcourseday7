@@ -1,4 +1,4 @@
-1.　字種
+# 1.　字種
 
 <h3>1.1　java.lang.Characterクラスによる文字の字種情報の取得</h3>
 java.lang.CharacterクラスのメソッドgetName、getType、getDirectionalityにより文字の字種情報を取得します。
