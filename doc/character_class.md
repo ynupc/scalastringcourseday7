@@ -1,304 +1,5 @@
 # 1.　字種
-
-<h3>1.1　java.lang.Characterクラスによる文字の字種情報の取得</h3>
-java.lang.CharacterクラスのメソッドgetName、getType、getDirectionalityにより文字の字種情報を取得します。
-<h4>1.1.1　Character.getName</h4>
-Character.getNameメソッドは、コードポイントがunassignedの場合はnull、それ以外は次の結果を返します。
-```java
-Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ENGLISH);
-```
-```scala
-  private val hiraganaChar: Char = 'か'
-  private val katakanaChar: Char = 'カ'
-  private val alphabetChar: Char = 'C'
-  private val symbolChar:   Char = '+'
-
-  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
-  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
-  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
-  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
-
-  @Test
-  def testCharacterClass(): Unit = {
-    assert(Character.getName(hiraganaCodePoint) == "HIRAGANA LETTER KA")
-    assert(Character.getName(katakanaCodePoint) == "KATAKANA LETTER KA")
-    assert(Character.getName(alphabetCodePoint) == "LATIN CAPITAL LETTER C")
-    assert(Character.getName(symbolCodePoint)   == "PLUS SIGN")
-  }
-```
-***
-<h4>1.1.2　Character.getType</h4>
-Character.getTypeメソッドはCharやコードポイントに対して<a href="#18unicodeカテゴリ">Unicodeカテゴリ</a>を返します。
-```scala
-  private val hiraganaChar: Char = 'か'
-  private val katakanaChar: Char = 'カ'
-  private val alphabetChar: Char = 'C'
-  private val symbolChar:   Char = '+'
-
-  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
-  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
-  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
-  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
-  
-  @Test
-  def testCharacterType(): Unit = {
-    //index order
-    assert( 0 == Character.UNASSIGNED)
-    assert( 1 == Character.UPPERCASE_LETTER)
-    assert( 2 == Character.LOWERCASE_LETTER)
-    assert( 3 == Character.TITLECASE_LETTER)
-    assert( 4 == Character.MODIFIER_LETTER)
-    assert( 5 == Character.OTHER_LETTER)
-    assert( 6 == Character.NON_SPACING_MARK)
-    assert( 7 == Character.ENCLOSING_MARK)
-    assert( 8 == Character.COMBINING_SPACING_MARK)
-    assert( 9 == Character.DECIMAL_DIGIT_NUMBER)
-    assert(10 == Character.LETTER_NUMBER)
-    assert(11 == Character.OTHER_NUMBER)
-    assert(12 == Character.SPACE_SEPARATOR)
-    assert(13 == Character.LINE_SEPARATOR)
-    assert(14 == Character.PARAGRAPH_SEPARATOR)
-    assert(15 == Character.CONTROL)
-    assert(16 == Character.FORMAT)
-    //17?
-    assert(18 == Character.PRIVATE_USE)
-    assert(19 == Character.SURROGATE)
-    assert(20 == Character.DASH_PUNCTUATION)
-    assert(21 == Character.START_PUNCTUATION)
-    assert(22 == Character.END_PUNCTUATION)
-    assert(23 == Character.CONNECTOR_PUNCTUATION)
-    assert(24 == Character.OTHER_PUNCTUATION)
-    assert(25 == Character.MATH_SYMBOL)
-    assert(26 == Character.CURRENCY_SYMBOL)
-    assert(27 == Character.MODIFIER_SYMBOL)
-    assert(28 == Character.OTHER_SYMBOL)
-    assert(29 == Character.INITIAL_QUOTE_PUNCTUATION)
-    assert(30 == Character.FINAL_QUOTE_PUNCTUATION)
-
-    //alphabetical order
-    assert( 8 == Character.COMBINING_SPACING_MARK)
-    assert(23 == Character.CONNECTOR_PUNCTUATION)
-    assert(15 == Character.CONTROL)
-    assert(26 == Character.CURRENCY_SYMBOL)
-    assert(20 == Character.DASH_PUNCTUATION)
-    assert( 9 == Character.DECIMAL_DIGIT_NUMBER)
-    assert( 7 == Character.ENCLOSING_MARK)
-    assert(22 == Character.END_PUNCTUATION)
-    assert(30 == Character.FINAL_QUOTE_PUNCTUATION)
-    assert(16 == Character.FORMAT)
-    assert(29 == Character.INITIAL_QUOTE_PUNCTUATION)
-    assert(10 == Character.LETTER_NUMBER)
-    assert(13 == Character.LINE_SEPARATOR)
-    assert( 2 == Character.LOWERCASE_LETTER)
-    assert(25 == Character.MATH_SYMBOL)
-    assert( 4 == Character.MODIFIER_LETTER)
-    assert(27 == Character.MODIFIER_SYMBOL)
-    assert( 6 == Character.NON_SPACING_MARK)
-    assert( 5 == Character.OTHER_LETTER)
-    assert(11 == Character.OTHER_NUMBER)
-    assert(24 == Character.OTHER_PUNCTUATION)
-    assert(28 == Character.OTHER_SYMBOL)
-    assert(14 == Character.PARAGRAPH_SEPARATOR)
-    assert(18 == Character.PRIVATE_USE)
-    assert(12 == Character.SPACE_SEPARATOR)
-    assert(21 == Character.START_PUNCTUATION)
-    assert(19 == Character.SURROGATE)
-    assert( 3 == Character.TITLECASE_LETTER)
-    assert( 0 == Character.UNASSIGNED)
-    assert( 1 == Character.UPPERCASE_LETTER)
-
-    //Char
-    assert(Character.getType(hiraganaChar) == Character.OTHER_LETTER)
-    assert(Character.getType(katakanaChar) == Character.OTHER_LETTER)
-    assert(Character.getType(alphabetChar) == Character.UPPERCASE_LETTER)
-    assert(Character.getType(symbolChar)   == Character.MATH_SYMBOL)
-
-    //コードポイント
-    assert(Character.getType(hiraganaCodePoint) == Character.OTHER_LETTER)
-    assert(Character.getType(katakanaCodePoint) == Character.OTHER_LETTER)
-    assert(Character.getType(alphabetCodePoint) == Character.UPPERCASE_LETTER)
-    assert(Character.getType(symbolCodePoint)   == Character.MATH_SYMBOL)
-  }
-```
-***
-<h4>1.1.3　Character.getDirectionality</h4>
-Character.getDirectionalityは文字の方向性（双方向文字タイプ）を取得するために使用します。文字の方向性というのは、例えば、日本語の文字は「左から右に表示する」といった情報のことです。<br>
-rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank">5.7.2 Bidirectional Class Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a>
-<table>
-<tr><th colspan="2">双方向文字タイプ</th><th>java.lang.Character</th></tr>
-<tr><td>AN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_ARABIC_NUMBER</td></tr>
-<tr><td>BN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_BOUNDARY_NEUTRAL</td></tr>
-<tr><td>CS</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_COMMON_NUMBER_SEPARATOR</td></tr>
-<tr><td>EN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER</td></tr>
-<tr><td>ES</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR</td></tr>
-<tr><td>ET</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR</td></tr>
-<tr><td>L</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_LEFT_TO_RIGHT</td></tr>
-<tr><td>LRE</td><td>強力な双方向文字タイプ（U+202A）</td><td>DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING</td></tr>
-<tr><td>LRO</td><td>強力な双方向文字タイプ（U+202D）</td><td>DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE</td></tr>
-<tr><td>NSM</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_NONSPACING_MARK</td></tr>
-<tr><td>ON</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_OTHER_NEUTRALS</td></tr>
-<tr><td>B</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_PARAGRAPH_SEPARATOR</td></tr>
-<tr><td>PDF</td><td>弱い双方向文字タイプ（U+202C）</td><td>DIRECTIONALITY_POP_DIRECTIONAL_FORMAT</td></tr>
-<tr><td>R</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT</td></tr>
-<tr><td>AL</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC</td></tr>
-<tr><td>RLE</td><td>強力な双方向文字タイプ（U+202B）</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING</td></tr>
-<tr><td>RLO</td><td>強力な双方向文字タイプ（U+202E）</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE</td></tr>
-<tr><td>S</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_SEGMENT_SEPARATOR</td></tr>
-<tr><td>&nbsp;</td><td>未定義の双方向文字タイプ</td><td>DIRECTIONALITY_UNDEFINED</td></tr>
-<tr><td>WS</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_WHITESPACE</td></tr>
-</table>
-
-```scala
-  private val hiraganaChar: Char = 'か'
-  private val katakanaChar: Char = 'カ'
-  private val alphabetChar: Char = 'C'
-  private val symbolChar:   Char = '+'
-
-  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
-  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
-  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
-  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
-
-  @Test
-  def testCharacterDirectionality(): Unit = {
-    //index order
-    assert((-1: Byte) == Character.DIRECTIONALITY_UNDEFINED)
-    assert(( 0: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert(( 1: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT)
-    assert(( 2: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC)
-    assert(( 3: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER)
-    assert(( 4: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
-    assert(( 5: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR)
-    assert(( 6: Byte) == Character.DIRECTIONALITY_ARABIC_NUMBER)
-    assert(( 7: Byte) == Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR)
-    assert(( 8: Byte) == Character.DIRECTIONALITY_NONSPACING_MARK)
-    assert(( 9: Byte) == Character.DIRECTIONALITY_BOUNDARY_NEUTRAL)
-    assert((10: Byte) == Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR)
-    assert((11: Byte) == Character.DIRECTIONALITY_SEGMENT_SEPARATOR)
-    assert((12: Byte) == Character.DIRECTIONALITY_WHITESPACE)
-    assert((13: Byte) == Character.DIRECTIONALITY_OTHER_NEUTRALS)
-    assert((14: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING)
-    assert((15: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE)
-    assert((16: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING)
-    assert((17: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE)
-    assert((18: Byte) == Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT)
-
-    //alphabetical order
-    assert(( 6: Byte) == Character.DIRECTIONALITY_ARABIC_NUMBER)
-    assert(( 9: Byte) == Character.DIRECTIONALITY_BOUNDARY_NEUTRAL)
-    assert(( 7: Byte) == Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR)
-    assert(( 3: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER)
-    assert(( 4: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
-    assert(( 5: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR)
-    assert(( 0: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert((14: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING)
-    assert((15: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE)
-    assert(( 8: Byte) == Character.DIRECTIONALITY_NONSPACING_MARK)
-    assert((13: Byte) == Character.DIRECTIONALITY_OTHER_NEUTRALS)
-    assert((10: Byte) == Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR)
-    assert((18: Byte) == Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT)
-    assert(( 1: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT)
-    assert(( 2: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC)
-    assert((16: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING)
-    assert((17: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE)
-    assert((11: Byte) == Character.DIRECTIONALITY_SEGMENT_SEPARATOR)
-    assert((-1: Byte) == Character.DIRECTIONALITY_UNDEFINED)
-    assert((12: Byte) == Character.DIRECTIONALITY_WHITESPACE)
-
-    //Char
-    assert(Character.getDirectionality(hiraganaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert(Character.getDirectionality(katakanaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert(Character.getDirectionality(alphabetChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert(Character.getDirectionality(symbolChar)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
-
-    //コードポイント
-    assert(Character.getDirectionality(hiraganaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert(Character.getDirectionality(katakanaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert(Character.getDirectionality(alphabetCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
-    assert(Character.getDirectionality(symbolCodePoint)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
-  }
-```
-
-***
-<h3>1.2　java.lang.Characterクラスによる文字の字種判定</h3>
-Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
-<table>
-<tr><th>java.lang.Characterの字種判定メソッド</th><th>説明</th></tr>
-<tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
-<tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(codePoint)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
-<tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(codePoint)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
-<tr><td>isLetterOrDigit</td><td>Character.isLetterまたはCharacter.isDigit</td></tr>
-<tr><td>isLowerCase</td><td>小文字である。Character.getType(codePoint)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
-<tr><td>isTitleCase</td><td>タイトルケース文字である。Character.getType(codePoint)がTITLECASE_LETTERである。</td></tr>
-<tr><td>isUpperCase</td><td>大文字である。Character.getType(codePoint)がUPPERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Uppercaseを持つ。</td></tr>
-<tr><td>isSpaceChar</td><td>Unicode標準の空白文字である。Character.getType(codePoint)がSPACE_SEPARATOR, LINE_SEPARATOR, PARAGRAPH_SEPARATORのいずれかである。</td></tr>
-<tr><td>isWhiteSpace</td><td>空白文字である。次のいずれかを満たす場合、空白文字とみなされます。
-<ul>
-<li>Unicode の空白文字 (SPACE_SEPARATOR、LINE_SEPARATOR、または PARAGRAPH_SEPARATOR) であるが、改行なしの空白 ('\u00A0'、'\u2007'、'\u202F') ではない。</li>
-<li>'\t' (U+0009 水平タブ) である</li>
-<li>'\n' (U+000A 改行) である。</li>
-<li>'\u000B' (U+000B 垂直タブ) である</li>
-<li>'\f' (U+000C フォームフィード) である。</li>
-<li>'\r' (U+000D 復帰) である。</li>
-<li>'\u001C' (U+001C ファイル区切り文字) である。</li>
-<li>'\u001D' (U+001D グループ区切り文字) である。</li>
-<li>'\u001E' (U+001E レコード区切り文字) である。</li>
-<li>'\u001F' (U+001F 単位区切り文字) である。</li>
-</ul>
-</td></tr>
-<tr><td>isMirrored</td><td>Unicode 仕様に従って、指定された文字 (Unicode コードポイント) をミラー化するかどうかを判定します。テキスト内で右から左に文字が描画される場合、文字のミラー化により、グリフが水平方向にミラー化されます。たとえば、'\u0028' LEFT PARENTHESIS は、セマンティクスでは開き括弧として定義されています。これは、左から右に描画されるテキストでは「(」になり、右から左に描画されるテキストでは「)」になります。</td></tr>
-<tr><td>isISOControl</td><td>参照された文字 (Unicode コードポイント) が ISO 制御文字かどうかを判定します。コードが '\u0000' - '\u001F' の範囲、または '\u007F' - '\u009F' の範囲の場合は、ISO 制御文字と見なされます。</td></tr>
-<tr><td>isIdentifierIgnorable</td><td>指定された文字 (Unicode コードポイント) が、Java 識別子または Unicode 識別子内で無視可能な文字かどうかを判定します。次の Unicode 文字は、Java 識別子や Unicode 識別子内で無視できます。
-<ul><li>空白以外の ISO 制御文字
-<ul>
-<li>'\u0000' - '\u0008'</li>
-<li>'\u000E' - '\u001B'</li>
-<li>'\u007F' - '\u009F'</li>
-</ul></li>
-<li>Character.getType(codePoint)がFORMATであるすべての文字</li>
-</ul>
-</td></tr>
-<tr><td>isUnicodeIdentifierStart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の最初に指定できます。
-<ul>
-<li>Character.isLetter(codePoint) が true を返す。</li>
-<li>Character.getType(codePoint) が LETTER_NUMBER を返す。</li>
-</ul>
-</td></tr>
-<tr><td>isUnicodeIdentifierPart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字以外に使用可能かどうかを判定します。次の文のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の一部に使用できます。
-<ul>
-<li>汎用文字である</li>
-<li>連結句読点文字である ('_' など)</li>
-<li>数字である</li>
-<li>数値汎用文字である (ローマ数字文字など)</li>
-<li>連結マークである</li>
-<li>非スペーシングマークである</li>
-<li>この文字の Character.isIdentifierIgnorable が true を返す。</li>
-</ul>
-</td></tr>
-<tr><td>isJavaIdentifierStart</td><td>
-文字 (Unicode コードポイント) を Java 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Java 識別子の最初に指定できます。
-<ul>
-<li>Character.isLetter(codePoint) が次を返す: true</li>
-<li>Character.getType(codePoint) が次を返す: LETTER_NUMBER</li>
-<li><u>参照される文字が通貨記号である ('$' など)</u></li>
-<li><u>参照文字が連結句読点文字である ('_' など)</u></li>
-</ul>
-</td></tr>
-<tr><td>isJavaIdentifierPart</td><td>文字 (Unicode コードポイント) を Java 識別子の最初の文字以外に使用可能かどうかを判定します。次のどれかに当てはまる場合にだけ、その文字を Java 識別子の一部に指定できます。
-<ul>
-<li>汎用文字である</li>
-<li><u>通貨記号である ('$' など)</u></li>
-<li>連結句読点文字である ('_' など)</li>
-<li>数字である</li>
-<li>数値汎用文字である (ローマ数字文字など)</li>
-<li>連結マークである</li>
-<li>非スペーシングマークである</li>
-<li>文字の Character.isIdentifierIgnorable(codePoint) が true を返す。</li>
-</ul>
-</td></tr>
-</table>
-***
-<h3>1.6　Unicodeコードポイントのグループ分け</h3>
+<h3>1.1　Unicodeコードポイントのグループ分け</h3>
 Unicodeコードポイントのグループ分けには、Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティがあります。
 <table>
 <tr><th>Unicodeコードポイントのグループ分け</th><th>特徴</th></tr>
@@ -314,7 +15,7 @@ rf.<br>
 </td></tr>
 </table>
 ***
-<h3>1.6.1　Unicodeスクリプト</h3>
+<h3>1.1.1　Unicodeスクリプト</h3>
 Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Common、Inherited、Unknownのいずれか)に割り当てられます。
 <table>
 <tr><th>特殊なスクリプト</th><th>説明</th></tr>
@@ -440,7 +141,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
   }
 ```
 ***
-<h3>1.2.2　Unicodeブロック</h3>
+<h3>1.1.2　Unicodeブロック</h3>
 全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。
 各Unicodeブロックの下限と上限のUnicodeコードポイントは「<a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Character Block Property Data File</a>」で確認できます。
 <table>
@@ -679,7 +380,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
   }
 ```
 ***
-<h3>1.2.3　Unicodeカテゴリ</h3>
+<h3>1.1.3　Unicodeカテゴリ</h3>
 全てのUnicodeコードポイントは一般カテゴリに割り当てられます。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられます。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a><br><br>
 一般カテゴリ
 <table>
@@ -731,7 +432,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <br>
 任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#142charactergettype">Character.getTypeメソッド</a>を使用します。
 ***
-<h3>1.6.4　Unicodeバイナリ・プロパティ</h3>
+<h3>1.1.4　Unicodeバイナリ・プロパティ</h3>
 Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうち下記のものがJavaの正規表現で定義されています。
 <table>
 <tr><th>バイナリ・プロパティ</th></tr>
@@ -751,9 +452,307 @@ Unicodeプロパティのうち、バイナリ型で定義されているもの�
 <tr><td>Assigned</td></tr>
 </table>
 ***
-<h3>1.3　正規表現による字種のマッチング</h3>
+<h3>1.2　java.lang.Characterクラスによる文字の字種情報の取得</h3>
+java.lang.CharacterクラスのメソッドgetName、getType、getDirectionalityにより文字の字種情報を取得します。
+<h4>1.2.1　Character.getName</h4>
+Character.getNameメソッドは、コードポイントがunassignedの場合はnull、それ以外は次の結果を返します。
+```java
+Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ENGLISH);
+```
+```scala
+  private val hiraganaChar: Char = 'か'
+  private val katakanaChar: Char = 'カ'
+  private val alphabetChar: Char = 'C'
+  private val symbolChar:   Char = '+'
+
+  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
+  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
+  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
+  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
+
+  @Test
+  def testCharacterClass(): Unit = {
+    assert(Character.getName(hiraganaCodePoint) == "HIRAGANA LETTER KA")
+    assert(Character.getName(katakanaCodePoint) == "KATAKANA LETTER KA")
+    assert(Character.getName(alphabetCodePoint) == "LATIN CAPITAL LETTER C")
+    assert(Character.getName(symbolCodePoint)   == "PLUS SIGN")
+  }
+```
+***
+<h4>1.2.2　Character.getType</h4>
+Character.getTypeメソッドはCharやコードポイントに対して<a href="#18unicodeカテゴリ">Unicodeカテゴリ</a>を返します。
+```scala
+  private val hiraganaChar: Char = 'か'
+  private val katakanaChar: Char = 'カ'
+  private val alphabetChar: Char = 'C'
+  private val symbolChar:   Char = '+'
+
+  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
+  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
+  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
+  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
+  
+  @Test
+  def testCharacterType(): Unit = {
+    //index order
+    assert( 0 == Character.UNASSIGNED)
+    assert( 1 == Character.UPPERCASE_LETTER)
+    assert( 2 == Character.LOWERCASE_LETTER)
+    assert( 3 == Character.TITLECASE_LETTER)
+    assert( 4 == Character.MODIFIER_LETTER)
+    assert( 5 == Character.OTHER_LETTER)
+    assert( 6 == Character.NON_SPACING_MARK)
+    assert( 7 == Character.ENCLOSING_MARK)
+    assert( 8 == Character.COMBINING_SPACING_MARK)
+    assert( 9 == Character.DECIMAL_DIGIT_NUMBER)
+    assert(10 == Character.LETTER_NUMBER)
+    assert(11 == Character.OTHER_NUMBER)
+    assert(12 == Character.SPACE_SEPARATOR)
+    assert(13 == Character.LINE_SEPARATOR)
+    assert(14 == Character.PARAGRAPH_SEPARATOR)
+    assert(15 == Character.CONTROL)
+    assert(16 == Character.FORMAT)
+    //17?
+    assert(18 == Character.PRIVATE_USE)
+    assert(19 == Character.SURROGATE)
+    assert(20 == Character.DASH_PUNCTUATION)
+    assert(21 == Character.START_PUNCTUATION)
+    assert(22 == Character.END_PUNCTUATION)
+    assert(23 == Character.CONNECTOR_PUNCTUATION)
+    assert(24 == Character.OTHER_PUNCTUATION)
+    assert(25 == Character.MATH_SYMBOL)
+    assert(26 == Character.CURRENCY_SYMBOL)
+    assert(27 == Character.MODIFIER_SYMBOL)
+    assert(28 == Character.OTHER_SYMBOL)
+    assert(29 == Character.INITIAL_QUOTE_PUNCTUATION)
+    assert(30 == Character.FINAL_QUOTE_PUNCTUATION)
+
+    //alphabetical order
+    assert( 8 == Character.COMBINING_SPACING_MARK)
+    assert(23 == Character.CONNECTOR_PUNCTUATION)
+    assert(15 == Character.CONTROL)
+    assert(26 == Character.CURRENCY_SYMBOL)
+    assert(20 == Character.DASH_PUNCTUATION)
+    assert( 9 == Character.DECIMAL_DIGIT_NUMBER)
+    assert( 7 == Character.ENCLOSING_MARK)
+    assert(22 == Character.END_PUNCTUATION)
+    assert(30 == Character.FINAL_QUOTE_PUNCTUATION)
+    assert(16 == Character.FORMAT)
+    assert(29 == Character.INITIAL_QUOTE_PUNCTUATION)
+    assert(10 == Character.LETTER_NUMBER)
+    assert(13 == Character.LINE_SEPARATOR)
+    assert( 2 == Character.LOWERCASE_LETTER)
+    assert(25 == Character.MATH_SYMBOL)
+    assert( 4 == Character.MODIFIER_LETTER)
+    assert(27 == Character.MODIFIER_SYMBOL)
+    assert( 6 == Character.NON_SPACING_MARK)
+    assert( 5 == Character.OTHER_LETTER)
+    assert(11 == Character.OTHER_NUMBER)
+    assert(24 == Character.OTHER_PUNCTUATION)
+    assert(28 == Character.OTHER_SYMBOL)
+    assert(14 == Character.PARAGRAPH_SEPARATOR)
+    assert(18 == Character.PRIVATE_USE)
+    assert(12 == Character.SPACE_SEPARATOR)
+    assert(21 == Character.START_PUNCTUATION)
+    assert(19 == Character.SURROGATE)
+    assert( 3 == Character.TITLECASE_LETTER)
+    assert( 0 == Character.UNASSIGNED)
+    assert( 1 == Character.UPPERCASE_LETTER)
+
+    //Char
+    assert(Character.getType(hiraganaChar) == Character.OTHER_LETTER)
+    assert(Character.getType(katakanaChar) == Character.OTHER_LETTER)
+    assert(Character.getType(alphabetChar) == Character.UPPERCASE_LETTER)
+    assert(Character.getType(symbolChar)   == Character.MATH_SYMBOL)
+
+    //コードポイント
+    assert(Character.getType(hiraganaCodePoint) == Character.OTHER_LETTER)
+    assert(Character.getType(katakanaCodePoint) == Character.OTHER_LETTER)
+    assert(Character.getType(alphabetCodePoint) == Character.UPPERCASE_LETTER)
+    assert(Character.getType(symbolCodePoint)   == Character.MATH_SYMBOL)
+  }
+```
+***
+<h4>1.2.3　Character.getDirectionality</h4>
+Character.getDirectionalityは文字の方向性（双方向文字タイプ）を取得するために使用します。文字の方向性というのは、例えば、日本語の文字は「左から右に表示する」といった情報のことです。<br>
+rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank">5.7.2 Bidirectional Class Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a>
+<table>
+<tr><th colspan="2">双方向文字タイプ</th><th>java.lang.Character</th></tr>
+<tr><td>AN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_ARABIC_NUMBER</td></tr>
+<tr><td>BN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_BOUNDARY_NEUTRAL</td></tr>
+<tr><td>CS</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_COMMON_NUMBER_SEPARATOR</td></tr>
+<tr><td>EN</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER</td></tr>
+<tr><td>ES</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR</td></tr>
+<tr><td>ET</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR</td></tr>
+<tr><td>L</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_LEFT_TO_RIGHT</td></tr>
+<tr><td>LRE</td><td>強力な双方向文字タイプ（U+202A）</td><td>DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING</td></tr>
+<tr><td>LRO</td><td>強力な双方向文字タイプ（U+202D）</td><td>DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE</td></tr>
+<tr><td>NSM</td><td>弱い双方向文字タイプ</td><td>DIRECTIONALITY_NONSPACING_MARK</td></tr>
+<tr><td>ON</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_OTHER_NEUTRALS</td></tr>
+<tr><td>B</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_PARAGRAPH_SEPARATOR</td></tr>
+<tr><td>PDF</td><td>弱い双方向文字タイプ（U+202C）</td><td>DIRECTIONALITY_POP_DIRECTIONAL_FORMAT</td></tr>
+<tr><td>R</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT</td></tr>
+<tr><td>AL</td><td>強力な双方向文字タイプ</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC</td></tr>
+<tr><td>RLE</td><td>強力な双方向文字タイプ（U+202B）</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING</td></tr>
+<tr><td>RLO</td><td>強力な双方向文字タイプ（U+202E）</td><td>DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE</td></tr>
+<tr><td>S</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_SEGMENT_SEPARATOR</td></tr>
+<tr><td>&nbsp;</td><td>未定義の双方向文字タイプ</td><td>DIRECTIONALITY_UNDEFINED</td></tr>
+<tr><td>WS</td><td>ニュートラルな双方向文字タイプ</td><td>DIRECTIONALITY_WHITESPACE</td></tr>
+</table>
+
+```scala
+  private val hiraganaChar: Char = 'か'
+  private val katakanaChar: Char = 'カ'
+  private val alphabetChar: Char = 'C'
+  private val symbolChar:   Char = '+'
+
+  private val hiraganaCodePoint: Int = Character.codePointAt(Array[Char](hiraganaChar), 0)
+  private val katakanaCodePoint: Int = Character.codePointAt(Array[Char](katakanaChar), 0)
+  private val alphabetCodePoint: Int = Character.codePointAt(Array[Char](alphabetChar), 0)
+  private val symbolCodePoint:   Int = Character.codePointAt(Array[Char](symbolChar),   0)
+
+  @Test
+  def testCharacterDirectionality(): Unit = {
+    //index order
+    assert((-1: Byte) == Character.DIRECTIONALITY_UNDEFINED)
+    assert(( 0: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(( 1: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT)
+    assert(( 2: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC)
+    assert(( 3: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER)
+    assert(( 4: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+    assert(( 5: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR)
+    assert(( 6: Byte) == Character.DIRECTIONALITY_ARABIC_NUMBER)
+    assert(( 7: Byte) == Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR)
+    assert(( 8: Byte) == Character.DIRECTIONALITY_NONSPACING_MARK)
+    assert(( 9: Byte) == Character.DIRECTIONALITY_BOUNDARY_NEUTRAL)
+    assert((10: Byte) == Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR)
+    assert((11: Byte) == Character.DIRECTIONALITY_SEGMENT_SEPARATOR)
+    assert((12: Byte) == Character.DIRECTIONALITY_WHITESPACE)
+    assert((13: Byte) == Character.DIRECTIONALITY_OTHER_NEUTRALS)
+    assert((14: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING)
+    assert((15: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE)
+    assert((16: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING)
+    assert((17: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE)
+    assert((18: Byte) == Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT)
+
+    //alphabetical order
+    assert(( 6: Byte) == Character.DIRECTIONALITY_ARABIC_NUMBER)
+    assert(( 9: Byte) == Character.DIRECTIONALITY_BOUNDARY_NEUTRAL)
+    assert(( 7: Byte) == Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR)
+    assert(( 3: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER)
+    assert(( 4: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+    assert(( 5: Byte) == Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR)
+    assert(( 0: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert((14: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING)
+    assert((15: Byte) == Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE)
+    assert(( 8: Byte) == Character.DIRECTIONALITY_NONSPACING_MARK)
+    assert((13: Byte) == Character.DIRECTIONALITY_OTHER_NEUTRALS)
+    assert((10: Byte) == Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR)
+    assert((18: Byte) == Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT)
+    assert(( 1: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT)
+    assert(( 2: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC)
+    assert((16: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING)
+    assert((17: Byte) == Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE)
+    assert((11: Byte) == Character.DIRECTIONALITY_SEGMENT_SEPARATOR)
+    assert((-1: Byte) == Character.DIRECTIONALITY_UNDEFINED)
+    assert((12: Byte) == Character.DIRECTIONALITY_WHITESPACE)
+
+    //Char
+    assert(Character.getDirectionality(hiraganaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(katakanaChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(alphabetChar) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(symbolChar)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+
+    //コードポイント
+    assert(Character.getDirectionality(hiraganaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(katakanaCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(alphabetCodePoint) == Character.DIRECTIONALITY_LEFT_TO_RIGHT)
+    assert(Character.getDirectionality(symbolCodePoint)   == Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR)
+  }
+```
+
+***
+<h3>1.3　java.lang.Characterクラスによる文字の字種判定</h3>
+Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
+<table>
+<tr><th>java.lang.Characterの字種判定メソッド</th><th>説明</th></tr>
+<tr><td>isDefined</td><td>Unicodeで定義されている。</td></tr>
+<tr><td>isDigit</td><td><strong>半角数字・全角数字など</strong>の数字である。<br><strong>「〇」以外の漢数字は数字として判定されない。</strong><br>（Character.getType(codePoint)がDECIMAL_DIGIT_NUMBERである。）</td></tr>
+<tr><td>isLetter</td><td>汎用文字である。<br>（Character.getType(codePoint)がUPPERCASE_LETER, LOWERCASE_LETTER, TITLECASE_LETTER, MODIFIER_LETTER, OTHER_LETTERのいずれかである。）</td></tr>
+<tr><td>isLetterOrDigit</td><td>Character.isLetterまたはCharacter.isDigit</td></tr>
+<tr><td>isLowerCase</td><td>小文字である。Character.getType(codePoint)がLOWERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Lowercaseを持つ。</td></tr>
+<tr><td>isTitleCase</td><td>タイトルケース文字である。Character.getType(codePoint)がTITLECASE_LETTERである。</td></tr>
+<tr><td>isUpperCase</td><td>大文字である。Character.getType(codePoint)がUPPERCASE_LETTERであるか、Unicode標準で規定された寄与プロパティOther_Uppercaseを持つ。</td></tr>
+<tr><td>isSpaceChar</td><td>Unicode標準の空白文字である。Character.getType(codePoint)がSPACE_SEPARATOR, LINE_SEPARATOR, PARAGRAPH_SEPARATORのいずれかである。</td></tr>
+<tr><td>isWhiteSpace</td><td>空白文字である。次のいずれかを満たす場合、空白文字とみなされます。
+<ul>
+<li>Unicode の空白文字 (SPACE_SEPARATOR、LINE_SEPARATOR、または PARAGRAPH_SEPARATOR) であるが、改行なしの空白 ('\u00A0'、'\u2007'、'\u202F') ではない。</li>
+<li>'\t' (U+0009 水平タブ) である</li>
+<li>'\n' (U+000A 改行) である。</li>
+<li>'\u000B' (U+000B 垂直タブ) である</li>
+<li>'\f' (U+000C フォームフィード) である。</li>
+<li>'\r' (U+000D 復帰) である。</li>
+<li>'\u001C' (U+001C ファイル区切り文字) である。</li>
+<li>'\u001D' (U+001D グループ区切り文字) である。</li>
+<li>'\u001E' (U+001E レコード区切り文字) である。</li>
+<li>'\u001F' (U+001F 単位区切り文字) である。</li>
+</ul>
+</td></tr>
+<tr><td>isMirrored</td><td>Unicode 仕様に従って、指定された文字 (Unicode コードポイント) をミラー化するかどうかを判定します。テキスト内で右から左に文字が描画される場合、文字のミラー化により、グリフが水平方向にミラー化されます。たとえば、'\u0028' LEFT PARENTHESIS は、セマンティクスでは開き括弧として定義されています。これは、左から右に描画されるテキストでは「(」になり、右から左に描画されるテキストでは「)」になります。</td></tr>
+<tr><td>isISOControl</td><td>参照された文字 (Unicode コードポイント) が ISO 制御文字かどうかを判定します。コードが '\u0000' - '\u001F' の範囲、または '\u007F' - '\u009F' の範囲の場合は、ISO 制御文字と見なされます。</td></tr>
+<tr><td>isIdentifierIgnorable</td><td>指定された文字 (Unicode コードポイント) が、Java 識別子または Unicode 識別子内で無視可能な文字かどうかを判定します。次の Unicode 文字は、Java 識別子や Unicode 識別子内で無視できます。
+<ul><li>空白以外の ISO 制御文字
+<ul>
+<li>'\u0000' - '\u0008'</li>
+<li>'\u000E' - '\u001B'</li>
+<li>'\u007F' - '\u009F'</li>
+</ul></li>
+<li>Character.getType(codePoint)がFORMATであるすべての文字</li>
+</ul>
+</td></tr>
+<tr><td>isUnicodeIdentifierStart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の最初に指定できます。
+<ul>
+<li>Character.isLetter(codePoint) が true を返す。</li>
+<li>Character.getType(codePoint) が LETTER_NUMBER を返す。</li>
+</ul>
+</td></tr>
+<tr><td>isUnicodeIdentifierPart</td><td>指定された文字 (Unicode コードポイント) を Unicode 識別子の最初の文字以外に使用可能かどうかを判定します。次の文のどれかに当てはまる場合にだけ、その文字を Unicode 識別子の一部に使用できます。
+<ul>
+<li>汎用文字である</li>
+<li>連結句読点文字である ('_' など)</li>
+<li>数字である</li>
+<li>数値汎用文字である (ローマ数字文字など)</li>
+<li>連結マークである</li>
+<li>非スペーシングマークである</li>
+<li>この文字の Character.isIdentifierIgnorable が true を返す。</li>
+</ul>
+</td></tr>
+<tr><td>isJavaIdentifierStart</td><td>
+文字 (Unicode コードポイント) を Java 識別子の最初の文字として指定可能かどうかを判定します。次の条件のどれかに当てはまる場合にだけ、その文字を Java 識別子の最初に指定できます。
+<ul>
+<li>Character.isLetter(codePoint) が次を返す: true</li>
+<li>Character.getType(codePoint) が次を返す: LETTER_NUMBER</li>
+<li><u>参照される文字が通貨記号である ('$' など)</u></li>
+<li><u>参照文字が連結句読点文字である ('_' など)</u></li>
+</ul>
+</td></tr>
+<tr><td>isJavaIdentifierPart</td><td>文字 (Unicode コードポイント) を Java 識別子の最初の文字以外に使用可能かどうかを判定します。次のどれかに当てはまる場合にだけ、その文字を Java 識別子の一部に指定できます。
+<ul>
+<li>汎用文字である</li>
+<li><u>通貨記号である ('$' など)</u></li>
+<li>連結句読点文字である ('_' など)</li>
+<li>数字である</li>
+<li>数値汎用文字である (ローマ数字文字など)</li>
+<li>連結マークである</li>
+<li>非スペーシングマークである</li>
+<li>文字の Character.isIdentifierIgnorable(codePoint) が true を返す。</li>
+</ul>
+</td></tr>
+</table>
+***
+<h3>1.4　正規表現による字種のマッチング</h3>
 正規表現では字種に関したマッチングを行うために、POSIX文字クラスや定義済み文字クラス（Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティなど）が用意されています。
-<h4>1.3.1　POSIX文字クラス(US-ASCIIのみ)</h4>
+<h4>1.4.1　POSIX文字クラス(US-ASCIIのみ)</h4>
 POSIX（Portable Operating System Interface）標準に従う文字クラスにすべてのASCII文字を表すASCIIクラスが追加されています。<br>
 rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html" target="_blank">9.3.5 RE Bracket Expression - The Open Group Base Specifications Issue 7 IEEE Std 1003.1™, 2013 Edition</a>
 <table>
@@ -773,7 +772,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
 </table>
 ***
-<h4>1.3.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
+<h4>1.4.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
@@ -782,7 +781,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
 </table>
 ***
-<h4>1.3.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
+<h4>1.4.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接頭辞"Is"をつけることで定義済み文字クラスとして正規表現で記述できます。
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
@@ -795,7 +794,7 @@ Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接
 <tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
 </table>
 ***
-<h4>1.3.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
+<h4>1.4.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
 POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
 <table>
 <tr><th>クラス</th><th colspan="2">マッチ</th></tr>
@@ -820,7 +819,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\W</td><td>非単語文字</td><td>[^\w]</td></tr>
 </table>
 ***
-<h4>1.3.5　日本語の字種のマッチング</h4>
+<h4>1.4.5　日本語の字種のマッチング</h4>
 ひらがな
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
@@ -879,9 +878,9 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
-<h3>1.4　字種の変換</h3>
+<h3>1.5　字種の変換</h3>
 case付きのアルファベットをlower case、title case、upper caseに揃える方法と、ひらがなからカタカナ・カタカナからひらがなに変換する方法について説明します。
-<h4>1.4.1　letter case</h4>
+<h4>1.5.1　letter case</h4>
 letter caseにはlower case、title case、upper caseが存在します。
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
@@ -890,7 +889,7 @@ letter caseにはlower case、title case、upper caseが存在します。
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 ***
-<h4>1.4.2　文字のletter caseの変換</h4>
+<h4>1.5.2　文字のletter caseの変換</h4>
 Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUpperCase、toTitleCase、toLowerCaseメソッドでいずれか一方に揃えます。
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
@@ -932,7 +931,7 @@ Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUp
   }
 ```
 ***
-<h4>1.4.3　文字列のletter caseの変換</h4>
+<h4>1.5.3　文字列のletter caseの変換</h4>
 Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃えます。
 ```scala
   private val locale: Locale = Locale.JAPAN
@@ -952,7 +951,7 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
   }
 ```
 ***
-<h4>1.4.4　カタカナとひらがなの相互変換（自作）</h4>
+<h4>1.5.4　カタカナとひらがなの相互変換（自作）</h4>
 自作のJapaneseCharacterCaseConverterは、カタカナとひらがなのコードポイントの差分を利用してカタカナとひらがなの相互変換を実行します。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
 処理に使用するのNormalizedStringOption、NormalizedString、StringOptionについては次章で説明します。
