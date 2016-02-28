@@ -1,6 +1,8 @@
-<h3>1.4　java.lang.Characterクラスによる文字の字種情報の取得</h3>
+1.　字種
+
+<h3>1.1　java.lang.Characterクラスによる文字の字種情報の取得</h3>
 java.lang.CharacterクラスのメソッドgetName、getType、getDirectionalityにより文字の字種情報を取得します。
-<h4>1.4.1　Character.getName</h4>
+<h4>1.1.1　Character.getName</h4>
 Character.getNameメソッドは、コードポイントがunassignedの場合はnull、それ以外は次の結果を返します。
 ```java
 Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ENGLISH);
@@ -25,7 +27,7 @@ Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Intege
   }
 ```
 ***
-<h4>1.4.2　Character.getType</h4>
+<h4>1.1.2　Character.getType</h4>
 Character.getTypeメソッドはCharやコードポイントに対して<a href="#18unicodeカテゴリ">Unicodeカテゴリ</a>を返します。
 ```scala
   private val hiraganaChar: Char = 'か'
@@ -119,7 +121,7 @@ Character.getTypeメソッドはCharやコードポイントに対して<a href=
   }
 ```
 ***
-<h4>1.4.3　Character.getDirectionality</h4>
+<h4>1.1.3　Character.getDirectionality</h4>
 Character.getDirectionalityは文字の方向性（双方向文字タイプ）を取得するために使用します。文字の方向性というのは、例えば、日本語の文字は「左から右に表示する」といった情報のことです。<br>
 rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank">5.7.2 Bidirectional Class Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a>
 <table>
@@ -218,7 +220,7 @@ rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank"
 ```
 
 ***
-<h3>1.5　java.lang.Characterクラスによる文字の字種判定</h3>
+<h3>1.2　java.lang.Characterクラスによる文字の字種判定</h3>
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
 <tr><th>java.lang.Characterの字種判定メソッド</th><th>説明</th></tr>
@@ -438,7 +440,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
   }
 ```
 ***
-<h3>1.6.2　Unicodeブロック</h3>
+<h3>1.2.2　Unicodeブロック</h3>
 全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。
 各Unicodeブロックの下限と上限のUnicodeコードポイントは「<a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Character Block Property Data File</a>」で確認できます。
 <table>
@@ -677,7 +679,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
   }
 ```
 ***
-<h3>1.6.3　Unicodeカテゴリ</h3>
+<h3>1.2.3　Unicodeカテゴリ</h3>
 全てのUnicodeコードポイントは一般カテゴリに割り当てられます。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられます。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a><br><br>
 一般カテゴリ
 <table>
@@ -749,9 +751,9 @@ Unicodeプロパティのうち、バイナリ型で定義されているもの�
 <tr><td>Assigned</td></tr>
 </table>
 ***
-<h3>1.7　正規表現による字種のマッチング</h3>
+<h3>1.3　正規表現による字種のマッチング</h3>
 正規表現では字種に関したマッチングを行うために、POSIX文字クラスや定義済み文字クラス（Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティなど）が用意されています。
-<h4>1.7.1　POSIX文字クラス(US-ASCIIのみ)</h4>
+<h4>1.3.1　POSIX文字クラス(US-ASCIIのみ)</h4>
 POSIX（Portable Operating System Interface）標準に従う文字クラスにすべてのASCII文字を表すASCIIクラスが追加されています。<br>
 rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html" target="_blank">9.3.5 RE Bracket Expression - The Open Group Base Specifications Issue 7 IEEE Std 1003.1™, 2013 Edition</a>
 <table>
@@ -771,7 +773,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
 </table>
 ***
-<h4>1.7.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
+<h4>1.3.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
@@ -780,7 +782,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
 </table>
 ***
-<h4>1.7.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
+<h4>1.3.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接頭辞"Is"をつけることで定義済み文字クラスとして正規表現で記述できます。
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
@@ -793,7 +795,7 @@ Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接
 <tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
 </table>
 ***
-<h4>1.7.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
+<h4>1.3.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
 POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
 <table>
 <tr><th>クラス</th><th colspan="2">マッチ</th></tr>
@@ -818,7 +820,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\W</td><td>非単語文字</td><td>[^\w]</td></tr>
 </table>
 ***
-<h4>1.7.5　日本語の字種のマッチング</h4>
+<h4>1.3.5　日本語の字種のマッチング</h4>
 ひらがな
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
@@ -877,9 +879,9 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
-<h3>1.8　字種の変換</h3>
+<h3>1.4　字種の変換</h3>
 case付きのアルファベットをlower case、title case、upper caseに揃える方法と、ひらがなからカタカナ・カタカナからひらがなに変換する方法について説明します。
-<h4>1.8.1　letter case</h4>
+<h4>1.4.1　letter case</h4>
 letter caseにはlower case、title case、upper caseが存在します。
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
@@ -888,7 +890,7 @@ letter caseにはlower case、title case、upper caseが存在します。
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 ***
-<h4>1.8.2　文字のletter caseの変換</h4>
+<h4>1.4.2　文字のletter caseの変換</h4>
 Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUpperCase、toTitleCase、toLowerCaseメソッドでいずれか一方に揃えます。
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
@@ -930,7 +932,7 @@ Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUp
   }
 ```
 ***
-<h4>1.8.3　文字列のletter caseの変換</h4>
+<h4>1.4.3　文字列のletter caseの変換</h4>
 Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃えます。
 ```scala
   private val locale: Locale = Locale.JAPAN
@@ -950,7 +952,7 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
   }
 ```
 ***
-<h4>1.8.4　カタカナとひらがなの相互変換（自作）</h4>
+<h4>1.4.4　カタカナとひらがなの相互変換（自作）</h4>
 自作のJapaneseCharacterCaseConverterは、カタカナとひらがなのコードポイントの差分を利用してカタカナとひらがなの相互変換を実行します。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
 処理に使用するのNormalizedStringOption、NormalizedString、StringOptionについては次章で説明します。
