@@ -384,7 +384,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 全てのUnicodeコードポイントは一般カテゴリに割り当てられます。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられます。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a><br><br>
 一般カテゴリ
 <table>
-<tr><th>カテゴリ</th><th>説明</th><th>サブカテゴリ</th></tr>
+<tr><th>Unicodeカテゴリ</th><th>説明</th><th>サブカテゴリ</th></tr>
 <tr><td>C</td><td>その他 (Other)</td><td>Cc | Cf | Cs | Co | Cn</td></tr>
 <tr><td>L</td><td>アルファベット (Letter)</td><td>Lu | Ll | Lt | Lm | Lo</td></tr>
 <tr><td>LC</td><td>case付きアルファベット（Cased Letter）</td><td>Lu | Ll | Lt</td></tr>
@@ -397,7 +397,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 サブカテゴリ
 <table>
-<tr><th>カテゴリ</th><th>説明</th><th>java.lang.Character</th></tr>
+<tr><th>Unicodeカテゴリ</th><th>説明</th><th>java.lang.Character</th></tr>
 <tr><td>Cc</td><td>C0/C1制御文字 (Control）</td><td>CONTROL</td></tr>
 <tr><td>Cf</td><td>非可視整形用文字 (Format)</td><td>FORMAT</td></tr>
 <tr><td>Cn</td><td>未定義コードポイント (Unassigned)</td><td>UNASSIGNED</td></tr>
@@ -435,21 +435,21 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <h3>1.1.4　Unicodeバイナリ・プロパティ</h3>
 Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうち下記のものがJavaの正規表現で定義されています。
 <table>
-<tr><th>バイナリ・プロパティ</th></tr>
-<tr><td>Alphabetic</td></tr>
-<tr><td>Ideographic</td></tr>
-<tr><td>Letter</td></tr>
-<tr><td>Lowercase</td></tr>
-<tr><td>Uppercase</td></tr>
-<tr><td>Titlecase</td></tr>
-<tr><td>Punctuation</td></tr>
-<tr><td>Control</td></tr>
-<tr><td>White_Space</td></tr>
-<tr><td>Digit</td></tr>
-<tr><td>Hex_Digit</td></tr>
-<tr><td>Join_Control</td></tr>
-<tr><td>Noncharacter_Code_Point</td></tr>
-<tr><td>Assigned</td></tr>
+<tr><th>Unicodeバイナリ・プロパティ</th><th>説明</th></tr>
+<tr><td>Alphabetic</td><td>アルファベット</td></tr>
+<tr><td>Ideographic</td><td>漢字</td></tr>
+<tr><td>Letter</td><td>文字</td></tr>
+<tr><td>Lowercase</td><td>lower caseの文字</td></tr>
+<tr><td>Uppercase</td><td>upper caseの文字</td></tr>
+<tr><td>Titlecase</td><td>title caseの文字</td></tr>
+<tr><td>Punctuation</td><td>句読点</td></tr>
+<tr><td>Control</td><td>制御文字</td></tr>
+<tr><td>White_Space</td><td>空白文字</td></tr>
+<tr><td>Digit</td><td>数字</td></tr>
+<tr><td>Hex_Digit</td><td>16進数での数字</td></tr>
+<tr><td>Join_Control</td><td>結合制御文字</td></tr>
+<tr><td>Noncharacter_Code_Point</td><td>文字ではないコードポイント</td></tr>
+<tr><td>Assigned</td><td>割り当てられた文字</td></tr>
 </table>
 ***
 <h3>1.2　java.lang.Characterクラスによる文字の字種情報の取得</h3>
