@@ -437,7 +437,7 @@ Unicodeプロパティのうち、バイナリ型で定義されているもの�
 <table>
 <tr><th>Unicodeバイナリ・プロパティ</th><th>説明</th></tr>
 <tr><td>Alphabetic</td><td>アルファベット</td></tr>
-<tr><td>Ideographic</td><td>漢字</td></tr>
+<tr><td>Ideographic</td><td>表意文字（漢字など）</td></tr>
 <tr><td>Letter</td><td>文字</td></tr>
 <tr><td>Lowercase</td><td>lower caseの文字</td></tr>
 <tr><td>Uppercase</td><td>upper caseの文字</td></tr>
