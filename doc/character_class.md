@@ -823,7 +823,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 ひらがな
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
-<tr><td>\p{InHiragana}</td><td>ひらがな（Unicodeスクリプト）</td><td>[U+3040, U+309F]</td></tr>
+<tr><td>\p{Hiragana}</td><td>ひらがな（Unicodeスクリプト）</td><td>[U+3040, U+309F]</td></tr>
 <tr><td>\p{InHiragana}</td><td>ひらがな（Unicodeブロック）</td><td>[U+3040, U+309F]</td></tr>
 <tr><td>\p{InKanaSupplement}</td><td>歴史的仮名（衣と江の仮名文字が0x1B000と0x1B001に対応）（Unicodeブロック）</td><td>[U+1B000, U+1B0FF]</td></tr>
 </table>
