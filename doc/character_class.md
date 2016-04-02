@@ -751,7 +751,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </table>
 ***
 <h3>1.4　正規表現の字種によるマッチング</h3>
-正規表現では字種に関したマッチングを行うために、POSIX文字クラスや定義済み文字クラス（Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティなど）が用意されています。
+正規表現には字種に関したマッチングを行うために、POSIX文字クラスや定義済み文字クラス（Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティなど）が用意されています。
 <h4>1.4.1　POSIX文字クラス(US-ASCIIのみ)</h4>
 POSIX（Portable Operating System Interface）標準に従う文字クラスにすべてのASCII文字を表すASCIIクラスが追加されています。<br>
 rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html" target="_blank">9.3.5 RE Bracket Expression - The Open Group Base Specifications Issue 7 IEEE Std 1003.1™, 2013 Edition</a>
