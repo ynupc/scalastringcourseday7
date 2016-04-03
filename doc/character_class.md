@@ -1,5 +1,6 @@
 # 1.　字種
 <h3>1.1　Unicodeコードポイントのグループ分け</h3>
+<img src="../image/string_course.002.jpeg" width="500px"><br>
 Unicodeコードポイントのグループ分けには、Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティがあります。
 <table>
 <tr><th>Unicodeコードポイントのグループ分け</th><th>特徴</th></tr>
