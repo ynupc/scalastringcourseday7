@@ -1,7 +1,9 @@
 # 2.　文字の正規化
+<img src="../image/string_course.024.jpeg" width="500px"><br>
 半角カナ文字「ｱ」と全角カナ文字「ア」のように、言語処理で等価に扱いたい文字が存在します。どの文字とどの文字を等価に扱いたいかは厳密にはアプリケーションによって異なりますが、言語処理をする上では、このような等価性は前処理でいずれかの文字に揃えておくとアルゴリズムの複雑さを大幅に減らすことができます。
 この前処理のことを文字の正規化と呼びます。
 <h3>2.1　文字の等価性</h3>
+<img src="../image/string_course.025.jpeg" width="500px"><br>
 文字の等価性には正準等価性と互換等価性があります。
 <h4>2.1.1　正準等価性</h4>
 ダイアクリティカルマークを合成済みの文字「が」＝文字「か」＋合成用ダイアクリティカルマーク「゛」<br>
@@ -29,6 +31,7 @@ etc.<br>
 <a href="https://ja.wikipedia.org/wiki/%E5%85%A8%E8%A7%92%E3%81%A8%E5%8D%8A%E8%A7%92" target="_blank">全角と半角</a>
 ***
 <h3>2.2　EUC-JP/Shift-JISでの正規化</h3>
+<img src="../image/string_course.026.jpeg" width="500px"><br>
 日本語文字をEUC-JPやShift-JISで扱う場合は、文字を全て２バイト文字に揃える正規化方法が一般的なために、ひらがなやカタカナだけでなく英数字も半角文字を全角文字にされます。２バイト文字に揃えておくとバイト数割る２で文字数を計測できます。EUC-JPやShift-JISで２バイト文字揃えによる正規化が一般的によく使用される理由として、EUC-JPやShift-JISがよく使用されていた過去の時代には日本語の文字列処理にPerlが使用されることが多く、PerlのStringがScalaのCharクラスやJavaのchar型のような文字境界を持つオブジェクトのシーケンスという設計にはなっていなかったという背景がある思います。<br>
 <br>
 例：EUC-JPを表す正規表現
@@ -51,6 +54,7 @@ etc.<br>
 マルチバイト文字のマッチングエラーについては<a href="#コラムマルチバイト文字のマッチングエラー">コラム：マルチバイト文字のマッチングエラー</a>、Shift-JISのダメ文字問題については、<a href="#コラムshift-jisのダメ文字問題">コラム：Shift-JISのダメ文字問題</a>をご参照ください。
 ***
 <h3>2.3　Unicode正規化</h3>
+<img src="../image/string_course.027.jpeg" width="500px"><br>
 Unicodeには次の４種類の正規化形式が用意されています。正準等価性・互換等価性の両方によって正規化される正規化形式KCが言語処理の前処理に使用されます。
 <ul>
   <li>NFD (Normalization Form Canonical Decomposition, 正規化形式D）<br>文字は正準等価性によって分解されます。</li>
@@ -62,6 +66,7 @@ Unicodeには次の４種類の正規化形式が用意されています。正�
 </ul>
 ***
 <h3>2.4　オプション</h3>
+<img src="../image/string_course.028.jpeg" width="500px"><br>
 Optionは値があるのかないのかわからない状態を表すものです。値をOptionで包むことで、その値がある（nullではない）場合はSome、ない（nullである）の場合はNoneという状態に移り、Someの場合は値を取り出せるという機構です。nullを記述せずにすむため、NullPointerExceptionを排除に使えます。Optionで包まれた値を取り出す方法は主に３つあります。
 <ol>
   <li>match-case文を利用する方法</li>
@@ -104,6 +109,7 @@ Optionは値があるのかないのかわからない状態を表すもので�
 ```
 ***
 <h3>2.5　文字列オプション（自作）</h3>
+<img src="../image/string_course.029.jpeg" width="500px"><br>
 Optionを使用するとnullを書かずにすむためNullPointerExceptionを排除するために使用できます。文字列処理においてStringはnullだけでなく空文字""も同時に排除したい場合がよくありますが、Optionでは空文字は排除されません。そこで、OptionのようにStringを包むことでnullと空文字を排除するためのStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>。
 ```scala
   @Test
@@ -129,6 +135,7 @@ Optionを使用するとnullを書かずにすむためNullPointerExceptionを�
 ```
 ***
 <h3>2.6　正規化文字列（自作）</h3>
+<img src="../image/string_course.030.jpeg" width="500px"><br>
 値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a>
 <h4>2.6.1　正規化処理の流れ</h4>
 NormalizedStringの正規化処理は次の順序で４段階で実行されます。
@@ -325,6 +332,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 ```
 ***
 <h3>2.7　句点による文分割と文の正規化（自作）</h3>
+<img src="../image/string_course.031.jpeg" width="500px"><br>
 日本語テキストを句点「。」や「．」の区切りによる文（単文・重文・複文の文ではない）に分割し、文を正規化する方法について説明します。単純に日本語テキストを上記のNormalizedStringやUnicode正規化してしまうと、日本語の句点・読点がそれぞれラテン文字のピリオト・カンマに変換されてしまいます。例えば、日本語テキストに小数点のピリオドや数字の桁区切りのカンマなどが混在している場合、正規化後のテキストのピリオドが日本語の句点を意味していたのか小数点のピリオドを意味していたのかわかりづらくなってしまいます。そこで、正規化する際に日本語の句点・読点を一旦退避させて、それらを正規化後に元の位置に戻すような処理を含めた文分割処理を作成しました。「モーニング娘。」のような固有名詞に句点が含まれている場合は正規化処理から退避させることに加え、句点による文分割の処理からも退避させる必要があります。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/proper_noun_with_japanese_period.txt" target="_blank">proper_noun_with_japanese_period.txt</a>に登録した句点を含む固有名詞の句点は文分割処理の前に一時的に幽霊文字に変換し、文分割処理後に元の句点に戻します。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/SentenceParser.scala" target="_blank">SentenceParserの実装</a>。
 ```scala
   @Test
