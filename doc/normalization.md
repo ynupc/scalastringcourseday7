@@ -62,7 +62,7 @@ Unicodeには次の４種類の正規化形式が用意されています。正�
 </ul>
 ***
 <h3>2.4　オプション</h3>
-Optionは値があるのかないのかどうかわからない状態を表すものです。値をOptionで包むことで、その値がある（nullではない）場合はSome、ない（nullである）の場合はNoneという状態に移り、Someの場合は値を取り出せるという機構です。nullを記述せずにNullPointerExceptionを排除するために使えます。Optionで包まれた値を取り出す方法は主に３つあります。
+Optionは値があるのかないのかわからない状態を表すものです。値をOptionで包むことで、その値がある（nullではない）場合はSome、ない（nullである）の場合はNoneという状態に移り、Someの場合は値を取り出せるという機構です。nullを記述せずにNullPointerExceptionを排除するために使えます。Optionで包まれた値を取り出す方法は主に３つあります。
 <ol>
   <li>match-case文を利用する方法</li>
   <li>isEmpty/nonEmptyでNoneを排除後に、getで値を取り出す方法</li>
