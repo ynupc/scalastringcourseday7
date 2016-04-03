@@ -1,6 +1,6 @@
-# Day 7 文字の正規化とオプション
+# Day 7 字種と文字の正規化
 <img src="image/string_course.001.jpeg" width="500px"><br>
-今日は、文字の正規化とオプションについて紹介したいと思います。  
+今日は、字種と文字の正規化について紹介したいと思います。  
 <h2>学習方法</h2>
 <a href="http://ynupc.github.io/course/scalastringcourse/index.html" target="_blank">Scalaの文字列処理</a>
 <h2><a href="SUMMARY.md">目次（読み物）</a></h2>
