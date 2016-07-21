@@ -1,5 +1,3 @@
-package day7
-
 import java.util.Locale
 
 import org.junit.Test
