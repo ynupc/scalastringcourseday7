@@ -2,6 +2,8 @@ package text
 
 import java.nio.file.Paths
 
+import util.Config
+
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
 
@@ -16,7 +18,6 @@ object SentenceParser {
   private final val japanesePeriod2: String = "．"
   private final val japaneseComma: String  = "、"
 
-  private final val basePath: String = "../../src/test/resources/"
   private final val properNounsWithJapanesePeriod: Seq[String] = initialize()
   private final val ghost: String = "妛"
   private final val ghost2: String = "彁"
@@ -26,7 +27,7 @@ object SentenceParser {
 
   private def initialize(): Seq[String] = {
     Source.fromFile(
-      Paths.get(basePath, "proper_noun_with_japanese_period.txt").toFile
+      Paths.get(Config.resourcesDir, "proper_noun_with_japanese_period.txt").toAbsolutePath.toFile
     ).getLines().toSeq.sortWith((a, b) => a.length > b.length)
   }
 
