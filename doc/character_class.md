@@ -898,7 +898,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <h3>1.5　日本語フォント対応で使われる漢字（自作）</h3>
 <table>
 <tr>
-<th>メソッド</th><th>説明</th>
+<th>変数・メソッド</th><th>説明</th>
 </tr>
 <tr>
 <td>regex</td><td>正規表現を返す。</td>
