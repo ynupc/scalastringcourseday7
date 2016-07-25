@@ -895,10 +895,50 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
-<h3>1.5　字種の変換</h3>
+<h3>1.5　日本語フォント対応で使われる漢字集合</h3>
+<table>
+<tr>
+<th>漢字集合</th><th>クラス</th>
+</tr>
+<tr>
+<td>常用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JoyoKanjiCharset.scala">JoyoKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>教育漢字（小学１〜６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchoolKanjiCharset.scala">PrimarySchoolKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>教育漢字（小学１年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool1stGradeKanjiCharset.scala">PrimarySchool1stGradeKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>教育漢字（小学２年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool2ndGradeKanjiCharset.scala">PrimarySchool2ndGradeKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>教育漢字（小学３年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool3rdGradeKanjiCharset.scala">PrimarySchool3rdGradeKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>教育漢字（小学４年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool4thGradeKanjiCharset.scala">PrimarySchool4thGradeKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>教育漢字（小学５年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool5thGradeKanjiCharset.scala">PrimarySchool5thGradeKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>教育漢字（小学６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool6thGradeKanjiCharset.scala">PrimarySchool6thGradeKanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>JIS第一水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1KanjiCharset.scala">JISLevel1KanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>JIS第二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel2KanjiCharset.scala">JISLevel2KanjiCharset.scala</a></td>
+</tr>
+<tr>
+<td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharset.scala">JISLevel1Plus2KanjiCharset.scala</a></td>
+</tr>
+</table>
+***
+<h3>1.6　字種の変換</h3>
 <img src="../image/string_course.019.jpeg" width="500px"><br>
 case付きのアルファベットをlower case、title case、upper caseに揃える方法と、ひらがなからカタカナ・カタカナからひらがなに変換する方法について説明します。
-<h4>1.5.1　letter case</h4>
+<h4>1.6.1　letter case</h4>
 <img src="../image/string_course.020.jpeg" width="500px"><br>
 letter caseにはlower case、title case、upper caseが存在します。
 <table>
@@ -908,7 +948,7 @@ letter caseにはlower case、title case、upper caseが存在します。
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 ***
-<h4>1.5.2　文字のletter caseの変換</h4>
+<h4>1.6.2　文字のletter caseの変換</h4>
 <img src="../image/string_course.021.jpeg" width="500px"><br>
 Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUpperCase、toTitleCase、toLowerCaseメソッドでいずれか一方に揃えます。
 ```scala
@@ -951,7 +991,7 @@ Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUp
   }
 ```
 ***
-<h4>1.5.3　文字列のletter caseの変換</h4>
+<h4>1.6.3　文字列のletter caseの変換</h4>
 <img src="../image/string_course.022.jpeg" width="500px"><br>
 Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃えます。
 ```scala
@@ -972,7 +1012,7 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
   }
 ```
 ***
-<h4>1.5.4　ひらがなとカタカナの相互変換（自作）</h4>
+<h4>1.6.4　ひらがなとカタカナの相互変換（自作）</h4>
 <img src="../image/string_course.023.jpeg" width="500px"><br>
 自作のJapaneseCharacterCaseConverterは、ひらがなとカタカナのコードポイントの差分を利用してひらがなとカタカナの相互変換を実行します。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
