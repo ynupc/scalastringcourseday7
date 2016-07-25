@@ -912,9 +912,6 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr>
 <td>notDefined</td><td>isDefinedの否定を返す。</td>
 </tr>
-<tr>
-<td></td><td></td>
-</tr>
 </table>
 <table>
 <tr>
