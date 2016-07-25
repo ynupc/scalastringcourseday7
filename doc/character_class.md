@@ -901,37 +901,37 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <th>漢字集合</th><th>クラス</th>
 </tr>
 <tr>
-<td>常用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JoyoKanjiCharset.scala">JoyoKanjiCharset.scala</a></td>
+<td>常用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JoyoKanjiCharacter.scala">JoyoKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学１〜６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchoolKanjiCharset.scala">PrimarySchoolKanjiCharset.scala</a></td>
+<td>教育漢字（小学１〜６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchoolKanjiCharacter.scala">PrimarySchoolKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学１年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool1stGradeKanjiCharset.scala">PrimarySchool1stGradeKanjiCharset.scala</a></td>
+<td>教育漢字（小学１年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool1stGradeKanjiCharacter.scala">PrimarySchool1stGradeKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学２年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool2ndGradeKanjiCharset.scala">PrimarySchool2ndGradeKanjiCharset.scala</a></td>
+<td>教育漢字（小学２年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool2ndGradeKanjiCharacter.scala">PrimarySchool2ndGradeKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学３年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool3rdGradeKanjiCharset.scala">PrimarySchool3rdGradeKanjiCharset.scala</a></td>
+<td>教育漢字（小学３年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool3rdGradeKanjiCharacter.scala">PrimarySchool3rdGradeKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学４年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool4thGradeKanjiCharset.scala">PrimarySchool4thGradeKanjiCharset.scala</a></td>
+<td>教育漢字（小学４年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool4thGradeKanjiCharacter.scala">PrimarySchool4thGradeKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学５年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool5thGradeKanjiCharset.scala">PrimarySchool5thGradeKanjiCharset.scala</a></td>
+<td>教育漢字（小学５年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool5thGradeKanjiCharacter.scala">PrimarySchool5thGradeKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool6thGradeKanjiCharset.scala">PrimarySchool6thGradeKanjiCharset.scala</a></td>
+<td>教育漢字（小学６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool6thGradeKanjiCharacter.scala">PrimarySchool6thGradeKanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>JIS第一水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1KanjiCharset.scala">JISLevel1KanjiCharset.scala</a></td>
+<td>JIS第一水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1KanjiCharacter.scala">JISLevel1KanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>JIS第二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel2KanjiCharset.scala">JISLevel2KanjiCharset.scala</a></td>
+<td>JIS第二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel2KanjiCharacter.scala">JISLevel2KanjiCharacter.scala</a></td>
 </tr>
 <tr>
-<td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharset.scala">JISLevel1Plus2KanjiCharset.scala</a></td>
+<td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharacter.scala">JISLevel1Plus2KanjiCharacter.scala</a></td>
 </tr>
 <tr>
 <td>JIS第三水準</td><td>未実装</td>
