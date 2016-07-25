@@ -6,4 +6,4 @@ package text
   */
 object CharacterNormalizerBeforeUnicodeNormalization
   extends DictionaryBasedNormalizer(
-    StringOption("character_dic_before_unicode_normalization.yml"))
+    StringOption("normalizer/character_dic_before_unicode_normalization.yml"))

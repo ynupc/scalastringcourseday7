@@ -27,7 +27,7 @@ object SentenceParser {
 
   private def initialize(): Seq[String] = {
     Source.fromFile(
-      Paths.get(Config.resourcesDir, "proper_noun_with_japanese_period.txt").toAbsolutePath.toFile
+      Paths.get(Config.resourcesDir, "normalizer", "proper_noun_with_japanese_period.txt").toAbsolutePath.toFile
     ).getLines().toSeq.sortWith((a, b) => a.length > b.length)
   }
 

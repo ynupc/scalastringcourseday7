@@ -31,7 +31,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
     val dictionaryName: String = dictionaryNameOpt.get
     val map: mutable.Map[String, List[String]] = mutable.Map[String, List[String]]()
     val buffer: ListBuffer[(String, String)] = ListBuffer[(String, String)]()
-    val filePath: Path = Paths.get(Config.resourcesDir, dictionaryName).toAbsolutePath
+    val filePath: Path = Paths.get(Config.resourcesDir, "normalizer", dictionaryName).toAbsolutePath
     val lines: Iterator[String] = ascii2native(filePath).toIterator
     while (lines.hasNext) {
       val line: String = lines.next.trim
