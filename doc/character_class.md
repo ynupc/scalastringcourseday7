@@ -895,7 +895,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
-<h3>1.5　主に日本語フォントで用いられる漢字の定義とマッチング（自作）</h3>
+<h4>1.4.6　主に日本語フォントで用いられる漢字の定義とマッチング（自作）</h4>
 <table>
 <tr>
 <th>変数・メソッド</th><th>説明</th>
@@ -974,10 +974,10 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
   }
 ```
 ***
-<h3>1.6　字種の変換</h3>
+<h3>1.5　字種の変換</h3>
 <img src="../image/string_course.019.jpeg" width="500px"><br>
 case付きのアルファベットをlower case、title case、upper caseに揃える方法と、ひらがなからカタカナ・カタカナからひらがなに変換する方法について説明します。
-<h4>1.6.1　letter case</h4>
+<h4>1.5.1　letter case</h4>
 <img src="../image/string_course.020.jpeg" width="500px"><br>
 letter caseにはlower case、title case、upper caseが存在します。
 <table>
@@ -987,7 +987,7 @@ letter caseにはlower case、title case、upper caseが存在します。
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
 ***
-<h4>1.6.2　文字のletter caseの変換</h4>
+<h4>1.5.2　文字のletter caseの変換</h4>
 <img src="../image/string_course.021.jpeg" width="500px"><br>
 Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUpperCase、toTitleCase、toLowerCaseメソッドでいずれか一方に揃えます。
 ```scala
@@ -1030,7 +1030,7 @@ Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUp
   }
 ```
 ***
-<h4>1.6.3　文字列のletter caseの変換</h4>
+<h4>1.5.3　文字列のletter caseの変換</h4>
 <img src="../image/string_course.022.jpeg" width="500px"><br>
 Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃えます。
 ```scala
@@ -1051,7 +1051,7 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
   }
 ```
 ***
-<h4>1.6.4　ひらがなとカタカナの相互変換（自作）</h4>
+<h4>1.5.4　ひらがなとカタカナの相互変換（自作）</h4>
 <img src="../image/string_course.023.jpeg" width="500px"><br>
 自作のJapaneseCharacterCaseConverterは、ひらがなとカタカナのコードポイントの差分を利用してひらがなとカタカナの相互変換を実行します。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/normalizer/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
