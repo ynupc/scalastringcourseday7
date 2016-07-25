@@ -6,11 +6,11 @@ package text.kanji
   */
 object PrimarySchoolKanjiCharacter extends KanjiCharacter {
   override val kanji: Seq[String] = {
-    PrimarySchool1StGradeKanjiCharacter.kanji ++
-    PrimarySchool2NdGradeKanjiCharacter.kanji ++
-    PrimarySchool3RdGradeKanjiCharacter.kanji ++
-    PrimarySchool4ThGradeKanjiCharacter.kanji ++
-    PrimarySchool5ThGradeKanjiCharacter.kanji ++
-    PrimarySchool6ThGradeKanjiCharacter.kanji
+    PrimarySchool1stGradeKanjiCharacter.kanji ++
+    PrimarySchool2ndGradeKanjiCharacter.kanji ++
+    PrimarySchool3rdGradeKanjiCharacter.kanji ++
+    PrimarySchool4thGradeKanjiCharacter.kanji ++
+    PrimarySchool5thGradeKanjiCharacter.kanji ++
+    PrimarySchool6thGradeKanjiCharacter.kanji
   }
 }
