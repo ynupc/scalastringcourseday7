@@ -169,22 +169,22 @@ NormalizedStringに関する辞書ファイルとプログラムファイルに�
 ```
 scalastringcourseday7/
  ├ src/
- │　└ main/
- │     ├ resources/
- │　　　│    ├ normalizer/
- │　　　│    …  ├ character_dic_after_unicode_normalization.yml
- │　　　│        ├ character_dic_before_unicode_normalization.yml
- │　　　│        └ word_expression_dic.yml
- │　　　└ scala/
+ │  └ main/
+ │    ├ resources/
+ │    │   ├ normalizer/
+ │    │   …   ├ character_dic_after_unicode_normalization.yml
+ │    │       ├ character_dic_before_unicode_normalization.yml
+ │    │       └ word_expression_dic.yml
+ │    └ scala/
  │        ├ text/
- │　　　　　│    ├ normalizer
- │　　　　　│    …　├ CharacterNormalizerAfterUnicodeNormalization.scala
- │　　　　　│    　　├ CharacterNormalizerBeforeUnicodeNormalization.scala
- │　　　　　│    　　├ DictionaryBasedNormalizer.scala
- │　　　　　│    　　├ NormalizedString.scala
- │　　　　　│    　　├ WordExpressionNormalizer.scala
- │　　　　　│    　　└ …
- │　　　　　└ …
+ │        │   ├ normalizer
+ │        │   …   ├ CharacterNormalizerAfterUnicodeNormalization.scala
+ │        │       ├ CharacterNormalizerBeforeUnicodeNormalization.scala
+ │        │       ├ DictionaryBasedNormalizer.scala
+ │        │       ├ NormalizedString.scala
+ │        │       ├ WordExpressionNormalizer.scala
+ │        │       └ …
+ │        └ …
  …
  ```
  <h4>2.6.3　辞書ファイルのフォーマット</h4>
