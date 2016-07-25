@@ -895,7 +895,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
-<h3>1.5　日本語フォント対応で使われる漢字（自作）</h3>
+<h3>1.5　主に日本語フォントで用いられる漢字の定義（自作）</h3>
 <table>
 <tr>
 <th>変数・メソッド</th><th>説明</th>
