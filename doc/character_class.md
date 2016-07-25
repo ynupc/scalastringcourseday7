@@ -895,7 +895,27 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
 ***
-<h3>1.5　日本語フォント対応で使われる漢字集合</h3>
+<h3>1.5　日本語フォント対応で使われる漢字（自作）</h3>
+<table>
+<tr>
+<th>メソッド</th><th>説明</th>
+</tr>
+<tr>
+<td>regex</td><td>正規表現を返す。</td>
+</tr>
+<tr>
+<td>pattern</td><td>Patternクラスを返す。</td>
+</tr>
+<tr>
+<td>isDefined</td><td>文字（Charかコードポイント）を与えると漢字として定義されているかを返す。</td>
+</tr>
+<tr>
+<td>notDefined</td><td>isDefinedの否定を返す。</td>
+</tr>
+<tr>
+<td></td><td></td>
+</tr>
+</table>
 <table>
 <tr>
 <th>漢字集合</th><th>クラス</th>
@@ -949,6 +969,13 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>人名用漢字</td><td>未実装</td>
 </tr>
 </table>
+```scala
+  @Test
+  def testKanji(): Unit = {
+    assert(JISLevel1Plus2KanjiCharacter.isDefined(kanjiChar))
+    assert(JISLevel1Plus2KanjiCharacter.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
+  }
+```
 ***
 <h3>1.6　字種の変換</h3>
 <img src="../image/string_course.019.jpeg" width="500px"><br>
