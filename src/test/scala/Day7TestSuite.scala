@@ -2,7 +2,7 @@ import java.util.Locale
 
 import org.junit.Test
 import org.scalatest.junit.AssertionsForJUnit
-import text.kanji.PrimarySchoolKanjiCharacter$
+import text.kanji.JISLevel1Plus2KanjiCharacter
 import text.normalizer._
 
 /**
@@ -213,8 +213,8 @@ class Day7TestSuite extends AssertionsForJUnit {
 
   @Test
   def testKanji(): Unit = {
-    assert(PrimarySchoolKanjiCharacter$.isDefined(kanjiChar))
-    assert(PrimarySchoolKanjiCharacter$.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
+    assert(JISLevel1Plus2KanjiCharacter.isDefined(kanjiChar))
+    assert(JISLevel1Plus2KanjiCharacter.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
   }
 
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
