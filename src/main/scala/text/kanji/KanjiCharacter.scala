@@ -13,7 +13,7 @@ import scala.io.Source
   * @author ynupc
   *         Created on 2016/07/26
   */
-trait KanjiCharset {
+trait KanjiCharacter {
   val kanji: Seq[String]
 
   lazy val regex: String = {
