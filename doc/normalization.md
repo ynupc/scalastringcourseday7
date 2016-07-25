@@ -169,19 +169,21 @@ NormalizedStringに関する辞書ファイルとプログラムファイルに�
 ```
 scalastringcourseday7/
  ├ src/
- │　└ test/
+ │　└ main/
  │     ├ resources/
- │　　　│    ├ character_dic_after_unicode_normalization.yml
- │　　　│    ├ character_dic_before_unicode_normalization.yml
- │　　　│    └ word_expression_dic.yml
+ │　　　│    ├ normalizer/
+ │　　　│    …  ├ character_dic_after_unicode_normalization.yml
+ │　　　│        ├ character_dic_before_unicode_normalization.yml
+ │　　　│        └ word_expression_dic.yml
  │　　　└ scala/
  │        ├ text/
- │　　　　　│    ├ CharacterNormalizerAfterUnicodeNormalization.scala
- │　　　　　│    ├ CharacterNormalizerBeforeUnicodeNormalization.scala
- │　　　　　│    ├ DictionaryBasedNormalizer.scala
- │　　　　　│    ├ NormalizedString.scala
- │　　　　　│    ├ WordExpressionNormalizer.scala
- │　　　　　│    └ …
+ │　　　　　│    ├ normalizer
+ │　　　　　│    …　├ CharacterNormalizerAfterUnicodeNormalization.scala
+ │　　　　　│    　　├ CharacterNormalizerBeforeUnicodeNormalization.scala
+ │　　　　　│    　　├ DictionaryBasedNormalizer.scala
+ │　　　　　│    　　├ NormalizedString.scala
+ │　　　　　│    　　├ WordExpressionNormalizer.scala
+ │　　　　　│    　　└ …
  │　　　　　└ …
  …
  ```
@@ -192,19 +194,19 @@ scalastringcourseday7/
  G:[E,F]
  ```
  Unicodeシーケンスで記述することができます。これにより、見た目が似ている文字もコードポイントにより明示的に区別することができます。「#」記号を使うことでコメントアウトすることができます。これにより、例えば、Unicodeシーケンンスで記述した文字をnativeな文字でコメントアウト内に記述したり、置換規則（行）の使用をコメントアウトにより管理することができます。現状では「#」記号と「:」記号を置換する・される文字・文字列内で記述することができません。<br>
-「Unicode正規化後の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/character_dic_before_unicode_normalization.yml" target="_blank">character_dic_before_unicode_normalization.yml</a>）
+「Unicode正規化後の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/character_dic_before_unicode_normalization.yml" target="_blank">character_dic_before_unicode_normalization.yml</a>）
  ```
  \uFF5E:[\u301C,\u007E]#波線記号の統一,～,〜,~
 #\u309B:[\u3099]#濁点の統一,゛,゙
  ```
 次のように「""」を使用することで、マッチする文字・文字列を削除（空文字に置換）することができます。<br>
-「Unicode正規化前の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/character_dic_after_unicode_normalization.yml" target="_blank">character_dic_after_unicode_normalization.yml</a>）
+「Unicode正規化前の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/character_dic_after_unicode_normalization.yml" target="_blank">character_dic_after_unicode_normalization.yml</a>）
  ```
 "":[\u003D,\uFF1D]#イコール記号の削除,=,＝
 "":[\u30FB]#中黒の削除,・
  ```
 word_expression_dic.ymlでは、次のように異表記を代表表記に変換できます。この辞書ファイルのみ、置き換えたい文字列を正規表現で記述することができます。同時に正規表現で記述できるためエスケープシーケンスに注意が必要です。<br>
-「辞書による単語の異表記からの代表表記への置換」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/word_expression_dic.yml" target="_blank">word_expression_dic.yml</a>）
+「辞書による単語の異表記からの代表表記への置換」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/word_expression_dic.yml" target="_blank">word_expression_dic.yml</a>）
 ```
 タンパク質:[たんぱく質,蛋白質]
 スパゲッティ:[スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ]
@@ -333,7 +335,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 ***
 <h3>2.7　句点による文分割と文の正規化（自作）</h3>
 <img src="../image/string_course.031.jpeg" width="500px"><br>
-日本語テキストを句点「。」や「．」の区切りによる文（単文・重文・複文の文ではない）に分割し、文を正規化する方法について説明します。単純に日本語テキストを上記のNormalizedStringやUnicode正規化してしまうと、日本語の句点・読点がそれぞれラテン文字のピリオト・カンマに変換されてしまいます。例えば、日本語テキストに小数点のピリオドや数字の桁区切りのカンマなどが混在している場合、正規化後のテキストのピリオドが日本語の句点を意味していたのか小数点のピリオドを意味していたのかわかりづらくなってしまいます。そこで、正規化する際に日本語の句点・読点を一旦退避させて、それらを正規化後に元の位置に戻すような処理を含めた文分割処理を作成しました。「モーニング娘。」のような固有名詞に句点が含まれている場合は正規化処理から退避させることに加え、句点による文分割の処理からも退避させる必要があります。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/resources/proper_noun_with_japanese_period.txt" target="_blank">proper_noun_with_japanese_period.txt</a>に登録した句点を含む固有名詞の句点は文分割処理の前に一時的に幽霊文字に変換し、文分割処理後に元の句点に戻します。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/SentenceParser.scala" target="_blank">SentenceParserの実装</a>。
+日本語テキストを句点「。」や「．」の区切りによる文（単文・重文・複文の文ではない）に分割し、文を正規化する方法について説明します。単純に日本語テキストを上記のNormalizedStringやUnicode正規化してしまうと、日本語の句点・読点がそれぞれラテン文字のピリオト・カンマに変換されてしまいます。例えば、日本語テキストに小数点のピリオドや数字の桁区切りのカンマなどが混在している場合、正規化後のテキストのピリオドが日本語の句点を意味していたのか小数点のピリオドを意味していたのかわかりづらくなってしまいます。そこで、正規化する際に日本語の句点・読点を一旦退避させて、それらを正規化後に元の位置に戻すような処理を含めた文分割処理を作成しました。「モーニング娘。」のような固有名詞に句点が含まれている場合は正規化処理から退避させることに加え、句点による文分割の処理からも退避させる必要があります。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/proper_noun_with_japanese_period.txt" target="_blank">proper_noun_with_japanese_period.txt</a>に登録した句点を含む固有名詞の句点は文分割処理の前に一時的に幽霊文字に変換し、文分割処理後に元の句点に戻します。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/normalizer/SentenceParser.scala" target="_blank">SentenceParserの実装</a>。
 ```scala
   @Test
   def testNormalizedSentence(): Unit = {
