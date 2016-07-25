@@ -1,4 +1,4 @@
-package text
+package text.normalizer
 
 import java.nio.file.{Path, Paths}
 

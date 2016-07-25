@@ -1,10 +1,10 @@
-package text
+package text.normalizer
 
 /**
   * @author ynupc
   *         Created on 2016/02/19
   */
-object WordExpressionNormalizer extends DictionaryBasedNormalizer(StringOption("normalizer/word_expression_dic.yml")) {
+object WordExpressionNormalizer extends DictionaryBasedNormalizer(StringOption("word_expression_dic.yml")) {
   override protected def sortNotationVariants(notationVariants: List[String]): List[String] = {
     super.sortNotationVariants(notationVariants).
     sortWith((a, b) => a.length > b.length)//length descending order

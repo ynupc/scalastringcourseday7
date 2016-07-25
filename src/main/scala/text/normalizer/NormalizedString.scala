@@ -1,4 +1,4 @@
-package text
+package text.normalizer
 
 import java.text.{Normalizer => JavaNormalizer}
 

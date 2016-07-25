@@ -1,4 +1,4 @@
-package text
+package text.normalizer
 
 /**
   * @author ynupc
@@ -6,4 +6,4 @@ package text
   */
 object CharacterNormalizerAfterUnicodeNormalization
   extends DictionaryBasedNormalizer(
-    StringOption("normalizer/character_dic_after_unicode_normalization.yml"))
+    StringOption("character_dic_after_unicode_normalization.yml"))

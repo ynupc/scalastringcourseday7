@@ -2,7 +2,8 @@ import java.util.Locale
 
 import org.junit.Test
 import org.scalatest.junit.AssertionsForJUnit
-import text._
+import text.kanji.PrimarySchoolKanjiCharset
+import text.normalizer._
 
 /**
   * @author ynupc
@@ -208,6 +209,12 @@ class Day7TestSuite extends AssertionsForJUnit {
   @Test
   def testHiragana2Katakana(): Unit = {
     assert(JapaneseCharacterCaseConverter.convertHiragana2Katakana(nullPoGa).toString == "「ヌルポ」「ガッ」")
+  }
+
+  @Test
+  def testKanji(): Unit = {
+    assert(PrimarySchoolKanjiCharset.isDefined(kanjiChar))
+    assert(PrimarySchoolKanjiCharset.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
   }
 
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
