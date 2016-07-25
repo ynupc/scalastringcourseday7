@@ -18,14 +18,14 @@ object SentenceParser {
   private final val japanesePeriod2: String = "．"
   private final val japaneseComma: String  = "、"
 
-  private final val properNounsWithJapanesePeriod: Seq[String] = initialize()
+  private final val properNounsWithJapanesePeriod: Seq[String] = initialize
   private final val ghost: String = "妛"
   private final val ghost2: String = "彁"
 
   // このようなprivateな型を作成しておかないとobject SentenceParser内のprivate class NormalizedSentenceをSeqで返すparseメソッドが作成ができない。
   private type NS = NormalizedSentence
 
-  private def initialize(): Seq[String] = {
+  private def initialize: Seq[String] = {
     Source.fromFile(
       Paths.get(Config.resourcesDir, "normalizer", "proper_noun_with_japanese_period.txt").toAbsolutePath.toFile
     ).getLines().toSeq.sortWith((a, b) => a.length > b.length)
@@ -42,28 +42,30 @@ object SentenceParser {
     textOpt.get split '\n' foreach {
       l =>
         var line: String = l
-        sentences ++= {
-          val replacementBuffer: ListBuffer[String] = ListBuffer[String]()
+        val replacementBuffer: ListBuffer[String] = ListBuffer[String]()
 
-          //句点を含む固有名詞の句点を幽霊文字に変換
-          for (properNoun <- properNounsWithJapanesePeriod if line contains properNoun) {
-            val replacement: String = properNoun.
-              replaceAllLiterally(japanesePeriod, ghost).
-              replaceAllLiterally(japanesePeriod2, ghost2)
-            replacementBuffer += replacement
-            line = line.replaceAllLiterally(
-              properNoun,
-              replacement
-            )
-          }
+        //句点を含む固有名詞の句点を幽霊文字に変換
+        for (properNoun <- properNounsWithJapanesePeriod
+             if line contains properNoun) {
+          val replacement: String = properNoun.
+            replaceAllLiterally(japanesePeriod, ghost).
+            replaceAllLiterally(japanesePeriod2, ghost2)
+          replacementBuffer += replacement
+          line = line.replaceAllLiterally(
+            properNoun,
+            replacement
+          )
+        }
 
-          val replacements: Seq[String] = replacementBuffer.result
+        val replacements: Seq[String] = replacementBuffer.result
 
-          //句点により文単位に分割
-          for (sentence <- line.trim split japanesePeriodRegex
-               if StringOption(sentence).nonEmpty) yield {
-            //正規化処理
-            var s: String = parseSentence(sentence)
+        //句点により文単位に分割
+        for (sentence <- line.trim split japanesePeriodRegex
+             if StringOption(sentence).nonEmpty) {
+          //正規化処理
+          val sOpt: Option[String] = parseSentence(sentence)
+          if (sOpt.nonEmpty) {
+            var s: String = sOpt.get
             //幽霊文字を元の句点に戻す
             for (replacement <- replacements) {
               val normalizedProperNoun: String = NormalizedString(StringOption(replacement)).toString
@@ -72,7 +74,7 @@ object SentenceParser {
                 replaceAllLiterally(ghost2, japanesePeriod2)
               s = s.replaceAllLiterally(normalizedProperNoun, normalizedProperNounWithJapanesePeriod)
             }
-            new NormalizedSentence(s)
+            sentences += new NormalizedSentence(s)
           }
         }
     }
@@ -80,7 +82,7 @@ object SentenceParser {
     sentences.result
   }
 
-  private def parseSentence(sentence: String): String = {
+  private def parseSentence(sentence: String): Option[String] = {
     val phrases: StringBuilder = new StringBuilder()
 
     //読点により節に分割
@@ -93,12 +95,17 @@ object SentenceParser {
           append(japaneseComma)
     }
 
-    phrases.
-      //文末の読点を削除
-      deleteCharAt(phrases.size - 1).
-      //文末に句点を追加
-      append(japanesePeriod).
-      result
+    if (phrases.isEmpty) {
+      return None
+    }
+
+    Option(
+      phrases.
+        //文末の読点を削除
+        deleteCharAt(phrases.size - 1).
+        //文末に句点を追加
+        append(japanesePeriod).
+        result)
   }
 
   private class NormalizedSentence(val text: String) {
