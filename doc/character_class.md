@@ -915,55 +915,55 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 </table>
 <table>
 <tr>
-<th>漢字集合</th><th>クラス</th>
+<th>漢字集合</th><th>クラス</th><th>データ</th>
 </tr>
 <tr>
-<td>常用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JoyoKanjiCharacter.scala">JoyoKanjiCharacter.scala</a></td>
+<td>常用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JoyoKanjiCharacter.scala">JoyoKanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/joyo_kanji.csv">joyo_kanji.csv</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学１〜６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchoolKanjiCharacter.scala">PrimarySchoolKanjiCharacter.scala</a></td>
+<td>教育漢字（小学１〜６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchoolKanjiCharacter.scala">PrimarySchoolKanjiCharacter.scala</a></td><td>&nbsp;</td>
 </tr>
 <tr>
-<td>教育漢字（小学１年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool1stGradeKanjiCharacter.scala">PrimarySchool1stGradeKanjiCharacter.scala</a></td>
+<td>教育漢字（小学１年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool1stGradeKanjiCharacter.scala">PrimarySchool1stGradeKanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_1st_grade.csv">primary_school_1st_grade.csv</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学２年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool2ndGradeKanjiCharacter.scala">PrimarySchool2ndGradeKanjiCharacter.scala</a></td>
+<td>教育漢字（小学２年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool2ndGradeKanjiCharacter.scala">PrimarySchool2ndGradeKanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_2nd_grade.csv">primary_school_2nd_grade.csv</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学３年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool3rdGradeKanjiCharacter.scala">PrimarySchool3rdGradeKanjiCharacter.scala</a></td>
+<td>教育漢字（小学３年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool3rdGradeKanjiCharacter.scala">PrimarySchool3rdGradeKanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_3rd_grade.csv">primary_school_3rd_grade.csv</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学４年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool4thGradeKanjiCharacter.scala">PrimarySchool4thGradeKanjiCharacter.scala</a></td>
+<td>教育漢字（小学４年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool4thGradeKanjiCharacter.scala">PrimarySchool4thGradeKanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_4th_grade.csv">primary_school_4th_grade.csv</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学５年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool5thGradeKanjiCharacter.scala">PrimarySchool5thGradeKanjiCharacter.scala</a></td>
+<td>教育漢字（小学５年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool5thGradeKanjiCharacter.scala">PrimarySchool5thGradeKanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_5th_grade.csv">primary_school_5th_grade.csv</a></td>
 </tr>
 <tr>
-<td>教育漢字（小学６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool6thGradeKanjiCharacter.scala">PrimarySchool6thGradeKanjiCharacter.scala</a></td>
+<td>教育漢字（小学６年生）</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/PrimarySchool6thGradeKanjiCharacter.scala">PrimarySchool6thGradeKanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_6th_grade.csv">primary_school_6th_grade.csv</a></td>
 </tr>
 <tr>
-<td>JIS第一水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1KanjiCharacter.scala">JISLevel1KanjiCharacter.scala</a></td>
+<td>JIS第一水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1KanjiCharacter.scala">JISLevel1KanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_1.csv">jis_level_1.csv</a></td>
 </tr>
 <tr>
-<td>JIS第二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel2KanjiCharacter.scala">JISLevel2KanjiCharacter.scala</a></td>
+<td>JIS第二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel2KanjiCharacter.scala">JISLevel2KanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_.2csv">jis_level_2.csv</a></td>
 </tr>
 <tr>
-<td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharacter.scala">JISLevel1Plus2KanjiCharacter.scala</a></td>
+<td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharacter.scala">JISLevel1Plus2KanjiCharacter.scala</a></td><td>&nbsp;</td>
 </tr>
 <tr>
-<td>JIS第三水準</td><td>未実装</td>
+<td>JIS第三水準</td><td>未実装</td><td>未実装</td>
 </tr>
 <tr>
-<td>JIS第一・二・三水準</td><td>未実装</td>
+<td>JIS第一・二・三水準</td><td>未実装</td><td>未実装</td>
 </tr>
 <tr>
-<td>JIS第四水準</td><td>未実装</td>
+<td>JIS第四水準</td><td>未実装</td><td>未実装</td>
 </tr>
 <tr>
-<td>JIS第一・二・三・四水準</td><td>未実装</td>
+<td>JIS第一・二・三・四水準</td><td>未実装</td><td>未実装</td>
 </tr>
 <tr>
-<td>人名用漢字</td><td>未実装</td>
+<td>人名用漢字</td><td>未実装</td><td>未実装</td>
 </tr>
 </table>
 ```scala
