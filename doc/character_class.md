@@ -933,6 +933,21 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr>
 <td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharset.scala">JISLevel1Plus2KanjiCharset.scala</a></td>
 </tr>
+<tr>
+<td>JIS第三水準</td><td>未実装</td>
+</tr>
+<tr>
+<td>JIS第一・二・三水準</td><td>未実装</td>
+</tr>
+<tr>
+<td>JIS第四水準</td><td>未実装</td>
+</tr>
+<tr>
+<td>JIS第一・二・三・四水準</td><td>未実装</td>
+</tr>
+<tr>
+<td>人名用漢字</td><td>未実装</td>
+</tr>
 </table>
 ***
 <h3>1.6　字種の変換</h3>
