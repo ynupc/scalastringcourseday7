@@ -136,7 +136,7 @@ Optionを使用するとnullを書かずにすむためNullPointerExceptionを�
 ***
 <h3>2.6　正規化文字列（自作）</h3>
 <img src="../image/string_course.030.jpeg" width="500px"><br>
-値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/test/scala/text/NormalizedString.scala" target="_blank">NormalizedStringの実装</a>
+値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/normalizer/NormalizedString.scala" target="_blank">NormalizedStringの実装</a>
 <h4>2.6.1　正規化処理の流れ</h4>
 NormalizedStringの正規化処理は次の順序で４段階で実行されます。
 <ol>
