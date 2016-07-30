@@ -148,6 +148,11 @@ NormalizedStringの正規化処理は次の順序で４段階で実行されま�
 <h4>2.6.2　ファイル構成</h4>
 NormalizedStringは辞書ファイルとプログラムファイルから構成されています。それぞれについて含まれているファイルとその説明は次です。
 <ul>
+  <li>設定
+    <ul>
+      <li>reference.conf<br>正規化用辞書ディレクトリnormalizerを下位に持つresourcesディレクトリへのパスを設定するためのファイル<br>resourcesDir = ../../src/main/resources/</li>
+    </ul>
+  </li>
   <li>辞書
     <ul>
       <li>character_dic_after_unicode_normalization.yml<br>「Unicode正規化後の辞書による文字の正規化」で使用する辞書</li>
@@ -171,6 +176,7 @@ scalastringcourseday7/
  ├ src/
  │  └ main/
  │    ├ resources/
+ │    │   ├ reference.conf
  │    │   ├ normalizer/
  │    │   …   ├ character_dic_after_unicode_normalization.yml
  │    │       ├ character_dic_before_unicode_normalization.yml
