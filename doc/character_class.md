@@ -913,6 +913,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>notDefined</td><td>isDefinedの否定を返す。</td>
 </tr>
 </table>
+次の漢字表に関する<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/README.md">README</a>
 <table>
 <tr>
 <th>漢字集合</th><th>クラス</th><th>データ</th>
