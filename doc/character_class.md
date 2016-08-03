@@ -951,13 +951,13 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharacter.scala">JISLevel1Plus2KanjiCharacter.scala</a></td><td>&nbsp;</td>
 </tr>
 <tr>
-<td>JIS第三水準</td><td>未実装</td><td>未実装</td>
+<td>JIS第三水準</td><td>未実装</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_3.csv">jis_level_3.csv</a></td>
 </tr>
 <tr>
 <td>JIS第一・二・三水準</td><td>未実装</td><td>未実装</td>
 </tr>
 <tr>
-<td>JIS第四水準</td><td>未実装</td><td>未実装</td>
+<td>JIS第四水準</td><td>未実装</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_4.csv">jis_level_4.csv</a></td>
 </tr>
 <tr>
 <td>JIS第一・二・三・四水準</td><td>未実装</td><td>未実装</td>
