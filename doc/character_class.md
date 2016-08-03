@@ -948,19 +948,19 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>JIS第二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel2KanjiCharacter.scala">JISLevel2KanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_2.csv">jis_level_2.csv</a></td>
 </tr>
 <tr>
-<td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1Plus2KanjiCharacter.scala">JISLevel1Plus2KanjiCharacter.scala</a></td><td>&nbsp;</td>
+<td>JIS第一・二水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1to2KanjiCharacter.scala">JISLevel1to2KanjiCharacter.scala</a></td><td>&nbsp;</td>
 </tr>
 <tr>
-<td>JIS第三水準</td><td>未実装</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_3.csv">jis_level_3.csv</a></td>
+<td>JIS第三水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel3KanjiCharacter.scala">JISLevel3KanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_3.csv">jis_level_3.csv</a></td>
 </tr>
 <tr>
-<td>JIS第一・二・三水準</td><td>未実装</td><td>&nbsp;</td>
+<td>JIS第一・二・三水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1to3KanjiCharacter.scala">JISLevel1to3KanjiCharacter.scala</a></td><td>&nbsp;</td>
 </tr>
 <tr>
-<td>JIS第四水準</td><td>未実装</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_4.csv">jis_level_4.csv</a></td>
+<td>JIS第四水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel4KanjiCharacter.scala">JISLevel4KanjiCharacter.scala</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_4.csv">jis_level_4.csv</a></td>
 </tr>
 <tr>
-<td>JIS第一・二・三・四水準</td><td>未実装</td><td>&nbsp;</td>
+<td>JIS第一・二・三・四水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1to4KanjiCharacter.scala">JISLevel1to4KanjiCharacter.scala</a></td><td>&nbsp;</td>
 </tr>
 <tr>
 <td>人名用漢字</td><td>未実装</td><td>未実装</td>
