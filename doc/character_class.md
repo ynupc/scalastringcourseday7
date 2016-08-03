@@ -914,6 +914,8 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 </tr>
 </table>
 ```scala
+  private val kanjiChar:    Char = '漢'
+  
   @Test
   def testKanji(): Unit = {
     assert(JISLevel1to2KanjiCharacter.isDefined(kanjiChar))
