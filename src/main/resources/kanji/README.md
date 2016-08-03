@@ -26,3 +26,25 @@
 2136字種2136字体<br>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/joyo_kanji.csv">joyo_kanji.csv</a>
 <h2>教育漢字</h2>
+現行学習指導要領・生きる力（小学校：平成23年4月～）
+別表　学年別漢字配当表
+<ul>
+<li>第一学年（80字）<br>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_1st_grade.csv">primary_school_1st_grade.csv</a>
+</li>
+<li>第二学年（160字）<br>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_2nd_grade.csv">primary_school_2nd_grade.csv</a>
+</li>
+<li>第三学年（200字）<br>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_3rd_grade.csv">primary_school_3rd_grade.csv</a>
+</li>
+<li>第四学年（200字）<br>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_4th_grade.csv">primary_school_4th_grade.csv</a>
+</li>
+<li>第五学年（185字）<br>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_5th_grade.csv">primary_school_5th_grade.csv</a>
+</li>
+<li>第六学年（181字）<br>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_6th_grade.csv">primary_school_6th_grade.csv</a>
+</li>
+</ul>
