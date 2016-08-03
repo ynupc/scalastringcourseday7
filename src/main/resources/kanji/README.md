@@ -19,7 +19,7 @@
 <ul><li>常用漢字2136字種2136字体</li></ul></li>
 </ul>
 <br>
-子の名に戸籍法施行規則第６０条３項にあるように、漢字とは別に「片仮名又は平仮名（変体仮名を除く。）」を使用できます。
+戸籍法施行規則第６０条３項にあるように、漢字とは別に「片仮名又は平仮名（変体仮名を除く。）」を子の名に使用できます。
 <h2>常用漢字</h2>
 常用漢字表（平成22年内閣告示第2号）<br>
 <a href="http://kokugo.bunka.go.jp/kokugo_nihongo/joho/kijun/naikaku/kanji/" target="_blank">http://kokugo.bunka.go.jp/kokugo_nihongo/joho/kijun/naikaku/kanji/</a><br>
