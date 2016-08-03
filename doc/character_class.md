@@ -913,7 +913,14 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>notDefined</td><td>isDefinedの否定を返す。</td>
 </tr>
 </table>
-次の漢字表に関する<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/README.md">README</a>
+```scala
+  @Test
+  def testKanji(): Unit = {
+    assert(JISLevel1to2KanjiCharacter.isDefined(kanjiChar))
+    assert(JISLevel1to2KanjiCharacter.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
+  }
+```
+次の漢字データに関する<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/README.md">README</a>
 <table>
 <tr>
 <th>漢字集合</th><th>クラス</th><th>データ</th>
@@ -967,13 +974,6 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>人名用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JinmeiyoKanjiCharacter.scala">JinmeiyoKanjiCharacter</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_1.csv">jinmeiyo_kanji_1.csv</a><br><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_2.csv">jinmeiyo_kanji_2.csv</a></td>
 </tr>
 </table>
-```scala
-  @Test
-  def testKanji(): Unit = {
-    assert(JISLevel1to2KanjiCharacter.isDefined(kanjiChar))
-    assert(JISLevel1to2KanjiCharacter.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
-  }
-```
 ***
 <h3>1.5　字種の変換</h3>
 <img src="../image/string_course.019.jpeg" width="500px"><br>
