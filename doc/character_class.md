@@ -969,8 +969,8 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 ```scala
   @Test
   def testKanji(): Unit = {
-    assert(JISLevel1Plus2KanjiCharacter.isDefined(kanjiChar))
-    assert(JISLevel1Plus2KanjiCharacter.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
+    assert(JISLevel1to2KanjiCharacter.isDefined(kanjiChar))
+    assert(JISLevel1to2KanjiCharacter.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
   }
 ```
 ***
