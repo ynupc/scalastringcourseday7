@@ -2,7 +2,6 @@ import java.util.Locale
 
 import org.junit.Test
 import org.scalatest.junit.AssertionsForJUnit
-import text.kanji.JISLevel1Plus2KanjiCharacter
 import text.normalizer._
 
 /**
