@@ -20,11 +20,13 @@
 </ul>
 <br>
 戸籍法施行規則第６０条３項にあるように、漢字とは別に「片仮名又は平仮名（変体仮名を除く。）」を子の名に使用できます。
+***
 <h2>常用漢字</h2>
 常用漢字表（平成22年内閣告示第2号）<br>
 <a href="http://kokugo.bunka.go.jp/kokugo_nihongo/joho/kijun/naikaku/kanji/" target="_blank">http://kokugo.bunka.go.jp/kokugo_nihongo/joho/kijun/naikaku/kanji/</a><br>
 2136字種2136字体<br>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/joyo_kanji.csv">joyo_kanji.csv</a>
+***
 <h2>教育漢字</h2>
 現行学習指導要領・生きる力（小学校：平成23年4月～）
 別表　学年別漢字配当表
@@ -48,6 +50,7 @@
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/primary_school_6th_grade.csv">primary_school_6th_grade.csv</a>
 </li>
 </ul>
+***
 <h2>JIS漢字水準</h2>
 JIS X 0213:2004
 <ul>
