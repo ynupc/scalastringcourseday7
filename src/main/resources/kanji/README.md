@@ -51,20 +51,16 @@
 <h2>JIS漢字水準</h2>
 JIS X 0213:2004
 <ul>
-<li>JIS第一水準漢字<br>
-2,965字<br>
+<li>JIS第一水準漢字（2,965字）<br>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_1.csv">jis_level_1.csv</a>
 </li>
-<li>JIS第二水準漢字<br>
-3,390字<br>
+<li>JIS第二水準漢字（3,390字）<br>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_2.csv">jis_level_2.csv</a>
 </li>
-<li>JIS第三水準漢字<br>
-1,259字<br>
+<li>JIS第三水準漢字（1,259字）<br>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_3.csv">jis_level_3.csv</a>
 </li>
-<li>JIS第四水準漢字<br>
-2,436字<br>
+<li>JIS第四水準漢字（2,436字）<br>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jis_level_4.csv">jis_level_4.csv</a>
 </li>
 </ul>
