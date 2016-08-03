@@ -963,7 +963,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>JIS第一・二・三・四水準</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JISLevel1to4KanjiCharacter.scala">JISLevel1to4KanjiCharacter</a></td><td>&nbsp;</td>
 </tr>
 <tr>
-<td>人名用漢字</td><td>未実装</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_1.csv">jinmeiyo_kanji_1.csv</a>・<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_2.csv">jinmeiyo_kanji_2.csv</a></td>
+<td>人名用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JinmeiyoKanjiCharacter.scala">JinmeiyoKanjiCharacter</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_1.csv">jinmeiyo_kanji_1.csv</a>・<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_2.csv">jinmeiyo_kanji_2.csv</a></td>
 </tr>
 </table>
 ```scala
