@@ -28,7 +28,7 @@
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/joyo_kanji.csv">joyo_kanji.csv</a>
 ***
 <h2>教育漢字</h2>
-現行学習指導要領・生きる力（小学校：平成23年4月～）
+現行学習指導要領・生きる力（小学校：平成23年4月～）<br>
 別表　学年別漢字配当表
 <ul>
 <li>第一学年（80字）<br>
