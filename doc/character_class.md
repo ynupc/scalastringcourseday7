@@ -976,6 +976,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>人名用漢字</td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/kanji/JinmeiyoKanjiCharacter.scala">JinmeiyoKanjiCharacter</a></td><td><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_1.csv">jinmeiyo_kanji_1.csv</a><br><a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/jinmeiyo_kanji_2.csv">jinmeiyo_kanji_2.csv</a></td>
 </tr>
 </table>
+JIS水準漢字の一覧を出力するプログラムはこちら<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/JISStandardKanji.scala">JISStandardKanji</a>です。Shift-JISやwindows-31jではJIS水準漢字を全て出力するには文字が足りないので、x-Shift-JIS_0213かs-MS932_0213を使う必要があります。
 ***
 <h3>1.5　字種の変換</h3>
 <img src="../image/string_course.019.jpeg" width="500px"><br>
