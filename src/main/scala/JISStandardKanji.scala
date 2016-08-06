@@ -89,8 +89,7 @@ object JISStandardKanji {
         val str: String = new String(Array(highSurrogate.toByte, lowSurrogate.toByte), "x-MS932_0213") //"x-Shift-JIS_0213"も可
         val codePoint: Int = str.codePoints.toArray.head
         val codePointHex: String = getCodePointHex(codePoint)
-        if (codePoint != 0xFFFD) {
-          //double check
+        if (codePoint != 0xFFFD) {//double check
           printf("lv.%s,0x%s,U+%s,%s\n",
             level,
             sjis.toUpperCase,
