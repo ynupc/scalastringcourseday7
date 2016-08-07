@@ -48,7 +48,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
             sortedNotationalVariants
           }
         case otherwise =>
-        //Do nothing
+          //Do nothing
       }
     }
     sortRepresentations(map.keySet.toList) foreach {
@@ -58,7 +58,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
             buffer += ((notationalVariant, representation))
         }
     }
-    buffer.toSeq
+    buffer.result
   }
 
   protected def sortNotationVariants(notationVariants: List[String]): List[String] = {
@@ -78,7 +78,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
             case (term, replacement) =>
               result = replaceAll(result, term, replacement)
             case otherwise =>
-            //Do nothing
+              //Do nothing
           }
         }
         result
