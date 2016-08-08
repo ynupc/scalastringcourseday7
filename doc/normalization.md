@@ -364,5 +364,6 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
     assert(JapaneseSentenceSplitter.split(StringOption("。。")).isEmpty)
   }
 ```
+***
 <h3>2.8　引用符による文の解析（自作）</h3>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/SentenceQuotationParser.scala" target="_blank">SentenceQuotationParserの実装</a>。
