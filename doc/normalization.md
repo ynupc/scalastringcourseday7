@@ -110,7 +110,7 @@ Optionは値があるのかないのかわからない状態を表すもので�
 ***
 <h3>2.5　文字列オプション（自作）</h3>
 <img src="../image/string_course.029.jpeg" width="500px"><br>
-Optionを使用するとnullを書かずにすむためNullPointerExceptionを排除するために使用できます。文字列処理においてStringはnullだけでなく空文字""も同時に排除したい場合がよくありますが、Optionでは空文字は排除されません。そこで、OptionのようにStringを包むことでnullと空文字を排除するためのStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/normalizer/StringOption.scala" target="_blank">StringOptionの実装</a>。
+Optionを使用するとnullを書かずにすむためNullPointerExceptionを排除するために使用できます。文字列処理においてStringはnullだけでなく空文字""も同時に排除したい場合がよくありますが、Optionでは空文字は排除されません。そこで、OptionのようにStringを包むことでnullと空文字を排除するためのStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>。
 ```scala
   @Test
   def testStringOption(): Unit = {
@@ -364,3 +364,5 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
     assert(JapaneseSentenceSplitter.split(StringOption("。。")).isEmpty)
   }
 ```
+<h3>2.8　引用符による文の解析（自作）</h3>
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/SentenceQuotationParser.scala" target="_blank">SentenceQuotationParserの実装</a>。
