@@ -2,6 +2,7 @@ package text.normalizer
 
 import java.nio.file.Paths
 
+import util.StringUtils._
 import util.Config
 
 import scala.collection.mutable.ListBuffer
@@ -10,9 +11,12 @@ import scala.util.control.Breaks
 
 /**
   * @author ynupc
-  *         Created on 2016/02/21
+  *         Created on 2016/08/08
   */
-object SentenceSplitter {
+object JapaneseSentenceSplitter {
+  //このようなprivateな型を作成しておかないとobject JapaneseSentenceSplitter内のprivate class NormalizedSentenceをSeqで返すparseメソッドが作成ができない。
+  private type NS = NormalizedSentence
+
   private final val japanesePeriodRegex: String = "[。．]"
   private final val japaneseCommaRegex: String  = "[、，]"
   private final val japanesePeriod: String = "。"
@@ -30,9 +34,6 @@ object SentenceSplitter {
     }
     builder.result
   }
-
-  //このようなprivateな型を作成しておかないとobject SentenceParser内のprivate class NormalizedSentenceをSeqで返すparseメソッドが作成ができない。
-  private type NS = NormalizedSentence
 
   private def initialize: Seq[String] = {
     Source.fromFile(
@@ -72,8 +73,9 @@ object SentenceSplitter {
                   breaks.break
                 }
               case otherwise =>
-              //Do nothing
+                //Do nothing
             }
+            throw new NoSuchElementException("SentenceSplitter.split")
           }
         }
 
@@ -82,10 +84,10 @@ object SentenceSplitter {
              if line contains properNoun) {
 
           val replacement: String = properNoun.
-            replaceAllLiterally(japanesePeriod, ghost).
-            replaceAllLiterally(japanesePeriod2, ghost2)
+            replaceAllLiteratim(japanesePeriod, ghost).
+            replaceAllLiteratim(japanesePeriod2, ghost2)
           replacementBuffer += replacement
-          line = line.replaceAllLiterally(
+          line = line.replaceAllLiteratim(
             properNoun,
             replacement
           )
@@ -97,16 +99,16 @@ object SentenceSplitter {
         for (sentence: String <- line.trim split japanesePeriodRegex
              if StringOption(sentence).nonEmpty) {
           //正規化処理
-          val sOpt: Option[String] = parseSentence(sentence)
+          val sOpt: Option[String] = splitSentence(sentence)
           if (sOpt.nonEmpty) {
             var s: String = sOpt.get
             //幽霊文字を元の句点に戻す
             for (replacement: String <- replacements) {
               val normalizedProperNoun: String = NormalizedString(StringOption(replacement)).toString
               val normalizedProperNounWithJapanesePeriod: String = normalizedProperNoun.
-                replaceAllLiterally(ghost, japanesePeriod).
-                replaceAllLiterally(ghost2, japanesePeriod2)
-              s = s.replaceAllLiterally(
+                replaceAllLiteratim(ghost, japanesePeriod).
+                replaceAllLiteratim(ghost2, japanesePeriod2)
+              s = s.replaceAllLiteratim(
                 normalizedProperNoun,
                 normalizedProperNounWithJapanesePeriod)
             }
@@ -124,7 +126,7 @@ object SentenceSplitter {
     sentences.result
   }
 
-  private def parseSentence(sentence: String): Option[String] = {
+  private def splitSentence(sentence: String): Option[String] = {
     val phrases: StringBuilder = new StringBuilder()
 
     //読点により節に分割

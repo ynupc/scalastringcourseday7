@@ -416,7 +416,7 @@ class Day7TestSuite extends AssertionsForJUnit {
   @Test
   def testNormalizedSentence(): Unit = {
     val text: String = """2005年にカンザス州教育委員会では、公教育において進化論と同様にインテリジェント・デザイン（ID説）の立場も教えなければいけないという決議が評決されることになっていた。前年の教育委員の改選で委員6人中4人を保守派が占めており、可決は確実と見られていた。これに抗議するために、2005年6月、アメリカ合衆国のオレゴン州立大学物理学科卒業生のボビー・ヘンダーソンは公開質問状を提出した。ヘンダーソンは自分のサイト "venganza.org" （スペイン語で復讐の意）において空飛ぶスパゲッティー・モンスターの概略を示して、明らかな証拠や、それに基づいて進化を説明できる十分な論理性・整合性があると論じ、創造論の一部として「空飛ぶスパゲティ・モンスター」を進化論やID説と同様に公立高校で教えることを公開質問状において提案した。"""
-    val sentences = SentenceParser.parse(StringOption(text))
+    val sentences = JapaneseSentenceSplitter.split(StringOption(text))
     //sentencesの型はSeq[NormalizedSentence]だが、NormalizedSentenceの型にはここからアクセスできないため、型を明示的に書けない。
 
     assert(sentences.length == 4)
@@ -425,12 +425,12 @@ class Day7TestSuite extends AssertionsForJUnit {
     assert(sentences(2).text   == """これに抗議するために、2005年6月、アメリカ合衆国のオレゴン州立大学物理学科卒業生のボビーヘンダーソンは公開質問状を提出した。""")
     assert(sentences.last.text == """ヘンダーソンは自分のサイト "venganza.org" (スペイン語で復讐の意)において空飛ぶスパゲッティモンスターの概略を示して、明らかな証拠や、それに基づいて進化を説明できる十分な論理性整合性があると論じ、創造論の一部として「空飛ぶスパゲッティモンスター」を進化論やID説と同様に公立高校で教えることを公開質問状において提案した。""")
 
-    assert(SentenceParser.parse(StringOption("、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("、、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("、、。")).isEmpty)
-    assert(SentenceParser.parse(StringOption("、。、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("。、、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("。")).isEmpty)
-    assert(SentenceParser.parse(StringOption("。。")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("、、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("、、。")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("、。、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("。、、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("。")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("。。")).isEmpty)
   }
 }

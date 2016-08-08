@@ -1,3 +1,5 @@
+import util.StringUtils._
+
 import scala.collection.mutable
 
 /**
@@ -8,7 +10,7 @@ object JISStandardKanji {
   private def remainder(sjisCodePoint: Int): Int = {
     val denominator: Int = 0x100
     sjisCodePoint % denominator match {
-      case remainder if remainder < 0 =>
+      case remainder: Int if remainder < 0 =>
         remainder + denominator
       case otherwise => otherwise
     }
@@ -66,8 +68,8 @@ object JISStandardKanji {
 
   private def getCodePointHex(codePoint: Int): String = {
     val size: Int = 4
-    java.lang.Integer.toHexString(codePoint).toUpperCase match {
-      case cp if cp.length < size =>
+    codePoint.toHexString match {
+      case cp: String if cp.length < size =>
         val builder: mutable.StringBuilder = new mutable.StringBuilder(size)
         for (i <- 0 until (size - cp.length)) {
           builder.append('0')
@@ -81,13 +83,13 @@ object JISStandardKanji {
   def main(args: Array[String]): Unit = {
     val surrogateRange: Range = 0 to 0xFF
     print("SJIS-Level,SJIS-CodePoint,Unicode-CodePoint,Character\n")
-    for (highSurrogate <- surrogateRange; lowSurrogate <- surrogateRange) {
-      val sjis: String = java.lang.Integer.toHexString(highSurrogate) concat java.lang.Integer.toHexString(lowSurrogate)
-      val sjisCodePoint: Int = Integer.parseInt(sjis, 0x10)
+    for (highSurrogate: Int <- surrogateRange; lowSurrogate: Int <- surrogateRange) {
+      val sjis: String = highSurrogate.toHexString concat lowSurrogate.toHexString
+      val sjisCodePoint: Int = sjis.hexStringToInt
       val level: Byte = getLevel(sjisCodePoint)
       if (0 < level) {
-        val str: String = new String(Array(highSurrogate.toByte, lowSurrogate.toByte), "x-MS932_0213") //"x-Shift-JIS_0213"も可
-        val codePoint: Int = str.codePoints.toArray.head
+        val str: String = new String(Array(highSurrogate.toByte, lowSurrogate.toByte), "x-MS932_0213")//"x-Shift-JIS_0213"でも可
+        val codePoint: Int = str.toCodePointArray.head
         val codePointHex: String = getCodePointHex(codePoint)
         if (codePoint != 0xFFFD) {//double check
           printf("lv.%s,0x%s,U+%s,%s\n",
