@@ -2,9 +2,10 @@ import java.util.Locale
 
 import org.junit.Test
 import org.scalatest.junit.AssertionsForJUnit
-import text.{JapaneseCharacterCaseConverter, JapaneseSentenceSplitter, StringNone, StringOption}
+import text.{JapaneseCharacterCaseConverter, StringNone, StringOption, StringSome}
 import text.kanji.JISLevel1to2KanjiCharacter
 import text.normalizer._
+import text.parser.JapaneseSentenceSplitter
 
 /**
   * @author ynupc

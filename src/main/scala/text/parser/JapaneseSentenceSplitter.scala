@@ -1,8 +1,9 @@
-package text
+package text.parser
 
 import java.nio.file.Paths
 
 import text.normalizer.{EscapeCharacter, NormalizedString, SentenceNormalizer}
+import text.{StringNone, StringOption, StringSome}
 import util.Config
 import util.StringUtils._
 
@@ -38,7 +39,7 @@ object JapaneseSentenceSplitter {
 
   private def initialize: Seq[String] = {
     Source.fromFile(
-      Paths.get(Config.resourcesDir, "normalizer", "proper_noun_with_japanese_period.txt").toAbsolutePath.toFile
+      Paths.get(Config.resourcesDir, "parser", "proper_noun_with_japanese_period.txt").toAbsolutePath.toFile
     ).getLines.toSeq.sortWith((a, b) => a.length > b.length)
   }
 
@@ -76,7 +77,7 @@ object JapaneseSentenceSplitter {
               case otherwise =>
                 //Do nothing
             }
-            throw new NoSuchElementException("SentenceSplitter.split")
+            throw new NoSuchElementException("JapaneseSentenceSplitter.split")
           }
         }
 

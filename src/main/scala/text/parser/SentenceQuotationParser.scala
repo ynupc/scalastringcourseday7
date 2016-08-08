@@ -1,8 +1,9 @@
-package text
+package text.parser
 
 import java.nio.file.Paths
 
 import text.normalizer._
+import text.{StringNone, StringOption, StringSome}
 import util.Config
 import util.StringUtils._
 
@@ -23,7 +24,7 @@ object SentenceQuotationParser {
   private final val quotations: Seq[Quotation] = {
     val buffer: ListBuffer[Quotation] = ListBuffer[Quotation]()
     Source.fromFile(
-      Paths.get(Config.resourcesDir, "normalizer", "quotation.csv").toAbsolutePath.toFile
+      Paths.get(Config.resourcesDir, "parser", "quotation.csv").toAbsolutePath.toFile
     ).getLines foreach {
       line: String =>
         val quotations: Array[String] = line.trim.split(',')
