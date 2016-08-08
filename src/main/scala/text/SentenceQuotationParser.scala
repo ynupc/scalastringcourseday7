@@ -1,7 +1,8 @@
-package text.normalizer
+package text
 
 import java.nio.file.Paths
 
+import text.normalizer._
 import util.Config
 import util.StringUtils._
 

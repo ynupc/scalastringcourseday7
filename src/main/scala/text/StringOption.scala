@@ -1,4 +1,4 @@
-package text.normalizer
+package text
 
 /**
   * @author ynupc

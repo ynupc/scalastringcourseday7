@@ -1,4 +1,6 @@
-package text.normalizer
+package text
+
+import text.normalizer.NormalizedString
 
 /**
   * @author ynupc

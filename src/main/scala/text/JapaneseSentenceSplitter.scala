@@ -1,9 +1,10 @@
-package text.normalizer
+package text
 
 import java.nio.file.Paths
 
-import util.StringUtils._
+import text.normalizer.{EscapeCharacter, NormalizedString, SentenceNormalizer}
 import util.Config
+import util.StringUtils._
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source

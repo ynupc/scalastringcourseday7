@@ -2,6 +2,8 @@ package text.normalizer
 
 import java.text.{Normalizer => JavaNormalizer}
 
+import text.{StringNone, StringOption, StringSome}
+
 /**
   * @author ynupc
   *         Created on 15/10/28

@@ -2,6 +2,7 @@ package text.normalizer
 
 import java.nio.file.Paths
 
+import text.{StringNone, StringOption, StringSome}
 import util.Config
 
 import scala.collection.mutable.ListBuffer
