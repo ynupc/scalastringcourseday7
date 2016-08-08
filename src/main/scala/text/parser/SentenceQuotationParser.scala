@@ -124,18 +124,23 @@ object SentenceQuotationParser {
     }
   }
 
-  def splitAndQuotationParseJapaneseText(textOpt: StringOption): Seq[(String, QuotedSentence)] = {
-    val buffer: ListBuffer[(String, QuotedSentence)] = ListBuffer[(String, QuotedSentence)]()
+  def splitAndQuotationParseJapaneseText(textOpt: StringOption): Seq[NormalizedQuotedSentence] = {
+    val buffer: ListBuffer[NormalizedQuotedSentence] = ListBuffer[NormalizedQuotedSentence]()
     JapaneseSentenceSplitter.split(textOpt) foreach {
       sentence =>
         parse(StringOption(sentence.text)) match {
           case Some(quotedSentence) =>
-            buffer += ((sentence.originalText, quotedSentence))
+            buffer += new NormalizedQuotedSentence(sentence.originalText, quotedSentence)
           case None =>
             //Do nothing
         }
     }
     buffer.result
+  }
+  
+  private class NormalizedQuotedSentence(val originalText: String,
+                                         val quotedSentence: QuotedSentence) {
+    override def toString: String = quotedSentence.toString
   }
 }
 
