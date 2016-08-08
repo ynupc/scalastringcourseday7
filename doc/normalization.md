@@ -339,14 +339,14 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
   }
 ```
 ***
-<h3>2.7　句点による文分割と文の正規化（自作）</h3>
+<h3>2.7　日本語の句点による文分割と文の正規化（自作）</h3>
 <img src="../image/string_course.031.jpeg" width="500px"><br>
 日本語テキストを句点「。」や「．」の区切りによる文（単文・重文・複文の文ではない）に分割し、文を正規化する方法について説明します。単純に日本語テキストを上記のNormalizedStringやUnicode正規化してしまうと、日本語の句点・読点がそれぞれラテン文字のピリオト・カンマに変換されてしまいます。例えば、日本語テキストに小数点のピリオドや数字の桁区切りのカンマなどが混在している場合、正規化後のテキストのピリオドが日本語の句点を意味していたのか小数点のピリオドを意味していたのかわかりづらくなってしまいます。そこで、正規化する際に日本語の句点・読点を一旦退避させて、それらを正規化後に元の位置に戻すような処理を含めた文分割処理を作成しました。「モーニング娘。」のような固有名詞に句点が含まれている場合は正規化処理から退避させることに加え、句点による文分割の処理からも退避させる必要があります。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/proper_noun_with_japanese_period.txt" target="_blank">proper_noun_with_japanese_period.txt</a>に登録した句点を含む固有名詞の句点は文分割処理の前に一時的に幽霊文字に変換し、文分割処理後に元の句点に戻します。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/normalizer/SentenceParser.scala" target="_blank">SentenceParserの実装</a>。
 ```scala
   @Test
   def testNormalizedSentence(): Unit = {
     val text: String = """2005年にカンザス州教育委員会では、公教育において進化論と同様にインテリジェント・デザイン（ID説）の立場も教えなければいけないという決議が評決されることになっていた。前年の教育委員の改選で委員6人中4人を保守派が占めており、可決は確実と見られていた。これに抗議するために、2005年6月、アメリカ合衆国のオレゴン州立大学物理学科卒業生のボビー・ヘンダーソンは公開質問状を提出した。ヘンダーソンは自分のサイト "venganza.org" （スペイン語で復讐の意）において空飛ぶスパゲッティー・モンスターの概略を示して、明らかな証拠や、それに基づいて進化を説明できる十分な論理性・整合性があると論じ、創造論の一部として「空飛ぶスパゲティ・モンスター」を進化論やID説と同様に公立高校で教えることを公開質問状において提案した。"""
-    val sentences = SentenceParser.parse(StringOption(text))
+    val sentences = JapaneseSentenceSplitter.split(StringOption(text))
     //sentencesの型はSeq[NormalizedSentence]だが、NormalizedSentenceの型にはここからアクセスできないため、型を明示的に書けない。
 
     assert(sentences.length == 4)
@@ -354,13 +354,13 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
     assert(sentences(1).text   == """前年の教育委員の改選で委員6人中4人を保守派が占めており、可決は確実と見られていた。""")
     assert(sentences(2).text   == """これに抗議するために、2005年6月、アメリカ合衆国のオレゴン州立大学物理学科卒業生のボビーヘンダーソンは公開質問状を提出した。""")
     assert(sentences.last.text == """ヘンダーソンは自分のサイト "venganza.org" (スペイン語で復讐の意)において空飛ぶスパゲッティモンスターの概略を示して、明らかな証拠や、それに基づいて進化を説明できる十分な論理性整合性があると論じ、創造論の一部として「空飛ぶスパゲッティモンスター」を進化論やID説と同様に公立高校で教えることを公開質問状において提案した。""")
-    
-    assert(SentenceParser.parse(StringOption("、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("、、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("、、。")).isEmpty)
-    assert(SentenceParser.parse(StringOption("、。、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("。、、")).isEmpty)
-    assert(SentenceParser.parse(StringOption("。")).isEmpty)
-    assert(SentenceParser.parse(StringOption("。。")).isEmpty)
+
+    assert(JapaneseSentenceSplitter.split(StringOption("、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("、、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("、、。")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("、。、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("。、、")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("。")).isEmpty)
+    assert(JapaneseSentenceSplitter.split(StringOption("。。")).isEmpty)
   }
 ```
