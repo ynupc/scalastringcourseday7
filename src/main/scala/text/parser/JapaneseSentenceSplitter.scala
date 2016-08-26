@@ -51,7 +51,7 @@ object JapaneseSentenceSplitter {
     val sentences: ListBuffer[NS] = ListBuffer[NS]()
 
     //改行文字により行に分割
-    textOpt.get split '\n' foreach {
+    textOpt.get.lines foreach {
       l: String =>
         var line: String = l
         val replacementBuffer: ListBuffer[String] = ListBuffer[String]()
