@@ -72,7 +72,7 @@ object JISStandardKanji {
     codePoint.toHexString.toUpperCase match {
       case cp: String if cp.length < size =>
         builder.
-          append("0" * (size - cp.length)).//実際上ではU+1000未満が存在しないため不要なコード
+          append("0" * (size - cp.length)).//結果論としては今回のケースでU+1000未満が存在しないため不要であった行
           append(cp).
           result
       case otherwise =>
