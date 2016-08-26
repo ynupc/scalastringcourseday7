@@ -108,7 +108,7 @@ object SentenceQuotationParser {
     new QuotedSentence(parentSentence, childrenSentences.toMap)
   }
 
-  private class QuotedSentence(val parentSentence: String,
+  class QuotedSentence(val parentSentence: String,
                                val childrenSentences: Map[String, QuotationSentence]) {
     override def toString: String = {
       var text: String = parentSentence
@@ -138,7 +138,7 @@ object SentenceQuotationParser {
     buffer.result
   }
 
-  private class NormalizedQuotedSentence(val originalText: String,
+  class NormalizedQuotedSentence(val originalText: String,
                                          val quotedSentence: QuotedSentence) {
     override def toString: String = quotedSentence.toString
   }

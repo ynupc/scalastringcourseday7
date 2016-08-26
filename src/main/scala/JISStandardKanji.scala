@@ -68,16 +68,18 @@ object JISStandardKanji {
 
   private def getCodePointHex(codePoint: Int): String = {
     val size: Int = 4
-    codePoint.toHexString match {
+    val builder: mutable.StringBuilder = new mutable.StringBuilder(size + 3).append('U').append('+')
+    codePoint.toHexString.toUpperCase match {
       case cp: String if cp.length < size =>
-        val builder: mutable.StringBuilder = new mutable.StringBuilder(size)
-        for (i <- 0 until (size - cp.length)) {
-          builder.append('0')
-        }
-        builder.append(cp)
-        builder.result
-      case otherwise => otherwise
+        builder.
+          append("0" * (size - cp.length)).//実際上ではU+1000未満が存在しないため不要なコード
+          append(cp).
+          result
+      case otherwise =>
+        builder.
+          append(otherwise)
     }
+    builder.result
   }
 
   def main(args: Array[String]): Unit = {
@@ -92,7 +94,7 @@ object JISStandardKanji {
         val codePoint: Int = str.toCodePointArray.head
         val codePointHex: String = getCodePointHex(codePoint)
         if (codePoint != 0xFFFD) {//double check
-          printf("lv.%s,0x%s,U+%s,%s\n",
+          printf("lv.%s,0x%s,%s,%s\n",
             level,
             sjis.toUpperCase,
             codePointHex,
