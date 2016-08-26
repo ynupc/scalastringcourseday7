@@ -876,7 +876,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 漢字
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
-<tr><td>\p{Han}</td><td>漢字（Unicodeスクリプト）</td><td><a href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5Cp%7BHan%7D&ucd=on" target="_blank">\p{Han}（Unicode Utilities: UnicodeSet）</a></td></tr>
+<tr><td>\p{script=Han}</td><td>漢字（Unicodeスクリプト）</td><td><a href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5Cp%7Bscript%3DHan%7D&ucd=on" target="_blank">\p{script=Han}（Unicode Utilities: UnicodeSet）</a></td></tr>
 <tr><td>\p{InCJKCompatibilityIdeographs}</td><td>CJK互換漢字（Unicodeブロック）</td><td>[U+F900, U+FAFF]</td></tr>
 <tr><td>\p{InCJKCompatibilityIdeographs Supplement}</td><td>CJK互換漢字補助（Unicodeブロック）</td><td>[U+2F800, U+2FA1D]</td></tr>
 <tr><td>\p{InCJKRadicalsSupplement}</td><td>CJK部首補助（Unicodeブロック）</td><td>[U+2E80, U+2EFF]</td></tr>
