@@ -1,5 +1,7 @@
 package text.normalizer
 
+import java.io.ByteArrayInputStream
+import java.nio.charset.StandardCharsets
 import java.nio.file.{Path, Paths}
 
 import text.StringOption
@@ -7,6 +9,7 @@ import util.Config
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
+import scala.io.{Codec, Source}
 import scala.sys.process.Process
 import scala.util.matching.Regex
 
@@ -34,23 +37,26 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
     val buffer: ListBuffer[(String, String)] = ListBuffer[(String, String)]()
     val filePath: Path = Paths.get(Config.resourcesDir, "normalizer", dictionaryName).toAbsolutePath
     val lines: Iterator[String] = ascii2native(filePath).toIterator
+    val byteBuffer: ListBuffer[Byte] = ListBuffer[Byte]()
     while (lines.hasNext) {
-      val line: String = lines.next.trim
-      line match {
-        case regex(representation, notationalVariants, commentOut) =>
-          val trimmedRepresentation: String = representation.trim match {
-            case "\"\"" => ""
-            case otherwise => otherwise
-          }
-          val sortedNotationalVariants: List[String] = sortNotationVariants(notationalVariants.split(',').toList)
-          map(trimmedRepresentation) = if (map.contains(trimmedRepresentation)) {
-              sortNotationVariants(map(trimmedRepresentation) ++ sortedNotationalVariants)
-          } else {
-            sortedNotationalVariants
-          }
-        case otherwise =>
-          //Do nothing
-      }
+      val line: String = lines.next.trim concat "\n"
+      byteBuffer ++= line.getBytes
+    }
+    implicit val codec = Codec(StandardCharsets.UTF_8)
+    Source.fromInputStream(new ByteArrayInputStream(byteBuffer.toArray)).getLines foreach {
+      case regex(representation, notationalVariants, commentOut) =>
+        val trimmedRepresentation: String = representation.trim match {
+          case "\"\"" => ""
+          case otherwise => otherwise
+        }
+        val sortedNotationalVariants: List[String] = sortNotationVariants(notationalVariants.split(',').toList)
+        map(trimmedRepresentation) = if (map.contains(trimmedRepresentation)) {
+          sortNotationVariants(map(trimmedRepresentation) ++ sortedNotationalVariants)
+        } else {
+          sortedNotationalVariants
+        }
+      case otherwise =>
+      //Do nothing
     }
     sortRepresentations(map.keySet.toList) foreach {
       representation =>
