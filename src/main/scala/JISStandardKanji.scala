@@ -6,7 +6,7 @@ import scala.collection.mutable
   * @author ynupc
   *         Created on 2016/08/06
   */
-object JISStandardKanji {
+object JISStandardKanji extends App {
   private def remainder(sjisCodePoint: Int): Int = {
     val denominator: Int = 0x100
     sjisCodePoint % denominator match {
@@ -82,24 +82,22 @@ object JISStandardKanji {
     builder.result
   }
 
-  def main(args: Array[String]): Unit = {
-    val surrogateRange: Range = 0 to 0xFF
-    print("SJIS-Level,SJIS-CodePoint,Unicode-CodePoint,Character\n")
-    for (highSurrogate: Int <- surrogateRange; lowSurrogate: Int <- surrogateRange) {
-      val sjis: String = highSurrogate.toHexString concat lowSurrogate.toHexString
-      val sjisCodePoint: Int = sjis.hexStringToInt
-      val level: Byte = getLevel(sjisCodePoint)
-      if (0 < level) {
-        val str: String = new String(Array(highSurrogate.toByte, lowSurrogate.toByte), "x-MS932_0213")//"x-SJIS_0213"でも可
-        val codePoint: Int = str.toCodePointArray.head
-        val codePointHex: String = getCodePointHex(codePoint)
-        if (codePoint != 0xFFFD) {//double check
-          printf("lv.%s,0x%s,%s,%s\n",
-            level,
-            sjis.toUpperCase,
-            codePointHex,
-            str)
-        }
+  val surrogateRange: Range = 0 to 0xFF
+  print("SJIS-Level,SJIS-CodePoint,Unicode-CodePoint,Character\n")
+  for (highSurrogate: Int <- surrogateRange; lowSurrogate: Int <- surrogateRange) {
+    val sjis: String = highSurrogate.toHexString concat lowSurrogate.toHexString
+    val sjisCodePoint: Int = sjis.hexStringToInt
+    val level: Byte = getLevel(sjisCodePoint)
+    if (0 < level) {
+      val str: String = new String(Array(highSurrogate.toByte, lowSurrogate.toByte), "x-MS932_0213")//"x-SJIS_0213"でも可
+      val codePoint: Int = str.toCodePointArray.head
+      val codePointHex: String = getCodePointHex(codePoint)
+      if (codePoint != 0xFFFD) {//double check
+        printf("lv.%s,0x%s,%s,%s\n",
+          level,
+          sjis.toUpperCase,
+          codePointHex,
+          str)
       }
     }
   }
