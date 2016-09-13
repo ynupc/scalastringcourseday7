@@ -1,7 +1,7 @@
 package text.normalizer
 
 import java.io.ByteArrayInputStream
-import java.nio.charset.StandardCharsets
+import java.nio.charset.{CodingErrorAction, StandardCharsets}
 import java.nio.file.{Path, Paths}
 
 import text.StringOption
@@ -42,7 +42,9 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
       val line: String = lines.next.trim concat "\n"
       byteBuffer ++= line.getBytes
     }
-    implicit val codec = Codec(StandardCharsets.UTF_8)
+    implicit val codec = Codec(StandardCharsets.UTF_8).
+      onMalformedInput(CodingErrorAction.REPORT).
+      onUnmappableCharacter(CodingErrorAction.REPORT)
     Source.fromInputStream(new ByteArrayInputStream(byteBuffer.toArray)).getLines foreach {
       case regex(representation, notationalVariants, commentOut) =>
         val trimmedRepresentation: String = representation.trim match {
@@ -56,7 +58,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
           sortedNotationalVariants
         }
       case otherwise =>
-      //Do nothing
+        //Do nothing
     }
     sortRepresentations(map.keySet.toList) foreach {
       representation =>
