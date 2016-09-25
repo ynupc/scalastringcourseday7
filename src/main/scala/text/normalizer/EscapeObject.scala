@@ -1,7 +1,5 @@
 package text.normalizer
 
-import java.nio.file.Paths
-
 import text.{StringNone, StringOption, StringSome}
 import util.Config
 
@@ -23,7 +21,7 @@ class EscapeObject(objectFileNameOpt: StringOption) {
 
     val buffer: ListBuffer[String] = ListBuffer[String]()
     Source.fromFile(
-      Paths.get(Config.resourcesDir, "normalizer", objectFileNameOpt.get).toAbsolutePath.toFile
+      Config.resourceFile("normalizer", objectFileNameOpt.get).toFile
     ).getLines foreach {
       line: String =>
         NormalizedString(StringOption(line.trim)).toStringOption match {

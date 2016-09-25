@@ -111,16 +111,16 @@ class NormalizedStringBuilder {
   }
 
   def result(): NormalizedString = {
-    new NormalizedString(StringOption(builder.toString()))
+    new NormalizedString(StringOption(builder.toString))
   }
 
   def clear(): Unit = {
-    builder.clear()
+    builder.clear
   }
 }
 
 class NormalizedStringBuffer {
-  val buffer = new StringBuffer
+  val buffer = new StringBuffer()
 
   def append(nStr: NormalizedString): NormalizedStringBuffer = {
     buffer.append(nStr.toString)

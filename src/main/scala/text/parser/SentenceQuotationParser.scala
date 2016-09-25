@@ -1,7 +1,5 @@
 package text.parser
 
-import java.nio.file.Paths
-
 import text.normalizer._
 import text.{StringNone, StringOption, StringSome}
 import util.Config
@@ -24,7 +22,7 @@ object SentenceQuotationParser {
   private final val quotations: Seq[Quotation] = {
     val buffer: ListBuffer[Quotation] = ListBuffer[Quotation]()
     Source.fromFile(
-      Paths.get(Config.resourcesDir, "parser", "quotation.csv").toAbsolutePath.toFile
+      Config.resourceFile("parser", "quotation.csv").toFile
     ).getLines foreach {
       line: String =>
         val quotations: Array[String] = line.trim.split(',')
@@ -139,7 +137,7 @@ object SentenceQuotationParser {
   }
 
   class NormalizedQuotedSentence(val originalText: String,
-                                         val quotedSentence: QuotedSentence) {
+                                 val quotedSentence: QuotedSentence) {
     override def toString: String = quotedSentence.toString
   }
 }
