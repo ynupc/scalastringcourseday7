@@ -20,10 +20,10 @@ object ProcessBuilderUtils {
 }
 
 class ProcessBuilderUtils(repr: ProcessBuilder) {
-  def lineStream_!(encoding: Charset,
-                   onMalformedInput: CodingErrorAction,
-                   onUnmappableCharacter: CodingErrorAction,
-                   replacementOpt: StringOption): Iterator[String] = {
+  def lineStream(encoding: Charset,
+                 onMalformedInput: CodingErrorAction,
+                 onUnmappableCharacter: CodingErrorAction,
+                 replacementOpt: StringOption): Iterator[String] = {
     val lines: Iterator[String] = repr.lineStream_!.iterator
     val byteBuffer: ListBuffer[Byte] = ListBuffer[Byte]()
     while (lines.hasNext) {

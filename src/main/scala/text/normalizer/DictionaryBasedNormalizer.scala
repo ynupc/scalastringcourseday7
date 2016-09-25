@@ -1,7 +1,7 @@
 package text.normalizer
 
 import java.nio.charset.{CodingErrorAction, StandardCharsets}
-import java.nio.file.{Path, Paths}
+import java.nio.file.Path
 
 import text.{StringNone, StringOption}
 import util.Config
@@ -22,7 +22,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
       s"${System.getProperty("java.home")}/../bin/native2ascii",
       "-reverse",
       "-encoding", "UTF-8",
-      inputPath.toAbsolutePath.toString)).lineStream_!(
+      inputPath.toAbsolutePath.toString)).lineStream(
         StandardCharsets.UTF_8,
         CodingErrorAction.REPORT,
         CodingErrorAction.REPORT,
@@ -38,7 +38,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
     val dictionaryName: String = dictionaryNameOpt.get
     val map: mutable.Map[String, List[String]] = mutable.Map[String, List[String]]()
     val buffer: ListBuffer[(String, String)] = ListBuffer[(String, String)]()
-    val filePath: Path = Paths.get(Config.resourcesDir, "normalizer", dictionaryName).toAbsolutePath
+    val filePath: Path = Config.resourceFile("normalizer", dictionaryName)
     ascii2native(filePath) foreach {
       case regex(representation, notationalVariants, commentOut) =>
         val trimmedRepresentation: String = representation.trim match {

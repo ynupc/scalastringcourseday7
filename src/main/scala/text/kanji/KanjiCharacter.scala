@@ -1,7 +1,6 @@
 package text.kanji
 
 import java.io.File
-import java.nio.file.Paths
 import java.util.regex.Pattern
 
 import util.Config
@@ -17,9 +16,14 @@ trait KanjiCharacter {
   val kanji: Seq[String]
 
   lazy val regex: String = {
-    val builder: StringBuilder = new StringBuilder(kanji.size)
-    kanji foreach builder.append
-    builder.result.mkString("[", "", "]")
+    val size: Int = kanji.size
+    if (size <= 0) {
+      ""
+    } else {
+      val builder: StringBuilder = new StringBuilder(size)
+      kanji foreach builder.append
+      builder.result.mkString("[", "", "]")
+    }
   }
 
   lazy val pattern: Pattern = Pattern.compile(regex)
@@ -46,7 +50,7 @@ trait KanjiCharacter {
 
   protected def readKanjiCSV(fileName: String): Seq[String] = {
     val buffer: ListBuffer[String] = ListBuffer[String]()
-    val file: File = Paths.get(Config.resourcesDir, "kanji", fileName.concat(".csv")).toAbsolutePath.toFile
+    val file: File = Config.resourceFile("kanji", fileName.concat(".csv")).toFile
     if (file.canRead && file.isFile) {
       Source.fromFile(file).getLines foreach {
         line =>
