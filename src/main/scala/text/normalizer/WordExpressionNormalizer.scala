@@ -18,6 +18,7 @@ object WordExpressionNormalizer extends DictionaryBasedNormalizer(StringOption("
   }
 
   override protected def replaceAll(input: String, term: String, replacement: String): String = {
+    //regex is available
     input.replaceAll(term, replacement)
   }
 }

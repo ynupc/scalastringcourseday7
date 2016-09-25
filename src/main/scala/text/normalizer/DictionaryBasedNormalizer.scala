@@ -89,6 +89,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
   }
 
   protected def replaceAll(input: String, term: String, replacement: String): String = {
-    input.replaceAllLiterally(term, replacement)
+    import util.StringUtils._
+    input.replaceAllLiteratim(term, replacement)
   }
 }
