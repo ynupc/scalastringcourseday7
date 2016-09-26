@@ -1058,8 +1058,8 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
 <h4>1.5.4　ひらがなとカタカナの相互変換（自作）</h4>
 <img src="../image/string_course.023.jpeg" width="500px"><br>
 自作のJapaneseCharacterCaseConverterは、ひらがなとカタカナのコードポイントの差分を利用してひらがなとカタカナの相互変換を実行します。
-<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/normalizer/JapaneseCharacterCaseConverter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
-処理に使用するのNormalizedStringOption、NormalizedString、StringOptionについては次章で説明します。
+<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/JapaneseSentenceSplitter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
+処理に使用するのNormalizedStringとStringOptionについては次章で説明します。
 ```scala
   private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
 
