@@ -8,4 +8,9 @@ import text.StringOption
   */
 object SentenceBeginningNormalizer
   extends DictionaryBasedNormalizer(
-    StringOption("sentence_beginning_normalization.yml"))
+    StringOption("sentence_beginning_normalization.yml")) {
+  override def replaceAll(input: String, term: String, replacement: String): String = {
+    //regex is available
+    input.replaceFirst("^" concat term, replacement)
+  }
+}

@@ -103,7 +103,7 @@ object Normalizer {
 }
 
 class NormalizedStringBuilder {
-  val builder = new StringBuilder
+  val builder: StringBuilder = new StringBuilder()
 
   def append(nStr: NormalizedString): NormalizedStringBuilder = {
     builder.append(nStr.toString)
@@ -120,7 +120,7 @@ class NormalizedStringBuilder {
 }
 
 class NormalizedStringBuffer {
-  val buffer = new StringBuffer()
+  val buffer: StringBuffer = new StringBuffer()
 
   def append(nStr: NormalizedString): NormalizedStringBuffer = {
     buffer.append(nStr.toString)

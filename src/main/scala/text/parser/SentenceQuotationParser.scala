@@ -62,7 +62,7 @@ object SentenceQuotationParser {
 
     quotations foreach {
       quotation: Quotation =>
-        val regex: Regex = s".+".quote(quotation).r
+        val regex: Regex = ".+".quote(quotation).r
         regex.findFirstMatchIn(sentence) foreach {
           m: Match =>
             quotationRangeBuffer += ((quotation, Range(m.start, m.end)))
