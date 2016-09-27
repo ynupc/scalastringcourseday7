@@ -30,9 +30,9 @@ etc.<br>
 <a href="https://ja.wikipedia.org/wiki/%E4%B8%8B%E4%BB%98%E3%81%8D%E6%96%87%E5%AD%97" target="_blank">下付き文字</a><br>
 <a href="https://ja.wikipedia.org/wiki/%E5%85%A8%E8%A7%92%E3%81%A8%E5%8D%8A%E8%A7%92" target="_blank">全角と半角</a>
 ***
-<h3>2.2　EUC-JP/Shift-JISでの正規化</h3>
+<h3>2.2　Shift-JIS・EUC-JP・ISO-2022-JPでの正規化</h3>
 <img src="../image/string_course.026.jpeg" width="500px"><br>
-日本語文字をEUC-JPやShift-JISで扱う場合は、文字を全て２バイト文字に揃える正規化方法が一般的なために、ひらがなやカタカナだけでなく英数字も半角文字を全角文字にされます。２バイト文字に揃えておくとバイト数割る２で文字数を計測できます。EUC-JPやShift-JISで２バイト文字揃えによる正規化が一般的によく使用される理由として、EUC-JPやShift-JISがよく使用されていた過去の時代には日本語の文字列処理にPerlが使用されることが多く、PerlのStringがScalaのCharクラスやJavaのchar型のような文字境界を持つオブジェクトのシーケンスという設計にはなっていなかったという背景がある思います。<br>
+日本語文字をShift-JISやEUC-JPやISO-2022-JPで扱う場合は、文字を全て２バイト文字に揃える正規化方法が一般的なために、ひらがなやカタカナだけでなく英数字も半角文字を全角文字にされます。その理由は、２バイト文字に揃えておくとバイト数割る２で文字数を計測できるからです。Shift-JISやEUC-JPやISO-2022-JPが主に使用されていた過去の時代には日本語の文字列処理にPerlが使用されることが多く、PerlのStringがScalaのCharクラスやJavaのchar型のような文字境界を持つオブジェクトのシーケンスという設計にはなっていなかったという背景があります。現在は日本語に限らずテキストファイルはUTF-8で扱うのが一般的で、別のUnicodeの正規化方法が存在します。ScalaやJavaのStringは文字境界を持つのでバイト数を活用して文字数を計測する必要は無くなりました。しかし、サロゲートペアの存在により文字境界が正確ではないため、正確な文字数を計測するためには特殊な方法で行います。特殊な方法については、<a href="https://github.com/ynupc/scalastringcourseday3">Day 3</a>で解説しています。<br>
 <br>
 例：EUC-JPを表す正規表現
 ```
