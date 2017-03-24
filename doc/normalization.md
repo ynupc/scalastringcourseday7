@@ -13,6 +13,7 @@
 </ul>
 例：<br>
 <a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%82%A4%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AB%E3%83%AB%E3%83%9E%E3%83%BC%E3%82%AF" target="_blank">ダイアクリティカルマーク</a>
+
 ***
 <h4>2.1.2　互換等価性</h4>
 上付き文字「¹」＝普通の文字「1」<br>
@@ -29,12 +30,14 @@ etc.<br>
 <a href="https://ja.wikipedia.org/wiki/%E4%B8%8A%E4%BB%98%E3%81%8D%E6%96%87%E5%AD%97" target="_blank">上付き文字</a><br>
 <a href="https://ja.wikipedia.org/wiki/%E4%B8%8B%E4%BB%98%E3%81%8D%E6%96%87%E5%AD%97" target="_blank">下付き文字</a><br>
 <a href="https://ja.wikipedia.org/wiki/%E5%85%A8%E8%A7%92%E3%81%A8%E5%8D%8A%E8%A7%92" target="_blank">全角と半角</a>
+
 ***
 <h3>2.2　Shift-JIS・EUC-JP・ISO-2022-JPでの正規化</h3>
 <img src="../image/string_course.026.jpeg" width="500px"><br>
 日本語文字をShift-JISやEUC-JPやISO-2022-JPで扱う場合は、文字を全て２バイト文字に揃える正規化方法が一般的なために、ひらがなやカタカナだけでなく英数字も半角文字を全角文字にされます。その理由は、２バイト文字に揃えておくとバイト数割る２で文字数を計測できるからです。Shift-JISやEUC-JPやISO-2022-JPが主に使用されていた過去の時代には日本語の文字列処理にPerlが使用されることが多く、PerlのStringがScalaのCharクラスやJavaのchar型のような文字境界を持つオブジェクトのシーケンスという設計にはなっていなかったという背景があります。現在は日本語に限らずテキストファイルはUTF-8で扱うのが一般的で、別のUnicodeの正規化方法が存在します。ScalaやJavaのStringは文字境界を持つのでバイト数を活用して文字数を計測する必要は無くなりました。しかし、サロゲートペアの存在により文字境界が正確ではないため、正確な文字数を計測するためには特殊な方法で行います。特殊な方法については、<a href="https://github.com/ynupc/scalastringcourseday3">Day 3</a>で解説しています。<br>
 <br>
 例：Shift-JISを表す正規表現
+
 ```
 (?:
                                    [\\x00-\\x7F]| // ASCII/JIS ローマ字
@@ -43,6 +46,7 @@ etc.<br>
 )
 ```
 例：EUC-JPを表す正規表現
+
 ```
 (?:
                   [\\x00-\\x7F]| // コードセット０（ASCII/JIS ローマ字）
@@ -52,6 +56,7 @@ etc.<br>
 )
 ```
 例：ISO-2022-JPを表す正規表現
+
 ```
 (?:
                                                 [\\x00-\\x7F]  | // ASCII/JIS ローマ字
@@ -61,6 +66,7 @@ etc.<br>
 )
 ```
 Shift-JIS・EUC-JP・ISO-2022-JPといった日本語専用の文字コードについては、<a href="#コラム日本語専用文字コード区点コードshift-jiseuc-jpiso-2022-jp">コラム：日本語専用文字コード（区点コード・Shift-JIS・EUC-JP・ISO-2022-JP）</a>、マルチバイト文字のマッチングエラーについては<a href="#コラムマルチバイト文字のマッチングエラー">コラム：マルチバイト文字のマッチングエラー</a>、Shift-JISのダメ文字問題については、<a href="#コラムshift-jisのダメ文字問題">コラム：Shift-JISのダメ文字問題</a>をご参照ください。
+
 ***
 <h3>2.3　Unicode正規化</h3>
 <img src="../image/string_course.027.jpeg" width="500px"><br>
@@ -73,6 +79,7 @@ Unicodeには次の４種類の正規化形式が用意されています。正�
   <li><strong>NFKC（Normalization Form Compatibility Composition, 正規化形式KC）<br>文字は互換等価性によって分解され、
 正準等価性によって再度合成されます。</strong></li>
 </ul>
+
 ***
 <h3>2.4　オプション</h3>
 <img src="../image/string_course.028.jpeg" width="500px"><br>
@@ -82,6 +89,7 @@ Optionは値があるのかないのかわからない状態を表すもので�
   <li>isEmpty/nonEmptyでNoneを排除後に、getで値を取り出す方法</li>
   <li>getOrElseで取り出せなかった時（elseの時）に返すデフォルト値を事前に用意してから値を取り出す方法</li>
 </ol>
+
 ```scala
   private val wordVariants: String = "スパゲッティ,スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ"
   private val nullString: String = null
@@ -116,10 +124,12 @@ Optionは値があるのかないのかわからない状態を表すもので�
     assert(nullStringOpt.getOrElse("ゲッティ") == "ゲッティ")
   }
 ```
+
 ***
 <h3>2.5　文字列オプション（自作）</h3>
 <img src="../image/string_course.029.jpeg" width="500px"><br>
 Optionを使用するとnullを書かずにすむためNullPointerExceptionを排除するために使用できます。文字列処理においてStringはnullだけでなく空文字""も同時に排除したい場合がよくありますが、Optionでは空文字は排除されません。そこで、OptionのようにStringを包むことでnullと空文字を排除するためのStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>。
+
 ```scala
   @Test
   def testStringOption(): Unit = {
@@ -142,6 +152,7 @@ Optionを使用するとnullを書かずにすむためNullPointerExceptionを�
     }
   }
 ```
+
 ***
 <h3>2.6　正規化文字列（自作）</h3>
 <img src="../image/string_course.030.jpeg" width="500px"><br>
@@ -180,6 +191,7 @@ NormalizedStringは辞書ファイルとプログラムファイルから構成�
   </li>
 </ul>
 NormalizedStringに関する辞書ファイルとプログラムファイルについて、リポジトリ内のディレクトリ構成図は次です。
+
 ```
 scalastringcourseday7/
  ├ src/
@@ -204,24 +216,28 @@ scalastringcourseday7/
  ```
  <h4>2.6.3　辞書ファイルのフォーマット</h4>
  AやBやCをDに置換し、EやFをGに置換したい場合は次のように記述します。
+ 
  ```
  D:[A,B,C]
  G:[E,F]
  ```
  Unicodeシーケンスで記述することができます。これにより、見た目が似ている文字もコードポイントにより明示的に区別することができます。「#」記号を使うことでコメントアウトすることができます。これにより、例えば、Unicodeシーケンンスで記述した文字をnativeな文字でコメントアウト内に記述したり、置換規則（行）の使用をコメントアウトにより管理することができます。現状では「#」記号と「:」記号を置換する・される文字・文字列内で記述することができません。<br>
 「Unicode正規化後の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/character_dic_before_unicode_normalization.yml" target="_blank">character_dic_before_unicode_normalization.yml</a>）
+
  ```
  \uFF5E:[\u301C,\u007E]#波線記号の統一,～,〜,~
 #\u309B:[\u3099]#濁点の統一,゛,゙
  ```
 次のように「""」を使用することで、マッチする文字・文字列を削除（空文字に置換）することができます。<br>
 「Unicode正規化前の辞書による文字の正規化」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/character_dic_after_unicode_normalization.yml" target="_blank">character_dic_after_unicode_normalization.yml</a>）
+
  ```
 "":[\u003D,\uFF1D]#イコール記号の削除,=,＝
 "":[\u30FB]#中黒の削除,・
  ```
 word_expression_dic.ymlでは、次のように異表記を代表表記に変換できます。この辞書ファイルのみ、置き換えたい文字列を正規表現で記述することができます。同時に正規表現で記述できるためエスケープシーケンスに注意が必要です。<br>
 「辞書による単語の異表記からの代表表記への置換」で使用する辞書ファイル（<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/normalizer/word_expression_dic.yml" target="_blank">word_expression_dic.yml</a>）
+
 ```
 タンパク質:[たんぱく質,蛋白質]
 スパゲッティ:[スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ]
@@ -234,6 +250,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 このように表層的なパターンマッチによる置換で異表記を代表表記に統一する場合、単語境界が考慮されないので問題が起こる場合が懸念されます。例えば、「横浜国立大」を「横浜国立大学」に置換すると「横浜国立大学」が「横浜国立大学学」に誤変換したり、パターンマッチによって「横浜国立大学」の場合には誤変換を起こさないように正規表現を記述しても「パシフィコ横浜国立大ホール」（「パシフィコ横浜」＋「国立」＋「大ホール」であり、「横浜国立大学」が所有するホールではない）が「パシフィコ横浜国立大学ホール」に誤変換されるような場合が懸念されます。「國大生」は國學院大學の学生を指し、「国大生」は国立大学や横浜国立大学や國學院大學などの学生を指します。「國」を「国」に正規化すると「國大生」がより曖昧な語である「国大生」になってしまいます。正規化処理・表層的な文字列置換により作成したいアプリケーションの目的に反することが起きないよう、あるいは個々の正規化規則により得られるメリットとデメリットのバランスを考えて注意深く正規化の設計・保守・管理する必要があります。<br>
 <br>
 互換等価性に関するサンプルコード
+
 ```scala
   //\u30AC = 全角カタカナの「ガ」
   private val sOfU30AC = "\u30AC"
@@ -276,6 +293,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
   }
 ```
 正準等価性に関するサンプルコード
+
 ```scala
   //\u30AC = 全角カタカナの「ガ」
   private val sOfU30AC = "\u30AC"
@@ -334,6 +352,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
   }
 ```
 文字列の正規化に関するサンプルコード（単語異表記を代表表記に置換）
+
 ```scala
   private val wordVariants: String = "スパゲッティ,スパゲッティー,スパゲッテイ,スパゲティ,スパゲティー,スパゲテイ"
   
@@ -347,10 +366,12 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
     }
   }
 ```
+
 ***
 <h3>2.7　日本語の句点による文分割と文の正規化（自作）</h3>
 <img src="../image/string_course.031.jpeg" width="500px"><br>
 日本語テキストを句点「。」や「．」の区切りによる文（単文・重文・複文の文ではない）に分割し、文を正規化する方法について説明します。単純に日本語テキストを上記のNormalizedStringやUnicode正規化してしまうと、日本語の句点・読点がそれぞれラテン文字のピリオト・カンマに変換されてしまいます。例えば、日本語テキストに小数点のピリオドや数字の桁区切りのカンマなどが混在している場合、正規化後のテキストのピリオドが日本語の句点を意味していたのか小数点のピリオドを意味していたのかわかりづらくなってしまいます。そこで、正規化する際に日本語の句点・読点を一旦退避させて、それらを正規化後に元の位置に戻すような処理を含めた文分割処理を作成しました。「モーニング娘。」のような固有名詞に句点が含まれている場合は正規化処理から退避させることに加え、句点による文分割の処理からも退避させる必要があります。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/parser/proper_noun_with_japanese_period.txt" target="_blank">proper_noun_with_japanese_period.txt</a>に登録した句点を含む固有名詞の句点は文分割処理の前に一時的に幽霊文字に変換し、文分割処理後に元の句点に戻します。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/JapaneseSentenceSplitter.scala" target="_blank">JapaneseSentenceSplitterの実装</a>。
+
 ```scala
   @Test
   def testNormalizedSentence(): Unit = {
@@ -373,18 +394,22 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
     assert(JapaneseSentenceSplitter.split(StringOption("。。")).isEmpty)
   }
 ```
+
 ***
 <h3>2.8　引用符による文の解析（自作）</h3>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/SentenceQuotationParser.scala" target="_blank">SentenceQuotationParserの実装</a>。
+
 ***
 <h3>コラム：日本語専用文字コード（区点コード・Shift-JIS・EUC-JP・ISO-2022-JP）</h3>
 <h4>（１）区点コード</h4>
 <h4>（２）Shift-JIS</h4>
 <h4>（３）EUC-JP</h4>
 <h4>（４）ISO-2022-JP</h4>
+
 ***
 <h3>コラム：マルチバイト文字のマッチングエラー</h3>
 基本的にはScala/Javaでは起こらない問題ですし、ほぼ愚痴ですが、個人的な経験としてPerlやPHPなどでEUC-JPやShift-JISの文字の正規表現によるパターンマッチが、マルチバイト対応のメソッドを使用しないと（あるいは使用してもバグにより）失敗することがありました。２バイト文字が２つ並んだ場合、一つ目の文字（２バイト）がAB、二つ目の文字（２バイト）がCDとすると、プログラムにはABCDという文字列が見えています。ここで文字BCにパターンマッチをすると文字ABのBと文字CDのCで構成されたBCにマッチしてしまう問題が生じます。パターンマッチの失敗に加え、それをさらに置換・削除するような処理だと文字化けの原因にもなります。最近のPerl/PHPはUnicodeに対応しているようですし、新しいバージョンを使用すればそのような問題はないらしいです。（以前は正規表現が記述しやすいPerlを私は言語処理で使用しておりましたが$、@、%記号を大量にタイプしたくないのでやめました。使っていないため最近のことはよくわからないです。）
+
 ***
 <h3>コラム：Shift-JISのダメ文字問題</h3>
 0x5CはASCIIでバックスラッシュ記号を意味し、Shift-JISでは円記号です。
