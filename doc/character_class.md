@@ -15,6 +15,7 @@ rf.<br>
 </ul>
 </td></tr>
 </table>
+
 ***
 <h3>1.1.1　Unicodeスクリプト</h3>
 <img src="../image/string_course.003.jpeg" width="500px"><br>
@@ -132,6 +133,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Vai</td><td>VAI</td></tr>
 <tr><td>Yi</td><td>YI</td></tr>
 </table>
+
 ```scala
   @Test
   def testCharacterUnicodeScriptOf(): Unit = {
@@ -142,6 +144,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
     assert(Character.UnicodeScript.of(symbolCodePoint)   == Character.UnicodeScript.COMMON)
   }
 ```
+
 ***
 <h3>1.1.2　Unicodeブロック</h3>
 <img src="../image/string_course.004.jpeg" width="500px"><br>
@@ -366,6 +369,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 <tr><td>Yi Syllables</td><td>YI_SYLLABLES</td></tr>
 <tr><td>Yijing Hexagram Symbols</td><td>YIJING_HEXAGRAM_SYMBOLS</td></tr>
 </table>
+
 ```scala
   @Test
   def testCharacterUnicodeBlockOf(): Unit = {
@@ -382,6 +386,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
     assert(Character.UnicodeBlock.of(symbolCodePoint)   == Character.UnicodeBlock.BASIC_LATIN)
   }
 ```
+
 ***
 <h3>1.1.3　Unicodeカテゴリ</h3>
 <img src="../image/string_course.005.jpeg" width="500px"><br>
@@ -435,6 +440,7 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 </table>
 <br>
 任意のCharやコードポイントからUnicodeカテゴリを取得するには、<a href="#142charactergettype">Character.getTypeメソッド</a>を使用します。
+
 ***
 <h3>1.1.4　Unicodeバイナリ・プロパティ</h3>
 <img src="../image/string_course.006.jpeg" width="500px"><br>
@@ -456,6 +462,7 @@ Unicodeプロパティのうち、バイナリ型で定義されているもの�
 <tr><td>Noncharacter_Code_Point</td><td>文字ではないコードポイント</td></tr>
 <tr><td>Assigned</td><td>割り当てられた文字</td></tr>
 </table>
+
 ***
 <h3>1.2　java.lang.Characterクラスによる文字の字種情報の取得</h3>
 <img src="../image/string_course.007.jpeg" width="500px"><br>
@@ -463,6 +470,7 @@ java.lang.CharacterクラスのメソッドgetName、getType、getDirectionality
 <h4>1.2.1　Character.getName</h4>
 <img src="../image/string_course.008.jpeg" width="500px"><br>
 Character.getNameメソッドは、コードポイントがunassignedの場合はnull、それ以外は次の結果を返します。
+
 ```java
 Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ENGLISH);
 ```
@@ -485,10 +493,12 @@ Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Intege
     assert(Character.getName(symbolCodePoint)   == "PLUS SIGN")
   }
 ```
+
 ***
 <h4>1.2.2　Character.getType</h4>
 <img src="../image/string_course.009.jpeg" width="500px"><br>
 Character.getTypeメソッドはCharやコードポイントに対して<a href="#18unicodeカテゴリ">Unicodeカテゴリ</a>を返します。
+
 ```scala
   private val hiraganaChar: Char = 'か'
   private val katakanaChar: Char = 'カ'
@@ -580,6 +590,7 @@ Character.getTypeメソッドはCharやコードポイントに対して<a href=
     assert(Character.getType(symbolCodePoint)   == Character.MATH_SYMBOL)
   }
 ```
+
 ***
 <h4>1.2.3　Character.getDirectionality</h4>
 <img src="../image/string_course.010.jpeg" width="500px"><br>
@@ -759,6 +770,7 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 </ul>
 </td></tr>
 </table>
+
 ***
 <h3>1.4　正規表現の字種によるマッチング</h3>
 <img src="../image/string_course.012.jpeg" width="500px"><br>
@@ -783,6 +795,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{XDigit}</td><td>16進数字</td><td>[0-9a-fA-F]</td></tr>
 <tr><td>\p{Space}</td><td>空白文字</td><td>[\t\n\x0B\f\r]</td></tr>
 </table>
+
 ***
 <h4>1.4.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
 <img src="../image/string_course.014.jpeg" width="500px"><br>
@@ -793,6 +806,7 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 <tr><td>\p{javaWhitespace}</td><td>java.lang.Character.isWhitespace()と等価</td></tr>
 <tr><td>\p{javaMirrored}</td><td>java.lang.Character.isMirrored()と等価</td></tr>
 </table>
+
 ***
 <h4>1.4.3　Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティのクラス</h4>
 <img src="../image/string_course.015.jpeg" width="500px"><br>
@@ -807,6 +821,7 @@ Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接
 <tr><td>\P{InGreek}</td><td>ギリシャ語ブロック以外の文字(否定)</td></tr>
 <tr><td>[\p{L}&&[^\p{Lu}]]</td><td>大文字以外の文字(減算)</td></tr>
 </table>
+
 ***
 <h4>1.4.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
 <img src="../image/string_course.016.jpeg" width="500px"><br>
@@ -833,6 +848,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\w</td><td>単語構成文字</td><td>[\p{Alpha}\p{gc=Mn}\p{gc=Me}\p{gc=Mc}\p{Digit}\p{gc=Pc}\p{IsJoin_Control}]</td></tr>
 <tr><td>\W</td><td>非単語文字</td><td>[^\w]</td></tr>
 </table>
+
 ***
 <h4>1.4.5　日本語の字種のマッチング</h4>
 <img src="../image/string_course.017.jpeg" width="500px"><br>
@@ -894,6 +910,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <tr><td>\uFA30-\uFA6A</td><td>康煕別掲字（こうきべっけいじ）・人名許容体</td><td>[U+FA30, U+FA6A]</td></tr>
 <tr><td>\uFA6B-\uFA6D</td><td>ARIB外字（日本のデータ放送用）</td><td>[U+FA6B, U+FA6D]</td></tr>
 </table>
+
 ***
 <h4>1.4.6　主に日本語フォントで用いられる漢字の定義とマッチング（自作）</h4>
 <table>
@@ -913,6 +930,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 <td>notDefined</td><td>isDefinedの否定を返す。</td>
 </tr>
 </table>
+
 ```scala
   private val kanjiChar:    Char = '漢'
   
@@ -977,6 +995,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 </tr>
 </table>
 JIS水準漢字の一覧を出力するプログラムはこちら<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/JISStandardKanji.scala">JISStandardKanji</a>です。Shift-JISやwindows-31jではJIS水準漢字を全て出力するには符号化文字集合が足りないので、x-SJIS_0213かx-MS932_0213、もしくはUnicodeを使う必要があります。
+
 ***
 <h3>1.5　字種の変換</h3>
 <img src="../image/string_course.019.jpeg" width="500px"><br>
@@ -990,10 +1009,12 @@ letter caseにはlower case、title case、upper caseが存在します。
 <tr><td>title case</td><td>Abc</td><td>先頭文字が大文字で残りは小文字<br>１文字で複数文字あるように見える文字には、<br>title caseを持っている文字があります。<br>例：<ul><li>upper case:「Ǉ」（U+01C7）</li><li>title case:「ǈ」（U+01C8）</li><li>lower case:「	ǉ」（U+01C9）</li></ul></td></tr>
 <tr><td>upper case</td><td>ABC</td><td>全部大文字</td></tr>
 </table>
+
 ***
 <h4>1.5.2　文字のletter caseの変換</h4>
 <img src="../image/string_course.021.jpeg" width="500px"><br>
 Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUpperCase、toTitleCase、toLowerCaseメソッドでいずれか一方に揃えます。
+
 ```scala
   private val upperCaseChar: Char = '\u01C7'//「Ǉ」
   private val titleCaseChar: Char = '\u01C8'//「ǈ」
@@ -1033,10 +1054,12 @@ Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUp
     assert(Character.toLowerCase(lowerCaseCodePoint) == lowerCaseChar)
   }
 ```
+
 ***
 <h4>1.5.3　文字列のletter caseの変換</h4>
 <img src="../image/string_course.022.jpeg" width="500px"><br>
 Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃えます。
+
 ```scala
   private val locale: Locale = Locale.JAPAN
 
@@ -1054,12 +1077,14 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
     assert(letterCase.capitalize == "Letter Case string")
   }
 ```
+
 ***
 <h4>1.5.4　ひらがなとカタカナの相互変換（自作）</h4>
 <img src="../image/string_course.023.jpeg" width="500px"><br>
 自作のJapaneseCharacterCaseConverterは、ひらがなとカタカナのコードポイントの差分を利用してひらがなとカタカナの相互変換を実行します。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/JapaneseSentenceSplitter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
 処理に使用するのNormalizedStringとStringOptionについては次章で説明します。
+
 ```scala
   private val nullPoGa: NormalizedStringOption = NormalizedStringOption(NormalizedString(StringOption("「ぬるぽ」「ガッ」")))
 
