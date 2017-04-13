@@ -12,6 +12,8 @@ object StringOption {
       StringSome(value)
     }
   }
+ 
+  def empty: StringOption = StringNone
 }
 
 sealed abstract class StringOption {
