@@ -1,6 +1,9 @@
 # 1.　字種
+
 <h3>1.1　Unicodeコードポイントのグループ分け</h3>
+
 <img src="../image/string_course.002.jpeg" width="500px"><br>
+
 Unicodeコードポイントのグループ分けには、Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティがあります。
 <table>
 <tr><th>Unicodeコードポイントのグループ分け</th><th>特徴</th></tr>
@@ -18,7 +21,9 @@ rf.<br>
 
 ***
 <h3>1.1.1　Unicodeスクリプト</h3>
+
 <img src="../image/string_course.003.jpeg" width="500px"><br>
+
 Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="_blank">Unicode Standard Annex#24: Script Names</a>で規定されており、すべてのUnicode文字は、単一のUnicodeスクリプト(Latinなどの特定のスクリプトか、3つの特殊値Common、Inherited、Unknownのいずれか)に割り当てられます。
 <table>
 <tr><th>特殊なスクリプト</th><th>説明</th></tr>
@@ -147,7 +152,9 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 ***
 <h3>1.1.2　Unicodeブロック</h3>
+
 <img src="../image/string_course.004.jpeg" width="500px"><br>
+
 全てのUnicodeブロックはUnicodeコードポイントの下限と上限で定義されます。
 各Unicodeブロックの下限と上限のUnicodeコードポイントは「<a href="http://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt" target="_blank">Character Block Property Data File</a>」で確認できます。
 <table>
@@ -389,7 +396,9 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 ***
 <h3>1.1.3　Unicodeカテゴリ</h3>
+
 <img src="../image/string_course.005.jpeg" width="500px"><br>
+
 全てのUnicodeコードポイントは一般カテゴリに割り当てられます。そして、全てのUnicodeコードポイントはサブカテゴリにも割り当てられます。<br>rf. <a href="http://unicode.org/reports/tr44/#General_Category_Values" target="_blank">5.7.1 General Category Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a><br><br>
 一般カテゴリ
 <table>
@@ -443,7 +452,9 @@ Unicodeスクリプトは<a href="http://www.unicode.org/reports/tr24/" target="
 
 ***
 <h3>1.1.4　Unicodeバイナリ・プロパティ</h3>
+
 <img src="../image/string_course.006.jpeg" width="500px"><br>
+
 Unicodeプロパティのうち、バイナリ型で定義されているものです。そのうち下記のものがJavaの正規表現で定義されています。
 <table>
 <tr><th>Unicodeバイナリ・プロパティ</th><th>説明</th></tr>
@@ -465,7 +476,9 @@ Unicodeプロパティのうち、バイナリ型で定義されているもの�
 
 ***
 <h3>1.2　java.lang.Characterクラスによる文字の字種情報の取得</h3>
+
 <img src="../image/string_course.007.jpeg" width="500px"><br>
+
 java.lang.CharacterクラスのメソッドgetName、getType、getDirectionalityにより文字の字種情報を取得します。
 <h4>1.2.1　Character.getName</h4>
 <img src="../image/string_course.008.jpeg" width="500px"><br>
@@ -496,7 +509,9 @@ Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Intege
 
 ***
 <h4>1.2.2　Character.getType</h4>
+
 <img src="../image/string_course.009.jpeg" width="500px"><br>
+
 Character.getTypeメソッドはCharやコードポイントに対して<a href="#18unicodeカテゴリ">Unicodeカテゴリ</a>を返します。
 
 ```scala
@@ -593,7 +608,9 @@ Character.getTypeメソッドはCharやコードポイントに対して<a href=
 
 ***
 <h4>1.2.3　Character.getDirectionality</h4>
+
 <img src="../image/string_course.010.jpeg" width="500px"><br>
+
 Character.getDirectionalityは文字の方向性（双方向文字タイプ）を取得するために使用します。文字の方向性というのは、例えば、日本語の文字は「左から右に表示する」といった情報のことです。<br>
 rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank">5.7.2 Bidirectional Class Values - Unicode® Standard Annex #44 UNICODE CHARACTER DATABASE</a>
 <table>
@@ -693,7 +710,9 @@ rf. <a href="http://unicode.org/reports/tr44/#Bidi_Class_Values" target="_blank"
 
 ***
 <h3>1.3　java.lang.Characterクラスによる文字の字種判定</h3>
+
 <img src="../image/string_course.011.jpeg" width="500px"><br>
+
 Characterクラスのメソッドで字種の判定を行います。引数はCharでもコードポイント（Int）でも可です。ただし引数がCharだとCharにはBMP領域の文字しか格納できないので、補助文字は判定できません。
 <table>
 <tr><th>java.lang.Characterの字種判定メソッド</th><th>説明</th></tr>
@@ -773,10 +792,15 @@ Characterクラスのメソッドで字種の判定を行います。引数はCh
 
 ***
 <h3>1.4　正規表現の字種によるマッチング</h3>
+
 <img src="../image/string_course.012.jpeg" width="500px"><br>
+
 正規表現には字種に関したマッチングを行うために、POSIX文字クラスや定義済み文字クラス（Unicodeスクリプト、ブロック、カテゴリ、バイナリ・プロパティなど）が用意されています。
+
 <h4>1.4.1　POSIX文字クラス(US-ASCIIのみ)</h4>
+
 <img src="../image/string_course.013.jpeg" width="500px"><br>
+
 POSIX（Portable Operating System Interface）標準に従う文字クラスにすべてのASCII文字を表すASCII文字クラスが追加されています。<br>
 rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html" target="_blank">9.3.5 RE Bracket Expression - The Open Group Base Specifications Issue 7 IEEE Std 1003.1™, 2013 Edition</a>
 <table>
@@ -798,7 +822,9 @@ rf. <a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.
 
 ***
 <h4>1.4.2　java.lang.Characterクラス(単純なJava文字タイプ)</h4>
+
 <img src="../image/string_course.014.jpeg" width="500px"><br>
+
 <table>
 <tr><th>クラス</th><th>マッチ</th></tr>
 <tr><td>\p{javaLowerCase}</td><td>java.lang.Character.isLowerCase()と等価</td></tr>
@@ -824,7 +850,9 @@ Unicodeブロックには接頭辞"In"、バイナリ・プロパティには接
 
 ***
 <h4>1.4.4　POSIX文字クラスと定義済の文字クラスの互換性</h4>
+
 <img src="../image/string_course.016.jpeg" width="500px"><br>
+
 POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/Pattern.html#UNICODE_CHARACTER_CLASS" target="_blank">UNICODE_CHARACTER_CLASS</a>フラグが指定されている場合、<a href="http://www.unicode.org/reports/tr18/" target="_blank">Unicode正規表現</a>の付録C: 互換性プロパティの勧告に適合しています。
 <table>
 <tr><th>クラス</th><th colspan="2">マッチ</th></tr>
@@ -851,8 +879,11 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 
 ***
 <h4>1.4.5　日本語の字種のマッチング</h4>
+
 <img src="../image/string_course.017.jpeg" width="500px"><br>
+
 <img src="../image/string_course.018.jpeg" width="500px"><br>
+
 ひらがな
 <table>
 <tr><th>正規表現</th><th>説明</th><th>範囲</th></tr>
@@ -913,6 +944,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 
 ***
 <h4>1.4.6　主に日本語フォントで用いられる漢字の定義とマッチング（自作）</h4>
+
 <table>
 <tr>
 <th>変数・メソッド</th><th>説明</th>
@@ -940,6 +972,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
     assert(JISLevel1to2KanjiCharacter.isDefined(Character.codePointAt(kanjiChar.toString, 0)))
   }
 ```
+
 次の漢字データに関する<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/kanji/README.md">README</a>
 <table>
 <tr>
@@ -998,10 +1031,15 @@ JIS水準漢字の一覧を出力するプログラムはこちら<a href="https
 
 ***
 <h3>1.5　字種の変換</h3>
+
 <img src="../image/string_course.019.jpeg" width="500px"><br>
+
 case付きのアルファベットをlower case、title case、upper caseに揃える方法と、ひらがなからカタカナ・カタカナからひらがなに変換する方法について説明します。
+
 <h4>1.5.1　letter case</h4>
+
 <img src="../image/string_course.020.jpeg" width="500px"><br>
+
 letter caseにはlower case、title case、upper caseが存在します。
 <table>
 <tr><th>letter case</th><th>例</th><th>説明</th></tr>
@@ -1012,7 +1050,9 @@ letter caseにはlower case、title case、upper caseが存在します。
 
 ***
 <h4>1.5.2　文字のletter caseの変換</h4>
+
 <img src="../image/string_course.021.jpeg" width="500px"><br>
+
 Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUpperCase、toTitleCase、toLowerCaseメソッドでいずれか一方に揃えます。
 
 ```scala
@@ -1057,7 +1097,9 @@ Charやコードポイントのletter caseをjava.lang.CharacterクラスのtoUp
 
 ***
 <h4>1.5.3　文字列のletter caseの変換</h4>
+
 <img src="../image/string_course.022.jpeg" width="500px"><br>
+
 Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃えます。
 
 ```scala
@@ -1080,7 +1122,9 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
 
 ***
 <h4>1.5.4　ひらがなとカタカナの相互変換（自作）</h4>
+
 <img src="../image/string_course.023.jpeg" width="500px"><br>
+
 自作のJapaneseCharacterCaseConverterは、ひらがなとカタカナのコードポイントの差分を利用してひらがなとカタカナの相互変換を実行します。
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/JapaneseSentenceSplitter.scala" target="_blank">JapaneseCharacterCaseConverterの実装</a>。
 処理に使用するのNormalizedStringとStringOptionについては次章で説明します。
