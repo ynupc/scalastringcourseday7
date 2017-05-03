@@ -36,11 +36,11 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
       return Nil
     }
     val dictionaryName: String = dictionaryNameOpt.get
-    val map: mutable.Map[String, List[String]] = mutable.Map[String, List[String]]()
-    val buffer: ListBuffer[(String, String)] = ListBuffer[(String, String)]()
+    val map = mutable.Map.empty[String, List[String]]
+    val buffer = ListBuffer.empty[(String, String)]
     val filePath: Path = Config.resourceFile("normalizer", dictionaryName)
     ascii2native(filePath) foreach {
-      case regex(representation, notationalVariants, commentOut) =>
+      case regex(representation, notationalVariants, _) =>
         val trimmedRepresentation: String = representation.trim match {
           case "\"\"" => ""
           case otherwise => otherwise
@@ -51,7 +51,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
         } else {
           sortedNotationalVariants
         }
-      case otherwise =>
+      case _ =>
         //Do nothing
     }
     sortRepresentations(map.keySet.toList) foreach {
@@ -80,7 +80,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
           terms foreach {
             case (term, replacement) =>
               result = replaceAll(result, term, replacement)
-            case otherwise =>
+            case _ =>
               //Do nothing
           }
         }
@@ -89,7 +89,7 @@ class DictionaryBasedNormalizer(dictionaryNameOpt: StringOption) {
   }
 
   protected def replaceAll(input: String, term: String, replacement: String): String = {
-    import util.StringUtils._
+    import util.primitive._
     input.replaceAllLiteratim(term, replacement)
   }
 }

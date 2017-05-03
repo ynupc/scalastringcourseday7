@@ -41,7 +41,7 @@ object Config {
   final lazy val nGram: Int = config.as[Option[Int]]("concept.nGram.n") match {
     case Some(n) if 1 <= n =>
       n
-    case otherwise =>
+    case _ =>
       1
   }
 
@@ -50,7 +50,7 @@ object Config {
       gap
     case Some(gap) if gap < 0 =>
       Int.MaxValue
-    case otherwise =>
+    case _ =>
       0
   }
 

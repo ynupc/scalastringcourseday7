@@ -36,7 +36,7 @@ class NormalizedString(str: StringOption) extends AnyRef {
   override def equals(other: Any): Boolean = other match {
     case that: NormalizedString =>
       this.toString == that.toString
-    case otherwise => false
+    case _ => false
   }
 
   def concat(nStr: NormalizedString): NormalizedString = {
@@ -51,7 +51,7 @@ class NormalizedString(str: StringOption) extends AnyRef {
             new NormalizedString(StringOption(token))
         }
       case StringNone =>
-        Array[NormalizedString]()
+        Array.empty[NormalizedString]
     }
   }
 
@@ -65,10 +65,10 @@ class NormalizedString(str: StringOption) extends AnyRef {
                 new NormalizedString(StringOption(token))
             }
           case StringNone =>
-            Array[NormalizedString]()
+            Array.empty[NormalizedString]
         }
       case StringNone =>
-        Array[NormalizedString]()
+        Array.empty[NormalizedString]
     }
   }
 

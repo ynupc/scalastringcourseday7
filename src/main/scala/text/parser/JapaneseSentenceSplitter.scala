@@ -3,7 +3,7 @@ package text.parser
 import text.normalizer.{EscapeCharacter, NormalizedString, SentenceNormalizer}
 import text.{StringNone, StringOption, StringSome}
 import util.Config
-import util.StringUtils._
+import util.primitive._
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
@@ -46,7 +46,7 @@ object JapaneseSentenceSplitter {
       return Nil
     }
 
-    val sentences: ListBuffer[NS] = ListBuffer[NS]()
+    val sentences = ListBuffer.empty[NS]
 
     //改行文字により行に分割
     textOpt.get.lines foreach {
@@ -72,7 +72,7 @@ object JapaneseSentenceSplitter {
                   ghost2 = c
                   breaks.break
                 }
-              case otherwise =>
+              case _ =>
                 //Do nothing
             }
             throw new NoSuchElementException("JapaneseSentenceSplitter.split")

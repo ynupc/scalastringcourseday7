@@ -3,7 +3,7 @@ package text.parser
 import text.normalizer._
 import text.{StringNone, StringOption, StringSome}
 import util.Config
-import util.StringUtils._
+import util.primitive._
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
@@ -20,7 +20,7 @@ object SentenceQuotationParser {
   private type QuotationSentence = (Quotation, QuotedSentence)
 
   private final val quotations: Seq[Quotation] = {
-    val buffer: ListBuffer[Quotation] = ListBuffer[Quotation]()
+    val buffer = ListBuffer.empty[Quotation]
     Source.fromFile(
       Config.resourceFile("parser", "quotation.csv").toFile
     ).getLines foreach {
@@ -50,14 +50,14 @@ object SentenceQuotationParser {
   def parse(sentenceOpt: StringOption): Option[QuotedSentence] = {
     sentenceOpt match {
       case StringSome(sentence) =>
-        Option(parse(sentence, ListBuffer[String]() ++ EscapeNoun.objects))
+        Option(parse(sentence, ListBuffer.empty[String] ++ EscapeNoun.objects))
       case StringNone =>
         None
     }
   }
 
   private def getFirstMatchOpt(sentence: String): Option[(Quotation, Range)] = {
-    val quotationRangeBuffer: ListBuffer[(Quotation, Range)] = ListBuffer[(Quotation, Range)]()
+    val quotationRangeBuffer = ListBuffer.empty[(Quotation, Range)]
     var firstMatchOpt: Option[(Quotation, Range)] = None
 
     quotations foreach {
@@ -75,7 +75,7 @@ object SentenceQuotationParser {
           if (firstMatchOpt.isEmpty || (range.start < firstMatchOpt.get._2.start)) {
             firstMatchOpt = Some((quotation, range))
           }
-        case otherwise =>
+        case _ =>
           //Do nothing
       }
     }
@@ -85,7 +85,7 @@ object SentenceQuotationParser {
 
   private def parse(sentence: String, nouns: ListBuffer[String]): QuotedSentence = {
     var parentSentence: String = sentence
-    val childrenSentences: mutable.Map[String, QuotationSentence] = mutable.Map[String, QuotationSentence]()
+    val childrenSentences = mutable.Map.empty[String, QuotationSentence]
 
     var firstMatchOpt: Option[(Quotation, Range)] = getFirstMatchOpt(sentence)
 
@@ -115,7 +115,7 @@ object SentenceQuotationParser {
           text = text.replaceAllLiteratim(
             replacement,
             sentence.toString.quote(quotation))
-        case otherwise =>
+        case _ =>
           //Do nothing
       }
       text
@@ -123,7 +123,7 @@ object SentenceQuotationParser {
   }
 
   def splitAndQuotationParseJapaneseText(textOpt: StringOption): Seq[NormalizedQuotedSentence] = {
-    val buffer: ListBuffer[NormalizedQuotedSentence] = ListBuffer[NormalizedQuotedSentence]()
+    val buffer = ListBuffer.empty[NormalizedQuotedSentence]
     JapaneseSentenceSplitter.split(textOpt) foreach {
       sentence =>
         parse(StringOption(sentence.text)) match {

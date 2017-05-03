@@ -25,7 +25,7 @@ class ProcessBuilderUtils(repr: ProcessBuilder) {
                  onUnmappableCharacter: CodingErrorAction,
                  replacementOpt: StringOption): Iterator[String] = {
     val lines: Iterator[String] = repr.lineStream_!.iterator
-    val byteBuffer: ListBuffer[Byte] = ListBuffer[Byte]()
+    val byteBuffer = ListBuffer.empty[Byte]
     while (lines.hasNext) {
       val line: String = lines.next.trim concat "\n"
       byteBuffer ++= line.getBytes

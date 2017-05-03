@@ -49,7 +49,7 @@ trait KanjiCharacter {
   }
 
   protected def readKanjiCSV(fileName: String): Seq[String] = {
-    val buffer: ListBuffer[String] = ListBuffer[String]()
+    val buffer = ListBuffer.empty[String]
     val file: File = Config.resourceFile("kanji", fileName.concat(".csv")).toFile
     if (file.canRead && file.isFile) {
       Source.fromFile(file).getLines foreach {

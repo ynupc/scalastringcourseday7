@@ -2,93 +2,28 @@ package util
 
 /**
   * @author ynupc
-  *         Created on 2016/08/07
+  *         Created on 2017/05/01
   */
-object StringUtils {
-  implicit def stringToStringUtils(repr: CharSequence): StringUtils = {
-    new StringUtils(repr)
-  }
-}
+trait StringUtilsConversions {
+  protected def str: String
 
-class StringUtils(repr: CharSequence) {
-  private val str: String = {
-    repr match {
-      case s: String => s
-      case otherwise =>
-        otherwise.toString
-    }
-  }
+  def replaceAllLiteratim(target: CharSequence, replacement: CharSequence): String
 
-  def replaceAllLiteratim(target: CharSequence, replacement: CharSequence): String = {
-    str.replace(target, replacement)
-  }
+  def quote(quotation: (String, String)): String
 
-  def quote(quotation: (String, String)): String = {
-    new StringBuilder().
-      append(quotation._1).
-      append(repr).
-      append(quotation._2).
-      result
-  }
+  def codePointNumber: Int
 
-  def codePointCount: Int = {
-    str.codePointCount(0, str.length)
-  }
-
-  def toCodePointArray: Array[Int] = {
-    if (repr == null) {
-      throw new NullPointerException
-    }
-
-    val charArray: Array[Char] = str.toCharArray
-    val length: Int = charArray.length
-    var surrogatePairCount: Int = 0
-    var isSkipped: Boolean = false
-    for (i <- 0 until length) {
-      if (isSkipped) {
-        isSkipped = false
-      } else {
-        if (0 < i && Character.isSurrogatePair(charArray(i - 1), charArray(i))) {
-          surrogatePairCount += 1
-          isSkipped = true
-        }
-      }
-    }
-    isSkipped = false
-    val codePoints: Array[Int] = new Array[Int](length - surrogatePairCount)
-    var j: Int = 0
-    for (i <- 0 until length) {
-      if (isSkipped) {
-        isSkipped = false
-      } else {
-        val currentChar: Char = charArray(i)
-        if (Character.isHighSurrogate(currentChar) && i + 1 < length) {
-          val nextChar: Char = charArray(i + 1)
-          if (Character.isLowSurrogate(nextChar)) {
-            codePoints(j) = Character.toCodePoint(currentChar, nextChar)
-            j += 1
-            isSkipped = true
-          }
-        }
-        if (!isSkipped) {
-          codePoints(j) = currentChar
-          j += 1
-        }
-      }
-    }
-    codePoints
-  }
+  def toCodePointArray: Array[Int]
 
   //binaryString to AnyVal
-  def binaryStringToByte: Byte = {
-    java.lang.Byte.parseByte(str, 2)
-  }
+  def binaryStringToByte: Byte
 
   def binaryStringToByteOpt: Option[Byte] = {
     try {
       Option(binaryStringToByte)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -102,15 +37,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def binaryStringToShort: Short = {
-    java.lang.Short.parseShort(str, 2)
-  }
+  def binaryStringToShort: Short
 
   def binaryStringToShortOpt: Option[Short] = {
     try {
       Option(binaryStringToShort)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -124,15 +58,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def binaryStringToInt: Int = {
-    java.lang.Integer.parseInt(str, 2)
-  }
+  def binaryStringToInt: Int
 
   def binaryStringToIntOpt: Option[Int] = {
     try {
       Option(binaryStringToInt)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -146,15 +79,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def binaryStringToUnsignedInt: Int = {
-    java.lang.Integer.parseUnsignedInt(str, 2)
-  }
+  def binaryStringToUnsignedInt: Int
 
   def binaryStringToUnsignedIntOpt: Option[Int] = {
     try {
       Option(binaryStringToUnsignedInt)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -168,15 +100,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def binaryStringToLong: Long = {
-    java.lang.Long.parseLong(str, 2)
-  }
+  def binaryStringToLong: Long
 
   def binaryStringToLongOpt: Option[Long] = {
     try {
       Option(binaryStringToLong)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -190,15 +121,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def binaryStringToUnsignedLong: Long = {
-    java.lang.Long.parseUnsignedLong(str, 2)
-  }
+  def binaryStringToUnsignedLong: Long
 
   def binaryStringToUnsignedLongOpt: Option[Long] = {
     try {
       Option(binaryStringToUnsignedLong)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -213,15 +143,14 @@ class StringUtils(repr: CharSequence) {
   }
 
   //octalString to AnyVal
-  def octalStringToByte: Byte = {
-    java.lang.Byte.parseByte(str, 8)
-  }
+  def octalStringToByte: Byte
 
   def octalStringToByteOpt: Option[Byte] = {
     try {
       Option(octalStringToByte)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -235,15 +164,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def octalStringToShort: Short = {
-    java.lang.Short.parseShort(str, 8)
-  }
+  def octalStringToShort: Short
 
   def octalStringToShortOpt: Option[Short] = {
     try {
       Option(octalStringToShort)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -257,15 +185,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def octalStringToInt: Int = {
-    java.lang.Integer.parseInt(str, 8)
-  }
+  def octalStringToInt: Int
 
   def octalStringToIntOpt: Option[Int] = {
     try {
       Option(octalStringToInt)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -279,15 +206,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def octalStringToUnsignedInt: Int = {
-    java.lang.Integer.parseUnsignedInt(str, 8)
-  }
+  def octalStringToUnsignedInt: Int
 
   def octalStringToUnsignedIntOpt: Option[Int] = {
     try {
       Option(octalStringToUnsignedInt)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -301,15 +227,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def octalStringToLong: Long = {
-    java.lang.Long.parseLong(str, 8)
-  }
+  def octalStringToLong: Long
 
   def octalStringToLongOpt: Option[Long] = {
     try {
       Option(octalStringToLong)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -323,15 +248,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def octalStringToUnsignedLong: Long = {
-    java.lang.Long.parseUnsignedLong(str, 8)
-  }
+  def octalStringToUnsignedLong: Long
 
   def octalStringToUnsignedLongOpt: Option[Long] = {
     try {
       Option(octalStringToUnsignedLong)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -346,15 +270,14 @@ class StringUtils(repr: CharSequence) {
   }
 
   //hexString to AnyVal
-  def hexStringToByte: Byte = {
-    java.lang.Byte.parseByte(str, 0x10)
-  }
+  def hexStringToByte: Byte
 
   def hexStringToByteOpt: Option[Byte] = {
     try {
       Option(hexStringToByte)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -368,15 +291,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def hexStringToShort: Short = {
-    java.lang.Short.parseShort(str, 0x10)
-  }
+  def hexStringToShort: Short
 
   def hexStringToShortOpt: Option[Short] = {
     try {
       Option(hexStringToShort)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -390,15 +312,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def hexStringToInt: Int = {
-    java.lang.Integer.parseInt(str, 0x10)
-  }
+  def hexStringToInt: Int
 
   def hexStringToIntOpt: Option[Int] = {
     try {
       Option(hexStringToInt)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -412,15 +333,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def hexStringToUnsignedInt: Int = {
-    java.lang.Integer.parseUnsignedInt(str, 0x10)
-  }
+  def hexStringToUnsignedInt: Int
 
   def hexStringToUnsignedIntOpt: Option[Int] = {
     try {
       Option(hexStringToUnsignedInt)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -434,15 +354,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def hexStringToLong: Long = {
-    java.lang.Long.parseLong(str, 0x10)
-  }
+  def hexStringToLong: Long
 
   def hexStringToLongOpt: Option[Long] = {
     try {
       Option(hexStringToLong)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -456,15 +375,14 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def hexStringToUnsignedLong: Long = {
-    java.lang.Long.parseUnsignedLong(str, 0x10)
-  }
+  def hexStringToUnsignedLong: Long
 
   def hexStringToUnsignedLongOpt: Option[Long] = {
     try {
       Option(hexStringToUnsignedLong)
     } catch {
       case e: NumberFormatException =>
+        e.printStackTrace()
         None
     }
   }
@@ -478,32 +396,18 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def toIntOpt: Option[Int] = {
-    try {
-      Option(str.toInt)
-    } catch {
-      case e: NumberFormatException =>
-        None
-    }
-  }
+  def toIntOpt: Option[Int]
 
   def toIntOr(defaultValue: Int): Int = {
     toIntOpt match {
       case Some(int) =>
         int
-      case otherwise =>
+      case None =>
         defaultValue
     }
   }
 
-  def toLongOpt: Option[Long] = {
-    try {
-      Option(str.toLong)
-    } catch {
-      case e: NumberFormatException =>
-        None
-    }
-  }
+  def toLongOpt: Option[Long]
 
   def toLongOr(defaultValue: Long): Long = {
     toLongOpt match {
@@ -514,14 +418,7 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def toShortOpt: Option[Short] = {
-    try {
-      Option(str.toShort)
-    } catch {
-      case e: NumberFormatException =>
-        None
-    }
-  }
+  def toShortOpt: Option[Short]
 
   def toShortOr(defaultValue: Short): Short = {
     toShortOpt match {
@@ -532,14 +429,7 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def toByteOpt: Option[Byte] = {
-    try {
-      Option(str.toByte)
-    } catch {
-      case e: NumberFormatException =>
-        None
-    }
-  }
+  def toByteOpt: Option[Byte]
 
   def toByteOr(defaultValue: Byte): Byte = {
     toByteOpt match {
@@ -550,14 +440,7 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def toFloatOpt: Option[Float] = {
-    try {
-      Option(str.toFloat)
-    } catch {
-      case e: NumberFormatException =>
-        None
-    }
-  }
+  def toFloatOpt: Option[Float]
 
   def toFloatOr(defaultValue: Float): Float = {
     toFloatOpt match {
@@ -568,14 +451,7 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def toDoubleOpt: Option[Double] = {
-    try {
-      Option(str.toDouble)
-    } catch {
-      case e: NumberFormatException =>
-        None
-    }
-  }
+  def toDoubleOpt: Option[Double]
 
   def toDoubleOr(defaultValue: Double): Double = {
     toDoubleOpt match {
@@ -586,14 +462,7 @@ class StringUtils(repr: CharSequence) {
     }
   }
 
-  def toBooleanOpt: Option[Boolean] = {
-    try {
-      Option(java.lang.Boolean.parseBoolean(str))
-    } catch {
-      case e: IllegalArgumentException =>
-        None
-    }
-  }
+  def toBooleanOpt: Option[Boolean]
 
   def toBooleanOr(defaultValue: Boolean): Boolean = {
     toBooleanOpt match {

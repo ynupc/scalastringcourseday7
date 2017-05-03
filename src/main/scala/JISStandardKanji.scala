@@ -1,4 +1,4 @@
-import util.StringUtils._
+import util.primitive._
 
 import scala.collection.mutable
 

@@ -19,7 +19,7 @@ class EscapeObject(objectFileNameOpt: StringOption) {
       return Nil
     }
 
-    val buffer: ListBuffer[String] = ListBuffer[String]()
+    val buffer = ListBuffer.empty[String]
     Source.fromFile(
       Config.resourceFile("normalizer", objectFileNameOpt.get).toFile
     ).getLines foreach {
