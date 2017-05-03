@@ -137,7 +137,7 @@ Optionは値があるのかないのかわからない状態を表すもので�
 ```
 
 ***
-<h3>2.5　文字列オプション（自作）</h3>
+<h3>2.5　文字列オプション</h3>
 <img src="../image/string_course.029.jpeg" width="500px"><br>
 Optionを使用するとnullを書かずにすむためNullPointerExceptionを排除するために使用できます。文字列処理においてStringはnullだけでなく空文字""も同時に排除したい場合がよくありますが、Optionでは空文字は排除されません。そこで、OptionのようにStringを包むことでnullと空文字を排除するためのStringOptionを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/StringOption.scala" target="_blank">StringOptionの実装</a>。
 
@@ -165,7 +165,7 @@ Optionを使用するとnullを書かずにすむためNullPointerExceptionを�
 ```
 
 ***
-<h3>2.6　正規化文字列（自作）</h3>
+<h3>2.6　正規化文字列</h3>
 <img src="../image/string_course.030.jpeg" width="500px"><br>
 値からnullや空文字を排除することに加えて、値が正規化されていることを保証するためにNormalizedStringを自作しました。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/normalizer/NormalizedString.scala" target="_blank">NormalizedStringの実装</a>
 <h4>2.6.1　正規化処理の流れ</h4>
@@ -379,7 +379,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 ```
 
 ***
-<h3>2.7　日本語の句点による文分割と文の正規化（自作）</h3>
+<h3>2.7　日本語の句点による文分割と文の正規化</h3>
 <img src="../image/string_course.031.jpeg" width="500px"><br>
 日本語テキストを句点「。」や「．」の区切りによる文（単文・重文・複文の文ではない）に分割し、文を正規化する方法について説明します。単純に日本語テキストを上記のNormalizedStringやUnicode正規化してしまうと、日本語の句点・読点がそれぞれラテン文字のピリオト・カンマに変換されてしまいます。例えば、日本語テキストに小数点のピリオドや数字の桁区切りのカンマなどが混在している場合、正規化後のテキストのピリオドが日本語の句点を意味していたのか小数点のピリオドを意味していたのかわかりづらくなってしまいます。そこで、正規化する際に日本語の句点・読点を一旦退避させて、それらを正規化後に元の位置に戻すような処理を含めた文分割処理を作成しました。「モーニング娘。」のような固有名詞に句点が含まれている場合は正規化処理から退避させることに加え、句点による文分割の処理からも退避させる必要があります。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/resources/parser/proper_noun_with_japanese_period.txt" target="_blank">proper_noun_with_japanese_period.txt</a>に登録した句点を含む固有名詞の句点は文分割処理の前に一時的に幽霊文字に変換し、文分割処理後に元の句点に戻します。<a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/JapaneseSentenceSplitter.scala" target="_blank">JapaneseSentenceSplitterの実装</a>。
 
@@ -407,7 +407,7 @@ word_expression_dic.ymlでは、次のように異表記を代表表記に変換
 ```
 
 ***
-<h3>2.8　引用符による文の解析（自作）</h3>
+<h3>2.8　引用符による文の解析</h3>
 <a href="https://github.com/ynupc/scalastringcourseday7/blob/master/src/main/scala/text/parser/SentenceQuotationParser.scala" target="_blank">SentenceQuotationParserの実装</a>。
 
 ***
