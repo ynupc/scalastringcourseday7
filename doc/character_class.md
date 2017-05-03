@@ -943,7 +943,7 @@ POSIX文字クラスと定義済の文字クラスは、<a href="https://docs.or
 </table>
 
 ***
-<h4>1.4.6　主に日本語フォントで用いられる漢字の定義とマッチング（自作）</h4>
+<h4>1.4.6　主に日本語フォントで用いられる漢字の定義とマッチング</h4>
 
 <table>
 <tr>
@@ -1121,7 +1121,7 @@ Stringのletter caseをtoUpperCase、toLowerCaseメソッドで一方に揃え�
 ```
 
 ***
-<h4>1.5.4　ひらがなとカタカナの相互変換（自作）</h4>
+<h4>1.5.4　ひらがなとカタカナの相互変換</h4>
 
 <img src="../image/string_course.023.jpeg" width="500px"><br>
 
